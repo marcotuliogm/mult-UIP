@@ -1,0 +1,12 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$msersock_8c.html#a90aa6ba9145e9500974e7a8d2eb0f951" title="atende_o_cliente" alt="" coords="113,112,244,141"/>
+<area shape="rect" id="node7" href="$clisock_8c.html#a51619db9d83ab69e2189d5653c1991e6" title="erro_fatal" alt="" coords="477,164,560,193"/>
+<area shape="rect" id="node19" href="$msersock_8c.html#a34dbbd5be45b52b4d2dc758f5025b438" title="cria_soquete_serv" alt="" coords="109,216,248,245"/>
+<area shape="rect" id="node5" href="$msersock_8c.html#ae79c21dfb92ac7de84872cac47db1cfa" title="envia_pro_cliente" alt="" coords="296,112,429,141"/>
+<area shape="rect" id="node9" href="$mprintf_8c.html#a486df650a64b4719f771096d27ed4076" title="sprintf" alt="" coords="332,59,393,88"/>
+<area shape="rect" id="node11" href="$mprintf_8c.html#a4258ec4e57ed55fef8f175226f66263d" title="sputchar" alt="" coords="480,85,557,115"/>
+<area shape="rect" id="node13" href="$mprintf_8c.html#afac470569c34e290d1b8b7c53cbeb6e1" title="va_printf" alt="" coords="480,32,557,61"/>
+<area shape="rect" id="node15" href="$mprintf_8c.html#a829eca90dc67b4fcf6dd1460e621d144" title="dprint" alt="" coords="608,5,667,35"/>
+<area shape="rect" id="node17" href="$mprintf_8c.html#ad44aca28598820cf82ac3cff0c30350a" title="u2str" alt="" coords="611,59,664,88"/>
+<area shape="rect" id="node22" href="$group__uip.html#gaa22b04cac8cf283ca12f028578bebc06" title="htons" alt="" coords="333,267,392,296"/>
+</map>

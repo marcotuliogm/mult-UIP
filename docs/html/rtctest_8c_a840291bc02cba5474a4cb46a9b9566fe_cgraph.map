@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$rtc_8c.html#a0ace81a0e0d8d3b18c4054c63959fe11" title="RTCGetTime" alt="" coords="129,5,228,35"/>
+<area shape="rect" id="node5" href="$rtc_8c.html#ae39b64b3d054ebab4c5672ccac1b576e" title="RTCInit" alt="" coords="148,59,209,88"/>
+<area shape="rect" id="node7" href="$rtc_8c.html#abece672a26b35764fbd9dec2f21b06f6" title="RTCSetAlarm" alt="" coords="127,112,231,141"/>
+<area shape="rect" id="node9" href="$rtc_8c.html#aeb74c10687db6f9d6c8206b5dd7e82b8" title="RTCSetAlarmMask" alt="" coords="111,165,247,195"/>
+<area shape="rect" id="node11" href="$rtc_8c.html#af2c698dc8acd3cd5e5af932d936f43ee" title="RTCSetTime" alt="" coords="131,219,227,248"/>
+<area shape="rect" id="node13" href="$rtc_8c.html#a35a5a2256826045b4b16c8005296c5d9" title="RTCStart" alt="" coords="141,272,216,301"/>
+</map>
