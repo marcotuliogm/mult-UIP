@@ -1,7 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$proj_2timer_2timer_8c.html#a1074cdcb942e956a19764c56388e7d38" title="delayMs" alt="" coords="153,5,228,35"/>
-<area shape="rect" id="node5" href="$emac_8c.html#a76d444b6a00010746dbc958f4902bb60" title="read_PHY" alt="" coords="149,59,232,88"/>
-<area shape="rect" id="node7" href="$emac_8c.html#adfee51c94eb6b5d2b3558c5156b67304" title="rx_descr_init" alt="" coords="140,112,241,141"/>
-<area shape="rect" id="node9" href="$emac_8c.html#a45c05fc7653674536301a023ea298c7c" title="tx_descr_init" alt="" coords="140,165,241,195"/>
-<area shape="rect" id="node11" href="$emac_8c.html#ab3b471af1b3dec414a8bd2af03142b61" title="write_PHY" alt="" coords="149,219,232,248"/>
-</map>
