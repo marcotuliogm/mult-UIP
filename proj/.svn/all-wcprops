@@ -1,0 +1,137 @@
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/37/trunk/webserver/proj
+END
+main.o
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/43/trunk/webserver/proj/main.o
+END
+ldscript.ld
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/2/trunk/webserver/proj/ldscript.ld
+END
+SELivre-ethernet-httpd.map
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/12/trunk/webserver/proj/SELivre-ethernet-httpd.map
+END
+SELivre-eth-multServ.map
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/43/trunk/webserver/proj/SELivre-eth-multServ.map
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/2/trunk/webserver/proj/.project
+END
+doxygen.sh
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/38/trunk/webserver/proj/doxygen.sh
+END
+.cproject
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/2/trunk/webserver/proj/.cproject
+END
+SELivre-eth-multServ.hex
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/43/trunk/webserver/proj/SELivre-eth-multServ.hex
+END
+lpc_config.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/10/trunk/webserver/proj/lpc_config.h
+END
+SELivre-ethernet-httpd.hex
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/12/trunk/webserver/proj/SELivre-ethernet-httpd.hex
+END
+lpc24xx.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/2/trunk/webserver/proj/lpc24xx.h
+END
+syscalls.o
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/21/trunk/webserver/proj/syscalls.o
+END
+doxygen.log
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/43/trunk/webserver/proj/doxygen.log
+END
+doxygen.conf
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/38/trunk/webserver/proj/doxygen.conf
+END
+boot.s
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/2/trunk/webserver/proj/boot.s
+END
+main.c
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/43/trunk/webserver/proj/main.c
+END
+SELivre-ethernet-httpd.lst
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/12/trunk/webserver/proj/SELivre-ethernet-httpd.lst
+END
+SELivre-eth-multServ.lst
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/43/trunk/webserver/proj/SELivre-eth-multServ.lst
+END
+SELivre-eth-multServ.elf
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/43/trunk/webserver/proj/SELivre-eth-multServ.elf
+END
+SELivre-ethernet-httpd.elf
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/12/trunk/webserver/proj/SELivre-ethernet-httpd.elf
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/37/trunk/webserver/proj/Makefile
+END
+syscalls.c
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/2/trunk/webserver/proj/syscalls.c
+END
