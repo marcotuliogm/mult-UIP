@@ -1,0 +1,171 @@
+\hypertarget{group__CHAT}{
+\section{CHAT usando sockets}
+\label{group__CHAT}\index{CHAT usando sockets@{CHAT usando sockets}}
+}
+
+
+Collaboration diagram for CHAT usando sockets:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{group__CHAT}
+\end{center}
+\end{figure}
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__CHAT_gacc932bb3604c55fcb89a5f6d045f8da1}{chat\_\-end} (struct \hyperlink{structchat__state}{chat\_\-state} $\ast$s)
+\begin{DoxyCompactList}\small\item\em cabecalho destino do chat. \item\end{DoxyCompactList}\item 
+void \hyperlink{group__CHAT_ga67e501b615630d513731a410683811be}{chat\_\-init} ()
+\begin{DoxyCompactList}\small\item\em Inicializa o servico de socket de acordo com a porta. \item\end{DoxyCompactList}\item 
+void \hyperlink{group__CHAT_ga25b460a2990c027f8814e844fb522894}{chat\_\-start} ()
+\begin{DoxyCompactList}\small\item\em Coloca flag de inicio de comunicacao no chat em 1. \item\end{DoxyCompactList}\item 
+void \hyperlink{group__CHAT_ga00e5c6d3357581f7e4177b41485d8417}{chat\_\-appcall} (void)
+\begin{DoxyCompactList}\small\item\em Funcao que gerencia conexao do chat. \item\end{DoxyCompactList}\item 
+int \hyperlink{group__CHAT_ga4441743abd914961e74e7c4eaae43ae7}{chat\_\-communication} (struct \hyperlink{structchat__state}{chat\_\-state} $\ast$s)
+\begin{DoxyCompactList}\small\item\em Funcao para gerenciar os estados da conexao do chat. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char \hyperlink{group__CHAT_ga6936bd73a531977d0e65e15a3875a50e}{cabec\_\-or} \mbox{[}20\mbox{]}
+\item 
+char \hyperlink{group__CHAT_ga812529c69e1be053d60429b71bef09e6}{cabec\_\-dest} \mbox{[}20\mbox{]}
+\begin{DoxyCompactList}\small\item\em cabecalho origem do chat. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{group__CHAT_ga00e5c6d3357581f7e4177b41485d8417}{
+\index{CHAT@{CHAT}!chat\_\-appcall@{chat\_\-appcall}}
+\index{chat\_\-appcall@{chat\_\-appcall}!CHAT@{CHAT}}
+\subsubsection[{chat\_\-appcall}]{\setlength{\rightskip}{0pt plus 5cm}void chat\_\-appcall (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__CHAT_ga00e5c6d3357581f7e4177b41485d8417}
+Monitora se e uma nova conexao, ou passa a informacao para ser tratada. 
+
+Definition at line 67 of file cli\_\-webSock.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{group__CHAT_ga00e5c6d3357581f7e4177b41485d8417_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{group__CHAT_ga4441743abd914961e74e7c4eaae43ae7}{
+\index{CHAT@{CHAT}!chat\_\-communication@{chat\_\-communication}}
+\index{chat\_\-communication@{chat\_\-communication}!CHAT@{CHAT}}
+\subsubsection[{chat\_\-communication}]{\setlength{\rightskip}{0pt plus 5cm}int chat\_\-communication (
+\begin{DoxyParamCaption}
+\item[{struct {\bf chat\_\-state} $\ast$}]{ s}
+\end{DoxyParamCaption}
+)}}
+\label{group__CHAT_ga4441743abd914961e74e7c4eaae43ae7}
+Dois estados habilitados no chat: RECV\_\-CHAT -\/ quando esta aberto para receber dados da socket conectada a ele
+
+SEND\_\-CHAT -\/ pega informacao digitada na serial e envia para ele. 
+
+Definition at line 96 of file cli\_\-webSock.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{group__CHAT_ga4441743abd914961e74e7c4eaae43ae7_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{group__CHAT_gacc932bb3604c55fcb89a5f6d045f8da1}{
+\index{CHAT@{CHAT}!chat\_\-end@{chat\_\-end}}
+\index{chat\_\-end@{chat\_\-end}!CHAT@{CHAT}}
+\subsubsection[{chat\_\-end}]{\setlength{\rightskip}{0pt plus 5cm}void chat\_\-end (
+\begin{DoxyParamCaption}
+\item[{struct {\bf chat\_\-state} $\ast$}]{ s}
+\end{DoxyParamCaption}
+)}}
+\label{group__CHAT_gacc932bb3604c55fcb89a5f6d045f8da1}
+Finaliza a comunicacao com sockets. \hypertarget{group__CHAT_ga67e501b615630d513731a410683811be}{
+\index{CHAT@{CHAT}!chat\_\-init@{chat\_\-init}}
+\index{chat\_\-init@{chat\_\-init}!CHAT@{CHAT}}
+\subsubsection[{chat\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void chat\_\-init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{group__CHAT_ga67e501b615630d513731a410683811be}
+
+
+Definition at line 40 of file cli\_\-webSock.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{group__CHAT_ga67e501b615630d513731a410683811be_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{group__CHAT_ga25b460a2990c027f8814e844fb522894}{
+\index{CHAT@{CHAT}!chat\_\-start@{chat\_\-start}}
+\index{chat\_\-start@{chat\_\-start}!CHAT@{CHAT}}
+\subsubsection[{chat\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}void chat\_\-start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{group__CHAT_ga25b460a2990c027f8814e844fb522894}
+Inicialia o processo de comunicacao usado pelo chat. Coloca a saida serial fora do ar para a CLI e dedicada para o chat. 
+
+Definition at line 50 of file cli\_\-webSock.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{group__CHAT_ga25b460a2990c027f8814e844fb522894_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{group__CHAT_ga812529c69e1be053d60429b71bef09e6}{
+\index{CHAT@{CHAT}!cabec\_\-dest@{cabec\_\-dest}}
+\index{cabec\_\-dest@{cabec\_\-dest}!CHAT@{CHAT}}
+\subsubsection[{cabec\_\-dest}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf cabec\_\-dest}\mbox{[}20\mbox{]}}}
+\label{group__CHAT_ga812529c69e1be053d60429b71bef09e6}
+
+
+Definition at line 30 of file cli\_\-webSock.c.
+
+\hypertarget{group__CHAT_ga6936bd73a531977d0e65e15a3875a50e}{
+\index{CHAT@{CHAT}!cabec\_\-or@{cabec\_\-or}}
+\index{cabec\_\-or@{cabec\_\-or}!CHAT@{CHAT}}
+\subsubsection[{cabec\_\-or}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf cabec\_\-or}\mbox{[}20\mbox{]}}}
+\label{group__CHAT_ga6936bd73a531977d0e65e15a3875a50e}
+
+
+Definition at line 29 of file cli\_\-webSock.c.
+

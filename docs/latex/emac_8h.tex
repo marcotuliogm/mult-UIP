@@ -1,0 +1,2643 @@
+\hypertarget{emac_8h}{
+\section{mac/emac.h File Reference}
+\label{emac_8h}\index{mac/emac.h@{mac/emac.h}}
+}
+{\ttfamily \#include \char`\"{}../eth/eth.h\char`\"{}}\par
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{emac_8h_a4e23e19f562caf36e27ac175fdc0ddc6}{emacETHADDR0}~uipMAC\_\-ADDR0
+\item 
+\#define \hyperlink{emac_8h_a43eaa6526eec70ae4e5881569096a9e7}{emacETHADDR1}~uipMAC\_\-ADDR1
+\item 
+\#define \hyperlink{emac_8h_a56d81cdb25ad905ed427b0e26136296b}{emacETHADDR2}~uipMAC\_\-ADDR2
+\item 
+\#define \hyperlink{emac_8h_a5cb7f3868ae5d48ffbde67bf65b72c6e}{emacETHADDR3}~uipMAC\_\-ADDR3
+\item 
+\#define \hyperlink{emac_8h_ae0a83d11765f80389658e40660d41131}{emacETHADDR4}~uipMAC\_\-ADDR4
+\item 
+\#define \hyperlink{emac_8h_ab6f68897d7ed79f3ea5746122ab2b7b8}{emacETHADDR5}~uipMAC\_\-ADDR5
+\item 
+\#define \hyperlink{emac_8h_aeaafe84a9e6100abbdbcb36081c47deb}{NUM\_\-RX\_\-FRAG}~4
+\item 
+\#define \hyperlink{emac_8h_ad0fac51fab1c1237a8d81da7f2f12504}{NUM\_\-TX\_\-FRAG}~2
+\item 
+\#define \hyperlink{emac_8h_a90c7cfc0d28b76a09c949c42726809f5}{ETH\_\-FRAG\_\-SIZE}~1536
+\item 
+\#define \hyperlink{emac_8h_a5d3243c7c9da0659f4225753ad17a4b6}{ETH\_\-MAX\_\-FLEN}~1536
+\item 
+\#define \hyperlink{emac_8h_a7dc8057d05e1a2b33f21a835fd28eea3}{RX\_\-DESC\_\-BASE}~0x7FE00000
+\item 
+\#define \hyperlink{emac_8h_af79e247a49d9bd2f0b4c4bacc2ffabd6}{RX\_\-STAT\_\-BASE}~(RX\_\-DESC\_\-BASE + NUM\_\-RX\_\-FRAG$\ast$8)
+\item 
+\#define \hyperlink{emac_8h_ab864482ea76340dbd397711f8e5b6781}{TX\_\-DESC\_\-BASE}~(RX\_\-STAT\_\-BASE + NUM\_\-RX\_\-FRAG$\ast$8)
+\item 
+\#define \hyperlink{emac_8h_a5d60966396c5e0f1fd12ab3e937522a9}{TX\_\-STAT\_\-BASE}~(TX\_\-DESC\_\-BASE + NUM\_\-TX\_\-FRAG$\ast$8)
+\item 
+\#define \hyperlink{emac_8h_a7f2dc28fce64ef7931272d03a0ea385f}{RX\_\-BUF\_\-BASE}~(TX\_\-STAT\_\-BASE + NUM\_\-TX\_\-FRAG$\ast$4)
+\item 
+\#define \hyperlink{emac_8h_a6cb77f0e696b0fa650677daa12fec41e}{TX\_\-BUF\_\-BASE}~(RX\_\-BUF\_\-BASE  + NUM\_\-RX\_\-FRAG$\ast$ETH\_\-FRAG\_\-SIZE)
+\item 
+\#define \hyperlink{emac_8h_af4cc816cc821b2a2f01b3cb4987a20c1}{RX\_\-DESC\_\-PACKET}(\hyperlink{sft_8h_acb559820d9ca11295b4500f179ef6392}{i})~($\ast$(unsigned int $\ast$)(RX\_\-DESC\_\-BASE   + 8$\ast$\hyperlink{sft_8h_acb559820d9ca11295b4500f179ef6392}{i}))
+\item 
+\#define \hyperlink{emac_8h_a8bdfebe21c2c684f831acd1de55f74a7}{RX\_\-DESC\_\-CTRL}(\hyperlink{sft_8h_acb559820d9ca11295b4500f179ef6392}{i})~($\ast$(unsigned int $\ast$)(RX\_\-DESC\_\-BASE+4 + 8$\ast$\hyperlink{sft_8h_acb559820d9ca11295b4500f179ef6392}{i}))
+\item 
+\#define \hyperlink{emac_8h_abeca03ea3777be654723de075f003988}{RX\_\-STAT\_\-INFO}(\hyperlink{sft_8h_acb559820d9ca11295b4500f179ef6392}{i})~($\ast$(unsigned int $\ast$)(RX\_\-STAT\_\-BASE   + 8$\ast$\hyperlink{sft_8h_acb559820d9ca11295b4500f179ef6392}{i}))
+\item 
+\#define \hyperlink{emac_8h_a769c9e330a78150b792220c48272bd04}{RX\_\-STAT\_\-HASHCRC}(\hyperlink{sft_8h_acb559820d9ca11295b4500f179ef6392}{i})~($\ast$(unsigned int $\ast$)(RX\_\-STAT\_\-BASE+4 + 8$\ast$\hyperlink{sft_8h_acb559820d9ca11295b4500f179ef6392}{i}))
+\item 
+\#define \hyperlink{emac_8h_a3a4e5cf7cf4ec1b2f7e8032a30c59048}{TX\_\-DESC\_\-PACKET}(\hyperlink{sft_8h_acb559820d9ca11295b4500f179ef6392}{i})~($\ast$(unsigned int $\ast$)(TX\_\-DESC\_\-BASE   + 8$\ast$\hyperlink{sft_8h_acb559820d9ca11295b4500f179ef6392}{i}))
+\item 
+\#define \hyperlink{emac_8h_a20022a53cb91ae20ad30782c5999eb0c}{TX\_\-DESC\_\-CTRL}(\hyperlink{sft_8h_acb559820d9ca11295b4500f179ef6392}{i})~($\ast$(unsigned int $\ast$)(TX\_\-DESC\_\-BASE+4 + 8$\ast$\hyperlink{sft_8h_acb559820d9ca11295b4500f179ef6392}{i}))
+\item 
+\#define \hyperlink{emac_8h_a346933a584daf315ab0ad830be905a9f}{TX\_\-STAT\_\-INFO}(\hyperlink{sft_8h_acb559820d9ca11295b4500f179ef6392}{i})~($\ast$(unsigned int $\ast$)(TX\_\-STAT\_\-BASE   + 4$\ast$\hyperlink{sft_8h_acb559820d9ca11295b4500f179ef6392}{i}))
+\item 
+\#define \hyperlink{emac_8h_a9cfcfe4546c18b55c7c4bc3048f922d1}{RX\_\-BUF}(\hyperlink{sft_8h_acb559820d9ca11295b4500f179ef6392}{i})~(RX\_\-BUF\_\-BASE + ETH\_\-FRAG\_\-SIZE$\ast$\hyperlink{sft_8h_acb559820d9ca11295b4500f179ef6392}{i})
+\item 
+\#define \hyperlink{emac_8h_aeb63295b8ffbc937d82d9219e5759582}{TX\_\-BUF}(\hyperlink{sft_8h_acb559820d9ca11295b4500f179ef6392}{i})~(TX\_\-BUF\_\-BASE + ETH\_\-FRAG\_\-SIZE$\ast$\hyperlink{sft_8h_acb559820d9ca11295b4500f179ef6392}{i})
+\item 
+\#define \hyperlink{emac_8h_a197783fc20ad40ef435a4d4db12c01c7}{MAC1\_\-REC\_\-EN}~0x00000001
+\item 
+\#define \hyperlink{emac_8h_a97e3f630d645c447e540c6be485a661a}{MAC1\_\-PASS\_\-ALL}~0x00000002
+\item 
+\#define \hyperlink{emac_8h_a24e20d3aab3914facfa3222612f10ec4}{MAC1\_\-RX\_\-FLOWC}~0x00000004
+\item 
+\#define \hyperlink{emac_8h_aaf0a6ebde4122379344e701eb31ad06f}{MAC1\_\-TX\_\-FLOWC}~0x00000008
+\item 
+\#define \hyperlink{emac_8h_a93318bae84d4cee15dd41b22aacc4a88}{MAC1\_\-LOOPB}~0x00000010
+\item 
+\#define \hyperlink{emac_8h_a16ff37a7357cf572e538cd2128a435fd}{MAC1\_\-RES\_\-TX}~0x00000100
+\item 
+\#define \hyperlink{emac_8h_aed449d759a1c4409d741664ba2662684}{MAC1\_\-RES\_\-MCS\_\-TX}~0x00000200
+\item 
+\#define \hyperlink{emac_8h_ad06fe4d50d59bf134097087d07269125}{MAC1\_\-RES\_\-RX}~0x00000400
+\item 
+\#define \hyperlink{emac_8h_ad4064ef6e37f5a01969f46452e8621ff}{MAC1\_\-RES\_\-MCS\_\-RX}~0x00000800
+\item 
+\#define \hyperlink{emac_8h_a6071877a510a3107d33f51a897cba2b2}{MAC1\_\-SIM\_\-RES}~0x00004000
+\item 
+\#define \hyperlink{emac_8h_a01e6f1edbf72ad53086907771f5f8a2f}{MAC1\_\-SOFT\_\-RES}~0x00008000
+\item 
+\#define \hyperlink{emac_8h_ae443ddaad1dc3d2752335578a989d137}{MAC2\_\-FULL\_\-DUP}~0x00000001
+\item 
+\#define \hyperlink{emac_8h_a30711311f7752c73f42513069ec6d356}{MAC2\_\-FRM\_\-LEN\_\-CHK}~0x00000002
+\item 
+\#define \hyperlink{emac_8h_a4e6f2c4b521b876d81d92b12f2b17581}{MAC2\_\-HUGE\_\-FRM\_\-EN}~0x00000004
+\item 
+\#define \hyperlink{emac_8h_a4ed22b73ea1be3c747ed44f8f2799c48}{MAC2\_\-DLY\_\-CRC}~0x00000008
+\item 
+\#define \hyperlink{emac_8h_ae1158c2c2d9c348efd523f0633a1566a}{MAC2\_\-CRC\_\-EN}~0x00000010
+\item 
+\#define \hyperlink{emac_8h_a24250535119d2c9aa45047b30c532022}{MAC2\_\-PAD\_\-EN}~0x00000020
+\item 
+\#define \hyperlink{emac_8h_a6eadc12ebc20c3bac767fc0a80e849c1}{MAC2\_\-VLAN\_\-PAD\_\-EN}~0x00000040
+\item 
+\#define \hyperlink{emac_8h_a94630cd054d719c734dbe29e618fb370}{MAC2\_\-ADET\_\-PAD\_\-EN}~0x00000080
+\item 
+\#define \hyperlink{emac_8h_abc29e1b34a65cdf08bd50b1f28dca539}{MAC2\_\-PPREAM\_\-ENF}~0x00000100
+\item 
+\#define \hyperlink{emac_8h_a862a664b662c03c709f15fe7d9f33060}{MAC2\_\-LPREAM\_\-ENF}~0x00000200
+\item 
+\#define \hyperlink{emac_8h_a486660c6129233971f829e6a0807ed84}{MAC2\_\-NO\_\-BACKOFF}~0x00001000
+\item 
+\#define \hyperlink{emac_8h_a9e602880a2a10f1646981a75df55aff3}{MAC2\_\-BACK\_\-PRESSURE}~0x00002000
+\item 
+\#define \hyperlink{emac_8h_a9841bc17769e96db971a10cad64cc963}{MAC2\_\-EXCESS\_\-DEF}~0x00004000
+\item 
+\#define \hyperlink{emac_8h_a7a1913ae1e7cc89d93f52336269f73a7}{IPGT\_\-FULL\_\-DUP}~0x00000015
+\item 
+\#define \hyperlink{emac_8h_a6c3ae31e90806a0b595744e046001e0b}{IPGT\_\-HALF\_\-DUP}~0x00000012
+\item 
+\#define \hyperlink{emac_8h_ad1c3c6c35dac16ae62a6bf0eed745769}{IPGR\_\-DEF}~0x00000012
+\item 
+\#define \hyperlink{emac_8h_ad1b44a4eeb576c9f29e0228d8ab2e5de}{CLRT\_\-DEF}~0x0000370F
+\item 
+\#define \hyperlink{emac_8h_a3424971fe980e63b7e58fa7aa03f6a85}{SUPP\_\-SPEED}~0x00000100
+\item 
+\#define \hyperlink{emac_8h_aa09c5a1334e27447c27a69faa02bc83d}{SUPP\_\-RES\_\-RMII}~0x00000800
+\item 
+\#define \hyperlink{emac_8h_ae757a3df2d994d17929d3c35d192cbef}{TEST\_\-SHCUT\_\-PQUANTA}~0x00000001
+\item 
+\#define \hyperlink{emac_8h_a61b9b8984c5fe8881bf5f5d435edab60}{TEST\_\-TST\_\-PAUSE}~0x00000002
+\item 
+\#define \hyperlink{emac_8h_a571e66221da4c7798e001b8e84b1e1ed}{TEST\_\-TST\_\-BACKP}~0x00000004
+\item 
+\#define \hyperlink{emac_8h_ae262fbcb33e31fb9751241893ca36398}{MCFG\_\-SCAN\_\-INC}~0x00000001
+\item 
+\#define \hyperlink{emac_8h_a93c78e5cc9f1299cb7100c4e71cd42db}{MCFG\_\-SUPP\_\-PREAM}~0x00000002
+\item 
+\#define \hyperlink{emac_8h_ad16695833cd7891312d1800e8183b577}{MCFG\_\-CLK\_\-SEL}~0x0000001C
+\item 
+\#define \hyperlink{emac_8h_a02abd8e90ac5e845899fad8c0d54f863}{MCFG\_\-RES\_\-MII}~0x00008000
+\item 
+\#define \hyperlink{emac_8h_af60313980b5e9d2ed762ed700a897efb}{HOST\_\-CLK\_\-BY\_\-20}~0x00000018
+\item 
+\#define \hyperlink{emac_8h_adcaa72088508faa536a02c9332a04e09}{MCMD\_\-READ}~0x00000001
+\item 
+\#define \hyperlink{emac_8h_ae52afda39da2a1c73fe23fbe96add74a}{MCMD\_\-SCAN}~0x00000002
+\item 
+\#define \hyperlink{emac_8h_a3779acbd287764ca1adce0bcf8eeed56}{MII\_\-WR\_\-TOUT}~0x00050000
+\item 
+\#define \hyperlink{emac_8h_a97a581688ecfd5ccbd448207a9768c01}{MII\_\-RD\_\-TOUT}~0x00050000
+\item 
+\#define \hyperlink{emac_8h_abf228fc2510eed928164f8b0afbc10c7}{MADR\_\-REG\_\-ADR}~0x0000001F
+\item 
+\#define \hyperlink{emac_8h_a840e114a2fdf537b5c3d31bc00f972fd}{MADR\_\-PHY\_\-ADR}~0x00001F00
+\item 
+\#define \hyperlink{emac_8h_afc27f3ce906c03f2add8b58df26ddc67}{MIND\_\-BUSY}~0x00000001
+\item 
+\#define \hyperlink{emac_8h_aa3fceea3c20530a6560890667cc2a091}{MIND\_\-SCAN}~0x00000002
+\item 
+\#define \hyperlink{emac_8h_a64603838e0304ac3b3d7eb5971071d66}{MIND\_\-NOT\_\-VAL}~0x00000004
+\item 
+\#define \hyperlink{emac_8h_a117bbc6d3f63e6759a4af66852b080f3}{MIND\_\-MII\_\-LINK\_\-FAIL}~0x00000008
+\item 
+\#define \hyperlink{emac_8h_a6fae61dff1bbfa0d8fe139c42a0107f0}{CR\_\-RX\_\-EN}~0x00000001
+\item 
+\#define \hyperlink{emac_8h_ac376c110963e776495d3f0e7aa9daa95}{CR\_\-TX\_\-EN}~0x00000002
+\item 
+\#define \hyperlink{emac_8h_ab4b24318afe4c3854f159bccec8b093d}{CR\_\-REG\_\-RES}~0x00000008
+\item 
+\#define \hyperlink{emac_8h_ac3e55e2f0ea956851cb35eef321c5c4b}{CR\_\-TX\_\-RES}~0x00000010
+\item 
+\#define \hyperlink{emac_8h_a3bcabcba8763f1ace764471bf8f4806b}{CR\_\-RX\_\-RES}~0x00000020
+\item 
+\#define \hyperlink{emac_8h_a19b60e92fb9955b6c1cc079357b42364}{CR\_\-PASS\_\-RUNT\_\-FRM}~0x00000040
+\item 
+\#define \hyperlink{emac_8h_a45d64fa4c99793236f0c55b7b4a497a3}{CR\_\-PASS\_\-RX\_\-FILT}~0x00000080
+\item 
+\#define \hyperlink{emac_8h_a363b9ac810f2214b033a2722d7c5b972}{CR\_\-TX\_\-FLOW\_\-CTRL}~0x00000100
+\item 
+\#define \hyperlink{emac_8h_a7f15650b77054f8a71585ab3f7452297}{CR\_\-RMII}~0x00000200
+\item 
+\#define \hyperlink{emac_8h_a844212e64a33c825e8a8bde40f97dd68}{CR\_\-FULL\_\-DUP}~0x00000400
+\item 
+\#define \hyperlink{emac_8h_afe60ad6257d501f0e9834ba27a5ac147}{SR\_\-RX\_\-EN}~0x00000001
+\item 
+\#define \hyperlink{emac_8h_a9e56534faaa8c695a91c76cb3dd24c1f}{SR\_\-TX\_\-EN}~0x00000002
+\item 
+\#define \hyperlink{emac_8h_a64b8fd0cd4832d63ed322c71bb9afffe}{TSV0\_\-CRC\_\-ERR}~0x00000001
+\item 
+\#define \hyperlink{emac_8h_adbfb9ec99f7f1491bf588b1abd6c1af2}{TSV0\_\-LEN\_\-CHKERR}~0x00000002
+\item 
+\#define \hyperlink{emac_8h_a48e02d11e45785ff49424c8c2fac9e57}{TSV0\_\-LEN\_\-OUTRNG}~0x00000004
+\item 
+\#define \hyperlink{emac_8h_a35bb2e4abc98d7d9c1a41dbd9507e42f}{TSV0\_\-DONE}~0x00000008
+\item 
+\#define \hyperlink{emac_8h_ae7ce8dd987149f0865582572f644121c}{TSV0\_\-MCAST}~0x00000010
+\item 
+\#define \hyperlink{emac_8h_a1680714d6a862ce4e5812667650c7d0b}{TSV0\_\-BCAST}~0x00000020
+\item 
+\#define \hyperlink{emac_8h_ae8c4387b64410aad6fffc07330c1d5ab}{TSV0\_\-PKT\_\-DEFER}~0x00000040
+\item 
+\#define \hyperlink{emac_8h_a2279441493e14b8f87eee7a787801eaa}{TSV0\_\-EXC\_\-DEFER}~0x00000080
+\item 
+\#define \hyperlink{emac_8h_adfcebb04b09004d23d25acc5662618d5}{TSV0\_\-EXC\_\-COLL}~0x00000100
+\item 
+\#define \hyperlink{emac_8h_a76972a1db37f994d82a4b0ca99bd77b8}{TSV0\_\-LATE\_\-COLL}~0x00000200
+\item 
+\#define \hyperlink{emac_8h_a1026b54e2d01e0d4db0c514a98a3d874}{TSV0\_\-GIANT}~0x00000400
+\item 
+\#define \hyperlink{emac_8h_aa513f987a5463163b9146b51349317b5}{TSV0\_\-UNDERRUN}~0x00000800
+\item 
+\#define \hyperlink{emac_8h_ad2b950218a9e865ca860d61b43275b76}{TSV0\_\-BYTES}~0x0FFFF000
+\item 
+\#define \hyperlink{emac_8h_aa860fdf06b9cdb63f523b0a6617a04dd}{TSV0\_\-CTRL\_\-FRAME}~0x10000000
+\item 
+\#define \hyperlink{emac_8h_a65d49b960a704d8dd8cd2bad6e84ce27}{TSV0\_\-PAUSE}~0x20000000
+\item 
+\#define \hyperlink{emac_8h_a4bcbd2a3a7d6526a1ea1085b24e2bda1}{TSV0\_\-BACK\_\-PRESS}~0x40000000
+\item 
+\#define \hyperlink{emac_8h_aabb2535572996b1c7000f7ab46c28df6}{TSV0\_\-VLAN}~0x80000000
+\item 
+\#define \hyperlink{emac_8h_a05d5ea1ee3f87bed8b30b907f86d95fb}{TSV1\_\-BYTE\_\-CNT}~0x0000FFFF
+\item 
+\#define \hyperlink{emac_8h_aa2775426f5761743ddec9ecbe62c27c2}{TSV1\_\-COLL\_\-CNT}~0x000F0000
+\item 
+\#define \hyperlink{emac_8h_ae4c64a16cbd19649145d7befa13d1f59}{RSV\_\-BYTE\_\-CNT}~0x0000FFFF
+\item 
+\#define \hyperlink{emac_8h_af509b2ef2f4ce929ef223118c63416f1}{RSV\_\-PKT\_\-IGNORED}~0x00010000
+\item 
+\#define \hyperlink{emac_8h_a5fad8f2c3afbde220dd00b60b2a61367}{RSV\_\-RXDV\_\-SEEN}~0x00020000
+\item 
+\#define \hyperlink{emac_8h_aedeee269fb684e02ad9aa6af2b8af280}{RSV\_\-CARR\_\-SEEN}~0x00040000
+\item 
+\#define \hyperlink{emac_8h_a4ee52d2626b2e9f1ae2ec5e36d7cbce8}{RSV\_\-REC\_\-CODEV}~0x00080000
+\item 
+\#define \hyperlink{emac_8h_a1f7a388e437efae4cb1e25aa1cb8fb6f}{RSV\_\-CRC\_\-ERR}~0x00100000
+\item 
+\#define \hyperlink{emac_8h_ad3cefe383c23a5d13e21debb6e060bc3}{RSV\_\-LEN\_\-CHKERR}~0x00200000
+\item 
+\#define \hyperlink{emac_8h_aa2b612b30510c67bcebf086a34a6142b}{RSV\_\-LEN\_\-OUTRNG}~0x00400000
+\item 
+\#define \hyperlink{emac_8h_ab2622a726e03da2fef49c2e8224b9259}{RSV\_\-REC\_\-OK}~0x00800000
+\item 
+\#define \hyperlink{emac_8h_a7bc9470c406ce158b0fdd52516c0d84c}{RSV\_\-MCAST}~0x01000000
+\item 
+\#define \hyperlink{emac_8h_adb8ea01609009f7851914f1385599425}{RSV\_\-BCAST}~0x02000000
+\item 
+\#define \hyperlink{emac_8h_a10e12c27244bcf3d3cf246c80b75153a}{RSV\_\-DRIB\_\-NIBB}~0x04000000
+\item 
+\#define \hyperlink{emac_8h_ab749ce83a9ec7956244abeeb6b418bc7}{RSV\_\-CTRL\_\-FRAME}~0x08000000
+\item 
+\#define \hyperlink{emac_8h_a70148717d1dc12c183a00701ff3263ea}{RSV\_\-PAUSE}~0x10000000
+\item 
+\#define \hyperlink{emac_8h_adcbddcf40ccae2c1d6420ed74ba1ba75}{RSV\_\-UNSUPP\_\-OPC}~0x20000000
+\item 
+\#define \hyperlink{emac_8h_af7e886da080407aec8cb1aad7864b281}{RSV\_\-VLAN}~0x40000000
+\item 
+\#define \hyperlink{emac_8h_ab7b13339e1099ecb80d167f4dc269091}{FCC\_\-MIRR\_\-CNT}~0x0000FFFF
+\item 
+\#define \hyperlink{emac_8h_a7c2b454cdf035d63cbe0c2ac3c765334}{FCC\_\-PAUSE\_\-TIM}~0xFFFF0000
+\item 
+\#define \hyperlink{emac_8h_aff78fecf9ce7cb7a9ecce00a34ac890f}{FCS\_\-MIRR\_\-CNT}~0x0000FFFF
+\item 
+\#define \hyperlink{emac_8h_afcb2b9568cd8da49507c05c1216d9be5}{RFC\_\-UCAST\_\-EN}~0x00000001
+\item 
+\#define \hyperlink{emac_8h_a0eafa682c333fd122ba5a12d9ce45012}{RFC\_\-BCAST\_\-EN}~0x00000002
+\item 
+\#define \hyperlink{emac_8h_a01af5c1c9b20252d03951f5ef14d74e2}{RFC\_\-MCAST\_\-EN}~0x00000004
+\item 
+\#define \hyperlink{emac_8h_aac8da5fab8a31a913a8276827a94ff37}{RFC\_\-UCAST\_\-HASH\_\-EN}~0x00000008
+\item 
+\#define \hyperlink{emac_8h_a70329f34580c5593893c7b4779a645ce}{RFC\_\-MCAST\_\-HASH\_\-EN}~0x00000010
+\item 
+\#define \hyperlink{emac_8h_aa82929a0b30b1c0969cf199eeba1c19a}{RFC\_\-PERFECT\_\-EN}~0x00000020
+\item 
+\#define \hyperlink{emac_8h_ae2a9aae3cbe2c8c0cfb5084512eeee10}{RFC\_\-MAGP\_\-WOL\_\-EN}~0x00001000
+\item 
+\#define \hyperlink{emac_8h_a94d47a72a6e2e867e2de3ed748a6b875}{RFC\_\-PFILT\_\-WOL\_\-EN}~0x00002000
+\item 
+\#define \hyperlink{emac_8h_a1a5bae74bcda3ed46a892d11cdb7a50a}{WOL\_\-UCAST}~0x00000001
+\item 
+\#define \hyperlink{emac_8h_a3d5676d272ee04609415a1a6a3ea68fe}{WOL\_\-BCAST}~0x00000002
+\item 
+\#define \hyperlink{emac_8h_a59b104d1c5ff78b8492df69eb765b742}{WOL\_\-MCAST}~0x00000004
+\item 
+\#define \hyperlink{emac_8h_ada3a4c2c9fe50dfae0b7bbb8b766d0ba}{WOL\_\-UCAST\_\-HASH}~0x00000008
+\item 
+\#define \hyperlink{emac_8h_ad9fac80b5a5e3b7b7d4d8ae8cd0d7297}{WOL\_\-MCAST\_\-HASH}~0x00000010
+\item 
+\#define \hyperlink{emac_8h_a05edbda5a8e0befa6a747cbc170ccd61}{WOL\_\-PERFECT}~0x00000020
+\item 
+\#define \hyperlink{emac_8h_a6c57db2b42dd8286d529f01ffcec997e}{WOL\_\-RX\_\-FILTER}~0x00000080
+\item 
+\#define \hyperlink{emac_8h_a5a7a3d5aab198f1102eab51e0cf76ece}{WOL\_\-MAG\_\-PACKET}~0x00000100
+\item 
+\#define \hyperlink{emac_8h_affc2583e4d700924d32f60b1fcf015eb}{INT\_\-RX\_\-OVERRUN}~0x00000001
+\item 
+\#define \hyperlink{emac_8h_a9ec8fa7d1349ab16f2c74059f37d60d6}{INT\_\-RX\_\-ERR}~0x00000002
+\item 
+\#define \hyperlink{emac_8h_a38e8d9f410f1e35ddb0a8cf801487864}{INT\_\-RX\_\-FIN}~0x00000004
+\item 
+\#define \hyperlink{emac_8h_adba185a1a6a0f68f870e20e897ed3d0f}{INT\_\-RX\_\-DONE}~0x00000008
+\item 
+\#define \hyperlink{emac_8h_a69287ade846b84b7927c25dc66590a8c}{INT\_\-TX\_\-UNDERRUN}~0x00000010
+\item 
+\#define \hyperlink{emac_8h_a5beefbbcaa60450121b9159f68ddc851}{INT\_\-TX\_\-ERR}~0x00000020
+\item 
+\#define \hyperlink{emac_8h_a826d5faed20b1a1988a50af8daa1b79a}{INT\_\-TX\_\-FIN}~0x00000040
+\item 
+\#define \hyperlink{emac_8h_a85d498ed907151b131819754f3b8c359}{INT\_\-TX\_\-DONE}~0x00000080
+\item 
+\#define \hyperlink{emac_8h_a09b86afa6f6d6121b8a377d653f12ee3}{INT\_\-SOFT\_\-INT}~0x00001000
+\item 
+\#define \hyperlink{emac_8h_a5a3b59d7da57dff63a4a442cc6811da8}{INT\_\-WAKEUP}~0x00002000
+\item 
+\#define \hyperlink{emac_8h_a5f1dbb6fdb18c58da287e74460583d60}{PD\_\-POWER\_\-DOWN}~0x80000000
+\item 
+\#define \hyperlink{emac_8h_a2e79d235fd8a0cd170b65f131ed26ffb}{RCTRL\_\-SIZE}~0x000007FF
+\item 
+\#define \hyperlink{emac_8h_a557cdce88298fa9cbd21c8725ea3f23f}{RCTRL\_\-INT}~0x80000000
+\item 
+\#define \hyperlink{emac_8h_a1a92849f895415ce6ed365102c6d40cd}{RHASH\_\-SA}~0x000001FF
+\item 
+\#define \hyperlink{emac_8h_a7c5dff8fd15341dde1cc70db96a535a2}{RHASH\_\-DA}~0x001FF000
+\item 
+\#define \hyperlink{emac_8h_afa0f68fee7fdc6f35b9e71df501a49e5}{RINFO\_\-SIZE}~0x000007FF
+\item 
+\#define \hyperlink{emac_8h_a20585c51409a3b3435d310e720b9df88}{RINFO\_\-CTRL\_\-FRAME}~0x00040000
+\item 
+\#define \hyperlink{emac_8h_a2c12999ad72a1679ed7827d1b66636ec}{RINFO\_\-VLAN}~0x00080000
+\item 
+\#define \hyperlink{emac_8h_aff3e4f07c1b6e654aa3080cb896ceafd}{RINFO\_\-FAIL\_\-FILT}~0x00100000
+\item 
+\#define \hyperlink{emac_8h_a5a1fdb4c25a2ff7f290bb9d3745115df}{RINFO\_\-MCAST}~0x00200000
+\item 
+\#define \hyperlink{emac_8h_a7c5111d42f1e075bb19616c7800dbef0}{RINFO\_\-BCAST}~0x00400000
+\item 
+\#define \hyperlink{emac_8h_aa2870a05ad6cacd837519a360691435a}{RINFO\_\-CRC\_\-ERR}~0x00800000
+\item 
+\#define \hyperlink{emac_8h_a95d9d5107fd83ed8a6848c7a540620a0}{RINFO\_\-SYM\_\-ERR}~0x01000000
+\item 
+\#define \hyperlink{emac_8h_a171c0fbadd0ba22f7a7fa3fd70a04373}{RINFO\_\-LEN\_\-ERR}~0x02000000
+\item 
+\#define \hyperlink{emac_8h_ae305882a82b764429ecf7478ead17141}{RINFO\_\-RANGE\_\-ERR}~0x04000000
+\item 
+\#define \hyperlink{emac_8h_ac90a518de44c306c3744a82f95e4b716}{RINFO\_\-ALIGN\_\-ERR}~0x08000000
+\item 
+\#define \hyperlink{emac_8h_a5a90613b8f2dbb2c8c34bca92cc0e5ec}{RINFO\_\-OVERRUN}~0x10000000
+\item 
+\#define \hyperlink{emac_8h_ace263856b5319426eab84dbd39ec5229}{RINFO\_\-NO\_\-DESCR}~0x20000000
+\item 
+\#define \hyperlink{emac_8h_a79ad12aeb401a9d1d0b51a8aced41cf9}{RINFO\_\-LAST\_\-FLAG}~0x40000000
+\item 
+\#define \hyperlink{emac_8h_a82a8eb86cc98ef52c464047b59fc78e7}{RINFO\_\-ERR}~0x80000000
+\item 
+\#define \hyperlink{emac_8h_af8adf9a18a6769ac7e95157303eebfa6}{RINFO\_\-ERR\_\-MASK}
+\item 
+\#define \hyperlink{emac_8h_abc57dc2c0472ea0471a320ad652697f6}{TCTRL\_\-SIZE}~0x000007FF
+\item 
+\#define \hyperlink{emac_8h_a46e54873d7ad46e8189eb1cb29e5489a}{TCTRL\_\-OVERRIDE}~0x04000000
+\item 
+\#define \hyperlink{emac_8h_ac5d178dbd44a66a8f9b4590b37c34284}{TCTRL\_\-HUGE}~0x08000000
+\item 
+\#define \hyperlink{emac_8h_a7207e38ed5fa902f6349e6ef174369f8}{TCTRL\_\-PAD}~0x10000000
+\item 
+\#define \hyperlink{emac_8h_a892af3de371b524fcf60fa7b8a6d8f35}{TCTRL\_\-CRC}~0x20000000
+\item 
+\#define \hyperlink{emac_8h_afa58f98215e917d77982836c6a682883}{TCTRL\_\-LAST}~0x40000000
+\item 
+\#define \hyperlink{emac_8h_a5d18aeeeeb5a3b16ffeb793d3805a62c}{TCTRL\_\-INT}~0x80000000
+\item 
+\#define \hyperlink{emac_8h_ad0f521a5f81cdb7bfd49897a047b3873}{TINFO\_\-COL\_\-CNT}~0x01E00000
+\item 
+\#define \hyperlink{emac_8h_a05a99b232b02eba19797e925c81e37d4}{TINFO\_\-DEFER}~0x02000000
+\item 
+\#define \hyperlink{emac_8h_aa549b023fe020c09e7f633c7566e16e6}{TINFO\_\-EXCESS\_\-DEF}~0x04000000
+\item 
+\#define \hyperlink{emac_8h_aeebe0a5440bd7de2cd9c50bfa0f90d16}{TINFO\_\-EXCESS\_\-COL}~0x08000000
+\item 
+\#define \hyperlink{emac_8h_ae93eacf848b9514efc5f6e6d38211ab5}{TINFO\_\-LATE\_\-COL}~0x10000000
+\item 
+\#define \hyperlink{emac_8h_ad8374cf612c7b2b3e355cd70ee09d06e}{TINFO\_\-UNDERRUN}~0x20000000
+\item 
+\#define \hyperlink{emac_8h_aacc5f1654a090d8405839dbbae2ad9b4}{TINFO\_\-NO\_\-DESCR}~0x40000000
+\item 
+\#define \hyperlink{emac_8h_ab62a10e4afa451e99275482c284a0ac2}{TINFO\_\-ERR}~0x80000000
+\item 
+\#define \hyperlink{emac_8h_a35b3bc2120d1e7d8f6adf84172ffc5c0}{PHY\_\-REG\_\-BMCR}~0x00
+\item 
+\#define \hyperlink{emac_8h_aba09224973417bc3a686da320e984394}{PHY\_\-REG\_\-BMSR}~0x01
+\item 
+\#define \hyperlink{emac_8h_adc99a4d5c60c4f1db949900854b5da2d}{PHY\_\-REG\_\-IDR1}~0x02
+\item 
+\#define \hyperlink{emac_8h_ad86680289572058e0cd66c378efe8796}{PHY\_\-REG\_\-IDR2}~0x03
+\item 
+\#define \hyperlink{emac_8h_a81c45af97da8ca0aa172edb464ac8736}{PHY\_\-REG\_\-ANAR}~0x04
+\item 
+\#define \hyperlink{emac_8h_a16616d7d740ace1dc1a1c9f34d3d0aca}{PHY\_\-REG\_\-ANLPAR}~0x05
+\item 
+\#define \hyperlink{emac_8h_a974befd690a504dd421d7cf5dfca0a2f}{PHY\_\-REG\_\-ANER}~0x06
+\item 
+\#define \hyperlink{emac_8h_a16dafbc219d2fa34bee7f8521c6c6b49}{PHY\_\-REG\_\-ANNPTR}~0x07
+\item 
+\#define \hyperlink{emac_8h_a9719b117245aa1b73a6003d00246fb49}{PHY\_\-REG\_\-STS}~0x10
+\item 
+\#define \hyperlink{emac_8h_aae44f1acd36a8d72edd511f6fc7cecc2}{PHY\_\-REG\_\-MICR}~0x11
+\item 
+\#define \hyperlink{emac_8h_a6b2549fccb1bcdbffb67e0b7e7bd4c4b}{PHY\_\-REG\_\-MISR}~0x12
+\item 
+\#define \hyperlink{emac_8h_a4ddb4ab56ee861d05ce4eee14ad706db}{PHY\_\-REG\_\-FCSCR}~0x14
+\item 
+\#define \hyperlink{emac_8h_a102f82ede18985b2b1455e2f548e43ea}{PHY\_\-REG\_\-RECR}~0x15
+\item 
+\#define \hyperlink{emac_8h_adbdcbe1c15df474442d2b59be22f9eef}{PHY\_\-REG\_\-PCSR}~0x16
+\item 
+\#define \hyperlink{emac_8h_adf0d29ce8e23081f40b3a21fb2f7f10b}{PHY\_\-REG\_\-RBR}~0x17
+\item 
+\#define \hyperlink{emac_8h_a067046c54a41d2d0f1ef51f4768bf89d}{PHY\_\-REG\_\-LEDCR}~0x18
+\item 
+\#define \hyperlink{emac_8h_ace4ad7f18b893f8cad81b7e0b5291c80}{PHY\_\-REG\_\-PHYCR}~0x19
+\item 
+\#define \hyperlink{emac_8h_a4952b1966e99022629fdc5a9107e38cd}{PHY\_\-REG\_\-10BTSCR}~0x1A
+\item 
+\#define \hyperlink{emac_8h_aa82c86c387e1828fa203608acfd981d7}{PHY\_\-REG\_\-CDCTRL1}~0x1B
+\item 
+\#define \hyperlink{emac_8h_adea47a7b97f7cba9d975a8ab7fe6aca7}{PHY\_\-REG\_\-EDCR}~0x1D
+\item 
+\#define \hyperlink{emac_8h_a0b20351abee99881295a5e05db1de9bd}{PHY\_\-FULLD\_\-100M}~0x2100
+\item 
+\#define \hyperlink{emac_8h_a33b7c30f71d4899caf2cfe4398a7440e}{PHY\_\-HALFD\_\-100M}~0x2000
+\item 
+\#define \hyperlink{emac_8h_ae2feb873a8e66854ef7d72c7ce18e16c}{PHY\_\-FULLD\_\-10M}~0x0100
+\item 
+\#define \hyperlink{emac_8h_afb38b2c422807845106d71be9d8b4007}{PHY\_\-HALFD\_\-10M}~0x0000
+\item 
+\#define \hyperlink{emac_8h_a64a205014f3924799e4c529eaad947a9}{PHY\_\-AUTO\_\-NEG}~0x3000
+\item 
+\#define \hyperlink{emac_8h_ab84cf04c2f366ca9df5c93e70a2f8732}{DP83848C\_\-DEF\_\-ADR}~0x0100
+\item 
+\#define \hyperlink{emac_8h_af0d0e10f995167747e220c126b16ff1a}{DP83848C\_\-ID}~0x20005C90
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{emac_8h_a950d069e1027387e55f8ae720132f0d6}{Init\_\-EMAC} (void)
+\begin{DoxyCompactList}\small\item\em configure port-\/pins for use with LAN-\/controller, reset it and send the configuration-\/sequence \item\end{DoxyCompactList}\item 
+unsigned short \hyperlink{emac_8h_a20e6ca0a61b433d2d8ffa9238cc8f41d}{ReadFrameBE\_\-EMAC} (void)
+\item 
+void \hyperlink{emac_8h_ae76b07cc1215a035953cc7958b861356}{CopyToFrame\_\-EMAC} (void $\ast$Source, unsigned int Size)
+\item 
+void \hyperlink{emac_8h_a1a7dca81ea5d770353e4206fefe042c5}{CopyFromFrame\_\-EMAC} (void $\ast$Dest, unsigned short Size)
+\item 
+void \hyperlink{emac_8h_aac915958347d3ddcbd4032eae1e4a89d}{DummyReadFrame\_\-EMAC} (unsigned short Size)
+\item 
+unsigned short \hyperlink{emac_8h_a2fc342534e2db89a6531315cc3b99a1c}{StartReadFrame} (void)
+\item 
+void \hyperlink{emac_8h_a72f4541b2abeb49e7d0ee6ca0f372852}{EndReadFrame} (void)
+\item 
+unsigned int \hyperlink{emac_8h_a54235af1c9c42fd18c3ea1caad97ca4b}{CheckFrameReceived} (void)
+\item 
+void \hyperlink{emac_8h_ad385e8970400caa09c503e234e049ac1}{RequestSend} (void)
+\item 
+unsigned int \hyperlink{emac_8h_a885c4d662ebde263043e432637490150}{Rdy4Tx} (void)
+\item 
+void \hyperlink{emac_8h_a78dcd0e5393dad2f7569ba38d47008e1}{DoSend\_\-EMAC} (unsigned short FrameSize)
+\item 
+unsigned int \hyperlink{emac_8h_a69397c786a88e31e29ca8ed2605b8fbd}{uiGetEMACRxData} (unsigned char $\ast$ucBuffer)
+\item 
+void \hyperlink{emac_8h_aa691b8982acd34f683fe43c249a7c19b}{print\_\-PHY\_\-status} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Define Documentation}
+\hypertarget{emac_8h_ad1b44a4eeb576c9f29e0228d8ab2e5de}{
+\index{emac.h@{emac.h}!CLRT\_\-DEF@{CLRT\_\-DEF}}
+\index{CLRT\_\-DEF@{CLRT\_\-DEF}!emac.h@{emac.h}}
+\subsubsection[{CLRT\_\-DEF}]{\setlength{\rightskip}{0pt plus 5cm}\#define CLRT\_\-DEF~0x0000370F}}
+\label{emac_8h_ad1b44a4eeb576c9f29e0228d8ab2e5de}
+
+
+Definition at line 86 of file emac.h.
+
+\hypertarget{emac_8h_a844212e64a33c825e8a8bde40f97dd68}{
+\index{emac.h@{emac.h}!CR\_\-FULL\_\-DUP@{CR\_\-FULL\_\-DUP}}
+\index{CR\_\-FULL\_\-DUP@{CR\_\-FULL\_\-DUP}!emac.h@{emac.h}}
+\subsubsection[{CR\_\-FULL\_\-DUP}]{\setlength{\rightskip}{0pt plus 5cm}\#define CR\_\-FULL\_\-DUP~0x00000400}}
+\label{emac_8h_a844212e64a33c825e8a8bde40f97dd68}
+
+
+Definition at line 135 of file emac.h.
+
+\hypertarget{emac_8h_a19b60e92fb9955b6c1cc079357b42364}{
+\index{emac.h@{emac.h}!CR\_\-PASS\_\-RUNT\_\-FRM@{CR\_\-PASS\_\-RUNT\_\-FRM}}
+\index{CR\_\-PASS\_\-RUNT\_\-FRM@{CR\_\-PASS\_\-RUNT\_\-FRM}!emac.h@{emac.h}}
+\subsubsection[{CR\_\-PASS\_\-RUNT\_\-FRM}]{\setlength{\rightskip}{0pt plus 5cm}\#define CR\_\-PASS\_\-RUNT\_\-FRM~0x00000040}}
+\label{emac_8h_a19b60e92fb9955b6c1cc079357b42364}
+
+
+Definition at line 131 of file emac.h.
+
+\hypertarget{emac_8h_a45d64fa4c99793236f0c55b7b4a497a3}{
+\index{emac.h@{emac.h}!CR\_\-PASS\_\-RX\_\-FILT@{CR\_\-PASS\_\-RX\_\-FILT}}
+\index{CR\_\-PASS\_\-RX\_\-FILT@{CR\_\-PASS\_\-RX\_\-FILT}!emac.h@{emac.h}}
+\subsubsection[{CR\_\-PASS\_\-RX\_\-FILT}]{\setlength{\rightskip}{0pt plus 5cm}\#define CR\_\-PASS\_\-RX\_\-FILT~0x00000080}}
+\label{emac_8h_a45d64fa4c99793236f0c55b7b4a497a3}
+
+
+Definition at line 132 of file emac.h.
+
+\hypertarget{emac_8h_ab4b24318afe4c3854f159bccec8b093d}{
+\index{emac.h@{emac.h}!CR\_\-REG\_\-RES@{CR\_\-REG\_\-RES}}
+\index{CR\_\-REG\_\-RES@{CR\_\-REG\_\-RES}!emac.h@{emac.h}}
+\subsubsection[{CR\_\-REG\_\-RES}]{\setlength{\rightskip}{0pt plus 5cm}\#define CR\_\-REG\_\-RES~0x00000008}}
+\label{emac_8h_ab4b24318afe4c3854f159bccec8b093d}
+
+
+Definition at line 128 of file emac.h.
+
+\hypertarget{emac_8h_a7f15650b77054f8a71585ab3f7452297}{
+\index{emac.h@{emac.h}!CR\_\-RMII@{CR\_\-RMII}}
+\index{CR\_\-RMII@{CR\_\-RMII}!emac.h@{emac.h}}
+\subsubsection[{CR\_\-RMII}]{\setlength{\rightskip}{0pt plus 5cm}\#define CR\_\-RMII~0x00000200}}
+\label{emac_8h_a7f15650b77054f8a71585ab3f7452297}
+
+
+Definition at line 134 of file emac.h.
+
+\hypertarget{emac_8h_a6fae61dff1bbfa0d8fe139c42a0107f0}{
+\index{emac.h@{emac.h}!CR\_\-RX\_\-EN@{CR\_\-RX\_\-EN}}
+\index{CR\_\-RX\_\-EN@{CR\_\-RX\_\-EN}!emac.h@{emac.h}}
+\subsubsection[{CR\_\-RX\_\-EN}]{\setlength{\rightskip}{0pt plus 5cm}\#define CR\_\-RX\_\-EN~0x00000001}}
+\label{emac_8h_a6fae61dff1bbfa0d8fe139c42a0107f0}
+
+
+Definition at line 126 of file emac.h.
+
+\hypertarget{emac_8h_a3bcabcba8763f1ace764471bf8f4806b}{
+\index{emac.h@{emac.h}!CR\_\-RX\_\-RES@{CR\_\-RX\_\-RES}}
+\index{CR\_\-RX\_\-RES@{CR\_\-RX\_\-RES}!emac.h@{emac.h}}
+\subsubsection[{CR\_\-RX\_\-RES}]{\setlength{\rightskip}{0pt plus 5cm}\#define CR\_\-RX\_\-RES~0x00000020}}
+\label{emac_8h_a3bcabcba8763f1ace764471bf8f4806b}
+
+
+Definition at line 130 of file emac.h.
+
+\hypertarget{emac_8h_ac376c110963e776495d3f0e7aa9daa95}{
+\index{emac.h@{emac.h}!CR\_\-TX\_\-EN@{CR\_\-TX\_\-EN}}
+\index{CR\_\-TX\_\-EN@{CR\_\-TX\_\-EN}!emac.h@{emac.h}}
+\subsubsection[{CR\_\-TX\_\-EN}]{\setlength{\rightskip}{0pt plus 5cm}\#define CR\_\-TX\_\-EN~0x00000002}}
+\label{emac_8h_ac376c110963e776495d3f0e7aa9daa95}
+
+
+Definition at line 127 of file emac.h.
+
+\hypertarget{emac_8h_a363b9ac810f2214b033a2722d7c5b972}{
+\index{emac.h@{emac.h}!CR\_\-TX\_\-FLOW\_\-CTRL@{CR\_\-TX\_\-FLOW\_\-CTRL}}
+\index{CR\_\-TX\_\-FLOW\_\-CTRL@{CR\_\-TX\_\-FLOW\_\-CTRL}!emac.h@{emac.h}}
+\subsubsection[{CR\_\-TX\_\-FLOW\_\-CTRL}]{\setlength{\rightskip}{0pt plus 5cm}\#define CR\_\-TX\_\-FLOW\_\-CTRL~0x00000100}}
+\label{emac_8h_a363b9ac810f2214b033a2722d7c5b972}
+
+
+Definition at line 133 of file emac.h.
+
+\hypertarget{emac_8h_ac3e55e2f0ea956851cb35eef321c5c4b}{
+\index{emac.h@{emac.h}!CR\_\-TX\_\-RES@{CR\_\-TX\_\-RES}}
+\index{CR\_\-TX\_\-RES@{CR\_\-TX\_\-RES}!emac.h@{emac.h}}
+\subsubsection[{CR\_\-TX\_\-RES}]{\setlength{\rightskip}{0pt plus 5cm}\#define CR\_\-TX\_\-RES~0x00000010}}
+\label{emac_8h_ac3e55e2f0ea956851cb35eef321c5c4b}
+
+
+Definition at line 129 of file emac.h.
+
+\hypertarget{emac_8h_ab84cf04c2f366ca9df5c93e70a2f8732}{
+\index{emac.h@{emac.h}!DP83848C\_\-DEF\_\-ADR@{DP83848C\_\-DEF\_\-ADR}}
+\index{DP83848C\_\-DEF\_\-ADR@{DP83848C\_\-DEF\_\-ADR}!emac.h@{emac.h}}
+\subsubsection[{DP83848C\_\-DEF\_\-ADR}]{\setlength{\rightskip}{0pt plus 5cm}\#define DP83848C\_\-DEF\_\-ADR~0x0100}}
+\label{emac_8h_ab84cf04c2f366ca9df5c93e70a2f8732}
+
+
+Definition at line 301 of file emac.h.
+
+\hypertarget{emac_8h_af0d0e10f995167747e220c126b16ff1a}{
+\index{emac.h@{emac.h}!DP83848C\_\-ID@{DP83848C\_\-ID}}
+\index{DP83848C\_\-ID@{DP83848C\_\-ID}!emac.h@{emac.h}}
+\subsubsection[{DP83848C\_\-ID}]{\setlength{\rightskip}{0pt plus 5cm}\#define DP83848C\_\-ID~0x20005C90}}
+\label{emac_8h_af0d0e10f995167747e220c126b16ff1a}
+
+
+Definition at line 302 of file emac.h.
+
+\hypertarget{emac_8h_a4e23e19f562caf36e27ac175fdc0ddc6}{
+\index{emac.h@{emac.h}!emacETHADDR0@{emacETHADDR0}}
+\index{emacETHADDR0@{emacETHADDR0}!emac.h@{emac.h}}
+\subsubsection[{emacETHADDR0}]{\setlength{\rightskip}{0pt plus 5cm}\#define emacETHADDR0~uipMAC\_\-ADDR0}}
+\label{emac_8h_a4e23e19f562caf36e27ac175fdc0ddc6}
+
+
+Definition at line 15 of file emac.h.
+
+\hypertarget{emac_8h_a43eaa6526eec70ae4e5881569096a9e7}{
+\index{emac.h@{emac.h}!emacETHADDR1@{emacETHADDR1}}
+\index{emacETHADDR1@{emacETHADDR1}!emac.h@{emac.h}}
+\subsubsection[{emacETHADDR1}]{\setlength{\rightskip}{0pt plus 5cm}\#define emacETHADDR1~uipMAC\_\-ADDR1}}
+\label{emac_8h_a43eaa6526eec70ae4e5881569096a9e7}
+
+
+Definition at line 16 of file emac.h.
+
+\hypertarget{emac_8h_a56d81cdb25ad905ed427b0e26136296b}{
+\index{emac.h@{emac.h}!emacETHADDR2@{emacETHADDR2}}
+\index{emacETHADDR2@{emacETHADDR2}!emac.h@{emac.h}}
+\subsubsection[{emacETHADDR2}]{\setlength{\rightskip}{0pt plus 5cm}\#define emacETHADDR2~uipMAC\_\-ADDR2}}
+\label{emac_8h_a56d81cdb25ad905ed427b0e26136296b}
+
+
+Definition at line 17 of file emac.h.
+
+\hypertarget{emac_8h_a5cb7f3868ae5d48ffbde67bf65b72c6e}{
+\index{emac.h@{emac.h}!emacETHADDR3@{emacETHADDR3}}
+\index{emacETHADDR3@{emacETHADDR3}!emac.h@{emac.h}}
+\subsubsection[{emacETHADDR3}]{\setlength{\rightskip}{0pt plus 5cm}\#define emacETHADDR3~uipMAC\_\-ADDR3}}
+\label{emac_8h_a5cb7f3868ae5d48ffbde67bf65b72c6e}
+
+
+Definition at line 18 of file emac.h.
+
+\hypertarget{emac_8h_ae0a83d11765f80389658e40660d41131}{
+\index{emac.h@{emac.h}!emacETHADDR4@{emacETHADDR4}}
+\index{emacETHADDR4@{emacETHADDR4}!emac.h@{emac.h}}
+\subsubsection[{emacETHADDR4}]{\setlength{\rightskip}{0pt plus 5cm}\#define emacETHADDR4~uipMAC\_\-ADDR4}}
+\label{emac_8h_ae0a83d11765f80389658e40660d41131}
+
+
+Definition at line 19 of file emac.h.
+
+\hypertarget{emac_8h_ab6f68897d7ed79f3ea5746122ab2b7b8}{
+\index{emac.h@{emac.h}!emacETHADDR5@{emacETHADDR5}}
+\index{emacETHADDR5@{emacETHADDR5}!emac.h@{emac.h}}
+\subsubsection[{emacETHADDR5}]{\setlength{\rightskip}{0pt plus 5cm}\#define emacETHADDR5~uipMAC\_\-ADDR5}}
+\label{emac_8h_ab6f68897d7ed79f3ea5746122ab2b7b8}
+
+
+Definition at line 20 of file emac.h.
+
+\hypertarget{emac_8h_a90c7cfc0d28b76a09c949c42726809f5}{
+\index{emac.h@{emac.h}!ETH\_\-FRAG\_\-SIZE@{ETH\_\-FRAG\_\-SIZE}}
+\index{ETH\_\-FRAG\_\-SIZE@{ETH\_\-FRAG\_\-SIZE}!emac.h@{emac.h}}
+\subsubsection[{ETH\_\-FRAG\_\-SIZE}]{\setlength{\rightskip}{0pt plus 5cm}\#define ETH\_\-FRAG\_\-SIZE~1536}}
+\label{emac_8h_a90c7cfc0d28b76a09c949c42726809f5}
+
+
+Definition at line 26 of file emac.h.
+
+\hypertarget{emac_8h_a5d3243c7c9da0659f4225753ad17a4b6}{
+\index{emac.h@{emac.h}!ETH\_\-MAX\_\-FLEN@{ETH\_\-MAX\_\-FLEN}}
+\index{ETH\_\-MAX\_\-FLEN@{ETH\_\-MAX\_\-FLEN}!emac.h@{emac.h}}
+\subsubsection[{ETH\_\-MAX\_\-FLEN}]{\setlength{\rightskip}{0pt plus 5cm}\#define ETH\_\-MAX\_\-FLEN~1536}}
+\label{emac_8h_a5d3243c7c9da0659f4225753ad17a4b6}
+
+
+Definition at line 28 of file emac.h.
+
+\hypertarget{emac_8h_ab7b13339e1099ecb80d167f4dc269091}{
+\index{emac.h@{emac.h}!FCC\_\-MIRR\_\-CNT@{FCC\_\-MIRR\_\-CNT}}
+\index{FCC\_\-MIRR\_\-CNT@{FCC\_\-MIRR\_\-CNT}!emac.h@{emac.h}}
+\subsubsection[{FCC\_\-MIRR\_\-CNT}]{\setlength{\rightskip}{0pt plus 5cm}\#define FCC\_\-MIRR\_\-CNT~0x0000FFFF}}
+\label{emac_8h_ab7b13339e1099ecb80d167f4dc269091}
+
+
+Definition at line 183 of file emac.h.
+
+\hypertarget{emac_8h_a7c2b454cdf035d63cbe0c2ac3c765334}{
+\index{emac.h@{emac.h}!FCC\_\-PAUSE\_\-TIM@{FCC\_\-PAUSE\_\-TIM}}
+\index{FCC\_\-PAUSE\_\-TIM@{FCC\_\-PAUSE\_\-TIM}!emac.h@{emac.h}}
+\subsubsection[{FCC\_\-PAUSE\_\-TIM}]{\setlength{\rightskip}{0pt plus 5cm}\#define FCC\_\-PAUSE\_\-TIM~0xFFFF0000}}
+\label{emac_8h_a7c2b454cdf035d63cbe0c2ac3c765334}
+
+
+Definition at line 184 of file emac.h.
+
+\hypertarget{emac_8h_aff78fecf9ce7cb7a9ecce00a34ac890f}{
+\index{emac.h@{emac.h}!FCS\_\-MIRR\_\-CNT@{FCS\_\-MIRR\_\-CNT}}
+\index{FCS\_\-MIRR\_\-CNT@{FCS\_\-MIRR\_\-CNT}!emac.h@{emac.h}}
+\subsubsection[{FCS\_\-MIRR\_\-CNT}]{\setlength{\rightskip}{0pt plus 5cm}\#define FCS\_\-MIRR\_\-CNT~0x0000FFFF}}
+\label{emac_8h_aff78fecf9ce7cb7a9ecce00a34ac890f}
+
+
+Definition at line 187 of file emac.h.
+
+\hypertarget{emac_8h_af60313980b5e9d2ed762ed700a897efb}{
+\index{emac.h@{emac.h}!HOST\_\-CLK\_\-BY\_\-20@{HOST\_\-CLK\_\-BY\_\-20}}
+\index{HOST\_\-CLK\_\-BY\_\-20@{HOST\_\-CLK\_\-BY\_\-20}!emac.h@{emac.h}}
+\subsubsection[{HOST\_\-CLK\_\-BY\_\-20}]{\setlength{\rightskip}{0pt plus 5cm}\#define HOST\_\-CLK\_\-BY\_\-20~0x00000018}}
+\label{emac_8h_af60313980b5e9d2ed762ed700a897efb}
+
+
+Definition at line 103 of file emac.h.
+
+\hypertarget{emac_8h_adba185a1a6a0f68f870e20e897ed3d0f}{
+\index{emac.h@{emac.h}!INT\_\-RX\_\-DONE@{INT\_\-RX\_\-DONE}}
+\index{INT\_\-RX\_\-DONE@{INT\_\-RX\_\-DONE}!emac.h@{emac.h}}
+\subsubsection[{INT\_\-RX\_\-DONE}]{\setlength{\rightskip}{0pt plus 5cm}\#define INT\_\-RX\_\-DONE~0x00000008}}
+\label{emac_8h_adba185a1a6a0f68f870e20e897ed3d0f}
+
+
+Definition at line 213 of file emac.h.
+
+\hypertarget{emac_8h_a9ec8fa7d1349ab16f2c74059f37d60d6}{
+\index{emac.h@{emac.h}!INT\_\-RX\_\-ERR@{INT\_\-RX\_\-ERR}}
+\index{INT\_\-RX\_\-ERR@{INT\_\-RX\_\-ERR}!emac.h@{emac.h}}
+\subsubsection[{INT\_\-RX\_\-ERR}]{\setlength{\rightskip}{0pt plus 5cm}\#define INT\_\-RX\_\-ERR~0x00000002}}
+\label{emac_8h_a9ec8fa7d1349ab16f2c74059f37d60d6}
+
+
+Definition at line 211 of file emac.h.
+
+\hypertarget{emac_8h_a38e8d9f410f1e35ddb0a8cf801487864}{
+\index{emac.h@{emac.h}!INT\_\-RX\_\-FIN@{INT\_\-RX\_\-FIN}}
+\index{INT\_\-RX\_\-FIN@{INT\_\-RX\_\-FIN}!emac.h@{emac.h}}
+\subsubsection[{INT\_\-RX\_\-FIN}]{\setlength{\rightskip}{0pt plus 5cm}\#define INT\_\-RX\_\-FIN~0x00000004}}
+\label{emac_8h_a38e8d9f410f1e35ddb0a8cf801487864}
+
+
+Definition at line 212 of file emac.h.
+
+\hypertarget{emac_8h_affc2583e4d700924d32f60b1fcf015eb}{
+\index{emac.h@{emac.h}!INT\_\-RX\_\-OVERRUN@{INT\_\-RX\_\-OVERRUN}}
+\index{INT\_\-RX\_\-OVERRUN@{INT\_\-RX\_\-OVERRUN}!emac.h@{emac.h}}
+\subsubsection[{INT\_\-RX\_\-OVERRUN}]{\setlength{\rightskip}{0pt plus 5cm}\#define INT\_\-RX\_\-OVERRUN~0x00000001}}
+\label{emac_8h_affc2583e4d700924d32f60b1fcf015eb}
+
+
+Definition at line 210 of file emac.h.
+
+\hypertarget{emac_8h_a09b86afa6f6d6121b8a377d653f12ee3}{
+\index{emac.h@{emac.h}!INT\_\-SOFT\_\-INT@{INT\_\-SOFT\_\-INT}}
+\index{INT\_\-SOFT\_\-INT@{INT\_\-SOFT\_\-INT}!emac.h@{emac.h}}
+\subsubsection[{INT\_\-SOFT\_\-INT}]{\setlength{\rightskip}{0pt plus 5cm}\#define INT\_\-SOFT\_\-INT~0x00001000}}
+\label{emac_8h_a09b86afa6f6d6121b8a377d653f12ee3}
+
+
+Definition at line 218 of file emac.h.
+
+\hypertarget{emac_8h_a85d498ed907151b131819754f3b8c359}{
+\index{emac.h@{emac.h}!INT\_\-TX\_\-DONE@{INT\_\-TX\_\-DONE}}
+\index{INT\_\-TX\_\-DONE@{INT\_\-TX\_\-DONE}!emac.h@{emac.h}}
+\subsubsection[{INT\_\-TX\_\-DONE}]{\setlength{\rightskip}{0pt plus 5cm}\#define INT\_\-TX\_\-DONE~0x00000080}}
+\label{emac_8h_a85d498ed907151b131819754f3b8c359}
+
+
+Definition at line 217 of file emac.h.
+
+\hypertarget{emac_8h_a5beefbbcaa60450121b9159f68ddc851}{
+\index{emac.h@{emac.h}!INT\_\-TX\_\-ERR@{INT\_\-TX\_\-ERR}}
+\index{INT\_\-TX\_\-ERR@{INT\_\-TX\_\-ERR}!emac.h@{emac.h}}
+\subsubsection[{INT\_\-TX\_\-ERR}]{\setlength{\rightskip}{0pt plus 5cm}\#define INT\_\-TX\_\-ERR~0x00000020}}
+\label{emac_8h_a5beefbbcaa60450121b9159f68ddc851}
+
+
+Definition at line 215 of file emac.h.
+
+\hypertarget{emac_8h_a826d5faed20b1a1988a50af8daa1b79a}{
+\index{emac.h@{emac.h}!INT\_\-TX\_\-FIN@{INT\_\-TX\_\-FIN}}
+\index{INT\_\-TX\_\-FIN@{INT\_\-TX\_\-FIN}!emac.h@{emac.h}}
+\subsubsection[{INT\_\-TX\_\-FIN}]{\setlength{\rightskip}{0pt plus 5cm}\#define INT\_\-TX\_\-FIN~0x00000040}}
+\label{emac_8h_a826d5faed20b1a1988a50af8daa1b79a}
+
+
+Definition at line 216 of file emac.h.
+
+\hypertarget{emac_8h_a69287ade846b84b7927c25dc66590a8c}{
+\index{emac.h@{emac.h}!INT\_\-TX\_\-UNDERRUN@{INT\_\-TX\_\-UNDERRUN}}
+\index{INT\_\-TX\_\-UNDERRUN@{INT\_\-TX\_\-UNDERRUN}!emac.h@{emac.h}}
+\subsubsection[{INT\_\-TX\_\-UNDERRUN}]{\setlength{\rightskip}{0pt plus 5cm}\#define INT\_\-TX\_\-UNDERRUN~0x00000010}}
+\label{emac_8h_a69287ade846b84b7927c25dc66590a8c}
+
+
+Definition at line 214 of file emac.h.
+
+\hypertarget{emac_8h_a5a3b59d7da57dff63a4a442cc6811da8}{
+\index{emac.h@{emac.h}!INT\_\-WAKEUP@{INT\_\-WAKEUP}}
+\index{INT\_\-WAKEUP@{INT\_\-WAKEUP}!emac.h@{emac.h}}
+\subsubsection[{INT\_\-WAKEUP}]{\setlength{\rightskip}{0pt plus 5cm}\#define INT\_\-WAKEUP~0x00002000}}
+\label{emac_8h_a5a3b59d7da57dff63a4a442cc6811da8}
+
+
+Definition at line 219 of file emac.h.
+
+\hypertarget{emac_8h_ad1c3c6c35dac16ae62a6bf0eed745769}{
+\index{emac.h@{emac.h}!IPGR\_\-DEF@{IPGR\_\-DEF}}
+\index{IPGR\_\-DEF@{IPGR\_\-DEF}!emac.h@{emac.h}}
+\subsubsection[{IPGR\_\-DEF}]{\setlength{\rightskip}{0pt plus 5cm}\#define IPGR\_\-DEF~0x00000012}}
+\label{emac_8h_ad1c3c6c35dac16ae62a6bf0eed745769}
+
+
+Definition at line 83 of file emac.h.
+
+\hypertarget{emac_8h_a7a1913ae1e7cc89d93f52336269f73a7}{
+\index{emac.h@{emac.h}!IPGT\_\-FULL\_\-DUP@{IPGT\_\-FULL\_\-DUP}}
+\index{IPGT\_\-FULL\_\-DUP@{IPGT\_\-FULL\_\-DUP}!emac.h@{emac.h}}
+\subsubsection[{IPGT\_\-FULL\_\-DUP}]{\setlength{\rightskip}{0pt plus 5cm}\#define IPGT\_\-FULL\_\-DUP~0x00000015}}
+\label{emac_8h_a7a1913ae1e7cc89d93f52336269f73a7}
+
+
+Definition at line 79 of file emac.h.
+
+\hypertarget{emac_8h_a6c3ae31e90806a0b595744e046001e0b}{
+\index{emac.h@{emac.h}!IPGT\_\-HALF\_\-DUP@{IPGT\_\-HALF\_\-DUP}}
+\index{IPGT\_\-HALF\_\-DUP@{IPGT\_\-HALF\_\-DUP}!emac.h@{emac.h}}
+\subsubsection[{IPGT\_\-HALF\_\-DUP}]{\setlength{\rightskip}{0pt plus 5cm}\#define IPGT\_\-HALF\_\-DUP~0x00000012}}
+\label{emac_8h_a6c3ae31e90806a0b595744e046001e0b}
+
+
+Definition at line 80 of file emac.h.
+
+\hypertarget{emac_8h_a93318bae84d4cee15dd41b22aacc4a88}{
+\index{emac.h@{emac.h}!MAC1\_\-LOOPB@{MAC1\_\-LOOPB}}
+\index{MAC1\_\-LOOPB@{MAC1\_\-LOOPB}!emac.h@{emac.h}}
+\subsubsection[{MAC1\_\-LOOPB}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAC1\_\-LOOPB~0x00000010}}
+\label{emac_8h_a93318bae84d4cee15dd41b22aacc4a88}
+
+
+Definition at line 54 of file emac.h.
+
+\hypertarget{emac_8h_a97e3f630d645c447e540c6be485a661a}{
+\index{emac.h@{emac.h}!MAC1\_\-PASS\_\-ALL@{MAC1\_\-PASS\_\-ALL}}
+\index{MAC1\_\-PASS\_\-ALL@{MAC1\_\-PASS\_\-ALL}!emac.h@{emac.h}}
+\subsubsection[{MAC1\_\-PASS\_\-ALL}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAC1\_\-PASS\_\-ALL~0x00000002}}
+\label{emac_8h_a97e3f630d645c447e540c6be485a661a}
+
+
+Definition at line 51 of file emac.h.
+
+\hypertarget{emac_8h_a197783fc20ad40ef435a4d4db12c01c7}{
+\index{emac.h@{emac.h}!MAC1\_\-REC\_\-EN@{MAC1\_\-REC\_\-EN}}
+\index{MAC1\_\-REC\_\-EN@{MAC1\_\-REC\_\-EN}!emac.h@{emac.h}}
+\subsubsection[{MAC1\_\-REC\_\-EN}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAC1\_\-REC\_\-EN~0x00000001}}
+\label{emac_8h_a197783fc20ad40ef435a4d4db12c01c7}
+
+
+Definition at line 50 of file emac.h.
+
+\hypertarget{emac_8h_ad4064ef6e37f5a01969f46452e8621ff}{
+\index{emac.h@{emac.h}!MAC1\_\-RES\_\-MCS\_\-RX@{MAC1\_\-RES\_\-MCS\_\-RX}}
+\index{MAC1\_\-RES\_\-MCS\_\-RX@{MAC1\_\-RES\_\-MCS\_\-RX}!emac.h@{emac.h}}
+\subsubsection[{MAC1\_\-RES\_\-MCS\_\-RX}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAC1\_\-RES\_\-MCS\_\-RX~0x00000800}}
+\label{emac_8h_ad4064ef6e37f5a01969f46452e8621ff}
+
+
+Definition at line 58 of file emac.h.
+
+\hypertarget{emac_8h_aed449d759a1c4409d741664ba2662684}{
+\index{emac.h@{emac.h}!MAC1\_\-RES\_\-MCS\_\-TX@{MAC1\_\-RES\_\-MCS\_\-TX}}
+\index{MAC1\_\-RES\_\-MCS\_\-TX@{MAC1\_\-RES\_\-MCS\_\-TX}!emac.h@{emac.h}}
+\subsubsection[{MAC1\_\-RES\_\-MCS\_\-TX}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAC1\_\-RES\_\-MCS\_\-TX~0x00000200}}
+\label{emac_8h_aed449d759a1c4409d741664ba2662684}
+
+
+Definition at line 56 of file emac.h.
+
+\hypertarget{emac_8h_ad06fe4d50d59bf134097087d07269125}{
+\index{emac.h@{emac.h}!MAC1\_\-RES\_\-RX@{MAC1\_\-RES\_\-RX}}
+\index{MAC1\_\-RES\_\-RX@{MAC1\_\-RES\_\-RX}!emac.h@{emac.h}}
+\subsubsection[{MAC1\_\-RES\_\-RX}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAC1\_\-RES\_\-RX~0x00000400}}
+\label{emac_8h_ad06fe4d50d59bf134097087d07269125}
+
+
+Definition at line 57 of file emac.h.
+
+\hypertarget{emac_8h_a16ff37a7357cf572e538cd2128a435fd}{
+\index{emac.h@{emac.h}!MAC1\_\-RES\_\-TX@{MAC1\_\-RES\_\-TX}}
+\index{MAC1\_\-RES\_\-TX@{MAC1\_\-RES\_\-TX}!emac.h@{emac.h}}
+\subsubsection[{MAC1\_\-RES\_\-TX}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAC1\_\-RES\_\-TX~0x00000100}}
+\label{emac_8h_a16ff37a7357cf572e538cd2128a435fd}
+
+
+Definition at line 55 of file emac.h.
+
+\hypertarget{emac_8h_a24e20d3aab3914facfa3222612f10ec4}{
+\index{emac.h@{emac.h}!MAC1\_\-RX\_\-FLOWC@{MAC1\_\-RX\_\-FLOWC}}
+\index{MAC1\_\-RX\_\-FLOWC@{MAC1\_\-RX\_\-FLOWC}!emac.h@{emac.h}}
+\subsubsection[{MAC1\_\-RX\_\-FLOWC}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAC1\_\-RX\_\-FLOWC~0x00000004}}
+\label{emac_8h_a24e20d3aab3914facfa3222612f10ec4}
+
+
+Definition at line 52 of file emac.h.
+
+\hypertarget{emac_8h_a6071877a510a3107d33f51a897cba2b2}{
+\index{emac.h@{emac.h}!MAC1\_\-SIM\_\-RES@{MAC1\_\-SIM\_\-RES}}
+\index{MAC1\_\-SIM\_\-RES@{MAC1\_\-SIM\_\-RES}!emac.h@{emac.h}}
+\subsubsection[{MAC1\_\-SIM\_\-RES}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAC1\_\-SIM\_\-RES~0x00004000}}
+\label{emac_8h_a6071877a510a3107d33f51a897cba2b2}
+
+
+Definition at line 59 of file emac.h.
+
+\hypertarget{emac_8h_a01e6f1edbf72ad53086907771f5f8a2f}{
+\index{emac.h@{emac.h}!MAC1\_\-SOFT\_\-RES@{MAC1\_\-SOFT\_\-RES}}
+\index{MAC1\_\-SOFT\_\-RES@{MAC1\_\-SOFT\_\-RES}!emac.h@{emac.h}}
+\subsubsection[{MAC1\_\-SOFT\_\-RES}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAC1\_\-SOFT\_\-RES~0x00008000}}
+\label{emac_8h_a01e6f1edbf72ad53086907771f5f8a2f}
+
+
+Definition at line 60 of file emac.h.
+
+\hypertarget{emac_8h_aaf0a6ebde4122379344e701eb31ad06f}{
+\index{emac.h@{emac.h}!MAC1\_\-TX\_\-FLOWC@{MAC1\_\-TX\_\-FLOWC}}
+\index{MAC1\_\-TX\_\-FLOWC@{MAC1\_\-TX\_\-FLOWC}!emac.h@{emac.h}}
+\subsubsection[{MAC1\_\-TX\_\-FLOWC}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAC1\_\-TX\_\-FLOWC~0x00000008}}
+\label{emac_8h_aaf0a6ebde4122379344e701eb31ad06f}
+
+
+Definition at line 53 of file emac.h.
+
+\hypertarget{emac_8h_a94630cd054d719c734dbe29e618fb370}{
+\index{emac.h@{emac.h}!MAC2\_\-ADET\_\-PAD\_\-EN@{MAC2\_\-ADET\_\-PAD\_\-EN}}
+\index{MAC2\_\-ADET\_\-PAD\_\-EN@{MAC2\_\-ADET\_\-PAD\_\-EN}!emac.h@{emac.h}}
+\subsubsection[{MAC2\_\-ADET\_\-PAD\_\-EN}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAC2\_\-ADET\_\-PAD\_\-EN~0x00000080}}
+\label{emac_8h_a94630cd054d719c734dbe29e618fb370}
+
+
+Definition at line 70 of file emac.h.
+
+\hypertarget{emac_8h_a9e602880a2a10f1646981a75df55aff3}{
+\index{emac.h@{emac.h}!MAC2\_\-BACK\_\-PRESSURE@{MAC2\_\-BACK\_\-PRESSURE}}
+\index{MAC2\_\-BACK\_\-PRESSURE@{MAC2\_\-BACK\_\-PRESSURE}!emac.h@{emac.h}}
+\subsubsection[{MAC2\_\-BACK\_\-PRESSURE}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAC2\_\-BACK\_\-PRESSURE~0x00002000}}
+\label{emac_8h_a9e602880a2a10f1646981a75df55aff3}
+
+
+Definition at line 75 of file emac.h.
+
+\hypertarget{emac_8h_ae1158c2c2d9c348efd523f0633a1566a}{
+\index{emac.h@{emac.h}!MAC2\_\-CRC\_\-EN@{MAC2\_\-CRC\_\-EN}}
+\index{MAC2\_\-CRC\_\-EN@{MAC2\_\-CRC\_\-EN}!emac.h@{emac.h}}
+\subsubsection[{MAC2\_\-CRC\_\-EN}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAC2\_\-CRC\_\-EN~0x00000010}}
+\label{emac_8h_ae1158c2c2d9c348efd523f0633a1566a}
+
+
+Definition at line 67 of file emac.h.
+
+\hypertarget{emac_8h_a4ed22b73ea1be3c747ed44f8f2799c48}{
+\index{emac.h@{emac.h}!MAC2\_\-DLY\_\-CRC@{MAC2\_\-DLY\_\-CRC}}
+\index{MAC2\_\-DLY\_\-CRC@{MAC2\_\-DLY\_\-CRC}!emac.h@{emac.h}}
+\subsubsection[{MAC2\_\-DLY\_\-CRC}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAC2\_\-DLY\_\-CRC~0x00000008}}
+\label{emac_8h_a4ed22b73ea1be3c747ed44f8f2799c48}
+
+
+Definition at line 66 of file emac.h.
+
+\hypertarget{emac_8h_a9841bc17769e96db971a10cad64cc963}{
+\index{emac.h@{emac.h}!MAC2\_\-EXCESS\_\-DEF@{MAC2\_\-EXCESS\_\-DEF}}
+\index{MAC2\_\-EXCESS\_\-DEF@{MAC2\_\-EXCESS\_\-DEF}!emac.h@{emac.h}}
+\subsubsection[{MAC2\_\-EXCESS\_\-DEF}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAC2\_\-EXCESS\_\-DEF~0x00004000}}
+\label{emac_8h_a9841bc17769e96db971a10cad64cc963}
+
+
+Definition at line 76 of file emac.h.
+
+\hypertarget{emac_8h_a30711311f7752c73f42513069ec6d356}{
+\index{emac.h@{emac.h}!MAC2\_\-FRM\_\-LEN\_\-CHK@{MAC2\_\-FRM\_\-LEN\_\-CHK}}
+\index{MAC2\_\-FRM\_\-LEN\_\-CHK@{MAC2\_\-FRM\_\-LEN\_\-CHK}!emac.h@{emac.h}}
+\subsubsection[{MAC2\_\-FRM\_\-LEN\_\-CHK}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAC2\_\-FRM\_\-LEN\_\-CHK~0x00000002}}
+\label{emac_8h_a30711311f7752c73f42513069ec6d356}
+
+
+Definition at line 64 of file emac.h.
+
+\hypertarget{emac_8h_ae443ddaad1dc3d2752335578a989d137}{
+\index{emac.h@{emac.h}!MAC2\_\-FULL\_\-DUP@{MAC2\_\-FULL\_\-DUP}}
+\index{MAC2\_\-FULL\_\-DUP@{MAC2\_\-FULL\_\-DUP}!emac.h@{emac.h}}
+\subsubsection[{MAC2\_\-FULL\_\-DUP}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAC2\_\-FULL\_\-DUP~0x00000001}}
+\label{emac_8h_ae443ddaad1dc3d2752335578a989d137}
+
+
+Definition at line 63 of file emac.h.
+
+\hypertarget{emac_8h_a4e6f2c4b521b876d81d92b12f2b17581}{
+\index{emac.h@{emac.h}!MAC2\_\-HUGE\_\-FRM\_\-EN@{MAC2\_\-HUGE\_\-FRM\_\-EN}}
+\index{MAC2\_\-HUGE\_\-FRM\_\-EN@{MAC2\_\-HUGE\_\-FRM\_\-EN}!emac.h@{emac.h}}
+\subsubsection[{MAC2\_\-HUGE\_\-FRM\_\-EN}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAC2\_\-HUGE\_\-FRM\_\-EN~0x00000004}}
+\label{emac_8h_a4e6f2c4b521b876d81d92b12f2b17581}
+
+
+Definition at line 65 of file emac.h.
+
+\hypertarget{emac_8h_a862a664b662c03c709f15fe7d9f33060}{
+\index{emac.h@{emac.h}!MAC2\_\-LPREAM\_\-ENF@{MAC2\_\-LPREAM\_\-ENF}}
+\index{MAC2\_\-LPREAM\_\-ENF@{MAC2\_\-LPREAM\_\-ENF}!emac.h@{emac.h}}
+\subsubsection[{MAC2\_\-LPREAM\_\-ENF}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAC2\_\-LPREAM\_\-ENF~0x00000200}}
+\label{emac_8h_a862a664b662c03c709f15fe7d9f33060}
+
+
+Definition at line 72 of file emac.h.
+
+\hypertarget{emac_8h_a486660c6129233971f829e6a0807ed84}{
+\index{emac.h@{emac.h}!MAC2\_\-NO\_\-BACKOFF@{MAC2\_\-NO\_\-BACKOFF}}
+\index{MAC2\_\-NO\_\-BACKOFF@{MAC2\_\-NO\_\-BACKOFF}!emac.h@{emac.h}}
+\subsubsection[{MAC2\_\-NO\_\-BACKOFF}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAC2\_\-NO\_\-BACKOFF~0x00001000}}
+\label{emac_8h_a486660c6129233971f829e6a0807ed84}
+
+
+Definition at line 74 of file emac.h.
+
+\hypertarget{emac_8h_a24250535119d2c9aa45047b30c532022}{
+\index{emac.h@{emac.h}!MAC2\_\-PAD\_\-EN@{MAC2\_\-PAD\_\-EN}}
+\index{MAC2\_\-PAD\_\-EN@{MAC2\_\-PAD\_\-EN}!emac.h@{emac.h}}
+\subsubsection[{MAC2\_\-PAD\_\-EN}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAC2\_\-PAD\_\-EN~0x00000020}}
+\label{emac_8h_a24250535119d2c9aa45047b30c532022}
+
+
+Definition at line 68 of file emac.h.
+
+\hypertarget{emac_8h_abc29e1b34a65cdf08bd50b1f28dca539}{
+\index{emac.h@{emac.h}!MAC2\_\-PPREAM\_\-ENF@{MAC2\_\-PPREAM\_\-ENF}}
+\index{MAC2\_\-PPREAM\_\-ENF@{MAC2\_\-PPREAM\_\-ENF}!emac.h@{emac.h}}
+\subsubsection[{MAC2\_\-PPREAM\_\-ENF}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAC2\_\-PPREAM\_\-ENF~0x00000100}}
+\label{emac_8h_abc29e1b34a65cdf08bd50b1f28dca539}
+
+
+Definition at line 71 of file emac.h.
+
+\hypertarget{emac_8h_a6eadc12ebc20c3bac767fc0a80e849c1}{
+\index{emac.h@{emac.h}!MAC2\_\-VLAN\_\-PAD\_\-EN@{MAC2\_\-VLAN\_\-PAD\_\-EN}}
+\index{MAC2\_\-VLAN\_\-PAD\_\-EN@{MAC2\_\-VLAN\_\-PAD\_\-EN}!emac.h@{emac.h}}
+\subsubsection[{MAC2\_\-VLAN\_\-PAD\_\-EN}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAC2\_\-VLAN\_\-PAD\_\-EN~0x00000040}}
+\label{emac_8h_a6eadc12ebc20c3bac767fc0a80e849c1}
+
+
+Definition at line 69 of file emac.h.
+
+\hypertarget{emac_8h_a840e114a2fdf537b5c3d31bc00f972fd}{
+\index{emac.h@{emac.h}!MADR\_\-PHY\_\-ADR@{MADR\_\-PHY\_\-ADR}}
+\index{MADR\_\-PHY\_\-ADR@{MADR\_\-PHY\_\-ADR}!emac.h@{emac.h}}
+\subsubsection[{MADR\_\-PHY\_\-ADR}]{\setlength{\rightskip}{0pt plus 5cm}\#define MADR\_\-PHY\_\-ADR~0x00001F00}}
+\label{emac_8h_a840e114a2fdf537b5c3d31bc00f972fd}
+
+
+Definition at line 116 of file emac.h.
+
+\hypertarget{emac_8h_abf228fc2510eed928164f8b0afbc10c7}{
+\index{emac.h@{emac.h}!MADR\_\-REG\_\-ADR@{MADR\_\-REG\_\-ADR}}
+\index{MADR\_\-REG\_\-ADR@{MADR\_\-REG\_\-ADR}!emac.h@{emac.h}}
+\subsubsection[{MADR\_\-REG\_\-ADR}]{\setlength{\rightskip}{0pt plus 5cm}\#define MADR\_\-REG\_\-ADR~0x0000001F}}
+\label{emac_8h_abf228fc2510eed928164f8b0afbc10c7}
+
+
+Definition at line 115 of file emac.h.
+
+\hypertarget{emac_8h_ad16695833cd7891312d1800e8183b577}{
+\index{emac.h@{emac.h}!MCFG\_\-CLK\_\-SEL@{MCFG\_\-CLK\_\-SEL}}
+\index{MCFG\_\-CLK\_\-SEL@{MCFG\_\-CLK\_\-SEL}!emac.h@{emac.h}}
+\subsubsection[{MCFG\_\-CLK\_\-SEL}]{\setlength{\rightskip}{0pt plus 5cm}\#define MCFG\_\-CLK\_\-SEL~0x0000001C}}
+\label{emac_8h_ad16695833cd7891312d1800e8183b577}
+
+
+Definition at line 101 of file emac.h.
+
+\hypertarget{emac_8h_a02abd8e90ac5e845899fad8c0d54f863}{
+\index{emac.h@{emac.h}!MCFG\_\-RES\_\-MII@{MCFG\_\-RES\_\-MII}}
+\index{MCFG\_\-RES\_\-MII@{MCFG\_\-RES\_\-MII}!emac.h@{emac.h}}
+\subsubsection[{MCFG\_\-RES\_\-MII}]{\setlength{\rightskip}{0pt plus 5cm}\#define MCFG\_\-RES\_\-MII~0x00008000}}
+\label{emac_8h_a02abd8e90ac5e845899fad8c0d54f863}
+
+
+Definition at line 102 of file emac.h.
+
+\hypertarget{emac_8h_ae262fbcb33e31fb9751241893ca36398}{
+\index{emac.h@{emac.h}!MCFG\_\-SCAN\_\-INC@{MCFG\_\-SCAN\_\-INC}}
+\index{MCFG\_\-SCAN\_\-INC@{MCFG\_\-SCAN\_\-INC}!emac.h@{emac.h}}
+\subsubsection[{MCFG\_\-SCAN\_\-INC}]{\setlength{\rightskip}{0pt plus 5cm}\#define MCFG\_\-SCAN\_\-INC~0x00000001}}
+\label{emac_8h_ae262fbcb33e31fb9751241893ca36398}
+
+
+Definition at line 99 of file emac.h.
+
+\hypertarget{emac_8h_a93c78e5cc9f1299cb7100c4e71cd42db}{
+\index{emac.h@{emac.h}!MCFG\_\-SUPP\_\-PREAM@{MCFG\_\-SUPP\_\-PREAM}}
+\index{MCFG\_\-SUPP\_\-PREAM@{MCFG\_\-SUPP\_\-PREAM}!emac.h@{emac.h}}
+\subsubsection[{MCFG\_\-SUPP\_\-PREAM}]{\setlength{\rightskip}{0pt plus 5cm}\#define MCFG\_\-SUPP\_\-PREAM~0x00000002}}
+\label{emac_8h_a93c78e5cc9f1299cb7100c4e71cd42db}
+
+
+Definition at line 100 of file emac.h.
+
+\hypertarget{emac_8h_adcaa72088508faa536a02c9332a04e09}{
+\index{emac.h@{emac.h}!MCMD\_\-READ@{MCMD\_\-READ}}
+\index{MCMD\_\-READ@{MCMD\_\-READ}!emac.h@{emac.h}}
+\subsubsection[{MCMD\_\-READ}]{\setlength{\rightskip}{0pt plus 5cm}\#define MCMD\_\-READ~0x00000001}}
+\label{emac_8h_adcaa72088508faa536a02c9332a04e09}
+
+
+Definition at line 107 of file emac.h.
+
+\hypertarget{emac_8h_ae52afda39da2a1c73fe23fbe96add74a}{
+\index{emac.h@{emac.h}!MCMD\_\-SCAN@{MCMD\_\-SCAN}}
+\index{MCMD\_\-SCAN@{MCMD\_\-SCAN}!emac.h@{emac.h}}
+\subsubsection[{MCMD\_\-SCAN}]{\setlength{\rightskip}{0pt plus 5cm}\#define MCMD\_\-SCAN~0x00000002}}
+\label{emac_8h_ae52afda39da2a1c73fe23fbe96add74a}
+
+
+Definition at line 109 of file emac.h.
+
+\hypertarget{emac_8h_a97a581688ecfd5ccbd448207a9768c01}{
+\index{emac.h@{emac.h}!MII\_\-RD\_\-TOUT@{MII\_\-RD\_\-TOUT}}
+\index{MII\_\-RD\_\-TOUT@{MII\_\-RD\_\-TOUT}!emac.h@{emac.h}}
+\subsubsection[{MII\_\-RD\_\-TOUT}]{\setlength{\rightskip}{0pt plus 5cm}\#define MII\_\-RD\_\-TOUT~0x00050000}}
+\label{emac_8h_a97a581688ecfd5ccbd448207a9768c01}
+
+
+Definition at line 112 of file emac.h.
+
+\hypertarget{emac_8h_a3779acbd287764ca1adce0bcf8eeed56}{
+\index{emac.h@{emac.h}!MII\_\-WR\_\-TOUT@{MII\_\-WR\_\-TOUT}}
+\index{MII\_\-WR\_\-TOUT@{MII\_\-WR\_\-TOUT}!emac.h@{emac.h}}
+\subsubsection[{MII\_\-WR\_\-TOUT}]{\setlength{\rightskip}{0pt plus 5cm}\#define MII\_\-WR\_\-TOUT~0x00050000}}
+\label{emac_8h_a3779acbd287764ca1adce0bcf8eeed56}
+
+
+Definition at line 111 of file emac.h.
+
+\hypertarget{emac_8h_afc27f3ce906c03f2add8b58df26ddc67}{
+\index{emac.h@{emac.h}!MIND\_\-BUSY@{MIND\_\-BUSY}}
+\index{MIND\_\-BUSY@{MIND\_\-BUSY}!emac.h@{emac.h}}
+\subsubsection[{MIND\_\-BUSY}]{\setlength{\rightskip}{0pt plus 5cm}\#define MIND\_\-BUSY~0x00000001}}
+\label{emac_8h_afc27f3ce906c03f2add8b58df26ddc67}
+
+
+Definition at line 120 of file emac.h.
+
+\hypertarget{emac_8h_a117bbc6d3f63e6759a4af66852b080f3}{
+\index{emac.h@{emac.h}!MIND\_\-MII\_\-LINK\_\-FAIL@{MIND\_\-MII\_\-LINK\_\-FAIL}}
+\index{MIND\_\-MII\_\-LINK\_\-FAIL@{MIND\_\-MII\_\-LINK\_\-FAIL}!emac.h@{emac.h}}
+\subsubsection[{MIND\_\-MII\_\-LINK\_\-FAIL}]{\setlength{\rightskip}{0pt plus 5cm}\#define MIND\_\-MII\_\-LINK\_\-FAIL~0x00000008}}
+\label{emac_8h_a117bbc6d3f63e6759a4af66852b080f3}
+
+
+Definition at line 123 of file emac.h.
+
+\hypertarget{emac_8h_a64603838e0304ac3b3d7eb5971071d66}{
+\index{emac.h@{emac.h}!MIND\_\-NOT\_\-VAL@{MIND\_\-NOT\_\-VAL}}
+\index{MIND\_\-NOT\_\-VAL@{MIND\_\-NOT\_\-VAL}!emac.h@{emac.h}}
+\subsubsection[{MIND\_\-NOT\_\-VAL}]{\setlength{\rightskip}{0pt plus 5cm}\#define MIND\_\-NOT\_\-VAL~0x00000004}}
+\label{emac_8h_a64603838e0304ac3b3d7eb5971071d66}
+
+
+Definition at line 122 of file emac.h.
+
+\hypertarget{emac_8h_aa3fceea3c20530a6560890667cc2a091}{
+\index{emac.h@{emac.h}!MIND\_\-SCAN@{MIND\_\-SCAN}}
+\index{MIND\_\-SCAN@{MIND\_\-SCAN}!emac.h@{emac.h}}
+\subsubsection[{MIND\_\-SCAN}]{\setlength{\rightskip}{0pt plus 5cm}\#define MIND\_\-SCAN~0x00000002}}
+\label{emac_8h_aa3fceea3c20530a6560890667cc2a091}
+
+
+Definition at line 121 of file emac.h.
+
+\hypertarget{emac_8h_aeaafe84a9e6100abbdbcb36081c47deb}{
+\index{emac.h@{emac.h}!NUM\_\-RX\_\-FRAG@{NUM\_\-RX\_\-FRAG}}
+\index{NUM\_\-RX\_\-FRAG@{NUM\_\-RX\_\-FRAG}!emac.h@{emac.h}}
+\subsubsection[{NUM\_\-RX\_\-FRAG}]{\setlength{\rightskip}{0pt plus 5cm}\#define NUM\_\-RX\_\-FRAG~4}}
+\label{emac_8h_aeaafe84a9e6100abbdbcb36081c47deb}
+
+
+Definition at line 24 of file emac.h.
+
+\hypertarget{emac_8h_ad0fac51fab1c1237a8d81da7f2f12504}{
+\index{emac.h@{emac.h}!NUM\_\-TX\_\-FRAG@{NUM\_\-TX\_\-FRAG}}
+\index{NUM\_\-TX\_\-FRAG@{NUM\_\-TX\_\-FRAG}!emac.h@{emac.h}}
+\subsubsection[{NUM\_\-TX\_\-FRAG}]{\setlength{\rightskip}{0pt plus 5cm}\#define NUM\_\-TX\_\-FRAG~2}}
+\label{emac_8h_ad0fac51fab1c1237a8d81da7f2f12504}
+
+
+Definition at line 25 of file emac.h.
+
+\hypertarget{emac_8h_a5f1dbb6fdb18c58da287e74460583d60}{
+\index{emac.h@{emac.h}!PD\_\-POWER\_\-DOWN@{PD\_\-POWER\_\-DOWN}}
+\index{PD\_\-POWER\_\-DOWN@{PD\_\-POWER\_\-DOWN}!emac.h@{emac.h}}
+\subsubsection[{PD\_\-POWER\_\-DOWN}]{\setlength{\rightskip}{0pt plus 5cm}\#define PD\_\-POWER\_\-DOWN~0x80000000}}
+\label{emac_8h_a5f1dbb6fdb18c58da287e74460583d60}
+
+
+Definition at line 222 of file emac.h.
+
+\hypertarget{emac_8h_a64a205014f3924799e4c529eaad947a9}{
+\index{emac.h@{emac.h}!PHY\_\-AUTO\_\-NEG@{PHY\_\-AUTO\_\-NEG}}
+\index{PHY\_\-AUTO\_\-NEG@{PHY\_\-AUTO\_\-NEG}!emac.h@{emac.h}}
+\subsubsection[{PHY\_\-AUTO\_\-NEG}]{\setlength{\rightskip}{0pt plus 5cm}\#define PHY\_\-AUTO\_\-NEG~0x3000}}
+\label{emac_8h_a64a205014f3924799e4c529eaad947a9}
+
+
+Definition at line 299 of file emac.h.
+
+\hypertarget{emac_8h_a0b20351abee99881295a5e05db1de9bd}{
+\index{emac.h@{emac.h}!PHY\_\-FULLD\_\-100M@{PHY\_\-FULLD\_\-100M}}
+\index{PHY\_\-FULLD\_\-100M@{PHY\_\-FULLD\_\-100M}!emac.h@{emac.h}}
+\subsubsection[{PHY\_\-FULLD\_\-100M}]{\setlength{\rightskip}{0pt plus 5cm}\#define PHY\_\-FULLD\_\-100M~0x2100}}
+\label{emac_8h_a0b20351abee99881295a5e05db1de9bd}
+
+
+Definition at line 295 of file emac.h.
+
+\hypertarget{emac_8h_ae2feb873a8e66854ef7d72c7ce18e16c}{
+\index{emac.h@{emac.h}!PHY\_\-FULLD\_\-10M@{PHY\_\-FULLD\_\-10M}}
+\index{PHY\_\-FULLD\_\-10M@{PHY\_\-FULLD\_\-10M}!emac.h@{emac.h}}
+\subsubsection[{PHY\_\-FULLD\_\-10M}]{\setlength{\rightskip}{0pt plus 5cm}\#define PHY\_\-FULLD\_\-10M~0x0100}}
+\label{emac_8h_ae2feb873a8e66854ef7d72c7ce18e16c}
+
+
+Definition at line 297 of file emac.h.
+
+\hypertarget{emac_8h_a33b7c30f71d4899caf2cfe4398a7440e}{
+\index{emac.h@{emac.h}!PHY\_\-HALFD\_\-100M@{PHY\_\-HALFD\_\-100M}}
+\index{PHY\_\-HALFD\_\-100M@{PHY\_\-HALFD\_\-100M}!emac.h@{emac.h}}
+\subsubsection[{PHY\_\-HALFD\_\-100M}]{\setlength{\rightskip}{0pt plus 5cm}\#define PHY\_\-HALFD\_\-100M~0x2000}}
+\label{emac_8h_a33b7c30f71d4899caf2cfe4398a7440e}
+
+
+Definition at line 296 of file emac.h.
+
+\hypertarget{emac_8h_afb38b2c422807845106d71be9d8b4007}{
+\index{emac.h@{emac.h}!PHY\_\-HALFD\_\-10M@{PHY\_\-HALFD\_\-10M}}
+\index{PHY\_\-HALFD\_\-10M@{PHY\_\-HALFD\_\-10M}!emac.h@{emac.h}}
+\subsubsection[{PHY\_\-HALFD\_\-10M}]{\setlength{\rightskip}{0pt plus 5cm}\#define PHY\_\-HALFD\_\-10M~0x0000}}
+\label{emac_8h_afb38b2c422807845106d71be9d8b4007}
+
+
+Definition at line 298 of file emac.h.
+
+\hypertarget{emac_8h_a4952b1966e99022629fdc5a9107e38cd}{
+\index{emac.h@{emac.h}!PHY\_\-REG\_\-10BTSCR@{PHY\_\-REG\_\-10BTSCR}}
+\index{PHY\_\-REG\_\-10BTSCR@{PHY\_\-REG\_\-10BTSCR}!emac.h@{emac.h}}
+\subsubsection[{PHY\_\-REG\_\-10BTSCR}]{\setlength{\rightskip}{0pt plus 5cm}\#define PHY\_\-REG\_\-10BTSCR~0x1A}}
+\label{emac_8h_a4952b1966e99022629fdc5a9107e38cd}
+
+
+Definition at line 291 of file emac.h.
+
+\hypertarget{emac_8h_a81c45af97da8ca0aa172edb464ac8736}{
+\index{emac.h@{emac.h}!PHY\_\-REG\_\-ANAR@{PHY\_\-REG\_\-ANAR}}
+\index{PHY\_\-REG\_\-ANAR@{PHY\_\-REG\_\-ANAR}!emac.h@{emac.h}}
+\subsubsection[{PHY\_\-REG\_\-ANAR}]{\setlength{\rightskip}{0pt plus 5cm}\#define PHY\_\-REG\_\-ANAR~0x04}}
+\label{emac_8h_a81c45af97da8ca0aa172edb464ac8736}
+
+
+Definition at line 276 of file emac.h.
+
+\hypertarget{emac_8h_a974befd690a504dd421d7cf5dfca0a2f}{
+\index{emac.h@{emac.h}!PHY\_\-REG\_\-ANER@{PHY\_\-REG\_\-ANER}}
+\index{PHY\_\-REG\_\-ANER@{PHY\_\-REG\_\-ANER}!emac.h@{emac.h}}
+\subsubsection[{PHY\_\-REG\_\-ANER}]{\setlength{\rightskip}{0pt plus 5cm}\#define PHY\_\-REG\_\-ANER~0x06}}
+\label{emac_8h_a974befd690a504dd421d7cf5dfca0a2f}
+
+
+Definition at line 278 of file emac.h.
+
+\hypertarget{emac_8h_a16616d7d740ace1dc1a1c9f34d3d0aca}{
+\index{emac.h@{emac.h}!PHY\_\-REG\_\-ANLPAR@{PHY\_\-REG\_\-ANLPAR}}
+\index{PHY\_\-REG\_\-ANLPAR@{PHY\_\-REG\_\-ANLPAR}!emac.h@{emac.h}}
+\subsubsection[{PHY\_\-REG\_\-ANLPAR}]{\setlength{\rightskip}{0pt plus 5cm}\#define PHY\_\-REG\_\-ANLPAR~0x05}}
+\label{emac_8h_a16616d7d740ace1dc1a1c9f34d3d0aca}
+
+
+Definition at line 277 of file emac.h.
+
+\hypertarget{emac_8h_a16dafbc219d2fa34bee7f8521c6c6b49}{
+\index{emac.h@{emac.h}!PHY\_\-REG\_\-ANNPTR@{PHY\_\-REG\_\-ANNPTR}}
+\index{PHY\_\-REG\_\-ANNPTR@{PHY\_\-REG\_\-ANNPTR}!emac.h@{emac.h}}
+\subsubsection[{PHY\_\-REG\_\-ANNPTR}]{\setlength{\rightskip}{0pt plus 5cm}\#define PHY\_\-REG\_\-ANNPTR~0x07}}
+\label{emac_8h_a16dafbc219d2fa34bee7f8521c6c6b49}
+
+
+Definition at line 279 of file emac.h.
+
+\hypertarget{emac_8h_a35b3bc2120d1e7d8f6adf84172ffc5c0}{
+\index{emac.h@{emac.h}!PHY\_\-REG\_\-BMCR@{PHY\_\-REG\_\-BMCR}}
+\index{PHY\_\-REG\_\-BMCR@{PHY\_\-REG\_\-BMCR}!emac.h@{emac.h}}
+\subsubsection[{PHY\_\-REG\_\-BMCR}]{\setlength{\rightskip}{0pt plus 5cm}\#define PHY\_\-REG\_\-BMCR~0x00}}
+\label{emac_8h_a35b3bc2120d1e7d8f6adf84172ffc5c0}
+
+
+Definition at line 272 of file emac.h.
+
+\hypertarget{emac_8h_aba09224973417bc3a686da320e984394}{
+\index{emac.h@{emac.h}!PHY\_\-REG\_\-BMSR@{PHY\_\-REG\_\-BMSR}}
+\index{PHY\_\-REG\_\-BMSR@{PHY\_\-REG\_\-BMSR}!emac.h@{emac.h}}
+\subsubsection[{PHY\_\-REG\_\-BMSR}]{\setlength{\rightskip}{0pt plus 5cm}\#define PHY\_\-REG\_\-BMSR~0x01}}
+\label{emac_8h_aba09224973417bc3a686da320e984394}
+
+
+Definition at line 273 of file emac.h.
+
+\hypertarget{emac_8h_aa82c86c387e1828fa203608acfd981d7}{
+\index{emac.h@{emac.h}!PHY\_\-REG\_\-CDCTRL1@{PHY\_\-REG\_\-CDCTRL1}}
+\index{PHY\_\-REG\_\-CDCTRL1@{PHY\_\-REG\_\-CDCTRL1}!emac.h@{emac.h}}
+\subsubsection[{PHY\_\-REG\_\-CDCTRL1}]{\setlength{\rightskip}{0pt plus 5cm}\#define PHY\_\-REG\_\-CDCTRL1~0x1B}}
+\label{emac_8h_aa82c86c387e1828fa203608acfd981d7}
+
+
+Definition at line 292 of file emac.h.
+
+\hypertarget{emac_8h_adea47a7b97f7cba9d975a8ab7fe6aca7}{
+\index{emac.h@{emac.h}!PHY\_\-REG\_\-EDCR@{PHY\_\-REG\_\-EDCR}}
+\index{PHY\_\-REG\_\-EDCR@{PHY\_\-REG\_\-EDCR}!emac.h@{emac.h}}
+\subsubsection[{PHY\_\-REG\_\-EDCR}]{\setlength{\rightskip}{0pt plus 5cm}\#define PHY\_\-REG\_\-EDCR~0x1D}}
+\label{emac_8h_adea47a7b97f7cba9d975a8ab7fe6aca7}
+
+
+Definition at line 293 of file emac.h.
+
+\hypertarget{emac_8h_a4ddb4ab56ee861d05ce4eee14ad706db}{
+\index{emac.h@{emac.h}!PHY\_\-REG\_\-FCSCR@{PHY\_\-REG\_\-FCSCR}}
+\index{PHY\_\-REG\_\-FCSCR@{PHY\_\-REG\_\-FCSCR}!emac.h@{emac.h}}
+\subsubsection[{PHY\_\-REG\_\-FCSCR}]{\setlength{\rightskip}{0pt plus 5cm}\#define PHY\_\-REG\_\-FCSCR~0x14}}
+\label{emac_8h_a4ddb4ab56ee861d05ce4eee14ad706db}
+
+
+Definition at line 285 of file emac.h.
+
+\hypertarget{emac_8h_adc99a4d5c60c4f1db949900854b5da2d}{
+\index{emac.h@{emac.h}!PHY\_\-REG\_\-IDR1@{PHY\_\-REG\_\-IDR1}}
+\index{PHY\_\-REG\_\-IDR1@{PHY\_\-REG\_\-IDR1}!emac.h@{emac.h}}
+\subsubsection[{PHY\_\-REG\_\-IDR1}]{\setlength{\rightskip}{0pt plus 5cm}\#define PHY\_\-REG\_\-IDR1~0x02}}
+\label{emac_8h_adc99a4d5c60c4f1db949900854b5da2d}
+
+
+Definition at line 274 of file emac.h.
+
+\hypertarget{emac_8h_ad86680289572058e0cd66c378efe8796}{
+\index{emac.h@{emac.h}!PHY\_\-REG\_\-IDR2@{PHY\_\-REG\_\-IDR2}}
+\index{PHY\_\-REG\_\-IDR2@{PHY\_\-REG\_\-IDR2}!emac.h@{emac.h}}
+\subsubsection[{PHY\_\-REG\_\-IDR2}]{\setlength{\rightskip}{0pt plus 5cm}\#define PHY\_\-REG\_\-IDR2~0x03}}
+\label{emac_8h_ad86680289572058e0cd66c378efe8796}
+
+
+Definition at line 275 of file emac.h.
+
+\hypertarget{emac_8h_a067046c54a41d2d0f1ef51f4768bf89d}{
+\index{emac.h@{emac.h}!PHY\_\-REG\_\-LEDCR@{PHY\_\-REG\_\-LEDCR}}
+\index{PHY\_\-REG\_\-LEDCR@{PHY\_\-REG\_\-LEDCR}!emac.h@{emac.h}}
+\subsubsection[{PHY\_\-REG\_\-LEDCR}]{\setlength{\rightskip}{0pt plus 5cm}\#define PHY\_\-REG\_\-LEDCR~0x18}}
+\label{emac_8h_a067046c54a41d2d0f1ef51f4768bf89d}
+
+
+Definition at line 289 of file emac.h.
+
+\hypertarget{emac_8h_aae44f1acd36a8d72edd511f6fc7cecc2}{
+\index{emac.h@{emac.h}!PHY\_\-REG\_\-MICR@{PHY\_\-REG\_\-MICR}}
+\index{PHY\_\-REG\_\-MICR@{PHY\_\-REG\_\-MICR}!emac.h@{emac.h}}
+\subsubsection[{PHY\_\-REG\_\-MICR}]{\setlength{\rightskip}{0pt plus 5cm}\#define PHY\_\-REG\_\-MICR~0x11}}
+\label{emac_8h_aae44f1acd36a8d72edd511f6fc7cecc2}
+
+
+Definition at line 283 of file emac.h.
+
+\hypertarget{emac_8h_a6b2549fccb1bcdbffb67e0b7e7bd4c4b}{
+\index{emac.h@{emac.h}!PHY\_\-REG\_\-MISR@{PHY\_\-REG\_\-MISR}}
+\index{PHY\_\-REG\_\-MISR@{PHY\_\-REG\_\-MISR}!emac.h@{emac.h}}
+\subsubsection[{PHY\_\-REG\_\-MISR}]{\setlength{\rightskip}{0pt plus 5cm}\#define PHY\_\-REG\_\-MISR~0x12}}
+\label{emac_8h_a6b2549fccb1bcdbffb67e0b7e7bd4c4b}
+
+
+Definition at line 284 of file emac.h.
+
+\hypertarget{emac_8h_adbdcbe1c15df474442d2b59be22f9eef}{
+\index{emac.h@{emac.h}!PHY\_\-REG\_\-PCSR@{PHY\_\-REG\_\-PCSR}}
+\index{PHY\_\-REG\_\-PCSR@{PHY\_\-REG\_\-PCSR}!emac.h@{emac.h}}
+\subsubsection[{PHY\_\-REG\_\-PCSR}]{\setlength{\rightskip}{0pt plus 5cm}\#define PHY\_\-REG\_\-PCSR~0x16}}
+\label{emac_8h_adbdcbe1c15df474442d2b59be22f9eef}
+
+
+Definition at line 287 of file emac.h.
+
+\hypertarget{emac_8h_ace4ad7f18b893f8cad81b7e0b5291c80}{
+\index{emac.h@{emac.h}!PHY\_\-REG\_\-PHYCR@{PHY\_\-REG\_\-PHYCR}}
+\index{PHY\_\-REG\_\-PHYCR@{PHY\_\-REG\_\-PHYCR}!emac.h@{emac.h}}
+\subsubsection[{PHY\_\-REG\_\-PHYCR}]{\setlength{\rightskip}{0pt plus 5cm}\#define PHY\_\-REG\_\-PHYCR~0x19}}
+\label{emac_8h_ace4ad7f18b893f8cad81b7e0b5291c80}
+
+
+Definition at line 290 of file emac.h.
+
+\hypertarget{emac_8h_adf0d29ce8e23081f40b3a21fb2f7f10b}{
+\index{emac.h@{emac.h}!PHY\_\-REG\_\-RBR@{PHY\_\-REG\_\-RBR}}
+\index{PHY\_\-REG\_\-RBR@{PHY\_\-REG\_\-RBR}!emac.h@{emac.h}}
+\subsubsection[{PHY\_\-REG\_\-RBR}]{\setlength{\rightskip}{0pt plus 5cm}\#define PHY\_\-REG\_\-RBR~0x17}}
+\label{emac_8h_adf0d29ce8e23081f40b3a21fb2f7f10b}
+
+
+Definition at line 288 of file emac.h.
+
+\hypertarget{emac_8h_a102f82ede18985b2b1455e2f548e43ea}{
+\index{emac.h@{emac.h}!PHY\_\-REG\_\-RECR@{PHY\_\-REG\_\-RECR}}
+\index{PHY\_\-REG\_\-RECR@{PHY\_\-REG\_\-RECR}!emac.h@{emac.h}}
+\subsubsection[{PHY\_\-REG\_\-RECR}]{\setlength{\rightskip}{0pt plus 5cm}\#define PHY\_\-REG\_\-RECR~0x15}}
+\label{emac_8h_a102f82ede18985b2b1455e2f548e43ea}
+
+
+Definition at line 286 of file emac.h.
+
+\hypertarget{emac_8h_a9719b117245aa1b73a6003d00246fb49}{
+\index{emac.h@{emac.h}!PHY\_\-REG\_\-STS@{PHY\_\-REG\_\-STS}}
+\index{PHY\_\-REG\_\-STS@{PHY\_\-REG\_\-STS}!emac.h@{emac.h}}
+\subsubsection[{PHY\_\-REG\_\-STS}]{\setlength{\rightskip}{0pt plus 5cm}\#define PHY\_\-REG\_\-STS~0x10}}
+\label{emac_8h_a9719b117245aa1b73a6003d00246fb49}
+
+
+Definition at line 282 of file emac.h.
+
+\hypertarget{emac_8h_a557cdce88298fa9cbd21c8725ea3f23f}{
+\index{emac.h@{emac.h}!RCTRL\_\-INT@{RCTRL\_\-INT}}
+\index{RCTRL\_\-INT@{RCTRL\_\-INT}!emac.h@{emac.h}}
+\subsubsection[{RCTRL\_\-INT}]{\setlength{\rightskip}{0pt plus 5cm}\#define RCTRL\_\-INT~0x80000000}}
+\label{emac_8h_a557cdce88298fa9cbd21c8725ea3f23f}
+
+
+Definition at line 226 of file emac.h.
+
+\hypertarget{emac_8h_a2e79d235fd8a0cd170b65f131ed26ffb}{
+\index{emac.h@{emac.h}!RCTRL\_\-SIZE@{RCTRL\_\-SIZE}}
+\index{RCTRL\_\-SIZE@{RCTRL\_\-SIZE}!emac.h@{emac.h}}
+\subsubsection[{RCTRL\_\-SIZE}]{\setlength{\rightskip}{0pt plus 5cm}\#define RCTRL\_\-SIZE~0x000007FF}}
+\label{emac_8h_a2e79d235fd8a0cd170b65f131ed26ffb}
+
+
+Definition at line 225 of file emac.h.
+
+\hypertarget{emac_8h_a0eafa682c333fd122ba5a12d9ce45012}{
+\index{emac.h@{emac.h}!RFC\_\-BCAST\_\-EN@{RFC\_\-BCAST\_\-EN}}
+\index{RFC\_\-BCAST\_\-EN@{RFC\_\-BCAST\_\-EN}!emac.h@{emac.h}}
+\subsubsection[{RFC\_\-BCAST\_\-EN}]{\setlength{\rightskip}{0pt plus 5cm}\#define RFC\_\-BCAST\_\-EN~0x00000002}}
+\label{emac_8h_a0eafa682c333fd122ba5a12d9ce45012}
+
+
+Definition at line 191 of file emac.h.
+
+\hypertarget{emac_8h_ae2a9aae3cbe2c8c0cfb5084512eeee10}{
+\index{emac.h@{emac.h}!RFC\_\-MAGP\_\-WOL\_\-EN@{RFC\_\-MAGP\_\-WOL\_\-EN}}
+\index{RFC\_\-MAGP\_\-WOL\_\-EN@{RFC\_\-MAGP\_\-WOL\_\-EN}!emac.h@{emac.h}}
+\subsubsection[{RFC\_\-MAGP\_\-WOL\_\-EN}]{\setlength{\rightskip}{0pt plus 5cm}\#define RFC\_\-MAGP\_\-WOL\_\-EN~0x00001000}}
+\label{emac_8h_ae2a9aae3cbe2c8c0cfb5084512eeee10}
+
+
+Definition at line 196 of file emac.h.
+
+\hypertarget{emac_8h_a01af5c1c9b20252d03951f5ef14d74e2}{
+\index{emac.h@{emac.h}!RFC\_\-MCAST\_\-EN@{RFC\_\-MCAST\_\-EN}}
+\index{RFC\_\-MCAST\_\-EN@{RFC\_\-MCAST\_\-EN}!emac.h@{emac.h}}
+\subsubsection[{RFC\_\-MCAST\_\-EN}]{\setlength{\rightskip}{0pt plus 5cm}\#define RFC\_\-MCAST\_\-EN~0x00000004}}
+\label{emac_8h_a01af5c1c9b20252d03951f5ef14d74e2}
+
+
+Definition at line 192 of file emac.h.
+
+\hypertarget{emac_8h_a70329f34580c5593893c7b4779a645ce}{
+\index{emac.h@{emac.h}!RFC\_\-MCAST\_\-HASH\_\-EN@{RFC\_\-MCAST\_\-HASH\_\-EN}}
+\index{RFC\_\-MCAST\_\-HASH\_\-EN@{RFC\_\-MCAST\_\-HASH\_\-EN}!emac.h@{emac.h}}
+\subsubsection[{RFC\_\-MCAST\_\-HASH\_\-EN}]{\setlength{\rightskip}{0pt plus 5cm}\#define RFC\_\-MCAST\_\-HASH\_\-EN~0x00000010}}
+\label{emac_8h_a70329f34580c5593893c7b4779a645ce}
+
+
+Definition at line 194 of file emac.h.
+
+\hypertarget{emac_8h_aa82929a0b30b1c0969cf199eeba1c19a}{
+\index{emac.h@{emac.h}!RFC\_\-PERFECT\_\-EN@{RFC\_\-PERFECT\_\-EN}}
+\index{RFC\_\-PERFECT\_\-EN@{RFC\_\-PERFECT\_\-EN}!emac.h@{emac.h}}
+\subsubsection[{RFC\_\-PERFECT\_\-EN}]{\setlength{\rightskip}{0pt plus 5cm}\#define RFC\_\-PERFECT\_\-EN~0x00000020}}
+\label{emac_8h_aa82929a0b30b1c0969cf199eeba1c19a}
+
+
+Definition at line 195 of file emac.h.
+
+\hypertarget{emac_8h_a94d47a72a6e2e867e2de3ed748a6b875}{
+\index{emac.h@{emac.h}!RFC\_\-PFILT\_\-WOL\_\-EN@{RFC\_\-PFILT\_\-WOL\_\-EN}}
+\index{RFC\_\-PFILT\_\-WOL\_\-EN@{RFC\_\-PFILT\_\-WOL\_\-EN}!emac.h@{emac.h}}
+\subsubsection[{RFC\_\-PFILT\_\-WOL\_\-EN}]{\setlength{\rightskip}{0pt plus 5cm}\#define RFC\_\-PFILT\_\-WOL\_\-EN~0x00002000}}
+\label{emac_8h_a94d47a72a6e2e867e2de3ed748a6b875}
+
+
+Definition at line 197 of file emac.h.
+
+\hypertarget{emac_8h_afcb2b9568cd8da49507c05c1216d9be5}{
+\index{emac.h@{emac.h}!RFC\_\-UCAST\_\-EN@{RFC\_\-UCAST\_\-EN}}
+\index{RFC\_\-UCAST\_\-EN@{RFC\_\-UCAST\_\-EN}!emac.h@{emac.h}}
+\subsubsection[{RFC\_\-UCAST\_\-EN}]{\setlength{\rightskip}{0pt plus 5cm}\#define RFC\_\-UCAST\_\-EN~0x00000001}}
+\label{emac_8h_afcb2b9568cd8da49507c05c1216d9be5}
+
+
+Definition at line 190 of file emac.h.
+
+\hypertarget{emac_8h_aac8da5fab8a31a913a8276827a94ff37}{
+\index{emac.h@{emac.h}!RFC\_\-UCAST\_\-HASH\_\-EN@{RFC\_\-UCAST\_\-HASH\_\-EN}}
+\index{RFC\_\-UCAST\_\-HASH\_\-EN@{RFC\_\-UCAST\_\-HASH\_\-EN}!emac.h@{emac.h}}
+\subsubsection[{RFC\_\-UCAST\_\-HASH\_\-EN}]{\setlength{\rightskip}{0pt plus 5cm}\#define RFC\_\-UCAST\_\-HASH\_\-EN~0x00000008}}
+\label{emac_8h_aac8da5fab8a31a913a8276827a94ff37}
+
+
+Definition at line 193 of file emac.h.
+
+\hypertarget{emac_8h_a7c5dff8fd15341dde1cc70db96a535a2}{
+\index{emac.h@{emac.h}!RHASH\_\-DA@{RHASH\_\-DA}}
+\index{RHASH\_\-DA@{RHASH\_\-DA}!emac.h@{emac.h}}
+\subsubsection[{RHASH\_\-DA}]{\setlength{\rightskip}{0pt plus 5cm}\#define RHASH\_\-DA~0x001FF000}}
+\label{emac_8h_a7c5dff8fd15341dde1cc70db96a535a2}
+
+
+Definition at line 230 of file emac.h.
+
+\hypertarget{emac_8h_a1a92849f895415ce6ed365102c6d40cd}{
+\index{emac.h@{emac.h}!RHASH\_\-SA@{RHASH\_\-SA}}
+\index{RHASH\_\-SA@{RHASH\_\-SA}!emac.h@{emac.h}}
+\subsubsection[{RHASH\_\-SA}]{\setlength{\rightskip}{0pt plus 5cm}\#define RHASH\_\-SA~0x000001FF}}
+\label{emac_8h_a1a92849f895415ce6ed365102c6d40cd}
+
+
+Definition at line 229 of file emac.h.
+
+\hypertarget{emac_8h_ac90a518de44c306c3744a82f95e4b716}{
+\index{emac.h@{emac.h}!RINFO\_\-ALIGN\_\-ERR@{RINFO\_\-ALIGN\_\-ERR}}
+\index{RINFO\_\-ALIGN\_\-ERR@{RINFO\_\-ALIGN\_\-ERR}!emac.h@{emac.h}}
+\subsubsection[{RINFO\_\-ALIGN\_\-ERR}]{\setlength{\rightskip}{0pt plus 5cm}\#define RINFO\_\-ALIGN\_\-ERR~0x08000000}}
+\label{emac_8h_ac90a518de44c306c3744a82f95e4b716}
+
+
+Definition at line 243 of file emac.h.
+
+\hypertarget{emac_8h_a7c5111d42f1e075bb19616c7800dbef0}{
+\index{emac.h@{emac.h}!RINFO\_\-BCAST@{RINFO\_\-BCAST}}
+\index{RINFO\_\-BCAST@{RINFO\_\-BCAST}!emac.h@{emac.h}}
+\subsubsection[{RINFO\_\-BCAST}]{\setlength{\rightskip}{0pt plus 5cm}\#define RINFO\_\-BCAST~0x00400000}}
+\label{emac_8h_a7c5111d42f1e075bb19616c7800dbef0}
+
+
+Definition at line 238 of file emac.h.
+
+\hypertarget{emac_8h_aa2870a05ad6cacd837519a360691435a}{
+\index{emac.h@{emac.h}!RINFO\_\-CRC\_\-ERR@{RINFO\_\-CRC\_\-ERR}}
+\index{RINFO\_\-CRC\_\-ERR@{RINFO\_\-CRC\_\-ERR}!emac.h@{emac.h}}
+\subsubsection[{RINFO\_\-CRC\_\-ERR}]{\setlength{\rightskip}{0pt plus 5cm}\#define RINFO\_\-CRC\_\-ERR~0x00800000}}
+\label{emac_8h_aa2870a05ad6cacd837519a360691435a}
+
+
+Definition at line 239 of file emac.h.
+
+\hypertarget{emac_8h_a20585c51409a3b3435d310e720b9df88}{
+\index{emac.h@{emac.h}!RINFO\_\-CTRL\_\-FRAME@{RINFO\_\-CTRL\_\-FRAME}}
+\index{RINFO\_\-CTRL\_\-FRAME@{RINFO\_\-CTRL\_\-FRAME}!emac.h@{emac.h}}
+\subsubsection[{RINFO\_\-CTRL\_\-FRAME}]{\setlength{\rightskip}{0pt plus 5cm}\#define RINFO\_\-CTRL\_\-FRAME~0x00040000}}
+\label{emac_8h_a20585c51409a3b3435d310e720b9df88}
+
+
+Definition at line 234 of file emac.h.
+
+\hypertarget{emac_8h_a82a8eb86cc98ef52c464047b59fc78e7}{
+\index{emac.h@{emac.h}!RINFO\_\-ERR@{RINFO\_\-ERR}}
+\index{RINFO\_\-ERR@{RINFO\_\-ERR}!emac.h@{emac.h}}
+\subsubsection[{RINFO\_\-ERR}]{\setlength{\rightskip}{0pt plus 5cm}\#define RINFO\_\-ERR~0x80000000}}
+\label{emac_8h_a82a8eb86cc98ef52c464047b59fc78e7}
+
+
+Definition at line 247 of file emac.h.
+
+\hypertarget{emac_8h_af8adf9a18a6769ac7e95157303eebfa6}{
+\index{emac.h@{emac.h}!RINFO\_\-ERR\_\-MASK@{RINFO\_\-ERR\_\-MASK}}
+\index{RINFO\_\-ERR\_\-MASK@{RINFO\_\-ERR\_\-MASK}!emac.h@{emac.h}}
+\subsubsection[{RINFO\_\-ERR\_\-MASK}]{\setlength{\rightskip}{0pt plus 5cm}\#define RINFO\_\-ERR\_\-MASK}}
+\label{emac_8h_af8adf9a18a6769ac7e95157303eebfa6}
+{\bfseries Value:}
+\begin{DoxyCode}
+(RINFO_FAIL_FILT | RINFO_CRC_ERR   | RINFO_SYM_ERR | \
+                            RINFO_LEN_ERR   | RINFO_ALIGN_ERR | RINFO_OVERRUN)
+\end{DoxyCode}
+
+
+Definition at line 249 of file emac.h.
+
+\hypertarget{emac_8h_aff3e4f07c1b6e654aa3080cb896ceafd}{
+\index{emac.h@{emac.h}!RINFO\_\-FAIL\_\-FILT@{RINFO\_\-FAIL\_\-FILT}}
+\index{RINFO\_\-FAIL\_\-FILT@{RINFO\_\-FAIL\_\-FILT}!emac.h@{emac.h}}
+\subsubsection[{RINFO\_\-FAIL\_\-FILT}]{\setlength{\rightskip}{0pt plus 5cm}\#define RINFO\_\-FAIL\_\-FILT~0x00100000}}
+\label{emac_8h_aff3e4f07c1b6e654aa3080cb896ceafd}
+
+
+Definition at line 236 of file emac.h.
+
+\hypertarget{emac_8h_a79ad12aeb401a9d1d0b51a8aced41cf9}{
+\index{emac.h@{emac.h}!RINFO\_\-LAST\_\-FLAG@{RINFO\_\-LAST\_\-FLAG}}
+\index{RINFO\_\-LAST\_\-FLAG@{RINFO\_\-LAST\_\-FLAG}!emac.h@{emac.h}}
+\subsubsection[{RINFO\_\-LAST\_\-FLAG}]{\setlength{\rightskip}{0pt plus 5cm}\#define RINFO\_\-LAST\_\-FLAG~0x40000000}}
+\label{emac_8h_a79ad12aeb401a9d1d0b51a8aced41cf9}
+
+
+Definition at line 246 of file emac.h.
+
+\hypertarget{emac_8h_a171c0fbadd0ba22f7a7fa3fd70a04373}{
+\index{emac.h@{emac.h}!RINFO\_\-LEN\_\-ERR@{RINFO\_\-LEN\_\-ERR}}
+\index{RINFO\_\-LEN\_\-ERR@{RINFO\_\-LEN\_\-ERR}!emac.h@{emac.h}}
+\subsubsection[{RINFO\_\-LEN\_\-ERR}]{\setlength{\rightskip}{0pt plus 5cm}\#define RINFO\_\-LEN\_\-ERR~0x02000000}}
+\label{emac_8h_a171c0fbadd0ba22f7a7fa3fd70a04373}
+
+
+Definition at line 241 of file emac.h.
+
+\hypertarget{emac_8h_a5a1fdb4c25a2ff7f290bb9d3745115df}{
+\index{emac.h@{emac.h}!RINFO\_\-MCAST@{RINFO\_\-MCAST}}
+\index{RINFO\_\-MCAST@{RINFO\_\-MCAST}!emac.h@{emac.h}}
+\subsubsection[{RINFO\_\-MCAST}]{\setlength{\rightskip}{0pt plus 5cm}\#define RINFO\_\-MCAST~0x00200000}}
+\label{emac_8h_a5a1fdb4c25a2ff7f290bb9d3745115df}
+
+
+Definition at line 237 of file emac.h.
+
+\hypertarget{emac_8h_ace263856b5319426eab84dbd39ec5229}{
+\index{emac.h@{emac.h}!RINFO\_\-NO\_\-DESCR@{RINFO\_\-NO\_\-DESCR}}
+\index{RINFO\_\-NO\_\-DESCR@{RINFO\_\-NO\_\-DESCR}!emac.h@{emac.h}}
+\subsubsection[{RINFO\_\-NO\_\-DESCR}]{\setlength{\rightskip}{0pt plus 5cm}\#define RINFO\_\-NO\_\-DESCR~0x20000000}}
+\label{emac_8h_ace263856b5319426eab84dbd39ec5229}
+
+
+Definition at line 245 of file emac.h.
+
+\hypertarget{emac_8h_a5a90613b8f2dbb2c8c34bca92cc0e5ec}{
+\index{emac.h@{emac.h}!RINFO\_\-OVERRUN@{RINFO\_\-OVERRUN}}
+\index{RINFO\_\-OVERRUN@{RINFO\_\-OVERRUN}!emac.h@{emac.h}}
+\subsubsection[{RINFO\_\-OVERRUN}]{\setlength{\rightskip}{0pt plus 5cm}\#define RINFO\_\-OVERRUN~0x10000000}}
+\label{emac_8h_a5a90613b8f2dbb2c8c34bca92cc0e5ec}
+
+
+Definition at line 244 of file emac.h.
+
+\hypertarget{emac_8h_ae305882a82b764429ecf7478ead17141}{
+\index{emac.h@{emac.h}!RINFO\_\-RANGE\_\-ERR@{RINFO\_\-RANGE\_\-ERR}}
+\index{RINFO\_\-RANGE\_\-ERR@{RINFO\_\-RANGE\_\-ERR}!emac.h@{emac.h}}
+\subsubsection[{RINFO\_\-RANGE\_\-ERR}]{\setlength{\rightskip}{0pt plus 5cm}\#define RINFO\_\-RANGE\_\-ERR~0x04000000}}
+\label{emac_8h_ae305882a82b764429ecf7478ead17141}
+
+
+Definition at line 242 of file emac.h.
+
+\hypertarget{emac_8h_afa0f68fee7fdc6f35b9e71df501a49e5}{
+\index{emac.h@{emac.h}!RINFO\_\-SIZE@{RINFO\_\-SIZE}}
+\index{RINFO\_\-SIZE@{RINFO\_\-SIZE}!emac.h@{emac.h}}
+\subsubsection[{RINFO\_\-SIZE}]{\setlength{\rightskip}{0pt plus 5cm}\#define RINFO\_\-SIZE~0x000007FF}}
+\label{emac_8h_afa0f68fee7fdc6f35b9e71df501a49e5}
+
+
+Definition at line 233 of file emac.h.
+
+\hypertarget{emac_8h_a95d9d5107fd83ed8a6848c7a540620a0}{
+\index{emac.h@{emac.h}!RINFO\_\-SYM\_\-ERR@{RINFO\_\-SYM\_\-ERR}}
+\index{RINFO\_\-SYM\_\-ERR@{RINFO\_\-SYM\_\-ERR}!emac.h@{emac.h}}
+\subsubsection[{RINFO\_\-SYM\_\-ERR}]{\setlength{\rightskip}{0pt plus 5cm}\#define RINFO\_\-SYM\_\-ERR~0x01000000}}
+\label{emac_8h_a95d9d5107fd83ed8a6848c7a540620a0}
+
+
+Definition at line 240 of file emac.h.
+
+\hypertarget{emac_8h_a2c12999ad72a1679ed7827d1b66636ec}{
+\index{emac.h@{emac.h}!RINFO\_\-VLAN@{RINFO\_\-VLAN}}
+\index{RINFO\_\-VLAN@{RINFO\_\-VLAN}!emac.h@{emac.h}}
+\subsubsection[{RINFO\_\-VLAN}]{\setlength{\rightskip}{0pt plus 5cm}\#define RINFO\_\-VLAN~0x00080000}}
+\label{emac_8h_a2c12999ad72a1679ed7827d1b66636ec}
+
+
+Definition at line 235 of file emac.h.
+
+\hypertarget{emac_8h_adb8ea01609009f7851914f1385599425}{
+\index{emac.h@{emac.h}!RSV\_\-BCAST@{RSV\_\-BCAST}}
+\index{RSV\_\-BCAST@{RSV\_\-BCAST}!emac.h@{emac.h}}
+\subsubsection[{RSV\_\-BCAST}]{\setlength{\rightskip}{0pt plus 5cm}\#define RSV\_\-BCAST~0x02000000}}
+\label{emac_8h_adb8ea01609009f7851914f1385599425}
+
+
+Definition at line 175 of file emac.h.
+
+\hypertarget{emac_8h_ae4c64a16cbd19649145d7befa13d1f59}{
+\index{emac.h@{emac.h}!RSV\_\-BYTE\_\-CNT@{RSV\_\-BYTE\_\-CNT}}
+\index{RSV\_\-BYTE\_\-CNT@{RSV\_\-BYTE\_\-CNT}!emac.h@{emac.h}}
+\subsubsection[{RSV\_\-BYTE\_\-CNT}]{\setlength{\rightskip}{0pt plus 5cm}\#define RSV\_\-BYTE\_\-CNT~0x0000FFFF}}
+\label{emac_8h_ae4c64a16cbd19649145d7befa13d1f59}
+
+
+Definition at line 165 of file emac.h.
+
+\hypertarget{emac_8h_aedeee269fb684e02ad9aa6af2b8af280}{
+\index{emac.h@{emac.h}!RSV\_\-CARR\_\-SEEN@{RSV\_\-CARR\_\-SEEN}}
+\index{RSV\_\-CARR\_\-SEEN@{RSV\_\-CARR\_\-SEEN}!emac.h@{emac.h}}
+\subsubsection[{RSV\_\-CARR\_\-SEEN}]{\setlength{\rightskip}{0pt plus 5cm}\#define RSV\_\-CARR\_\-SEEN~0x00040000}}
+\label{emac_8h_aedeee269fb684e02ad9aa6af2b8af280}
+
+
+Definition at line 168 of file emac.h.
+
+\hypertarget{emac_8h_a1f7a388e437efae4cb1e25aa1cb8fb6f}{
+\index{emac.h@{emac.h}!RSV\_\-CRC\_\-ERR@{RSV\_\-CRC\_\-ERR}}
+\index{RSV\_\-CRC\_\-ERR@{RSV\_\-CRC\_\-ERR}!emac.h@{emac.h}}
+\subsubsection[{RSV\_\-CRC\_\-ERR}]{\setlength{\rightskip}{0pt plus 5cm}\#define RSV\_\-CRC\_\-ERR~0x00100000}}
+\label{emac_8h_a1f7a388e437efae4cb1e25aa1cb8fb6f}
+
+
+Definition at line 170 of file emac.h.
+
+\hypertarget{emac_8h_ab749ce83a9ec7956244abeeb6b418bc7}{
+\index{emac.h@{emac.h}!RSV\_\-CTRL\_\-FRAME@{RSV\_\-CTRL\_\-FRAME}}
+\index{RSV\_\-CTRL\_\-FRAME@{RSV\_\-CTRL\_\-FRAME}!emac.h@{emac.h}}
+\subsubsection[{RSV\_\-CTRL\_\-FRAME}]{\setlength{\rightskip}{0pt plus 5cm}\#define RSV\_\-CTRL\_\-FRAME~0x08000000}}
+\label{emac_8h_ab749ce83a9ec7956244abeeb6b418bc7}
+
+
+Definition at line 177 of file emac.h.
+
+\hypertarget{emac_8h_a10e12c27244bcf3d3cf246c80b75153a}{
+\index{emac.h@{emac.h}!RSV\_\-DRIB\_\-NIBB@{RSV\_\-DRIB\_\-NIBB}}
+\index{RSV\_\-DRIB\_\-NIBB@{RSV\_\-DRIB\_\-NIBB}!emac.h@{emac.h}}
+\subsubsection[{RSV\_\-DRIB\_\-NIBB}]{\setlength{\rightskip}{0pt plus 5cm}\#define RSV\_\-DRIB\_\-NIBB~0x04000000}}
+\label{emac_8h_a10e12c27244bcf3d3cf246c80b75153a}
+
+
+Definition at line 176 of file emac.h.
+
+\hypertarget{emac_8h_ad3cefe383c23a5d13e21debb6e060bc3}{
+\index{emac.h@{emac.h}!RSV\_\-LEN\_\-CHKERR@{RSV\_\-LEN\_\-CHKERR}}
+\index{RSV\_\-LEN\_\-CHKERR@{RSV\_\-LEN\_\-CHKERR}!emac.h@{emac.h}}
+\subsubsection[{RSV\_\-LEN\_\-CHKERR}]{\setlength{\rightskip}{0pt plus 5cm}\#define RSV\_\-LEN\_\-CHKERR~0x00200000}}
+\label{emac_8h_ad3cefe383c23a5d13e21debb6e060bc3}
+
+
+Definition at line 171 of file emac.h.
+
+\hypertarget{emac_8h_aa2b612b30510c67bcebf086a34a6142b}{
+\index{emac.h@{emac.h}!RSV\_\-LEN\_\-OUTRNG@{RSV\_\-LEN\_\-OUTRNG}}
+\index{RSV\_\-LEN\_\-OUTRNG@{RSV\_\-LEN\_\-OUTRNG}!emac.h@{emac.h}}
+\subsubsection[{RSV\_\-LEN\_\-OUTRNG}]{\setlength{\rightskip}{0pt plus 5cm}\#define RSV\_\-LEN\_\-OUTRNG~0x00400000}}
+\label{emac_8h_aa2b612b30510c67bcebf086a34a6142b}
+
+
+Definition at line 172 of file emac.h.
+
+\hypertarget{emac_8h_a7bc9470c406ce158b0fdd52516c0d84c}{
+\index{emac.h@{emac.h}!RSV\_\-MCAST@{RSV\_\-MCAST}}
+\index{RSV\_\-MCAST@{RSV\_\-MCAST}!emac.h@{emac.h}}
+\subsubsection[{RSV\_\-MCAST}]{\setlength{\rightskip}{0pt plus 5cm}\#define RSV\_\-MCAST~0x01000000}}
+\label{emac_8h_a7bc9470c406ce158b0fdd52516c0d84c}
+
+
+Definition at line 174 of file emac.h.
+
+\hypertarget{emac_8h_a70148717d1dc12c183a00701ff3263ea}{
+\index{emac.h@{emac.h}!RSV\_\-PAUSE@{RSV\_\-PAUSE}}
+\index{RSV\_\-PAUSE@{RSV\_\-PAUSE}!emac.h@{emac.h}}
+\subsubsection[{RSV\_\-PAUSE}]{\setlength{\rightskip}{0pt plus 5cm}\#define RSV\_\-PAUSE~0x10000000}}
+\label{emac_8h_a70148717d1dc12c183a00701ff3263ea}
+
+
+Definition at line 178 of file emac.h.
+
+\hypertarget{emac_8h_af509b2ef2f4ce929ef223118c63416f1}{
+\index{emac.h@{emac.h}!RSV\_\-PKT\_\-IGNORED@{RSV\_\-PKT\_\-IGNORED}}
+\index{RSV\_\-PKT\_\-IGNORED@{RSV\_\-PKT\_\-IGNORED}!emac.h@{emac.h}}
+\subsubsection[{RSV\_\-PKT\_\-IGNORED}]{\setlength{\rightskip}{0pt plus 5cm}\#define RSV\_\-PKT\_\-IGNORED~0x00010000}}
+\label{emac_8h_af509b2ef2f4ce929ef223118c63416f1}
+
+
+Definition at line 166 of file emac.h.
+
+\hypertarget{emac_8h_a4ee52d2626b2e9f1ae2ec5e36d7cbce8}{
+\index{emac.h@{emac.h}!RSV\_\-REC\_\-CODEV@{RSV\_\-REC\_\-CODEV}}
+\index{RSV\_\-REC\_\-CODEV@{RSV\_\-REC\_\-CODEV}!emac.h@{emac.h}}
+\subsubsection[{RSV\_\-REC\_\-CODEV}]{\setlength{\rightskip}{0pt plus 5cm}\#define RSV\_\-REC\_\-CODEV~0x00080000}}
+\label{emac_8h_a4ee52d2626b2e9f1ae2ec5e36d7cbce8}
+
+
+Definition at line 169 of file emac.h.
+
+\hypertarget{emac_8h_ab2622a726e03da2fef49c2e8224b9259}{
+\index{emac.h@{emac.h}!RSV\_\-REC\_\-OK@{RSV\_\-REC\_\-OK}}
+\index{RSV\_\-REC\_\-OK@{RSV\_\-REC\_\-OK}!emac.h@{emac.h}}
+\subsubsection[{RSV\_\-REC\_\-OK}]{\setlength{\rightskip}{0pt plus 5cm}\#define RSV\_\-REC\_\-OK~0x00800000}}
+\label{emac_8h_ab2622a726e03da2fef49c2e8224b9259}
+
+
+Definition at line 173 of file emac.h.
+
+\hypertarget{emac_8h_a5fad8f2c3afbde220dd00b60b2a61367}{
+\index{emac.h@{emac.h}!RSV\_\-RXDV\_\-SEEN@{RSV\_\-RXDV\_\-SEEN}}
+\index{RSV\_\-RXDV\_\-SEEN@{RSV\_\-RXDV\_\-SEEN}!emac.h@{emac.h}}
+\subsubsection[{RSV\_\-RXDV\_\-SEEN}]{\setlength{\rightskip}{0pt plus 5cm}\#define RSV\_\-RXDV\_\-SEEN~0x00020000}}
+\label{emac_8h_a5fad8f2c3afbde220dd00b60b2a61367}
+
+
+Definition at line 167 of file emac.h.
+
+\hypertarget{emac_8h_adcbddcf40ccae2c1d6420ed74ba1ba75}{
+\index{emac.h@{emac.h}!RSV\_\-UNSUPP\_\-OPC@{RSV\_\-UNSUPP\_\-OPC}}
+\index{RSV\_\-UNSUPP\_\-OPC@{RSV\_\-UNSUPP\_\-OPC}!emac.h@{emac.h}}
+\subsubsection[{RSV\_\-UNSUPP\_\-OPC}]{\setlength{\rightskip}{0pt plus 5cm}\#define RSV\_\-UNSUPP\_\-OPC~0x20000000}}
+\label{emac_8h_adcbddcf40ccae2c1d6420ed74ba1ba75}
+
+
+Definition at line 179 of file emac.h.
+
+\hypertarget{emac_8h_af7e886da080407aec8cb1aad7864b281}{
+\index{emac.h@{emac.h}!RSV\_\-VLAN@{RSV\_\-VLAN}}
+\index{RSV\_\-VLAN@{RSV\_\-VLAN}!emac.h@{emac.h}}
+\subsubsection[{RSV\_\-VLAN}]{\setlength{\rightskip}{0pt plus 5cm}\#define RSV\_\-VLAN~0x40000000}}
+\label{emac_8h_af7e886da080407aec8cb1aad7864b281}
+
+
+Definition at line 180 of file emac.h.
+
+\hypertarget{emac_8h_a9cfcfe4546c18b55c7c4bc3048f922d1}{
+\index{emac.h@{emac.h}!RX\_\-BUF@{RX\_\-BUF}}
+\index{RX\_\-BUF@{RX\_\-BUF}!emac.h@{emac.h}}
+\subsubsection[{RX\_\-BUF}]{\setlength{\rightskip}{0pt plus 5cm}\#define RX\_\-BUF(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf i}}
+\end{DoxyParamCaption}
+)~(RX\_\-BUF\_\-BASE + ETH\_\-FRAG\_\-SIZE$\ast${\bf i})}}
+\label{emac_8h_a9cfcfe4546c18b55c7c4bc3048f922d1}
+
+
+Definition at line 46 of file emac.h.
+
+\hypertarget{emac_8h_a7f2dc28fce64ef7931272d03a0ea385f}{
+\index{emac.h@{emac.h}!RX\_\-BUF\_\-BASE@{RX\_\-BUF\_\-BASE}}
+\index{RX\_\-BUF\_\-BASE@{RX\_\-BUF\_\-BASE}!emac.h@{emac.h}}
+\subsubsection[{RX\_\-BUF\_\-BASE}]{\setlength{\rightskip}{0pt plus 5cm}\#define RX\_\-BUF\_\-BASE~(TX\_\-STAT\_\-BASE + NUM\_\-TX\_\-FRAG$\ast$4)}}
+\label{emac_8h_a7f2dc28fce64ef7931272d03a0ea385f}
+
+
+Definition at line 35 of file emac.h.
+
+\hypertarget{emac_8h_a7dc8057d05e1a2b33f21a835fd28eea3}{
+\index{emac.h@{emac.h}!RX\_\-DESC\_\-BASE@{RX\_\-DESC\_\-BASE}}
+\index{RX\_\-DESC\_\-BASE@{RX\_\-DESC\_\-BASE}!emac.h@{emac.h}}
+\subsubsection[{RX\_\-DESC\_\-BASE}]{\setlength{\rightskip}{0pt plus 5cm}\#define RX\_\-DESC\_\-BASE~0x7FE00000}}
+\label{emac_8h_a7dc8057d05e1a2b33f21a835fd28eea3}
+
+
+Definition at line 31 of file emac.h.
+
+\hypertarget{emac_8h_a8bdfebe21c2c684f831acd1de55f74a7}{
+\index{emac.h@{emac.h}!RX\_\-DESC\_\-CTRL@{RX\_\-DESC\_\-CTRL}}
+\index{RX\_\-DESC\_\-CTRL@{RX\_\-DESC\_\-CTRL}!emac.h@{emac.h}}
+\subsubsection[{RX\_\-DESC\_\-CTRL}]{\setlength{\rightskip}{0pt plus 5cm}\#define RX\_\-DESC\_\-CTRL(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf i}}
+\end{DoxyParamCaption}
+)~($\ast$(unsigned int $\ast$)(RX\_\-DESC\_\-BASE+4 + 8$\ast${\bf i}))}}
+\label{emac_8h_a8bdfebe21c2c684f831acd1de55f74a7}
+
+
+Definition at line 40 of file emac.h.
+
+\hypertarget{emac_8h_af4cc816cc821b2a2f01b3cb4987a20c1}{
+\index{emac.h@{emac.h}!RX\_\-DESC\_\-PACKET@{RX\_\-DESC\_\-PACKET}}
+\index{RX\_\-DESC\_\-PACKET@{RX\_\-DESC\_\-PACKET}!emac.h@{emac.h}}
+\subsubsection[{RX\_\-DESC\_\-PACKET}]{\setlength{\rightskip}{0pt plus 5cm}\#define RX\_\-DESC\_\-PACKET(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf i}}
+\end{DoxyParamCaption}
+)~($\ast$(unsigned int $\ast$)(RX\_\-DESC\_\-BASE   + 8$\ast${\bf i}))}}
+\label{emac_8h_af4cc816cc821b2a2f01b3cb4987a20c1}
+
+
+Definition at line 39 of file emac.h.
+
+\hypertarget{emac_8h_af79e247a49d9bd2f0b4c4bacc2ffabd6}{
+\index{emac.h@{emac.h}!RX\_\-STAT\_\-BASE@{RX\_\-STAT\_\-BASE}}
+\index{RX\_\-STAT\_\-BASE@{RX\_\-STAT\_\-BASE}!emac.h@{emac.h}}
+\subsubsection[{RX\_\-STAT\_\-BASE}]{\setlength{\rightskip}{0pt plus 5cm}\#define RX\_\-STAT\_\-BASE~(RX\_\-DESC\_\-BASE + NUM\_\-RX\_\-FRAG$\ast$8)}}
+\label{emac_8h_af79e247a49d9bd2f0b4c4bacc2ffabd6}
+
+
+Definition at line 32 of file emac.h.
+
+\hypertarget{emac_8h_a769c9e330a78150b792220c48272bd04}{
+\index{emac.h@{emac.h}!RX\_\-STAT\_\-HASHCRC@{RX\_\-STAT\_\-HASHCRC}}
+\index{RX\_\-STAT\_\-HASHCRC@{RX\_\-STAT\_\-HASHCRC}!emac.h@{emac.h}}
+\subsubsection[{RX\_\-STAT\_\-HASHCRC}]{\setlength{\rightskip}{0pt plus 5cm}\#define RX\_\-STAT\_\-HASHCRC(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf i}}
+\end{DoxyParamCaption}
+)~($\ast$(unsigned int $\ast$)(RX\_\-STAT\_\-BASE+4 + 8$\ast${\bf i}))}}
+\label{emac_8h_a769c9e330a78150b792220c48272bd04}
+
+
+Definition at line 42 of file emac.h.
+
+\hypertarget{emac_8h_abeca03ea3777be654723de075f003988}{
+\index{emac.h@{emac.h}!RX\_\-STAT\_\-INFO@{RX\_\-STAT\_\-INFO}}
+\index{RX\_\-STAT\_\-INFO@{RX\_\-STAT\_\-INFO}!emac.h@{emac.h}}
+\subsubsection[{RX\_\-STAT\_\-INFO}]{\setlength{\rightskip}{0pt plus 5cm}\#define RX\_\-STAT\_\-INFO(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf i}}
+\end{DoxyParamCaption}
+)~($\ast$(unsigned int $\ast$)(RX\_\-STAT\_\-BASE   + 8$\ast${\bf i}))}}
+\label{emac_8h_abeca03ea3777be654723de075f003988}
+
+
+Definition at line 41 of file emac.h.
+
+\hypertarget{emac_8h_afe60ad6257d501f0e9834ba27a5ac147}{
+\index{emac.h@{emac.h}!SR\_\-RX\_\-EN@{SR\_\-RX\_\-EN}}
+\index{SR\_\-RX\_\-EN@{SR\_\-RX\_\-EN}!emac.h@{emac.h}}
+\subsubsection[{SR\_\-RX\_\-EN}]{\setlength{\rightskip}{0pt plus 5cm}\#define SR\_\-RX\_\-EN~0x00000001}}
+\label{emac_8h_afe60ad6257d501f0e9834ba27a5ac147}
+
+
+Definition at line 138 of file emac.h.
+
+\hypertarget{emac_8h_a9e56534faaa8c695a91c76cb3dd24c1f}{
+\index{emac.h@{emac.h}!SR\_\-TX\_\-EN@{SR\_\-TX\_\-EN}}
+\index{SR\_\-TX\_\-EN@{SR\_\-TX\_\-EN}!emac.h@{emac.h}}
+\subsubsection[{SR\_\-TX\_\-EN}]{\setlength{\rightskip}{0pt plus 5cm}\#define SR\_\-TX\_\-EN~0x00000002}}
+\label{emac_8h_a9e56534faaa8c695a91c76cb3dd24c1f}
+
+
+Definition at line 139 of file emac.h.
+
+\hypertarget{emac_8h_aa09c5a1334e27447c27a69faa02bc83d}{
+\index{emac.h@{emac.h}!SUPP\_\-RES\_\-RMII@{SUPP\_\-RES\_\-RMII}}
+\index{SUPP\_\-RES\_\-RMII@{SUPP\_\-RES\_\-RMII}!emac.h@{emac.h}}
+\subsubsection[{SUPP\_\-RES\_\-RMII}]{\setlength{\rightskip}{0pt plus 5cm}\#define SUPP\_\-RES\_\-RMII~0x00000800}}
+\label{emac_8h_aa09c5a1334e27447c27a69faa02bc83d}
+
+
+Definition at line 91 of file emac.h.
+
+\hypertarget{emac_8h_a3424971fe980e63b7e58fa7aa03f6a85}{
+\index{emac.h@{emac.h}!SUPP\_\-SPEED@{SUPP\_\-SPEED}}
+\index{SUPP\_\-SPEED@{SUPP\_\-SPEED}!emac.h@{emac.h}}
+\subsubsection[{SUPP\_\-SPEED}]{\setlength{\rightskip}{0pt plus 5cm}\#define SUPP\_\-SPEED~0x00000100}}
+\label{emac_8h_a3424971fe980e63b7e58fa7aa03f6a85}
+
+
+Definition at line 90 of file emac.h.
+
+\hypertarget{emac_8h_a892af3de371b524fcf60fa7b8a6d8f35}{
+\index{emac.h@{emac.h}!TCTRL\_\-CRC@{TCTRL\_\-CRC}}
+\index{TCTRL\_\-CRC@{TCTRL\_\-CRC}!emac.h@{emac.h}}
+\subsubsection[{TCTRL\_\-CRC}]{\setlength{\rightskip}{0pt plus 5cm}\#define TCTRL\_\-CRC~0x20000000}}
+\label{emac_8h_a892af3de371b524fcf60fa7b8a6d8f35}
+
+
+Definition at line 257 of file emac.h.
+
+\hypertarget{emac_8h_ac5d178dbd44a66a8f9b4590b37c34284}{
+\index{emac.h@{emac.h}!TCTRL\_\-HUGE@{TCTRL\_\-HUGE}}
+\index{TCTRL\_\-HUGE@{TCTRL\_\-HUGE}!emac.h@{emac.h}}
+\subsubsection[{TCTRL\_\-HUGE}]{\setlength{\rightskip}{0pt plus 5cm}\#define TCTRL\_\-HUGE~0x08000000}}
+\label{emac_8h_ac5d178dbd44a66a8f9b4590b37c34284}
+
+
+Definition at line 255 of file emac.h.
+
+\hypertarget{emac_8h_a5d18aeeeeb5a3b16ffeb793d3805a62c}{
+\index{emac.h@{emac.h}!TCTRL\_\-INT@{TCTRL\_\-INT}}
+\index{TCTRL\_\-INT@{TCTRL\_\-INT}!emac.h@{emac.h}}
+\subsubsection[{TCTRL\_\-INT}]{\setlength{\rightskip}{0pt plus 5cm}\#define TCTRL\_\-INT~0x80000000}}
+\label{emac_8h_a5d18aeeeeb5a3b16ffeb793d3805a62c}
+
+
+Definition at line 259 of file emac.h.
+
+\hypertarget{emac_8h_afa58f98215e917d77982836c6a682883}{
+\index{emac.h@{emac.h}!TCTRL\_\-LAST@{TCTRL\_\-LAST}}
+\index{TCTRL\_\-LAST@{TCTRL\_\-LAST}!emac.h@{emac.h}}
+\subsubsection[{TCTRL\_\-LAST}]{\setlength{\rightskip}{0pt plus 5cm}\#define TCTRL\_\-LAST~0x40000000}}
+\label{emac_8h_afa58f98215e917d77982836c6a682883}
+
+
+Definition at line 258 of file emac.h.
+
+\hypertarget{emac_8h_a46e54873d7ad46e8189eb1cb29e5489a}{
+\index{emac.h@{emac.h}!TCTRL\_\-OVERRIDE@{TCTRL\_\-OVERRIDE}}
+\index{TCTRL\_\-OVERRIDE@{TCTRL\_\-OVERRIDE}!emac.h@{emac.h}}
+\subsubsection[{TCTRL\_\-OVERRIDE}]{\setlength{\rightskip}{0pt plus 5cm}\#define TCTRL\_\-OVERRIDE~0x04000000}}
+\label{emac_8h_a46e54873d7ad46e8189eb1cb29e5489a}
+
+
+Definition at line 254 of file emac.h.
+
+\hypertarget{emac_8h_a7207e38ed5fa902f6349e6ef174369f8}{
+\index{emac.h@{emac.h}!TCTRL\_\-PAD@{TCTRL\_\-PAD}}
+\index{TCTRL\_\-PAD@{TCTRL\_\-PAD}!emac.h@{emac.h}}
+\subsubsection[{TCTRL\_\-PAD}]{\setlength{\rightskip}{0pt plus 5cm}\#define TCTRL\_\-PAD~0x10000000}}
+\label{emac_8h_a7207e38ed5fa902f6349e6ef174369f8}
+
+
+Definition at line 256 of file emac.h.
+
+\hypertarget{emac_8h_abc57dc2c0472ea0471a320ad652697f6}{
+\index{emac.h@{emac.h}!TCTRL\_\-SIZE@{TCTRL\_\-SIZE}}
+\index{TCTRL\_\-SIZE@{TCTRL\_\-SIZE}!emac.h@{emac.h}}
+\subsubsection[{TCTRL\_\-SIZE}]{\setlength{\rightskip}{0pt plus 5cm}\#define TCTRL\_\-SIZE~0x000007FF}}
+\label{emac_8h_abc57dc2c0472ea0471a320ad652697f6}
+
+
+Definition at line 253 of file emac.h.
+
+\hypertarget{emac_8h_ae757a3df2d994d17929d3c35d192cbef}{
+\index{emac.h@{emac.h}!TEST\_\-SHCUT\_\-PQUANTA@{TEST\_\-SHCUT\_\-PQUANTA}}
+\index{TEST\_\-SHCUT\_\-PQUANTA@{TEST\_\-SHCUT\_\-PQUANTA}!emac.h@{emac.h}}
+\subsubsection[{TEST\_\-SHCUT\_\-PQUANTA}]{\setlength{\rightskip}{0pt plus 5cm}\#define TEST\_\-SHCUT\_\-PQUANTA~0x00000001}}
+\label{emac_8h_ae757a3df2d994d17929d3c35d192cbef}
+
+
+Definition at line 94 of file emac.h.
+
+\hypertarget{emac_8h_a571e66221da4c7798e001b8e84b1e1ed}{
+\index{emac.h@{emac.h}!TEST\_\-TST\_\-BACKP@{TEST\_\-TST\_\-BACKP}}
+\index{TEST\_\-TST\_\-BACKP@{TEST\_\-TST\_\-BACKP}!emac.h@{emac.h}}
+\subsubsection[{TEST\_\-TST\_\-BACKP}]{\setlength{\rightskip}{0pt plus 5cm}\#define TEST\_\-TST\_\-BACKP~0x00000004}}
+\label{emac_8h_a571e66221da4c7798e001b8e84b1e1ed}
+
+
+Definition at line 96 of file emac.h.
+
+\hypertarget{emac_8h_a61b9b8984c5fe8881bf5f5d435edab60}{
+\index{emac.h@{emac.h}!TEST\_\-TST\_\-PAUSE@{TEST\_\-TST\_\-PAUSE}}
+\index{TEST\_\-TST\_\-PAUSE@{TEST\_\-TST\_\-PAUSE}!emac.h@{emac.h}}
+\subsubsection[{TEST\_\-TST\_\-PAUSE}]{\setlength{\rightskip}{0pt plus 5cm}\#define TEST\_\-TST\_\-PAUSE~0x00000002}}
+\label{emac_8h_a61b9b8984c5fe8881bf5f5d435edab60}
+
+
+Definition at line 95 of file emac.h.
+
+\hypertarget{emac_8h_ad0f521a5f81cdb7bfd49897a047b3873}{
+\index{emac.h@{emac.h}!TINFO\_\-COL\_\-CNT@{TINFO\_\-COL\_\-CNT}}
+\index{TINFO\_\-COL\_\-CNT@{TINFO\_\-COL\_\-CNT}!emac.h@{emac.h}}
+\subsubsection[{TINFO\_\-COL\_\-CNT}]{\setlength{\rightskip}{0pt plus 5cm}\#define TINFO\_\-COL\_\-CNT~0x01E00000}}
+\label{emac_8h_ad0f521a5f81cdb7bfd49897a047b3873}
+
+
+Definition at line 262 of file emac.h.
+
+\hypertarget{emac_8h_a05a99b232b02eba19797e925c81e37d4}{
+\index{emac.h@{emac.h}!TINFO\_\-DEFER@{TINFO\_\-DEFER}}
+\index{TINFO\_\-DEFER@{TINFO\_\-DEFER}!emac.h@{emac.h}}
+\subsubsection[{TINFO\_\-DEFER}]{\setlength{\rightskip}{0pt plus 5cm}\#define TINFO\_\-DEFER~0x02000000}}
+\label{emac_8h_a05a99b232b02eba19797e925c81e37d4}
+
+
+Definition at line 263 of file emac.h.
+
+\hypertarget{emac_8h_ab62a10e4afa451e99275482c284a0ac2}{
+\index{emac.h@{emac.h}!TINFO\_\-ERR@{TINFO\_\-ERR}}
+\index{TINFO\_\-ERR@{TINFO\_\-ERR}!emac.h@{emac.h}}
+\subsubsection[{TINFO\_\-ERR}]{\setlength{\rightskip}{0pt plus 5cm}\#define TINFO\_\-ERR~0x80000000}}
+\label{emac_8h_ab62a10e4afa451e99275482c284a0ac2}
+
+
+Definition at line 269 of file emac.h.
+
+\hypertarget{emac_8h_aeebe0a5440bd7de2cd9c50bfa0f90d16}{
+\index{emac.h@{emac.h}!TINFO\_\-EXCESS\_\-COL@{TINFO\_\-EXCESS\_\-COL}}
+\index{TINFO\_\-EXCESS\_\-COL@{TINFO\_\-EXCESS\_\-COL}!emac.h@{emac.h}}
+\subsubsection[{TINFO\_\-EXCESS\_\-COL}]{\setlength{\rightskip}{0pt plus 5cm}\#define TINFO\_\-EXCESS\_\-COL~0x08000000}}
+\label{emac_8h_aeebe0a5440bd7de2cd9c50bfa0f90d16}
+
+
+Definition at line 265 of file emac.h.
+
+\hypertarget{emac_8h_aa549b023fe020c09e7f633c7566e16e6}{
+\index{emac.h@{emac.h}!TINFO\_\-EXCESS\_\-DEF@{TINFO\_\-EXCESS\_\-DEF}}
+\index{TINFO\_\-EXCESS\_\-DEF@{TINFO\_\-EXCESS\_\-DEF}!emac.h@{emac.h}}
+\subsubsection[{TINFO\_\-EXCESS\_\-DEF}]{\setlength{\rightskip}{0pt plus 5cm}\#define TINFO\_\-EXCESS\_\-DEF~0x04000000}}
+\label{emac_8h_aa549b023fe020c09e7f633c7566e16e6}
+
+
+Definition at line 264 of file emac.h.
+
+\hypertarget{emac_8h_ae93eacf848b9514efc5f6e6d38211ab5}{
+\index{emac.h@{emac.h}!TINFO\_\-LATE\_\-COL@{TINFO\_\-LATE\_\-COL}}
+\index{TINFO\_\-LATE\_\-COL@{TINFO\_\-LATE\_\-COL}!emac.h@{emac.h}}
+\subsubsection[{TINFO\_\-LATE\_\-COL}]{\setlength{\rightskip}{0pt plus 5cm}\#define TINFO\_\-LATE\_\-COL~0x10000000}}
+\label{emac_8h_ae93eacf848b9514efc5f6e6d38211ab5}
+
+
+Definition at line 266 of file emac.h.
+
+\hypertarget{emac_8h_aacc5f1654a090d8405839dbbae2ad9b4}{
+\index{emac.h@{emac.h}!TINFO\_\-NO\_\-DESCR@{TINFO\_\-NO\_\-DESCR}}
+\index{TINFO\_\-NO\_\-DESCR@{TINFO\_\-NO\_\-DESCR}!emac.h@{emac.h}}
+\subsubsection[{TINFO\_\-NO\_\-DESCR}]{\setlength{\rightskip}{0pt plus 5cm}\#define TINFO\_\-NO\_\-DESCR~0x40000000}}
+\label{emac_8h_aacc5f1654a090d8405839dbbae2ad9b4}
+
+
+Definition at line 268 of file emac.h.
+
+\hypertarget{emac_8h_ad8374cf612c7b2b3e355cd70ee09d06e}{
+\index{emac.h@{emac.h}!TINFO\_\-UNDERRUN@{TINFO\_\-UNDERRUN}}
+\index{TINFO\_\-UNDERRUN@{TINFO\_\-UNDERRUN}!emac.h@{emac.h}}
+\subsubsection[{TINFO\_\-UNDERRUN}]{\setlength{\rightskip}{0pt plus 5cm}\#define TINFO\_\-UNDERRUN~0x20000000}}
+\label{emac_8h_ad8374cf612c7b2b3e355cd70ee09d06e}
+
+
+Definition at line 267 of file emac.h.
+
+\hypertarget{emac_8h_a4bcbd2a3a7d6526a1ea1085b24e2bda1}{
+\index{emac.h@{emac.h}!TSV0\_\-BACK\_\-PRESS@{TSV0\_\-BACK\_\-PRESS}}
+\index{TSV0\_\-BACK\_\-PRESS@{TSV0\_\-BACK\_\-PRESS}!emac.h@{emac.h}}
+\subsubsection[{TSV0\_\-BACK\_\-PRESS}]{\setlength{\rightskip}{0pt plus 5cm}\#define TSV0\_\-BACK\_\-PRESS~0x40000000}}
+\label{emac_8h_a4bcbd2a3a7d6526a1ea1085b24e2bda1}
+
+
+Definition at line 157 of file emac.h.
+
+\hypertarget{emac_8h_a1680714d6a862ce4e5812667650c7d0b}{
+\index{emac.h@{emac.h}!TSV0\_\-BCAST@{TSV0\_\-BCAST}}
+\index{TSV0\_\-BCAST@{TSV0\_\-BCAST}!emac.h@{emac.h}}
+\subsubsection[{TSV0\_\-BCAST}]{\setlength{\rightskip}{0pt plus 5cm}\#define TSV0\_\-BCAST~0x00000020}}
+\label{emac_8h_a1680714d6a862ce4e5812667650c7d0b}
+
+
+Definition at line 147 of file emac.h.
+
+\hypertarget{emac_8h_ad2b950218a9e865ca860d61b43275b76}{
+\index{emac.h@{emac.h}!TSV0\_\-BYTES@{TSV0\_\-BYTES}}
+\index{TSV0\_\-BYTES@{TSV0\_\-BYTES}!emac.h@{emac.h}}
+\subsubsection[{TSV0\_\-BYTES}]{\setlength{\rightskip}{0pt plus 5cm}\#define TSV0\_\-BYTES~0x0FFFF000}}
+\label{emac_8h_ad2b950218a9e865ca860d61b43275b76}
+
+
+Definition at line 154 of file emac.h.
+
+\hypertarget{emac_8h_a64b8fd0cd4832d63ed322c71bb9afffe}{
+\index{emac.h@{emac.h}!TSV0\_\-CRC\_\-ERR@{TSV0\_\-CRC\_\-ERR}}
+\index{TSV0\_\-CRC\_\-ERR@{TSV0\_\-CRC\_\-ERR}!emac.h@{emac.h}}
+\subsubsection[{TSV0\_\-CRC\_\-ERR}]{\setlength{\rightskip}{0pt plus 5cm}\#define TSV0\_\-CRC\_\-ERR~0x00000001}}
+\label{emac_8h_a64b8fd0cd4832d63ed322c71bb9afffe}
+
+
+Definition at line 142 of file emac.h.
+
+\hypertarget{emac_8h_aa860fdf06b9cdb63f523b0a6617a04dd}{
+\index{emac.h@{emac.h}!TSV0\_\-CTRL\_\-FRAME@{TSV0\_\-CTRL\_\-FRAME}}
+\index{TSV0\_\-CTRL\_\-FRAME@{TSV0\_\-CTRL\_\-FRAME}!emac.h@{emac.h}}
+\subsubsection[{TSV0\_\-CTRL\_\-FRAME}]{\setlength{\rightskip}{0pt plus 5cm}\#define TSV0\_\-CTRL\_\-FRAME~0x10000000}}
+\label{emac_8h_aa860fdf06b9cdb63f523b0a6617a04dd}
+
+
+Definition at line 155 of file emac.h.
+
+\hypertarget{emac_8h_a35bb2e4abc98d7d9c1a41dbd9507e42f}{
+\index{emac.h@{emac.h}!TSV0\_\-DONE@{TSV0\_\-DONE}}
+\index{TSV0\_\-DONE@{TSV0\_\-DONE}!emac.h@{emac.h}}
+\subsubsection[{TSV0\_\-DONE}]{\setlength{\rightskip}{0pt plus 5cm}\#define TSV0\_\-DONE~0x00000008}}
+\label{emac_8h_a35bb2e4abc98d7d9c1a41dbd9507e42f}
+
+
+Definition at line 145 of file emac.h.
+
+\hypertarget{emac_8h_adfcebb04b09004d23d25acc5662618d5}{
+\index{emac.h@{emac.h}!TSV0\_\-EXC\_\-COLL@{TSV0\_\-EXC\_\-COLL}}
+\index{TSV0\_\-EXC\_\-COLL@{TSV0\_\-EXC\_\-COLL}!emac.h@{emac.h}}
+\subsubsection[{TSV0\_\-EXC\_\-COLL}]{\setlength{\rightskip}{0pt plus 5cm}\#define TSV0\_\-EXC\_\-COLL~0x00000100}}
+\label{emac_8h_adfcebb04b09004d23d25acc5662618d5}
+
+
+Definition at line 150 of file emac.h.
+
+\hypertarget{emac_8h_a2279441493e14b8f87eee7a787801eaa}{
+\index{emac.h@{emac.h}!TSV0\_\-EXC\_\-DEFER@{TSV0\_\-EXC\_\-DEFER}}
+\index{TSV0\_\-EXC\_\-DEFER@{TSV0\_\-EXC\_\-DEFER}!emac.h@{emac.h}}
+\subsubsection[{TSV0\_\-EXC\_\-DEFER}]{\setlength{\rightskip}{0pt plus 5cm}\#define TSV0\_\-EXC\_\-DEFER~0x00000080}}
+\label{emac_8h_a2279441493e14b8f87eee7a787801eaa}
+
+
+Definition at line 149 of file emac.h.
+
+\hypertarget{emac_8h_a1026b54e2d01e0d4db0c514a98a3d874}{
+\index{emac.h@{emac.h}!TSV0\_\-GIANT@{TSV0\_\-GIANT}}
+\index{TSV0\_\-GIANT@{TSV0\_\-GIANT}!emac.h@{emac.h}}
+\subsubsection[{TSV0\_\-GIANT}]{\setlength{\rightskip}{0pt plus 5cm}\#define TSV0\_\-GIANT~0x00000400}}
+\label{emac_8h_a1026b54e2d01e0d4db0c514a98a3d874}
+
+
+Definition at line 152 of file emac.h.
+
+\hypertarget{emac_8h_a76972a1db37f994d82a4b0ca99bd77b8}{
+\index{emac.h@{emac.h}!TSV0\_\-LATE\_\-COLL@{TSV0\_\-LATE\_\-COLL}}
+\index{TSV0\_\-LATE\_\-COLL@{TSV0\_\-LATE\_\-COLL}!emac.h@{emac.h}}
+\subsubsection[{TSV0\_\-LATE\_\-COLL}]{\setlength{\rightskip}{0pt plus 5cm}\#define TSV0\_\-LATE\_\-COLL~0x00000200}}
+\label{emac_8h_a76972a1db37f994d82a4b0ca99bd77b8}
+
+
+Definition at line 151 of file emac.h.
+
+\hypertarget{emac_8h_adbfb9ec99f7f1491bf588b1abd6c1af2}{
+\index{emac.h@{emac.h}!TSV0\_\-LEN\_\-CHKERR@{TSV0\_\-LEN\_\-CHKERR}}
+\index{TSV0\_\-LEN\_\-CHKERR@{TSV0\_\-LEN\_\-CHKERR}!emac.h@{emac.h}}
+\subsubsection[{TSV0\_\-LEN\_\-CHKERR}]{\setlength{\rightskip}{0pt plus 5cm}\#define TSV0\_\-LEN\_\-CHKERR~0x00000002}}
+\label{emac_8h_adbfb9ec99f7f1491bf588b1abd6c1af2}
+
+
+Definition at line 143 of file emac.h.
+
+\hypertarget{emac_8h_a48e02d11e45785ff49424c8c2fac9e57}{
+\index{emac.h@{emac.h}!TSV0\_\-LEN\_\-OUTRNG@{TSV0\_\-LEN\_\-OUTRNG}}
+\index{TSV0\_\-LEN\_\-OUTRNG@{TSV0\_\-LEN\_\-OUTRNG}!emac.h@{emac.h}}
+\subsubsection[{TSV0\_\-LEN\_\-OUTRNG}]{\setlength{\rightskip}{0pt plus 5cm}\#define TSV0\_\-LEN\_\-OUTRNG~0x00000004}}
+\label{emac_8h_a48e02d11e45785ff49424c8c2fac9e57}
+
+
+Definition at line 144 of file emac.h.
+
+\hypertarget{emac_8h_ae7ce8dd987149f0865582572f644121c}{
+\index{emac.h@{emac.h}!TSV0\_\-MCAST@{TSV0\_\-MCAST}}
+\index{TSV0\_\-MCAST@{TSV0\_\-MCAST}!emac.h@{emac.h}}
+\subsubsection[{TSV0\_\-MCAST}]{\setlength{\rightskip}{0pt plus 5cm}\#define TSV0\_\-MCAST~0x00000010}}
+\label{emac_8h_ae7ce8dd987149f0865582572f644121c}
+
+
+Definition at line 146 of file emac.h.
+
+\hypertarget{emac_8h_a65d49b960a704d8dd8cd2bad6e84ce27}{
+\index{emac.h@{emac.h}!TSV0\_\-PAUSE@{TSV0\_\-PAUSE}}
+\index{TSV0\_\-PAUSE@{TSV0\_\-PAUSE}!emac.h@{emac.h}}
+\subsubsection[{TSV0\_\-PAUSE}]{\setlength{\rightskip}{0pt plus 5cm}\#define TSV0\_\-PAUSE~0x20000000}}
+\label{emac_8h_a65d49b960a704d8dd8cd2bad6e84ce27}
+
+
+Definition at line 156 of file emac.h.
+
+\hypertarget{emac_8h_ae8c4387b64410aad6fffc07330c1d5ab}{
+\index{emac.h@{emac.h}!TSV0\_\-PKT\_\-DEFER@{TSV0\_\-PKT\_\-DEFER}}
+\index{TSV0\_\-PKT\_\-DEFER@{TSV0\_\-PKT\_\-DEFER}!emac.h@{emac.h}}
+\subsubsection[{TSV0\_\-PKT\_\-DEFER}]{\setlength{\rightskip}{0pt plus 5cm}\#define TSV0\_\-PKT\_\-DEFER~0x00000040}}
+\label{emac_8h_ae8c4387b64410aad6fffc07330c1d5ab}
+
+
+Definition at line 148 of file emac.h.
+
+\hypertarget{emac_8h_aa513f987a5463163b9146b51349317b5}{
+\index{emac.h@{emac.h}!TSV0\_\-UNDERRUN@{TSV0\_\-UNDERRUN}}
+\index{TSV0\_\-UNDERRUN@{TSV0\_\-UNDERRUN}!emac.h@{emac.h}}
+\subsubsection[{TSV0\_\-UNDERRUN}]{\setlength{\rightskip}{0pt plus 5cm}\#define TSV0\_\-UNDERRUN~0x00000800}}
+\label{emac_8h_aa513f987a5463163b9146b51349317b5}
+
+
+Definition at line 153 of file emac.h.
+
+\hypertarget{emac_8h_aabb2535572996b1c7000f7ab46c28df6}{
+\index{emac.h@{emac.h}!TSV0\_\-VLAN@{TSV0\_\-VLAN}}
+\index{TSV0\_\-VLAN@{TSV0\_\-VLAN}!emac.h@{emac.h}}
+\subsubsection[{TSV0\_\-VLAN}]{\setlength{\rightskip}{0pt plus 5cm}\#define TSV0\_\-VLAN~0x80000000}}
+\label{emac_8h_aabb2535572996b1c7000f7ab46c28df6}
+
+
+Definition at line 158 of file emac.h.
+
+\hypertarget{emac_8h_a05d5ea1ee3f87bed8b30b907f86d95fb}{
+\index{emac.h@{emac.h}!TSV1\_\-BYTE\_\-CNT@{TSV1\_\-BYTE\_\-CNT}}
+\index{TSV1\_\-BYTE\_\-CNT@{TSV1\_\-BYTE\_\-CNT}!emac.h@{emac.h}}
+\subsubsection[{TSV1\_\-BYTE\_\-CNT}]{\setlength{\rightskip}{0pt plus 5cm}\#define TSV1\_\-BYTE\_\-CNT~0x0000FFFF}}
+\label{emac_8h_a05d5ea1ee3f87bed8b30b907f86d95fb}
+
+
+Definition at line 161 of file emac.h.
+
+\hypertarget{emac_8h_aa2775426f5761743ddec9ecbe62c27c2}{
+\index{emac.h@{emac.h}!TSV1\_\-COLL\_\-CNT@{TSV1\_\-COLL\_\-CNT}}
+\index{TSV1\_\-COLL\_\-CNT@{TSV1\_\-COLL\_\-CNT}!emac.h@{emac.h}}
+\subsubsection[{TSV1\_\-COLL\_\-CNT}]{\setlength{\rightskip}{0pt plus 5cm}\#define TSV1\_\-COLL\_\-CNT~0x000F0000}}
+\label{emac_8h_aa2775426f5761743ddec9ecbe62c27c2}
+
+
+Definition at line 162 of file emac.h.
+
+\hypertarget{emac_8h_aeb63295b8ffbc937d82d9219e5759582}{
+\index{emac.h@{emac.h}!TX\_\-BUF@{TX\_\-BUF}}
+\index{TX\_\-BUF@{TX\_\-BUF}!emac.h@{emac.h}}
+\subsubsection[{TX\_\-BUF}]{\setlength{\rightskip}{0pt plus 5cm}\#define TX\_\-BUF(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf i}}
+\end{DoxyParamCaption}
+)~(TX\_\-BUF\_\-BASE + ETH\_\-FRAG\_\-SIZE$\ast${\bf i})}}
+\label{emac_8h_aeb63295b8ffbc937d82d9219e5759582}
+
+
+Definition at line 47 of file emac.h.
+
+\hypertarget{emac_8h_a6cb77f0e696b0fa650677daa12fec41e}{
+\index{emac.h@{emac.h}!TX\_\-BUF\_\-BASE@{TX\_\-BUF\_\-BASE}}
+\index{TX\_\-BUF\_\-BASE@{TX\_\-BUF\_\-BASE}!emac.h@{emac.h}}
+\subsubsection[{TX\_\-BUF\_\-BASE}]{\setlength{\rightskip}{0pt plus 5cm}\#define TX\_\-BUF\_\-BASE~(RX\_\-BUF\_\-BASE  + NUM\_\-RX\_\-FRAG$\ast$ETH\_\-FRAG\_\-SIZE)}}
+\label{emac_8h_a6cb77f0e696b0fa650677daa12fec41e}
+
+
+Definition at line 36 of file emac.h.
+
+\hypertarget{emac_8h_ab864482ea76340dbd397711f8e5b6781}{
+\index{emac.h@{emac.h}!TX\_\-DESC\_\-BASE@{TX\_\-DESC\_\-BASE}}
+\index{TX\_\-DESC\_\-BASE@{TX\_\-DESC\_\-BASE}!emac.h@{emac.h}}
+\subsubsection[{TX\_\-DESC\_\-BASE}]{\setlength{\rightskip}{0pt plus 5cm}\#define TX\_\-DESC\_\-BASE~(RX\_\-STAT\_\-BASE + NUM\_\-RX\_\-FRAG$\ast$8)}}
+\label{emac_8h_ab864482ea76340dbd397711f8e5b6781}
+
+
+Definition at line 33 of file emac.h.
+
+\hypertarget{emac_8h_a20022a53cb91ae20ad30782c5999eb0c}{
+\index{emac.h@{emac.h}!TX\_\-DESC\_\-CTRL@{TX\_\-DESC\_\-CTRL}}
+\index{TX\_\-DESC\_\-CTRL@{TX\_\-DESC\_\-CTRL}!emac.h@{emac.h}}
+\subsubsection[{TX\_\-DESC\_\-CTRL}]{\setlength{\rightskip}{0pt plus 5cm}\#define TX\_\-DESC\_\-CTRL(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf i}}
+\end{DoxyParamCaption}
+)~($\ast$(unsigned int $\ast$)(TX\_\-DESC\_\-BASE+4 + 8$\ast${\bf i}))}}
+\label{emac_8h_a20022a53cb91ae20ad30782c5999eb0c}
+
+
+Definition at line 44 of file emac.h.
+
+\hypertarget{emac_8h_a3a4e5cf7cf4ec1b2f7e8032a30c59048}{
+\index{emac.h@{emac.h}!TX\_\-DESC\_\-PACKET@{TX\_\-DESC\_\-PACKET}}
+\index{TX\_\-DESC\_\-PACKET@{TX\_\-DESC\_\-PACKET}!emac.h@{emac.h}}
+\subsubsection[{TX\_\-DESC\_\-PACKET}]{\setlength{\rightskip}{0pt plus 5cm}\#define TX\_\-DESC\_\-PACKET(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf i}}
+\end{DoxyParamCaption}
+)~($\ast$(unsigned int $\ast$)(TX\_\-DESC\_\-BASE   + 8$\ast${\bf i}))}}
+\label{emac_8h_a3a4e5cf7cf4ec1b2f7e8032a30c59048}
+
+
+Definition at line 43 of file emac.h.
+
+\hypertarget{emac_8h_a5d60966396c5e0f1fd12ab3e937522a9}{
+\index{emac.h@{emac.h}!TX\_\-STAT\_\-BASE@{TX\_\-STAT\_\-BASE}}
+\index{TX\_\-STAT\_\-BASE@{TX\_\-STAT\_\-BASE}!emac.h@{emac.h}}
+\subsubsection[{TX\_\-STAT\_\-BASE}]{\setlength{\rightskip}{0pt plus 5cm}\#define TX\_\-STAT\_\-BASE~(TX\_\-DESC\_\-BASE + NUM\_\-TX\_\-FRAG$\ast$8)}}
+\label{emac_8h_a5d60966396c5e0f1fd12ab3e937522a9}
+
+
+Definition at line 34 of file emac.h.
+
+\hypertarget{emac_8h_a346933a584daf315ab0ad830be905a9f}{
+\index{emac.h@{emac.h}!TX\_\-STAT\_\-INFO@{TX\_\-STAT\_\-INFO}}
+\index{TX\_\-STAT\_\-INFO@{TX\_\-STAT\_\-INFO}!emac.h@{emac.h}}
+\subsubsection[{TX\_\-STAT\_\-INFO}]{\setlength{\rightskip}{0pt plus 5cm}\#define TX\_\-STAT\_\-INFO(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf i}}
+\end{DoxyParamCaption}
+)~($\ast$(unsigned int $\ast$)(TX\_\-STAT\_\-BASE   + 4$\ast${\bf i}))}}
+\label{emac_8h_a346933a584daf315ab0ad830be905a9f}
+
+
+Definition at line 45 of file emac.h.
+
+\hypertarget{emac_8h_a3d5676d272ee04609415a1a6a3ea68fe}{
+\index{emac.h@{emac.h}!WOL\_\-BCAST@{WOL\_\-BCAST}}
+\index{WOL\_\-BCAST@{WOL\_\-BCAST}!emac.h@{emac.h}}
+\subsubsection[{WOL\_\-BCAST}]{\setlength{\rightskip}{0pt plus 5cm}\#define WOL\_\-BCAST~0x00000002}}
+\label{emac_8h_a3d5676d272ee04609415a1a6a3ea68fe}
+
+
+Definition at line 201 of file emac.h.
+
+\hypertarget{emac_8h_a5a7a3d5aab198f1102eab51e0cf76ece}{
+\index{emac.h@{emac.h}!WOL\_\-MAG\_\-PACKET@{WOL\_\-MAG\_\-PACKET}}
+\index{WOL\_\-MAG\_\-PACKET@{WOL\_\-MAG\_\-PACKET}!emac.h@{emac.h}}
+\subsubsection[{WOL\_\-MAG\_\-PACKET}]{\setlength{\rightskip}{0pt plus 5cm}\#define WOL\_\-MAG\_\-PACKET~0x00000100}}
+\label{emac_8h_a5a7a3d5aab198f1102eab51e0cf76ece}
+
+
+Definition at line 207 of file emac.h.
+
+\hypertarget{emac_8h_a59b104d1c5ff78b8492df69eb765b742}{
+\index{emac.h@{emac.h}!WOL\_\-MCAST@{WOL\_\-MCAST}}
+\index{WOL\_\-MCAST@{WOL\_\-MCAST}!emac.h@{emac.h}}
+\subsubsection[{WOL\_\-MCAST}]{\setlength{\rightskip}{0pt plus 5cm}\#define WOL\_\-MCAST~0x00000004}}
+\label{emac_8h_a59b104d1c5ff78b8492df69eb765b742}
+
+
+Definition at line 202 of file emac.h.
+
+\hypertarget{emac_8h_ad9fac80b5a5e3b7b7d4d8ae8cd0d7297}{
+\index{emac.h@{emac.h}!WOL\_\-MCAST\_\-HASH@{WOL\_\-MCAST\_\-HASH}}
+\index{WOL\_\-MCAST\_\-HASH@{WOL\_\-MCAST\_\-HASH}!emac.h@{emac.h}}
+\subsubsection[{WOL\_\-MCAST\_\-HASH}]{\setlength{\rightskip}{0pt plus 5cm}\#define WOL\_\-MCAST\_\-HASH~0x00000010}}
+\label{emac_8h_ad9fac80b5a5e3b7b7d4d8ae8cd0d7297}
+
+
+Definition at line 204 of file emac.h.
+
+\hypertarget{emac_8h_a05edbda5a8e0befa6a747cbc170ccd61}{
+\index{emac.h@{emac.h}!WOL\_\-PERFECT@{WOL\_\-PERFECT}}
+\index{WOL\_\-PERFECT@{WOL\_\-PERFECT}!emac.h@{emac.h}}
+\subsubsection[{WOL\_\-PERFECT}]{\setlength{\rightskip}{0pt plus 5cm}\#define WOL\_\-PERFECT~0x00000020}}
+\label{emac_8h_a05edbda5a8e0befa6a747cbc170ccd61}
+
+
+Definition at line 205 of file emac.h.
+
+\hypertarget{emac_8h_a6c57db2b42dd8286d529f01ffcec997e}{
+\index{emac.h@{emac.h}!WOL\_\-RX\_\-FILTER@{WOL\_\-RX\_\-FILTER}}
+\index{WOL\_\-RX\_\-FILTER@{WOL\_\-RX\_\-FILTER}!emac.h@{emac.h}}
+\subsubsection[{WOL\_\-RX\_\-FILTER}]{\setlength{\rightskip}{0pt plus 5cm}\#define WOL\_\-RX\_\-FILTER~0x00000080}}
+\label{emac_8h_a6c57db2b42dd8286d529f01ffcec997e}
+
+
+Definition at line 206 of file emac.h.
+
+\hypertarget{emac_8h_a1a5bae74bcda3ed46a892d11cdb7a50a}{
+\index{emac.h@{emac.h}!WOL\_\-UCAST@{WOL\_\-UCAST}}
+\index{WOL\_\-UCAST@{WOL\_\-UCAST}!emac.h@{emac.h}}
+\subsubsection[{WOL\_\-UCAST}]{\setlength{\rightskip}{0pt plus 5cm}\#define WOL\_\-UCAST~0x00000001}}
+\label{emac_8h_a1a5bae74bcda3ed46a892d11cdb7a50a}
+
+
+Definition at line 200 of file emac.h.
+
+\hypertarget{emac_8h_ada3a4c2c9fe50dfae0b7bbb8b766d0ba}{
+\index{emac.h@{emac.h}!WOL\_\-UCAST\_\-HASH@{WOL\_\-UCAST\_\-HASH}}
+\index{WOL\_\-UCAST\_\-HASH@{WOL\_\-UCAST\_\-HASH}!emac.h@{emac.h}}
+\subsubsection[{WOL\_\-UCAST\_\-HASH}]{\setlength{\rightskip}{0pt plus 5cm}\#define WOL\_\-UCAST\_\-HASH~0x00000008}}
+\label{emac_8h_ada3a4c2c9fe50dfae0b7bbb8b766d0ba}
+
+
+Definition at line 203 of file emac.h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{emac_8h_a54235af1c9c42fd18c3ea1caad97ca4b}{
+\index{emac.h@{emac.h}!CheckFrameReceived@{CheckFrameReceived}}
+\index{CheckFrameReceived@{CheckFrameReceived}!emac.h@{emac.h}}
+\subsubsection[{CheckFrameReceived}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CheckFrameReceived (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{emac_8h_a54235af1c9c42fd18c3ea1caad97ca4b}
+
+
+Definition at line 328 of file emac.c.
+
+\hypertarget{emac_8h_a1a7dca81ea5d770353e4206fefe042c5}{
+\index{emac.h@{emac.h}!CopyFromFrame\_\-EMAC@{CopyFromFrame\_\-EMAC}}
+\index{CopyFromFrame\_\-EMAC@{CopyFromFrame\_\-EMAC}!emac.h@{emac.h}}
+\subsubsection[{CopyFromFrame\_\-EMAC}]{\setlength{\rightskip}{0pt plus 5cm}void CopyFromFrame\_\-EMAC (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{ Dest, }
+\item[{unsigned short}]{ Size}
+\end{DoxyParamCaption}
+)}}
+\label{emac_8h_a1a7dca81ea5d770353e4206fefe042c5}
+
+
+Definition at line 277 of file emac.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{emac_8h_a1a7dca81ea5d770353e4206fefe042c5_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{emac_8h_ae76b07cc1215a035953cc7958b861356}{
+\index{emac.h@{emac.h}!CopyToFrame\_\-EMAC@{CopyToFrame\_\-EMAC}}
+\index{CopyToFrame\_\-EMAC@{CopyToFrame\_\-EMAC}!emac.h@{emac.h}}
+\subsubsection[{CopyToFrame\_\-EMAC}]{\setlength{\rightskip}{0pt plus 5cm}void CopyToFrame\_\-EMAC (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{ Source, }
+\item[{unsigned int}]{ Size}
+\end{DoxyParamCaption}
+)}}
+\label{emac_8h_ae76b07cc1215a035953cc7958b861356}
+
+
+Definition at line 381 of file emac.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{emac_8h_ae76b07cc1215a035953cc7958b861356_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{emac_8h_a78dcd0e5393dad2f7569ba38d47008e1}{
+\index{emac.h@{emac.h}!DoSend\_\-EMAC@{DoSend\_\-EMAC}}
+\index{DoSend\_\-EMAC@{DoSend\_\-EMAC}!emac.h@{emac.h}}
+\subsubsection[{DoSend\_\-EMAC}]{\setlength{\rightskip}{0pt plus 5cm}void DoSend\_\-EMAC (
+\begin{DoxyParamCaption}
+\item[{unsigned short}]{ FrameSize}
+\end{DoxyParamCaption}
+)}}
+\label{emac_8h_a78dcd0e5393dad2f7569ba38d47008e1}
+
+
+Definition at line 393 of file emac.c.
+
+\hypertarget{emac_8h_aac915958347d3ddcbd4032eae1e4a89d}{
+\index{emac.h@{emac.h}!DummyReadFrame\_\-EMAC@{DummyReadFrame\_\-EMAC}}
+\index{DummyReadFrame\_\-EMAC@{DummyReadFrame\_\-EMAC}!emac.h@{emac.h}}
+\subsubsection[{DummyReadFrame\_\-EMAC}]{\setlength{\rightskip}{0pt plus 5cm}void DummyReadFrame\_\-EMAC (
+\begin{DoxyParamCaption}
+\item[{unsigned short}]{ Size}
+\end{DoxyParamCaption}
+)}}
+\label{emac_8h_aac915958347d3ddcbd4032eae1e4a89d}
+
+
+Definition at line 295 of file emac.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=362pt]{emac_8h_aac915958347d3ddcbd4032eae1e4a89d_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{emac_8h_a72f4541b2abeb49e7d0ee6ca0f372852}{
+\index{emac.h@{emac.h}!EndReadFrame@{EndReadFrame}}
+\index{EndReadFrame@{EndReadFrame}!emac.h@{emac.h}}
+\subsubsection[{EndReadFrame}]{\setlength{\rightskip}{0pt plus 5cm}void EndReadFrame (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{emac_8h_a72f4541b2abeb49e7d0ee6ca0f372852}
+
+
+Definition at line 316 of file emac.c.
+
+\hypertarget{emac_8h_a950d069e1027387e55f8ae720132f0d6}{
+\index{emac.h@{emac.h}!Init\_\-EMAC@{Init\_\-EMAC}}
+\index{Init\_\-EMAC@{Init\_\-EMAC}!emac.h@{emac.h}}
+\subsubsection[{Init\_\-EMAC}]{\setlength{\rightskip}{0pt plus 5cm}int Init\_\-EMAC (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{emac_8h_a950d069e1027387e55f8ae720132f0d6}
+
+
+Definition at line 120 of file emac.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{emac_8h_a950d069e1027387e55f8ae720132f0d6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{emac_8h_aa691b8982acd34f683fe43c249a7c19b}{
+\index{emac.h@{emac.h}!print\_\-PHY\_\-status@{print\_\-PHY\_\-status}}
+\index{print\_\-PHY\_\-status@{print\_\-PHY\_\-status}!emac.h@{emac.h}}
+\subsubsection[{print\_\-PHY\_\-status}]{\setlength{\rightskip}{0pt plus 5cm}void print\_\-PHY\_\-status (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{emac_8h_aa691b8982acd34f683fe43c249a7c19b}
+\hypertarget{emac_8h_a885c4d662ebde263043e432637490150}{
+\index{emac.h@{emac.h}!Rdy4Tx@{Rdy4Tx}}
+\index{Rdy4Tx@{Rdy4Tx}!emac.h@{emac.h}}
+\subsubsection[{Rdy4Tx}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Rdy4Tx (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{emac_8h_a885c4d662ebde263043e432637490150}
+
+
+Definition at line 364 of file emac.c.
+
+\hypertarget{emac_8h_a20e6ca0a61b433d2d8ffa9238cc8f41d}{
+\index{emac.h@{emac.h}!ReadFrameBE\_\-EMAC@{ReadFrameBE\_\-EMAC}}
+\index{ReadFrameBE\_\-EMAC@{ReadFrameBE\_\-EMAC}!emac.h@{emac.h}}
+\subsubsection[{ReadFrameBE\_\-EMAC}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short ReadFrameBE\_\-EMAC (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{emac_8h_a20e6ca0a61b433d2d8ffa9238cc8f41d}
+
+
+Definition at line 263 of file emac.c.
+
+\hypertarget{emac_8h_ad385e8970400caa09c503e234e049ac1}{
+\index{emac.h@{emac.h}!RequestSend@{RequestSend}}
+\index{RequestSend@{RequestSend}!emac.h@{emac.h}}
+\subsubsection[{RequestSend}]{\setlength{\rightskip}{0pt plus 5cm}void RequestSend (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{emac_8h_ad385e8970400caa09c503e234e049ac1}
+
+
+Definition at line 353 of file emac.c.
+
+\hypertarget{emac_8h_a2fc342534e2db89a6531315cc3b99a1c}{
+\index{emac.h@{emac.h}!StartReadFrame@{StartReadFrame}}
+\index{StartReadFrame@{StartReadFrame}!emac.h@{emac.h}}
+\subsubsection[{StartReadFrame}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short StartReadFrame (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{emac_8h_a2fc342534e2db89a6531315cc3b99a1c}
+
+
+Definition at line 306 of file emac.c.
+
+\hypertarget{emac_8h_a69397c786a88e31e29ca8ed2605b8fbd}{
+\index{emac.h@{emac.h}!uiGetEMACRxData@{uiGetEMACRxData}}
+\index{uiGetEMACRxData@{uiGetEMACRxData}!emac.h@{emac.h}}
+\subsubsection[{uiGetEMACRxData}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int uiGetEMACRxData (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{ ucBuffer}
+\end{DoxyParamCaption}
+)}}
+\label{emac_8h_a69397c786a88e31e29ca8ed2605b8fbd}
+
+
+Definition at line 336 of file emac.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{emac_8h_a69397c786a88e31e29ca8ed2605b8fbd_cgraph}
+\end{center}
+\end{figure}
+
+

@@ -1,0 +1,59 @@
+\hypertarget{group__uipinit}{
+\section{uIP initialization functions}
+\label{group__uipinit}\index{uIP initialization functions@{uIP initialization functions}}
+}
+
+
+Collaboration diagram for uIP initialization functions:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=366pt]{group__uipinit}
+\end{center}
+\end{figure}
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__uipinit_gac48ed5f0d27721ef62a3ed02a5ad8d2e}{uip\_\-init} (void)
+\item 
+void \hyperlink{group__uipinit_ga22f140b02c354dfebcc7ad481c3bcd68}{uip\_\-setipid} (\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} id)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The uIP initialization functions are used for booting uIP. 
+
+\subsection{Function Documentation}
+\hypertarget{group__uipinit_gac48ed5f0d27721ef62a3ed02a5ad8d2e}{
+\index{uipinit@{uipinit}!uip\_\-init@{uip\_\-init}}
+\index{uip\_\-init@{uip\_\-init}!uipinit@{uipinit}}
+\subsubsection[{uip\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void uip\_\-init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__uipinit_gac48ed5f0d27721ef62a3ed02a5ad8d2e}
+uIP initialization function.
+
+This function should be called at boot up to initilize the uIP TCP/IP stack. 
+
+Definition at line 384 of file uip.c.
+
+\hypertarget{group__uipinit_ga22f140b02c354dfebcc7ad481c3bcd68}{
+\index{uipinit@{uipinit}!uip\_\-setipid@{uip\_\-setipid}}
+\index{uip\_\-setipid@{uip\_\-setipid}!uipinit@{uipinit}}
+\subsubsection[{uip\_\-setipid}]{\setlength{\rightskip}{0pt plus 5cm}void uip\_\-setipid (
+\begin{DoxyParamCaption}
+\item[{{\bf u16\_\-t}}]{ id}
+\end{DoxyParamCaption}
+)}}
+\label{group__uipinit_ga22f140b02c354dfebcc7ad481c3bcd68}
+uIP initialization function.
+
+This function may be used at boot time to set the initial ip\_\-id. 
+
+Definition at line 186 of file uip.c.
+

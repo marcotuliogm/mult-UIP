@@ -1,0 +1,156 @@
+\hypertarget{socket__exemplos_2clisock_8c}{
+\section{sockets/socket\_\-exemplos/clisock.c File Reference}
+\label{socket__exemplos_2clisock_8c}\index{sockets/socket\_\-exemplos/clisock.c@{sockets/socket\_\-exemplos/clisock.c}}
+}
+{\ttfamily \#include $<$stdio.h$>$}\par
+{\ttfamily \#include $<$winsock2.h$>$}\par
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{socket__exemplos_2clisock_8c_a6e31d0ed0d32a0655e13233ddf82bf43}{MAXMSG}~512
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{socket__exemplos_2clisock_8c_a51619db9d83ab69e2189d5653c1991e6}{erro\_\-fatal} (char $\ast$mensagem)
+\item 
+int \hyperlink{socket__exemplos_2clisock_8c_a608dfd6f8108c572b6fd064296938c89}{cria\_\-soquete} (const char $\ast$hostname, int port)
+\item 
+int \hyperlink{socket__exemplos_2clisock_8c_abe211844004b93821e381d24330336d2}{espera} (int sock, int tempo)
+\item 
+int \hyperlink{socket__exemplos_2clisock_8c_a6d5238b436cd720f086f1183ecc98ae0}{escreve\_\-soq} (int sock, char $\ast$mensagem)
+\item 
+int \hyperlink{socket__exemplos_2clisock_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\subsection{Define Documentation}
+\hypertarget{socket__exemplos_2clisock_8c_a6e31d0ed0d32a0655e13233ddf82bf43}{
+\index{socket\_\-exemplos/clisock.c@{socket\_\-exemplos/clisock.c}!MAXMSG@{MAXMSG}}
+\index{MAXMSG@{MAXMSG}!socket_exemplos/clisock.c@{socket\_\-exemplos/clisock.c}}
+\subsubsection[{MAXMSG}]{\setlength{\rightskip}{0pt plus 5cm}\#define MAXMSG~512}}
+\label{socket__exemplos_2clisock_8c_a6e31d0ed0d32a0655e13233ddf82bf43}
+
+
+Definition at line 32 of file clisock.c.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{socket__exemplos_2clisock_8c_a608dfd6f8108c572b6fd064296938c89}{
+\index{socket\_\-exemplos/clisock.c@{socket\_\-exemplos/clisock.c}!cria\_\-soquete@{cria\_\-soquete}}
+\index{cria\_\-soquete@{cria\_\-soquete}!socket_exemplos/clisock.c@{socket\_\-exemplos/clisock.c}}
+\subsubsection[{cria\_\-soquete}]{\setlength{\rightskip}{0pt plus 5cm}int cria\_\-soquete (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ hostname, }
+\item[{int}]{ port}
+\end{DoxyParamCaption}
+)}}
+\label{socket__exemplos_2clisock_8c_a608dfd6f8108c572b6fd064296938c89}
+
+
+Definition at line 45 of file clisock.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{socket__exemplos_2clisock_8c_a608dfd6f8108c572b6fd064296938c89_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket__exemplos_2clisock_8c_a51619db9d83ab69e2189d5653c1991e6}{
+\index{socket\_\-exemplos/clisock.c@{socket\_\-exemplos/clisock.c}!erro\_\-fatal@{erro\_\-fatal}}
+\index{erro\_\-fatal@{erro\_\-fatal}!socket_exemplos/clisock.c@{socket\_\-exemplos/clisock.c}}
+\subsubsection[{erro\_\-fatal}]{\setlength{\rightskip}{0pt plus 5cm}void erro\_\-fatal (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{ mensagem}
+\end{DoxyParamCaption}
+)}}
+\label{socket__exemplos_2clisock_8c_a51619db9d83ab69e2189d5653c1991e6}
+
+
+Definition at line 37 of file clisock.c.
+
+\hypertarget{socket__exemplos_2clisock_8c_a6d5238b436cd720f086f1183ecc98ae0}{
+\index{socket\_\-exemplos/clisock.c@{socket\_\-exemplos/clisock.c}!escreve\_\-soq@{escreve\_\-soq}}
+\index{escreve\_\-soq@{escreve\_\-soq}!socket_exemplos/clisock.c@{socket\_\-exemplos/clisock.c}}
+\subsubsection[{escreve\_\-soq}]{\setlength{\rightskip}{0pt plus 5cm}int escreve\_\-soq (
+\begin{DoxyParamCaption}
+\item[{int}]{ sock, }
+\item[{char $\ast$}]{ mensagem}
+\end{DoxyParamCaption}
+)}}
+\label{socket__exemplos_2clisock_8c_a6d5238b436cd720f086f1183ecc98ae0}
+
+
+Definition at line 99 of file clisock.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{socket__exemplos_2clisock_8c_a6d5238b436cd720f086f1183ecc98ae0_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket__exemplos_2clisock_8c_abe211844004b93821e381d24330336d2}{
+\index{socket\_\-exemplos/clisock.c@{socket\_\-exemplos/clisock.c}!espera@{espera}}
+\index{espera@{espera}!socket_exemplos/clisock.c@{socket\_\-exemplos/clisock.c}}
+\subsubsection[{espera}]{\setlength{\rightskip}{0pt plus 5cm}int espera (
+\begin{DoxyParamCaption}
+\item[{int}]{ sock, }
+\item[{int}]{ tempo}
+\end{DoxyParamCaption}
+)}}
+\label{socket__exemplos_2clisock_8c_abe211844004b93821e381d24330336d2}
+
+
+Definition at line 79 of file clisock.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{socket__exemplos_2clisock_8c_abe211844004b93821e381d24330336d2_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{socket__exemplos_2clisock_8c_a3c04138a5bfe5d72780bb7e82a18e627}{
+\index{socket\_\-exemplos/clisock.c@{socket\_\-exemplos/clisock.c}!main@{main}}
+\index{main@{main}!socket_exemplos/clisock.c@{socket\_\-exemplos/clisock.c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{ argc, }
+\item[{char $\ast$$\ast$}]{ argv}
+\end{DoxyParamCaption}
+)}}
+\label{socket__exemplos_2clisock_8c_a3c04138a5bfe5d72780bb7e82a18e627}
+
+
+Definition at line 115 of file clisock.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=364pt]{socket__exemplos_2clisock_8c_a3c04138a5bfe5d72780bb7e82a18e627_cgraph}
+\end{center}
+\end{figure}
+
+

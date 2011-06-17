@@ -1,0 +1,432 @@
+\hypertarget{debug_8h}{
+\section{cli/debug.h File Reference}
+\label{debug_8h}\index{cli/debug.h@{cli/debug.h}}
+}
+
+
+Parametros para configuracao de depuracao do projeto.  
+
+
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{debug_8h_a1581dcc96e74323eac4fd2076d130d5a}{DEBUG\_\-MAIN}~1
+\item 
+\#define \hyperlink{debug_8h_a100af9bfd8aad0b0d8ca11c3a8227538}{DEBUG\_\-ENTER\_\-DEF}~0
+\item 
+\#define \hyperlink{debug_8h_a59ef9aea36a68647bd81e95818fb68c8}{DEBUG\_\-CLI\_\-T}~0
+\item 
+\#define \hyperlink{debug_8h_a033b070d14e08c97cc023d8689b46c01}{DEBUG\_\-ERROR\_\-T}~0
+\item 
+\#define \hyperlink{debug_8h_af759c921ed40e5c9fcd7428f529f1ae4}{DEBUG\_\-INFO\_\-T}~0
+\item 
+\#define \hyperlink{debug_8h_a13bc650b66d6ed83654d10374c97ca75}{DEBUG\_\-SOCK\_\-T}~0
+\item 
+\#define \hyperlink{debug_8h_a41de9f734be116f7bd93b49876893da9}{DEBUG\_\-HTTP\_\-T}~1
+\item 
+\#define \hyperlink{debug_8h_a56114ae64ab587ff94ead7af2b6d1320}{DEBUG\_\-FTP\_\-T}~0
+\item 
+\#define \hyperlink{debug_8h_a5e7ceded9022837ffedebda69f1083e0}{DEBUG\_\-SFT\_\-T}~0
+\item 
+\#define \hyperlink{debug_8h_a1be8da35e4b147639f334b749c4bb6d1}{OUT\_\-UART}~1
+\item 
+\#define \hyperlink{debug_8h_a00b53dd94d07bdeaea2ac6c1d626a300}{OUT\_\-TELNET}~1
+\item 
+\#define \hyperlink{debug_8h_a75bb06bc58ac2990d3804e575ad81fc0}{DEBUG\_\-SFT}(\hyperlink{client__msg_8c_a2d9fc9fb256865977515b723173ffa09}{msg})
+\begin{DoxyCompactList}\small\item\em Mensagem de depuracao do protocolo SFT. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{debug_8h_ad4c8868344a72dd392edbde7be7ba0e9}{DEBUG\_\-FTP}(\hyperlink{client__msg_8c_a2d9fc9fb256865977515b723173ffa09}{msg})
+\begin{DoxyCompactList}\small\item\em Mensagem de depuracao do protocolo FTP Client. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{debug_8h_a8a5e1980d8fce34947fc9b8cb48a40ee}{DEBUG\_\-HTTP}(\hyperlink{client__msg_8c_a2d9fc9fb256865977515b723173ffa09}{msg})
+\begin{DoxyCompactList}\small\item\em Mensagem de depuracao do protocolo HTTP. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{debug_8h_a19a6eb4d935b8253dd10d12e1d90316b}{DEBUG\_\-ERROR}(\hyperlink{client__msg_8c_a2d9fc9fb256865977515b723173ffa09}{msg})
+\begin{DoxyCompactList}\small\item\em Mensagem de depuracao de erro na execucao do programa. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{debug_8h_ad5f4b2c7c45848ede5ad16abe2e085b2}{DEBUG\_\-INFO}(\hyperlink{client__msg_8c_a2d9fc9fb256865977515b723173ffa09}{msg})
+\begin{DoxyCompactList}\small\item\em Mensagem de depuracao com informacao do comportamento da aplicacao. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{debug_8h_a544522a864246678a6330f117af8b447}{DEBUG\_\-CLI}(\hyperlink{client__msg_8c_a2d9fc9fb256865977515b723173ffa09}{msg})
+\begin{DoxyCompactList}\small\item\em Mensagem de depuracao da CLI. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{debug_8h_addf8f18b015fbb3f987f064e34c7b1f4}{DEBUG\_\-SOCK\_\-INFO}(\hyperlink{client__msg_8c_a2d9fc9fb256865977515b723173ffa09}{msg})
+\begin{DoxyCompactList}\small\item\em Mensagem de depuracao do chat. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{debug_8h_a9e747b21addab786793eb7b9aa89448d}{DEBUG\_\-ENTER}
+\begin{DoxyCompactList}\small\item\em Mensagem de depuracao do caminho percorrido pelas funcoes. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{debug_8h_ae840b20ad3a0d286b43ab640358b2aae}{DEBUG\_\-EXIT}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{debug_8h_a4afad6fd16d9f4d5d1acd9088582f790}{msg\_\-error} \{ \hyperlink{debug_8h_a4afad6fd16d9f4d5d1acd9088582f790ac59a571921e526d7e962044f17418741}{COMMAND\_\-NOT\_\-FOUND} = 0, 
+\hyperlink{debug_8h_a4afad6fd16d9f4d5d1acd9088582f790a061b3c95dfc9e08990ad74b4dac12f08}{TRY\_\-AGAYN}, 
+\hyperlink{debug_8h_a4afad6fd16d9f4d5d1acd9088582f790a1cf2f29eaea742a6926f1efd4b9c16e8}{INVALID\_\-DATA}, 
+\hyperlink{debug_8h_a4afad6fd16d9f4d5d1acd9088582f790af26158a918e547c2732cae656fe506d1}{EXEC\_\-COMMAND\_\-ERROR}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{debug_8h_a8ad27bb015a1210df9b47d026f26a702}{debug\_\-cli} (char $\ast$data)
+\item 
+void \hyperlink{debug_8h_a24dda162a8d7d77c8f8d012afefa0348}{debug\_\-func} (char $\ast$data)
+\item 
+void \hyperlink{debug_8h_a6a3be3c26efe756f68d85a31e75cc761}{PRT\_\-ERROR} (\hyperlink{debug_8h_a4afad6fd16d9f4d5d1acd9088582f790}{msg\_\-error} erro)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Marco Tulio Martins 
+\end{DoxyAuthor}
+
+
+Definition in file \hyperlink{debug_8h_source}{debug.h}.
+
+
+
+\subsection{Define Documentation}
+\hypertarget{debug_8h_a544522a864246678a6330f117af8b447}{
+\index{debug.h@{debug.h}!DEBUG\_\-CLI@{DEBUG\_\-CLI}}
+\index{DEBUG\_\-CLI@{DEBUG\_\-CLI}!debug.h@{debug.h}}
+\subsubsection[{DEBUG\_\-CLI}]{\setlength{\rightskip}{0pt plus 5cm}\#define DEBUG\_\-CLI(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf msg}}
+\end{DoxyParamCaption}
+)}}
+\label{debug_8h_a544522a864246678a6330f117af8b447}
+{\bfseries Value:}
+\begin{DoxyCode}
+do { \
+                if (DEBUG_MAIN) \
+                if (DEBUG_CLI_T) \
+                        printf("%s - %s(%d) action: %s\n", __FILE__, __FUNCTION__
+      , __LINE__, msg); \
+        } while(0)
+\end{DoxyCode}
+
+
+Definition at line 95 of file debug.h.
+
+\hypertarget{debug_8h_a59ef9aea36a68647bd81e95818fb68c8}{
+\index{debug.h@{debug.h}!DEBUG\_\-CLI\_\-T@{DEBUG\_\-CLI\_\-T}}
+\index{DEBUG\_\-CLI\_\-T@{DEBUG\_\-CLI\_\-T}!debug.h@{debug.h}}
+\subsubsection[{DEBUG\_\-CLI\_\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define DEBUG\_\-CLI\_\-T~0}}
+\label{debug_8h_a59ef9aea36a68647bd81e95818fb68c8}
+
+
+Definition at line 11 of file debug.h.
+
+\hypertarget{debug_8h_a9e747b21addab786793eb7b9aa89448d}{
+\index{debug.h@{debug.h}!DEBUG\_\-ENTER@{DEBUG\_\-ENTER}}
+\index{DEBUG\_\-ENTER@{DEBUG\_\-ENTER}!debug.h@{debug.h}}
+\subsubsection[{DEBUG\_\-ENTER}]{\setlength{\rightskip}{0pt plus 5cm}\#define DEBUG\_\-ENTER}}
+\label{debug_8h_a9e747b21addab786793eb7b9aa89448d}
+{\bfseries Value:}
+\begin{DoxyCode}
+do { \
+                if (DEBUG_MAIN) \
+                if (DEBUG_ENTER_DEF) \
+                        printf("%s - %s(%d): Entering\n", __FILE__, __FUNCTION__,
+       __LINE__); \
+        } while(0)
+\end{DoxyCode}
+\hypertarget{debug_8h_a100af9bfd8aad0b0d8ca11c3a8227538}{
+\index{debug.h@{debug.h}!DEBUG\_\-ENTER\_\-DEF@{DEBUG\_\-ENTER\_\-DEF}}
+\index{DEBUG\_\-ENTER\_\-DEF@{DEBUG\_\-ENTER\_\-DEF}!debug.h@{debug.h}}
+\subsubsection[{DEBUG\_\-ENTER\_\-DEF}]{\setlength{\rightskip}{0pt plus 5cm}\#define DEBUG\_\-ENTER\_\-DEF~0}}
+\label{debug_8h_a100af9bfd8aad0b0d8ca11c3a8227538}
+
+
+Definition at line 10 of file debug.h.
+
+\hypertarget{debug_8h_a19a6eb4d935b8253dd10d12e1d90316b}{
+\index{debug.h@{debug.h}!DEBUG\_\-ERROR@{DEBUG\_\-ERROR}}
+\index{DEBUG\_\-ERROR@{DEBUG\_\-ERROR}!debug.h@{debug.h}}
+\subsubsection[{DEBUG\_\-ERROR}]{\setlength{\rightskip}{0pt plus 5cm}\#define DEBUG\_\-ERROR(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf msg}}
+\end{DoxyParamCaption}
+)}}
+\label{debug_8h_a19a6eb4d935b8253dd10d12e1d90316b}
+{\bfseries Value:}
+\begin{DoxyCode}
+do { \
+                if (DEBUG_MAIN) \
+                if (DEBUG_ERROR_T) \
+                        printf("\n%s - %s(%d) error: %s\n", __FILE__, __FUNCTION_
+      _, __LINE__, error_cli[msg]); \
+        } while(0)
+\end{DoxyCode}
+
+
+Definition at line 73 of file debug.h.
+
+\hypertarget{debug_8h_a033b070d14e08c97cc023d8689b46c01}{
+\index{debug.h@{debug.h}!DEBUG\_\-ERROR\_\-T@{DEBUG\_\-ERROR\_\-T}}
+\index{DEBUG\_\-ERROR\_\-T@{DEBUG\_\-ERROR\_\-T}!debug.h@{debug.h}}
+\subsubsection[{DEBUG\_\-ERROR\_\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define DEBUG\_\-ERROR\_\-T~0}}
+\label{debug_8h_a033b070d14e08c97cc023d8689b46c01}
+
+
+Definition at line 12 of file debug.h.
+
+\hypertarget{debug_8h_ae840b20ad3a0d286b43ab640358b2aae}{
+\index{debug.h@{debug.h}!DEBUG\_\-EXIT@{DEBUG\_\-EXIT}}
+\index{DEBUG\_\-EXIT@{DEBUG\_\-EXIT}!debug.h@{debug.h}}
+\subsubsection[{DEBUG\_\-EXIT}]{\setlength{\rightskip}{0pt plus 5cm}\#define DEBUG\_\-EXIT}}
+\label{debug_8h_ae840b20ad3a0d286b43ab640358b2aae}
+{\bfseries Value:}
+\begin{DoxyCode}
+do { \
+                if (DEBUG_MAIN) \
+                if (DEBUG_ENTER_DEF) \
+                        printf("%s - %s(%d): Exiting\n", __FILE__, __FUNCTION__, 
+      __LINE__); \
+        } while(0)
+\end{DoxyCode}
+
+
+Definition at line 128 of file debug.h.
+
+\hypertarget{debug_8h_ad4c8868344a72dd392edbde7be7ba0e9}{
+\index{debug.h@{debug.h}!DEBUG\_\-FTP@{DEBUG\_\-FTP}}
+\index{DEBUG\_\-FTP@{DEBUG\_\-FTP}!debug.h@{debug.h}}
+\subsubsection[{DEBUG\_\-FTP}]{\setlength{\rightskip}{0pt plus 5cm}\#define DEBUG\_\-FTP(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf msg}}
+\end{DoxyParamCaption}
+)}}
+\label{debug_8h_ad4c8868344a72dd392edbde7be7ba0e9}
+{\bfseries Value:}
+\begin{DoxyCode}
+do { \
+                if (DEBUG_MAIN) \
+                if (DEBUG_FTP_T) \
+                        printf("\n%s - %s(%d) FTP report: %s\n", __FILE__, __FUNC
+      TION__, __LINE__, msg); \
+        } while(0)
+\end{DoxyCode}
+
+
+Definition at line 51 of file debug.h.
+
+\hypertarget{debug_8h_a56114ae64ab587ff94ead7af2b6d1320}{
+\index{debug.h@{debug.h}!DEBUG\_\-FTP\_\-T@{DEBUG\_\-FTP\_\-T}}
+\index{DEBUG\_\-FTP\_\-T@{DEBUG\_\-FTP\_\-T}!debug.h@{debug.h}}
+\subsubsection[{DEBUG\_\-FTP\_\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define DEBUG\_\-FTP\_\-T~0}}
+\label{debug_8h_a56114ae64ab587ff94ead7af2b6d1320}
+
+
+Definition at line 16 of file debug.h.
+
+\hypertarget{debug_8h_a8a5e1980d8fce34947fc9b8cb48a40ee}{
+\index{debug.h@{debug.h}!DEBUG\_\-HTTP@{DEBUG\_\-HTTP}}
+\index{DEBUG\_\-HTTP@{DEBUG\_\-HTTP}!debug.h@{debug.h}}
+\subsubsection[{DEBUG\_\-HTTP}]{\setlength{\rightskip}{0pt plus 5cm}\#define DEBUG\_\-HTTP(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf msg}}
+\end{DoxyParamCaption}
+)}}
+\label{debug_8h_a8a5e1980d8fce34947fc9b8cb48a40ee}
+{\bfseries Value:}
+\begin{DoxyCode}
+do { \
+                if (DEBUG_MAIN) \
+                if (DEBUG_HTTP_T) \
+                        printf("\n%s - %s(%d) HTTP report: %s\n", __FILE__, __FUN
+      CTION__, __LINE__, msg); \
+        } while(0)
+\end{DoxyCode}
+
+
+Definition at line 62 of file debug.h.
+
+\hypertarget{debug_8h_a41de9f734be116f7bd93b49876893da9}{
+\index{debug.h@{debug.h}!DEBUG\_\-HTTP\_\-T@{DEBUG\_\-HTTP\_\-T}}
+\index{DEBUG\_\-HTTP\_\-T@{DEBUG\_\-HTTP\_\-T}!debug.h@{debug.h}}
+\subsubsection[{DEBUG\_\-HTTP\_\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define DEBUG\_\-HTTP\_\-T~1}}
+\label{debug_8h_a41de9f734be116f7bd93b49876893da9}
+
+
+Definition at line 15 of file debug.h.
+
+\hypertarget{debug_8h_ad5f4b2c7c45848ede5ad16abe2e085b2}{
+\index{debug.h@{debug.h}!DEBUG\_\-INFO@{DEBUG\_\-INFO}}
+\index{DEBUG\_\-INFO@{DEBUG\_\-INFO}!debug.h@{debug.h}}
+\subsubsection[{DEBUG\_\-INFO}]{\setlength{\rightskip}{0pt plus 5cm}\#define DEBUG\_\-INFO(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf msg}}
+\end{DoxyParamCaption}
+)}}
+\label{debug_8h_ad5f4b2c7c45848ede5ad16abe2e085b2}
+{\bfseries Value:}
+\begin{DoxyCode}
+do { \
+                if (DEBUG_MAIN) \
+                if (DEBUG_INFO_T) \
+                        printf("%s - %s(%d) action: %s\n", __FILE__, __FUNCTION__
+      , __LINE__, msg); \
+        } while(0)
+\end{DoxyCode}
+
+
+Definition at line 84 of file debug.h.
+
+\hypertarget{debug_8h_af759c921ed40e5c9fcd7428f529f1ae4}{
+\index{debug.h@{debug.h}!DEBUG\_\-INFO\_\-T@{DEBUG\_\-INFO\_\-T}}
+\index{DEBUG\_\-INFO\_\-T@{DEBUG\_\-INFO\_\-T}!debug.h@{debug.h}}
+\subsubsection[{DEBUG\_\-INFO\_\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define DEBUG\_\-INFO\_\-T~0}}
+\label{debug_8h_af759c921ed40e5c9fcd7428f529f1ae4}
+
+
+Definition at line 13 of file debug.h.
+
+\hypertarget{debug_8h_a1581dcc96e74323eac4fd2076d130d5a}{
+\index{debug.h@{debug.h}!DEBUG\_\-MAIN@{DEBUG\_\-MAIN}}
+\index{DEBUG\_\-MAIN@{DEBUG\_\-MAIN}!debug.h@{debug.h}}
+\subsubsection[{DEBUG\_\-MAIN}]{\setlength{\rightskip}{0pt plus 5cm}\#define DEBUG\_\-MAIN~1}}
+\label{debug_8h_a1581dcc96e74323eac4fd2076d130d5a}
+
+
+Definition at line 8 of file debug.h.
+
+\hypertarget{debug_8h_a75bb06bc58ac2990d3804e575ad81fc0}{
+\index{debug.h@{debug.h}!DEBUG\_\-SFT@{DEBUG\_\-SFT}}
+\index{DEBUG\_\-SFT@{DEBUG\_\-SFT}!debug.h@{debug.h}}
+\subsubsection[{DEBUG\_\-SFT}]{\setlength{\rightskip}{0pt plus 5cm}\#define DEBUG\_\-SFT(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf msg}}
+\end{DoxyParamCaption}
+)}}
+\label{debug_8h_a75bb06bc58ac2990d3804e575ad81fc0}
+{\bfseries Value:}
+\begin{DoxyCode}
+do { \
+                if (DEBUG_MAIN) \
+                if (DEBUG_SFT_T) \
+                        printf("\n%s - %s(%d) FTP report: %s\n", __FILE__, __FUNC
+      TION__, __LINE__, msg); \
+        } while(0)
+\end{DoxyCode}
+
+
+Definition at line 40 of file debug.h.
+
+\hypertarget{debug_8h_a5e7ceded9022837ffedebda69f1083e0}{
+\index{debug.h@{debug.h}!DEBUG\_\-SFT\_\-T@{DEBUG\_\-SFT\_\-T}}
+\index{DEBUG\_\-SFT\_\-T@{DEBUG\_\-SFT\_\-T}!debug.h@{debug.h}}
+\subsubsection[{DEBUG\_\-SFT\_\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define DEBUG\_\-SFT\_\-T~0}}
+\label{debug_8h_a5e7ceded9022837ffedebda69f1083e0}
+
+
+Definition at line 17 of file debug.h.
+
+\hypertarget{debug_8h_addf8f18b015fbb3f987f064e34c7b1f4}{
+\index{debug.h@{debug.h}!DEBUG\_\-SOCK\_\-INFO@{DEBUG\_\-SOCK\_\-INFO}}
+\index{DEBUG\_\-SOCK\_\-INFO@{DEBUG\_\-SOCK\_\-INFO}!debug.h@{debug.h}}
+\subsubsection[{DEBUG\_\-SOCK\_\-INFO}]{\setlength{\rightskip}{0pt plus 5cm}\#define DEBUG\_\-SOCK\_\-INFO(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf msg}}
+\end{DoxyParamCaption}
+)}}
+\label{debug_8h_addf8f18b015fbb3f987f064e34c7b1f4}
+{\bfseries Value:}
+\begin{DoxyCode}
+do { \
+                        if (DEBUG_MAIN) \
+                        if (DEBUG_SOCK_T) \
+                                printf("%s - %s(%d) action: %s\n", __FILE__, __FU
+      NCTION__, __LINE__, msg); \
+                } while(0)
+\end{DoxyCode}
+
+
+Definition at line 106 of file debug.h.
+
+\hypertarget{debug_8h_a13bc650b66d6ed83654d10374c97ca75}{
+\index{debug.h@{debug.h}!DEBUG\_\-SOCK\_\-T@{DEBUG\_\-SOCK\_\-T}}
+\index{DEBUG\_\-SOCK\_\-T@{DEBUG\_\-SOCK\_\-T}!debug.h@{debug.h}}
+\subsubsection[{DEBUG\_\-SOCK\_\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define DEBUG\_\-SOCK\_\-T~0}}
+\label{debug_8h_a13bc650b66d6ed83654d10374c97ca75}
+
+
+Definition at line 14 of file debug.h.
+
+\hypertarget{debug_8h_a00b53dd94d07bdeaea2ac6c1d626a300}{
+\index{debug.h@{debug.h}!OUT\_\-TELNET@{OUT\_\-TELNET}}
+\index{OUT\_\-TELNET@{OUT\_\-TELNET}!debug.h@{debug.h}}
+\subsubsection[{OUT\_\-TELNET}]{\setlength{\rightskip}{0pt plus 5cm}\#define OUT\_\-TELNET~1}}
+\label{debug_8h_a00b53dd94d07bdeaea2ac6c1d626a300}
+
+
+Definition at line 20 of file debug.h.
+
+\hypertarget{debug_8h_a1be8da35e4b147639f334b749c4bb6d1}{
+\index{debug.h@{debug.h}!OUT\_\-UART@{OUT\_\-UART}}
+\index{OUT\_\-UART@{OUT\_\-UART}!debug.h@{debug.h}}
+\subsubsection[{OUT\_\-UART}]{\setlength{\rightskip}{0pt plus 5cm}\#define OUT\_\-UART~1}}
+\label{debug_8h_a1be8da35e4b147639f334b749c4bb6d1}
+
+
+Definition at line 19 of file debug.h.
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{debug_8h_a4afad6fd16d9f4d5d1acd9088582f790}{
+\index{debug.h@{debug.h}!msg\_\-error@{msg\_\-error}}
+\index{msg\_\-error@{msg\_\-error}!debug.h@{debug.h}}
+\subsubsection[{msg\_\-error}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf msg\_\-error}}}
+\label{debug_8h_a4afad6fd16d9f4d5d1acd9088582f790}
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{COMMAND\_\-NOT\_\-FOUND@{COMMAND\_\-NOT\_\-FOUND}!debug.h@{debug.h}}\index{debug.h@{debug.h}!COMMAND\_\-NOT\_\-FOUND@{COMMAND\_\-NOT\_\-FOUND}}\item[{\em 
+\hypertarget{debug_8h_a4afad6fd16d9f4d5d1acd9088582f790ac59a571921e526d7e962044f17418741}{
+COMMAND\_\-NOT\_\-FOUND}
+\label{debug_8h_a4afad6fd16d9f4d5d1acd9088582f790ac59a571921e526d7e962044f17418741}
+}]\index{TRY\_\-AGAYN@{TRY\_\-AGAYN}!debug.h@{debug.h}}\index{debug.h@{debug.h}!TRY\_\-AGAYN@{TRY\_\-AGAYN}}\item[{\em 
+\hypertarget{debug_8h_a4afad6fd16d9f4d5d1acd9088582f790a061b3c95dfc9e08990ad74b4dac12f08}{
+TRY\_\-AGAYN}
+\label{debug_8h_a4afad6fd16d9f4d5d1acd9088582f790a061b3c95dfc9e08990ad74b4dac12f08}
+}]\index{INVALID\_\-DATA@{INVALID\_\-DATA}!debug.h@{debug.h}}\index{debug.h@{debug.h}!INVALID\_\-DATA@{INVALID\_\-DATA}}\item[{\em 
+\hypertarget{debug_8h_a4afad6fd16d9f4d5d1acd9088582f790a1cf2f29eaea742a6926f1efd4b9c16e8}{
+INVALID\_\-DATA}
+\label{debug_8h_a4afad6fd16d9f4d5d1acd9088582f790a1cf2f29eaea742a6926f1efd4b9c16e8}
+}]\index{EXEC\_\-COMMAND\_\-ERROR@{EXEC\_\-COMMAND\_\-ERROR}!debug.h@{debug.h}}\index{debug.h@{debug.h}!EXEC\_\-COMMAND\_\-ERROR@{EXEC\_\-COMMAND\_\-ERROR}}\item[{\em 
+\hypertarget{debug_8h_a4afad6fd16d9f4d5d1acd9088582f790af26158a918e547c2732cae656fe506d1}{
+EXEC\_\-COMMAND\_\-ERROR}
+\label{debug_8h_a4afad6fd16d9f4d5d1acd9088582f790af26158a918e547c2732cae656fe506d1}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 26 of file debug.h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{debug_8h_a8ad27bb015a1210df9b47d026f26a702}{
+\index{debug.h@{debug.h}!debug\_\-cli@{debug\_\-cli}}
+\index{debug\_\-cli@{debug\_\-cli}!debug.h@{debug.h}}
+\subsubsection[{debug\_\-cli}]{\setlength{\rightskip}{0pt plus 5cm}void debug\_\-cli (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{ data}
+\end{DoxyParamCaption}
+)}}
+\label{debug_8h_a8ad27bb015a1210df9b47d026f26a702}
+\hypertarget{debug_8h_a24dda162a8d7d77c8f8d012afefa0348}{
+\index{debug.h@{debug.h}!debug\_\-func@{debug\_\-func}}
+\index{debug\_\-func@{debug\_\-func}!debug.h@{debug.h}}
+\subsubsection[{debug\_\-func}]{\setlength{\rightskip}{0pt plus 5cm}void debug\_\-func (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{ data}
+\end{DoxyParamCaption}
+)}}
+\label{debug_8h_a24dda162a8d7d77c8f8d012afefa0348}
+\hypertarget{debug_8h_a6a3be3c26efe756f68d85a31e75cc761}{
+\index{debug.h@{debug.h}!PRT\_\-ERROR@{PRT\_\-ERROR}}
+\index{PRT\_\-ERROR@{PRT\_\-ERROR}!debug.h@{debug.h}}
+\subsubsection[{PRT\_\-ERROR}]{\setlength{\rightskip}{0pt plus 5cm}void PRT\_\-ERROR (
+\begin{DoxyParamCaption}
+\item[{{\bf msg\_\-error}}]{ erro}
+\end{DoxyParamCaption}
+)}}
+\label{debug_8h_a6a3be3c26efe756f68d85a31e75cc761}

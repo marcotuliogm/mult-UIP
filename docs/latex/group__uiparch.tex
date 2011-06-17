@@ -1,0 +1,178 @@
+\hypertarget{group__uiparch}{
+\section{Architecture specific uIP functions}
+\label{group__uiparch}\index{Architecture specific uIP functions@{Architecture specific uIP functions}}
+}
+
+
+Collaboration diagram for Architecture specific uIP functions:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{group__uiparch}
+\end{center}
+\end{figure}
+
+
+\subsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file \hyperlink{uip__arch_8h}{uip\_\-arch.h}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__uiparch_ga6832e4d2d046536b6472f7ac92340f68}{uip\_\-add32} (\hyperlink{group__uipfw_ga4caecabca98b43919dd11be1c0d4cd8e}{u8\_\-t} $\ast$op32, \hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} op16)
+\item 
+\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} \hyperlink{group__uiparch_gab6683dd83fe1c8de9a24086d4b69e907}{uip\_\-chksum} (\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} $\ast$buf, \hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} len)
+\item 
+\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} \hyperlink{group__uiparch_ga2addf34c7d457c1a7899a7e2171ef1e9}{uip\_\-ipchksum} (void)
+\item 
+\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} \hyperlink{group__uiparch_ga85b65e38aa74eba18979156f97a94a87}{uip\_\-tcpchksum} (void)
+\item 
+\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} \hyperlink{group__uiparch_ga7023a34ba9e9d03b5fbedbcb32924453}{uip\_\-udpchksum} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group__uipfw_ga4caecabca98b43919dd11be1c0d4cd8e}{u8\_\-t} \hyperlink{group__uiparch_ga2a0cf5d86c58fab216414ce59bf1fea1}{uip\_\-acc32} \mbox{[}4\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The functions in the architecture specific module implement the IP check sum and 32-\/bit additions.
+
+The IP checksum calculation is the most computationally expensive operation in the TCP/IP stack and it therefore pays off to implement this in efficient assembler. The purpose of the uip-\/arch module is to let the checksum functions to be implemented in architecture specific assembler. 
+
+\subsection{Function Documentation}
+\hypertarget{group__uiparch_ga6832e4d2d046536b6472f7ac92340f68}{
+\index{uiparch@{uiparch}!uip\_\-add32@{uip\_\-add32}}
+\index{uip\_\-add32@{uip\_\-add32}!uiparch@{uiparch}}
+\subsubsection[{uip\_\-add32}]{\setlength{\rightskip}{0pt plus 5cm}void uip\_\-add32 (
+\begin{DoxyParamCaption}
+\item[{{\bf u8\_\-t} $\ast$}]{ op32, }
+\item[{{\bf u16\_\-t}}]{ op16}
+\end{DoxyParamCaption}
+)}}
+\label{group__uiparch_ga6832e4d2d046536b6472f7ac92340f68}
+Carry out a 32-\/bit addition.
+
+Because not all architectures for which uIP is intended has native 32-\/bit arithmetic, uIP uses an external C function for doing the required 32-\/bit additions in the TCP protocol processing. This function should add the two arguments and place the result in the global variable uip\_\-acc32.
+
+\begin{DoxyNote}{Note}
+The 32-\/bit integer pointed to by the op32 parameter and the result in the uip\_\-acc32 variable are in network byte order (big endian).
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em op32}]A pointer to a 4-\/byte array representing a 32-\/bit integer in network byte order (big endian).\item[{\em op16}]A 16-\/bit integer in host byte order. \end{DoxyParams}
+
+
+Definition at line 254 of file uip.c.
+
+\hypertarget{group__uiparch_gab6683dd83fe1c8de9a24086d4b69e907}{
+\index{uiparch@{uiparch}!uip\_\-chksum@{uip\_\-chksum}}
+\index{uip\_\-chksum@{uip\_\-chksum}!uiparch@{uiparch}}
+\subsubsection[{uip\_\-chksum}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u16\_\-t} uip\_\-chksum (
+\begin{DoxyParamCaption}
+\item[{{\bf u16\_\-t} $\ast$}]{ buf, }
+\item[{{\bf u16\_\-t}}]{ len}
+\end{DoxyParamCaption}
+)}}
+\label{group__uiparch_gab6683dd83fe1c8de9a24086d4b69e907}
+Calculate the Internet checksum over a buffer.
+
+The Internet checksum is the one's complement of the one's complement sum of all 16-\/bit words in the buffer.
+
+See RFC1071.
+
+\begin{DoxyNote}{Note}
+This function is not called in the current version of uIP, but future versions might make use of it.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em buf}]A pointer to the buffer over which the checksum is to be computed.\item[{\em len}]The length of the buffer over which the checksum is to be computed.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Internet checksum of the buffer.
+\end{DoxyReturn}
+Calculate the Internet checksum over a buffer.
+
+The Internet checksum is the one's complement of the one's complement sum of all 16-\/bit words in the buffer.
+
+See RFC1071.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em buf}]A pointer to the buffer over which the checksum is to be computed.\item[{\em len}]The length of the buffer over which the checksum is to be computed.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Internet checksum of the buffer. 
+\end{DoxyReturn}
+\hypertarget{group__uiparch_ga2addf34c7d457c1a7899a7e2171ef1e9}{
+\index{uiparch@{uiparch}!uip\_\-ipchksum@{uip\_\-ipchksum}}
+\index{uip\_\-ipchksum@{uip\_\-ipchksum}!uiparch@{uiparch}}
+\subsubsection[{uip\_\-ipchksum}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u16\_\-t} uip\_\-ipchksum (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__uiparch_ga2addf34c7d457c1a7899a7e2171ef1e9}
+Calculate the IP header checksum of the packet header in uip\_\-buf.
+
+The IP header checksum is the Internet checksum of the 20 bytes of the IP header.
+
+\begin{DoxyReturn}{Returns}
+The IP header checksum of the IP header in the uip\_\-buf buffer. 
+\end{DoxyReturn}
+\hypertarget{group__uiparch_ga85b65e38aa74eba18979156f97a94a87}{
+\index{uiparch@{uiparch}!uip\_\-tcpchksum@{uip\_\-tcpchksum}}
+\index{uip\_\-tcpchksum@{uip\_\-tcpchksum}!uiparch@{uiparch}}
+\subsubsection[{uip\_\-tcpchksum}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u16\_\-t} uip\_\-tcpchksum (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__uiparch_ga85b65e38aa74eba18979156f97a94a87}
+Calculate the TCP checksum of the packet in uip\_\-buf and uip\_\-appdata.
+
+The TCP checksum is the Internet checksum of data contents of the TCP segment, and a pseudo-\/header as defined in RFC793.
+
+\begin{DoxyNote}{Note}
+The uip\_\-appdata pointer that points to the packet data may point anywhere in memory, so it is not possible to simply calculate the Internet checksum of the contents of the uip\_\-buf buffer.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+The TCP checksum of the TCP segment in uip\_\-buf and pointed to by uip\_\-appdata.
+\end{DoxyReturn}
+Calculate the TCP checksum of the packet in uip\_\-buf and uip\_\-appdata.
+
+The TCP checksum is the Internet checksum of data contents of the TCP segment, and a pseudo-\/header as defined in RFC793.
+
+\begin{DoxyReturn}{Returns}
+The TCP checksum of the TCP segment in uip\_\-buf and pointed to by uip\_\-appdata. 
+\end{DoxyReturn}
+\hypertarget{group__uiparch_ga7023a34ba9e9d03b5fbedbcb32924453}{
+\index{uiparch@{uiparch}!uip\_\-udpchksum@{uip\_\-udpchksum}}
+\index{uip\_\-udpchksum@{uip\_\-udpchksum}!uiparch@{uiparch}}
+\subsubsection[{uip\_\-udpchksum}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u16\_\-t} uip\_\-udpchksum (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__uiparch_ga7023a34ba9e9d03b5fbedbcb32924453}
+Calculate the UDP checksum of the packet in uip\_\-buf and uip\_\-appdata.
+
+The UDP checksum is the Internet checksum of data contents of the UDP segment, and a pseudo-\/header as defined in RFC768.
+
+\begin{DoxyReturn}{Returns}
+The UDP checksum of the UDP segment in uip\_\-buf and pointed to by uip\_\-appdata. 
+\end{DoxyReturn}
+
+
+\subsection{Variable Documentation}
+\hypertarget{group__uiparch_ga2a0cf5d86c58fab216414ce59bf1fea1}{
+\index{uiparch@{uiparch}!uip\_\-acc32@{uip\_\-acc32}}
+\index{uip\_\-acc32@{uip\_\-acc32}!uiparch@{uiparch}}
+\subsubsection[{uip\_\-acc32}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u8\_\-t} {\bf uip\_\-acc32}\mbox{[}4\mbox{]}}}
+\label{group__uiparch_ga2a0cf5d86c58fab216414ce59bf1fea1}
+4-\/byte array used for the 32-\/bit sequence number calculations. 
+
+Definition at line 197 of file uip.c.
+

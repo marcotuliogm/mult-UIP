@@ -1,0 +1,102 @@
+\hypertarget{uip-neighbor_8h}{
+\section{/home/mtgm/tcc/mult-\/UIP/uip/uip-\/neighbor.h File Reference}
+\label{uip-neighbor_8h}\index{/home/mtgm/tcc/mult-\/UIP/uip/uip-\/neighbor.h@{/home/mtgm/tcc/mult-\/UIP/uip/uip-\/neighbor.h}}
+}
+{\ttfamily \#include \char`\"{}uip.h\char`\"{}}\par
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structuip__neighbor__addr}{uip\_\-neighbor\_\-addr}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{uip-neighbor_8h_a1273664aba3e6a2a46e87dcb1a5f19ad}{uip\_\-neighbor\_\-init} (void)
+\item 
+void \hyperlink{uip-neighbor_8h_a88460bea09a462d0e22511cb567eee14}{uip\_\-neighbor\_\-add} (\hyperlink{group__uip_ga1ef35301f43a5bbb9f89f07b5a36b9a0}{uip\_\-ipaddr\_\-t} ipaddr, struct \hyperlink{structuip__neighbor__addr}{uip\_\-neighbor\_\-addr} $\ast$addr)
+\item 
+void \hyperlink{uip-neighbor_8h_a1d5ce7047650f3ecee0814dbc8714099}{uip\_\-neighbor\_\-update} (\hyperlink{group__uip_ga1ef35301f43a5bbb9f89f07b5a36b9a0}{uip\_\-ipaddr\_\-t} ipaddr)
+\item 
+struct \hyperlink{structuip__neighbor__addr}{uip\_\-neighbor\_\-addr} $\ast$ \hyperlink{uip-neighbor_8h_a692d80636342d564422ccd9296ad568d}{uip\_\-neighbor\_\-lookup} (\hyperlink{group__uip_ga1ef35301f43a5bbb9f89f07b5a36b9a0}{uip\_\-ipaddr\_\-t} ipaddr)
+\item 
+void \hyperlink{uip-neighbor_8h_a890e822616a6839dfbf51dcb591b8e99}{uip\_\-neighbor\_\-periodic} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Header file for database of link-\/local neighbors, used by IPv6 code and to be used by future ARP code. \begin{DoxyAuthor}{Author}
+Adam Dunkels $<$\href{mailto:adam@sics.se}{\tt adam@sics.se}$>$ 
+\end{DoxyAuthor}
+
+
+Definition in file \hyperlink{uip-neighbor_8h_source}{uip-\/neighbor.h}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{uip-neighbor_8h_a88460bea09a462d0e22511cb567eee14}{
+\index{uip-\/neighbor.h@{uip-\/neighbor.h}!uip\_\-neighbor\_\-add@{uip\_\-neighbor\_\-add}}
+\index{uip\_\-neighbor\_\-add@{uip\_\-neighbor\_\-add}!uip-neighbor.h@{uip-\/neighbor.h}}
+\subsubsection[{uip\_\-neighbor\_\-add}]{\setlength{\rightskip}{0pt plus 5cm}void uip\_\-neighbor\_\-add (
+\begin{DoxyParamCaption}
+\item[{{\bf uip\_\-ipaddr\_\-t}}]{ ipaddr, }
+\item[{struct {\bf uip\_\-neighbor\_\-addr} $\ast$}]{ addr}
+\end{DoxyParamCaption}
+)}}
+\label{uip-neighbor_8h_a88460bea09a462d0e22511cb567eee14}
+
+
+Definition at line 86 of file uip-\/neighbor.c.
+
+\hypertarget{uip-neighbor_8h_a1273664aba3e6a2a46e87dcb1a5f19ad}{
+\index{uip-\/neighbor.h@{uip-\/neighbor.h}!uip\_\-neighbor\_\-init@{uip\_\-neighbor\_\-init}}
+\index{uip\_\-neighbor\_\-init@{uip\_\-neighbor\_\-init}!uip-neighbor.h@{uip-\/neighbor.h}}
+\subsubsection[{uip\_\-neighbor\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void uip\_\-neighbor\_\-init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{uip-neighbor_8h_a1273664aba3e6a2a46e87dcb1a5f19ad}
+
+
+Definition at line 64 of file uip-\/neighbor.c.
+
+\hypertarget{uip-neighbor_8h_a692d80636342d564422ccd9296ad568d}{
+\index{uip-\/neighbor.h@{uip-\/neighbor.h}!uip\_\-neighbor\_\-lookup@{uip\_\-neighbor\_\-lookup}}
+\index{uip\_\-neighbor\_\-lookup@{uip\_\-neighbor\_\-lookup}!uip-neighbor.h@{uip-\/neighbor.h}}
+\subsubsection[{uip\_\-neighbor\_\-lookup}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf uip\_\-neighbor\_\-addr}$\ast$ uip\_\-neighbor\_\-lookup (
+\begin{DoxyParamCaption}
+\item[{{\bf uip\_\-ipaddr\_\-t}}]{ ipaddr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}
+\label{uip-neighbor_8h_a692d80636342d564422ccd9296ad568d}
+
+
+Definition at line 145 of file uip-\/neighbor.c.
+
+\hypertarget{uip-neighbor_8h_a890e822616a6839dfbf51dcb591b8e99}{
+\index{uip-\/neighbor.h@{uip-\/neighbor.h}!uip\_\-neighbor\_\-periodic@{uip\_\-neighbor\_\-periodic}}
+\index{uip\_\-neighbor\_\-periodic@{uip\_\-neighbor\_\-periodic}!uip-neighbor.h@{uip-\/neighbor.h}}
+\subsubsection[{uip\_\-neighbor\_\-periodic}]{\setlength{\rightskip}{0pt plus 5cm}void uip\_\-neighbor\_\-periodic (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{uip-neighbor_8h_a890e822616a6839dfbf51dcb591b8e99}
+
+
+Definition at line 74 of file uip-\/neighbor.c.
+
+\hypertarget{uip-neighbor_8h_a1d5ce7047650f3ecee0814dbc8714099}{
+\index{uip-\/neighbor.h@{uip-\/neighbor.h}!uip\_\-neighbor\_\-update@{uip\_\-neighbor\_\-update}}
+\index{uip\_\-neighbor\_\-update@{uip\_\-neighbor\_\-update}!uip-neighbor.h@{uip-\/neighbor.h}}
+\subsubsection[{uip\_\-neighbor\_\-update}]{\setlength{\rightskip}{0pt plus 5cm}void uip\_\-neighbor\_\-update (
+\begin{DoxyParamCaption}
+\item[{{\bf uip\_\-ipaddr\_\-t}}]{ ipaddr}
+\end{DoxyParamCaption}
+)}}
+\label{uip-neighbor_8h_a1d5ce7047650f3ecee0814dbc8714099}
+
+
+Definition at line 134 of file uip-\/neighbor.c.
+

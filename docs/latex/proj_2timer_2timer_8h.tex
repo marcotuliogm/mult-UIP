@@ -1,0 +1,167 @@
+\hypertarget{proj_2timer_2timer_8h}{
+\section{timer/timer.h File Reference}
+\label{proj_2timer_2timer_8h}\index{timer/timer.h@{timer/timer.h}}
+}
+{\ttfamily \#include \char`\"{}../lpc\_\-config.h\char`\"{}}\par
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{proj_2timer_2timer_8h_a3018c7600b7bb9866400596a56a57af7}{START}~0x07
+\item 
+\#define \hyperlink{proj_2timer_2timer_8h_a6fbd908903ad34f115e0726001be8753}{MATCH}~TRUE
+\item 
+\#define \hyperlink{proj_2timer_2timer_8h_a8683a2280b9776b33f29f4b2134ea460}{NOT\_\-MATCH}~FALSE
+\item 
+\#define \hyperlink{proj_2timer_2timer_8h_a954b0cb4d6d4178cad130606cc77984a}{CHECK\_\-IF\_\-MATCH}~0x08
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{proj_2timer_2timer_8h_a21922fcfd328ddde697161b8ac305a26}{T0Init} (int ms)
+\item 
+void \hyperlink{proj_2timer_2timer_8h_abdf9cb5bce1e76dc8c9aa7cae12fd0a3}{T0Stop} ()
+\item 
+void \hyperlink{proj_2timer_2timer_8h_a91c2747b88b977baf27d17ad42d04453}{T0Start} ()
+\item 
+int \hyperlink{proj_2timer_2timer_8h_ae80a4ec66fd1eb1b968377ef4c4c1dab}{T0Get} ()
+\item 
+void \hyperlink{proj_2timer_2timer_8h_a1074cdcb942e956a19764c56388e7d38}{delayMs} (unsigned int delayInMs)
+\item 
+void \hyperlink{proj_2timer_2timer_8h_a04837043597d1a97e397463e32630d9b}{delayUs} (unsigned int delayInUs)
+\item 
+int \hyperlink{proj_2timer_2timer_8h_a72c5f400f1bffa4c7c596425de2e6cb7}{timeoutMs} (unsigned int delayInMs, unsigned int condition)
+\end{DoxyCompactItemize}
+
+
+\subsection{Define Documentation}
+\hypertarget{proj_2timer_2timer_8h_a954b0cb4d6d4178cad130606cc77984a}{
+\index{proj/timer/timer.h@{proj/timer/timer.h}!CHECK\_\-IF\_\-MATCH@{CHECK\_\-IF\_\-MATCH}}
+\index{CHECK\_\-IF\_\-MATCH@{CHECK\_\-IF\_\-MATCH}!proj/timer/timer.h@{proj/timer/timer.h}}
+\subsubsection[{CHECK\_\-IF\_\-MATCH}]{\setlength{\rightskip}{0pt plus 5cm}\#define CHECK\_\-IF\_\-MATCH~0x08}}
+\label{proj_2timer_2timer_8h_a954b0cb4d6d4178cad130606cc77984a}
+
+
+Definition at line 30 of file timer.h.
+
+\hypertarget{proj_2timer_2timer_8h_a6fbd908903ad34f115e0726001be8753}{
+\index{proj/timer/timer.h@{proj/timer/timer.h}!MATCH@{MATCH}}
+\index{MATCH@{MATCH}!proj/timer/timer.h@{proj/timer/timer.h}}
+\subsubsection[{MATCH}]{\setlength{\rightskip}{0pt plus 5cm}\#define MATCH~TRUE}}
+\label{proj_2timer_2timer_8h_a6fbd908903ad34f115e0726001be8753}
+
+
+Definition at line 28 of file timer.h.
+
+\hypertarget{proj_2timer_2timer_8h_a8683a2280b9776b33f29f4b2134ea460}{
+\index{proj/timer/timer.h@{proj/timer/timer.h}!NOT\_\-MATCH@{NOT\_\-MATCH}}
+\index{NOT\_\-MATCH@{NOT\_\-MATCH}!proj/timer/timer.h@{proj/timer/timer.h}}
+\subsubsection[{NOT\_\-MATCH}]{\setlength{\rightskip}{0pt plus 5cm}\#define NOT\_\-MATCH~FALSE}}
+\label{proj_2timer_2timer_8h_a8683a2280b9776b33f29f4b2134ea460}
+
+
+Definition at line 29 of file timer.h.
+
+\hypertarget{proj_2timer_2timer_8h_a3018c7600b7bb9866400596a56a57af7}{
+\index{proj/timer/timer.h@{proj/timer/timer.h}!START@{START}}
+\index{START@{START}!proj/timer/timer.h@{proj/timer/timer.h}}
+\subsubsection[{START}]{\setlength{\rightskip}{0pt plus 5cm}\#define START~0x07}}
+\label{proj_2timer_2timer_8h_a3018c7600b7bb9866400596a56a57af7}
+
+
+Definition at line 27 of file timer.h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{proj_2timer_2timer_8h_a1074cdcb942e956a19764c56388e7d38}{
+\index{proj/timer/timer.h@{proj/timer/timer.h}!delayMs@{delayMs}}
+\index{delayMs@{delayMs}!proj/timer/timer.h@{proj/timer/timer.h}}
+\subsubsection[{delayMs}]{\setlength{\rightskip}{0pt plus 5cm}void delayMs (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{ delayInMs}
+\end{DoxyParamCaption}
+)}}
+\label{proj_2timer_2timer_8h_a1074cdcb942e956a19764c56388e7d38}
+
+
+Definition at line 45 of file timer.c.
+
+\hypertarget{proj_2timer_2timer_8h_a04837043597d1a97e397463e32630d9b}{
+\index{proj/timer/timer.h@{proj/timer/timer.h}!delayUs@{delayUs}}
+\index{delayUs@{delayUs}!proj/timer/timer.h@{proj/timer/timer.h}}
+\subsubsection[{delayUs}]{\setlength{\rightskip}{0pt plus 5cm}void delayUs (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{ delayInUs}
+\end{DoxyParamCaption}
+)}}
+\label{proj_2timer_2timer_8h_a04837043597d1a97e397463e32630d9b}
+
+
+Definition at line 62 of file timer.c.
+
+\hypertarget{proj_2timer_2timer_8h_ae80a4ec66fd1eb1b968377ef4c4c1dab}{
+\index{proj/timer/timer.h@{proj/timer/timer.h}!T0Get@{T0Get}}
+\index{T0Get@{T0Get}!proj/timer/timer.h@{proj/timer/timer.h}}
+\subsubsection[{T0Get}]{\setlength{\rightskip}{0pt plus 5cm}int T0Get (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{proj_2timer_2timer_8h_ae80a4ec66fd1eb1b968377ef4c4c1dab}
+
+
+Definition at line 40 of file timer.c.
+
+\hypertarget{proj_2timer_2timer_8h_a21922fcfd328ddde697161b8ac305a26}{
+\index{proj/timer/timer.h@{proj/timer/timer.h}!T0Init@{T0Init}}
+\index{T0Init@{T0Init}!proj/timer/timer.h@{proj/timer/timer.h}}
+\subsubsection[{T0Init}]{\setlength{\rightskip}{0pt plus 5cm}void T0Init (
+\begin{DoxyParamCaption}
+\item[{int}]{ ms}
+\end{DoxyParamCaption}
+)}}
+\label{proj_2timer_2timer_8h_a21922fcfd328ddde697161b8ac305a26}
+
+
+Definition at line 23 of file timer.c.
+
+\hypertarget{proj_2timer_2timer_8h_a91c2747b88b977baf27d17ad42d04453}{
+\index{proj/timer/timer.h@{proj/timer/timer.h}!T0Start@{T0Start}}
+\index{T0Start@{T0Start}!proj/timer/timer.h@{proj/timer/timer.h}}
+\subsubsection[{T0Start}]{\setlength{\rightskip}{0pt plus 5cm}void T0Start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{proj_2timer_2timer_8h_a91c2747b88b977baf27d17ad42d04453}
+
+
+Definition at line 35 of file timer.c.
+
+\hypertarget{proj_2timer_2timer_8h_abdf9cb5bce1e76dc8c9aa7cae12fd0a3}{
+\index{proj/timer/timer.h@{proj/timer/timer.h}!T0Stop@{T0Stop}}
+\index{T0Stop@{T0Stop}!proj/timer/timer.h@{proj/timer/timer.h}}
+\subsubsection[{T0Stop}]{\setlength{\rightskip}{0pt plus 5cm}void T0Stop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{proj_2timer_2timer_8h_abdf9cb5bce1e76dc8c9aa7cae12fd0a3}
+
+
+Definition at line 31 of file timer.c.
+
+\hypertarget{proj_2timer_2timer_8h_a72c5f400f1bffa4c7c596425de2e6cb7}{
+\index{proj/timer/timer.h@{proj/timer/timer.h}!timeoutMs@{timeoutMs}}
+\index{timeoutMs@{timeoutMs}!proj/timer/timer.h@{proj/timer/timer.h}}
+\subsubsection[{timeoutMs}]{\setlength{\rightskip}{0pt plus 5cm}int timeoutMs (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{ delayInMs, }
+\item[{unsigned int}]{ condition}
+\end{DoxyParamCaption}
+)}}
+\label{proj_2timer_2timer_8h_a72c5f400f1bffa4c7c596425de2e6cb7}
+
+
+Definition at line 79 of file timer.c.
+

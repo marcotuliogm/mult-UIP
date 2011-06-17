@@ -1,0 +1,224 @@
+\hypertarget{i2c_8c}{
+\section{i2c/i2c.c File Reference}
+\label{i2c_8c}\index{i2c/i2c.c@{i2c/i2c.c}}
+}
+{\ttfamily \#include \char`\"{}i2c.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}../lpc\_\-config.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}../uart/uart.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{i2c_8c_ad200e305193f4ce977360647fda501d9}{I2CStart} (void)
+\item 
+int \hyperlink{i2c_8c_ae0a8a853fca2592a0b8181149b97135a}{I2CStop} (void)
+\item 
+int \hyperlink{i2c_8c_abd41dacdcd839a842f018b945eb34a52}{I2CInit} (int I2cMode)
+\item 
+int \hyperlink{i2c_8c_a76f4ed1937be50f48f29b49ae7adaee1}{I2CEngine} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+volatile int \hyperlink{i2c_8c_af62b47ba6e6e0d80905492ff03a5ce18}{I2CMasterState} = I2C\_\-IDLE
+\item 
+volatile int \hyperlink{i2c_8c_abc6eb7afec4605000756ba1bb862ea72}{I2CSlaveState} = I2C\_\-IDLE
+\item 
+volatile int \hyperlink{i2c_8c_ac9f703df200219c72d9b83b256a04395}{I2CCmd}
+\item 
+volatile int \hyperlink{i2c_8c_a0a85f7815922883d692ee9143ad37050}{I2CMode}
+\item 
+volatile char \hyperlink{i2c_8c_a1a2d34582b4f6f7529a4133e6fd47496}{I2CMasterBuffer} \mbox{[}BUFSIZE\mbox{]}
+\item 
+volatile char \hyperlink{i2c_8c_a99c53cddecf13f134e261b35db7d90e4}{I2CSlaveBuffer} \mbox{[}BUFSIZE\mbox{]}
+\item 
+volatile int \hyperlink{i2c_8c_ad46afbcf2c74e318960741a6393c4a36}{I2CCount} = 0
+\item 
+volatile int \hyperlink{i2c_8c_ac28640cc058d407b42a40407528f84c4}{I2CReadLength}
+\item 
+volatile int \hyperlink{i2c_8c_aa242eacce87ea38213d81adbb1daba77}{I2CWriteLength}
+\item 
+volatile int \hyperlink{i2c_8c_a4945a68b66d3b667f3465667c79e2590}{RdIndex} = 0
+\item 
+volatile int \hyperlink{i2c_8c_a956fc002b90d3acd0b717d469efe62ad}{WrIndex} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{i2c_8c_a76f4ed1937be50f48f29b49ae7adaee1}{
+\index{i2c.c@{i2c.c}!I2CEngine@{I2CEngine}}
+\index{I2CEngine@{I2CEngine}!i2c.c@{i2c.c}}
+\subsubsection[{I2CEngine}]{\setlength{\rightskip}{0pt plus 5cm}int I2CEngine (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{i2c_8c_a76f4ed1937be50f48f29b49ae7adaee1}
+
+
+Definition at line 171 of file i2c.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{i2c_8c_a76f4ed1937be50f48f29b49ae7adaee1_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{i2c_8c_abd41dacdcd839a842f018b945eb34a52}{
+\index{i2c.c@{i2c.c}!I2CInit@{I2CInit}}
+\index{I2CInit@{I2CInit}!i2c.c@{i2c.c}}
+\subsubsection[{I2CInit}]{\setlength{\rightskip}{0pt plus 5cm}int I2CInit (
+\begin{DoxyParamCaption}
+\item[{int}]{ I2cMode}
+\end{DoxyParamCaption}
+)}}
+\label{i2c_8c_abd41dacdcd839a842f018b945eb34a52}
+
+
+Definition at line 109 of file i2c.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{i2c_8c_abd41dacdcd839a842f018b945eb34a52_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{i2c_8c_ad200e305193f4ce977360647fda501d9}{
+\index{i2c.c@{i2c.c}!I2CStart@{I2CStart}}
+\index{I2CStart@{I2CStart}!i2c.c@{i2c.c}}
+\subsubsection[{I2CStart}]{\setlength{\rightskip}{0pt plus 5cm}int I2CStart (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{i2c_8c_ad200e305193f4ce977360647fda501d9}
+
+
+Definition at line 55 of file i2c.c.
+
+\hypertarget{i2c_8c_ae0a8a853fca2592a0b8181149b97135a}{
+\index{i2c.c@{i2c.c}!I2CStop@{I2CStop}}
+\index{I2CStop@{I2CStop}!i2c.c@{i2c.c}}
+\subsubsection[{I2CStop}]{\setlength{\rightskip}{0pt plus 5cm}int I2CStop (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{i2c_8c_ae0a8a853fca2592a0b8181149b97135a}
+
+
+Definition at line 90 of file i2c.c.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{i2c_8c_ac9f703df200219c72d9b83b256a04395}{
+\index{i2c.c@{i2c.c}!I2CCmd@{I2CCmd}}
+\index{I2CCmd@{I2CCmd}!i2c.c@{i2c.c}}
+\subsubsection[{I2CCmd}]{\setlength{\rightskip}{0pt plus 5cm}volatile int {\bf I2CCmd}}}
+\label{i2c_8c_ac9f703df200219c72d9b83b256a04395}
+
+
+Definition at line 21 of file i2c.c.
+
+\hypertarget{i2c_8c_ad46afbcf2c74e318960741a6393c4a36}{
+\index{i2c.c@{i2c.c}!I2CCount@{I2CCount}}
+\index{I2CCount@{I2CCount}!i2c.c@{i2c.c}}
+\subsubsection[{I2CCount}]{\setlength{\rightskip}{0pt plus 5cm}volatile int {\bf I2CCount} = 0}}
+\label{i2c_8c_ad46afbcf2c74e318960741a6393c4a36}
+
+
+Definition at line 26 of file i2c.c.
+
+\hypertarget{i2c_8c_a1a2d34582b4f6f7529a4133e6fd47496}{
+\index{i2c.c@{i2c.c}!I2CMasterBuffer@{I2CMasterBuffer}}
+\index{I2CMasterBuffer@{I2CMasterBuffer}!i2c.c@{i2c.c}}
+\subsubsection[{I2CMasterBuffer}]{\setlength{\rightskip}{0pt plus 5cm}volatile char {\bf I2CMasterBuffer}\mbox{[}BUFSIZE\mbox{]}}}
+\label{i2c_8c_a1a2d34582b4f6f7529a4133e6fd47496}
+
+
+Definition at line 24 of file i2c.c.
+
+\hypertarget{i2c_8c_af62b47ba6e6e0d80905492ff03a5ce18}{
+\index{i2c.c@{i2c.c}!I2CMasterState@{I2CMasterState}}
+\index{I2CMasterState@{I2CMasterState}!i2c.c@{i2c.c}}
+\subsubsection[{I2CMasterState}]{\setlength{\rightskip}{0pt plus 5cm}volatile int {\bf I2CMasterState} = I2C\_\-IDLE}}
+\label{i2c_8c_af62b47ba6e6e0d80905492ff03a5ce18}
+
+
+Definition at line 18 of file i2c.c.
+
+\hypertarget{i2c_8c_a0a85f7815922883d692ee9143ad37050}{
+\index{i2c.c@{i2c.c}!I2CMode@{I2CMode}}
+\index{I2CMode@{I2CMode}!i2c.c@{i2c.c}}
+\subsubsection[{I2CMode}]{\setlength{\rightskip}{0pt plus 5cm}volatile int {\bf I2CMode}}}
+\label{i2c_8c_a0a85f7815922883d692ee9143ad37050}
+
+
+Definition at line 22 of file i2c.c.
+
+\hypertarget{i2c_8c_ac28640cc058d407b42a40407528f84c4}{
+\index{i2c.c@{i2c.c}!I2CReadLength@{I2CReadLength}}
+\index{I2CReadLength@{I2CReadLength}!i2c.c@{i2c.c}}
+\subsubsection[{I2CReadLength}]{\setlength{\rightskip}{0pt plus 5cm}volatile int {\bf I2CReadLength}}}
+\label{i2c_8c_ac28640cc058d407b42a40407528f84c4}
+
+
+Definition at line 27 of file i2c.c.
+
+\hypertarget{i2c_8c_a99c53cddecf13f134e261b35db7d90e4}{
+\index{i2c.c@{i2c.c}!I2CSlaveBuffer@{I2CSlaveBuffer}}
+\index{I2CSlaveBuffer@{I2CSlaveBuffer}!i2c.c@{i2c.c}}
+\subsubsection[{I2CSlaveBuffer}]{\setlength{\rightskip}{0pt plus 5cm}volatile char {\bf I2CSlaveBuffer}\mbox{[}BUFSIZE\mbox{]}}}
+\label{i2c_8c_a99c53cddecf13f134e261b35db7d90e4}
+
+
+Definition at line 25 of file i2c.c.
+
+\hypertarget{i2c_8c_abc6eb7afec4605000756ba1bb862ea72}{
+\index{i2c.c@{i2c.c}!I2CSlaveState@{I2CSlaveState}}
+\index{I2CSlaveState@{I2CSlaveState}!i2c.c@{i2c.c}}
+\subsubsection[{I2CSlaveState}]{\setlength{\rightskip}{0pt plus 5cm}volatile int {\bf I2CSlaveState} = I2C\_\-IDLE}}
+\label{i2c_8c_abc6eb7afec4605000756ba1bb862ea72}
+
+
+Definition at line 19 of file i2c.c.
+
+\hypertarget{i2c_8c_aa242eacce87ea38213d81adbb1daba77}{
+\index{i2c.c@{i2c.c}!I2CWriteLength@{I2CWriteLength}}
+\index{I2CWriteLength@{I2CWriteLength}!i2c.c@{i2c.c}}
+\subsubsection[{I2CWriteLength}]{\setlength{\rightskip}{0pt plus 5cm}volatile int {\bf I2CWriteLength}}}
+\label{i2c_8c_aa242eacce87ea38213d81adbb1daba77}
+
+
+Definition at line 28 of file i2c.c.
+
+\hypertarget{i2c_8c_a4945a68b66d3b667f3465667c79e2590}{
+\index{i2c.c@{i2c.c}!RdIndex@{RdIndex}}
+\index{RdIndex@{RdIndex}!i2c.c@{i2c.c}}
+\subsubsection[{RdIndex}]{\setlength{\rightskip}{0pt plus 5cm}volatile int {\bf RdIndex} = 0}}
+\label{i2c_8c_a4945a68b66d3b667f3465667c79e2590}
+
+
+Definition at line 30 of file i2c.c.
+
+\hypertarget{i2c_8c_a956fc002b90d3acd0b717d469efe62ad}{
+\index{i2c.c@{i2c.c}!WrIndex@{WrIndex}}
+\index{WrIndex@{WrIndex}!i2c.c@{i2c.c}}
+\subsubsection[{WrIndex}]{\setlength{\rightskip}{0pt plus 5cm}volatile int {\bf WrIndex} = 0}}
+\label{i2c_8c_a956fc002b90d3acd0b717d469efe62ad}
+
+
+Definition at line 31 of file i2c.c.
+

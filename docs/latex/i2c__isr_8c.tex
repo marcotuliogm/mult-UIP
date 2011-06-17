@@ -1,0 +1,126 @@
+\hypertarget{i2c__isr_8c}{
+\section{i2c/i2c\_\-isr.c File Reference}
+\label{i2c__isr_8c}\index{i2c/i2c\_\-isr.c@{i2c/i2c\_\-isr.c}}
+}
+
+
+Funcoes para uso do I2C.  
+
+
+{\ttfamily \#include \char`\"{}../lpc\_\-config.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}i2c.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}../uart/uart.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{i2c__isr_8c_a42fe92ca14c2a512cfdad587743a4ac4}{I2C0MasterHandler} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+volatile int \hyperlink{i2c__isr_8c_af62b47ba6e6e0d80905492ff03a5ce18}{I2CMasterState}
+\item 
+volatile int \hyperlink{i2c__isr_8c_ac9f703df200219c72d9b83b256a04395}{I2CCmd}
+\item 
+volatile char \hyperlink{i2c__isr_8c_a1a2d34582b4f6f7529a4133e6fd47496}{I2CMasterBuffer} \mbox{[}BUFSIZE\mbox{]}
+\item 
+volatile int \hyperlink{i2c__isr_8c_ac28640cc058d407b42a40407528f84c4}{I2CReadLength}
+\item 
+volatile int \hyperlink{i2c__isr_8c_aa242eacce87ea38213d81adbb1daba77}{I2CWriteLength}
+\item 
+volatile int \hyperlink{i2c__isr_8c_a4945a68b66d3b667f3465667c79e2590}{RdIndex}
+\item 
+volatile int \hyperlink{i2c__isr_8c_a956fc002b90d3acd0b717d469efe62ad}{WrIndex}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Felipe de Andrade Neves Lavratti 
+\end{DoxyAuthor}
+
+
+Definition in file \hyperlink{i2c__isr_8c_source}{i2c\_\-isr.c}.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{i2c__isr_8c_a42fe92ca14c2a512cfdad587743a4ac4}{
+\index{i2c\_\-isr.c@{i2c\_\-isr.c}!I2C0MasterHandler@{I2C0MasterHandler}}
+\index{I2C0MasterHandler@{I2C0MasterHandler}!i2c_isr.c@{i2c\_\-isr.c}}
+\subsubsection[{I2C0MasterHandler}]{\setlength{\rightskip}{0pt plus 5cm}void I2C0MasterHandler (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{i2c__isr_8c_a42fe92ca14c2a512cfdad587743a4ac4}
+
+
+Definition at line 31 of file i2c\_\-isr.c.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{i2c__isr_8c_ac9f703df200219c72d9b83b256a04395}{
+\index{i2c\_\-isr.c@{i2c\_\-isr.c}!I2CCmd@{I2CCmd}}
+\index{I2CCmd@{I2CCmd}!i2c_isr.c@{i2c\_\-isr.c}}
+\subsubsection[{I2CCmd}]{\setlength{\rightskip}{0pt plus 5cm}volatile int {\bf I2CCmd}}}
+\label{i2c__isr_8c_ac9f703df200219c72d9b83b256a04395}
+
+
+Definition at line 21 of file i2c.c.
+
+\hypertarget{i2c__isr_8c_a1a2d34582b4f6f7529a4133e6fd47496}{
+\index{i2c\_\-isr.c@{i2c\_\-isr.c}!I2CMasterBuffer@{I2CMasterBuffer}}
+\index{I2CMasterBuffer@{I2CMasterBuffer}!i2c_isr.c@{i2c\_\-isr.c}}
+\subsubsection[{I2CMasterBuffer}]{\setlength{\rightskip}{0pt plus 5cm}volatile char {\bf I2CMasterBuffer}\mbox{[}BUFSIZE\mbox{]}}}
+\label{i2c__isr_8c_a1a2d34582b4f6f7529a4133e6fd47496}
+
+
+Definition at line 24 of file i2c.c.
+
+\hypertarget{i2c__isr_8c_af62b47ba6e6e0d80905492ff03a5ce18}{
+\index{i2c\_\-isr.c@{i2c\_\-isr.c}!I2CMasterState@{I2CMasterState}}
+\index{I2CMasterState@{I2CMasterState}!i2c_isr.c@{i2c\_\-isr.c}}
+\subsubsection[{I2CMasterState}]{\setlength{\rightskip}{0pt plus 5cm}volatile int {\bf I2CMasterState}}}
+\label{i2c__isr_8c_af62b47ba6e6e0d80905492ff03a5ce18}
+
+
+Definition at line 18 of file i2c.c.
+
+\hypertarget{i2c__isr_8c_ac28640cc058d407b42a40407528f84c4}{
+\index{i2c\_\-isr.c@{i2c\_\-isr.c}!I2CReadLength@{I2CReadLength}}
+\index{I2CReadLength@{I2CReadLength}!i2c_isr.c@{i2c\_\-isr.c}}
+\subsubsection[{I2CReadLength}]{\setlength{\rightskip}{0pt plus 5cm}volatile int {\bf I2CReadLength}}}
+\label{i2c__isr_8c_ac28640cc058d407b42a40407528f84c4}
+
+
+Definition at line 27 of file i2c.c.
+
+\hypertarget{i2c__isr_8c_aa242eacce87ea38213d81adbb1daba77}{
+\index{i2c\_\-isr.c@{i2c\_\-isr.c}!I2CWriteLength@{I2CWriteLength}}
+\index{I2CWriteLength@{I2CWriteLength}!i2c_isr.c@{i2c\_\-isr.c}}
+\subsubsection[{I2CWriteLength}]{\setlength{\rightskip}{0pt plus 5cm}volatile int {\bf I2CWriteLength}}}
+\label{i2c__isr_8c_aa242eacce87ea38213d81adbb1daba77}
+
+
+Definition at line 28 of file i2c.c.
+
+\hypertarget{i2c__isr_8c_a4945a68b66d3b667f3465667c79e2590}{
+\index{i2c\_\-isr.c@{i2c\_\-isr.c}!RdIndex@{RdIndex}}
+\index{RdIndex@{RdIndex}!i2c_isr.c@{i2c\_\-isr.c}}
+\subsubsection[{RdIndex}]{\setlength{\rightskip}{0pt plus 5cm}volatile int {\bf RdIndex}}}
+\label{i2c__isr_8c_a4945a68b66d3b667f3465667c79e2590}
+
+
+Definition at line 30 of file i2c.c.
+
+\hypertarget{i2c__isr_8c_a956fc002b90d3acd0b717d469efe62ad}{
+\index{i2c\_\-isr.c@{i2c\_\-isr.c}!WrIndex@{WrIndex}}
+\index{WrIndex@{WrIndex}!i2c_isr.c@{i2c\_\-isr.c}}
+\subsubsection[{WrIndex}]{\setlength{\rightskip}{0pt plus 5cm}volatile int {\bf WrIndex}}}
+\label{i2c__isr_8c_a956fc002b90d3acd0b717d469efe62ad}
+
+
+Definition at line 31 of file i2c.c.
+

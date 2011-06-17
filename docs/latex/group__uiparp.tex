@@ -1,0 +1,248 @@
+\hypertarget{group__uiparp}{
+\section{uIP Address Resolution Protocol}
+\label{group__uiparp}\index{uIP Address Resolution Protocol@{uIP Address Resolution Protocol}}
+}
+
+
+Collaboration diagram for uIP Address Resolution Protocol:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=396pt]{group__uiparp}
+\end{center}
+\end{figure}
+
+
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structarp__hdr}{arp\_\-hdr}
+\item 
+struct \hyperlink{structethip__hdr}{ethip\_\-hdr}
+\item 
+struct \hyperlink{structarp__entry}{arp\_\-entry}
+\item 
+struct \hyperlink{structuip__eth__hdr}{uip\_\-eth\_\-hdr}
+\end{DoxyCompactItemize}
+\subsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file \hyperlink{uip__arp_8c}{uip\_\-arp.c}
+\item 
+file \hyperlink{uip__arp_8h}{uip\_\-arp.h}
+\end{DoxyCompactItemize}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__uiparp_ga7a7c46ffaba30477b8c9e3e61bd2e106}{ARP\_\-REQUEST}~1
+\item 
+\#define \hyperlink{group__uiparp_ga06ba7b414e718081998f2814090debf1}{ARP\_\-REPLY}~2
+\item 
+\#define \hyperlink{group__uiparp_gabb56b549f7ab4d86e1cc39b8afc70d1e}{ARP\_\-HWTYPE\_\-ETH}~1
+\item 
+\#define \hyperlink{group__uiparp_ga24f52ac52d6e714cb04a5aa01be3bdd0}{BUF}~((struct \hyperlink{structarp__hdr}{arp\_\-hdr} $\ast$)\&\hyperlink{group__uipdevfunc_gab81e78f890dbbee50c533a9734b74fd9}{uip\_\-buf}\mbox{[}0\mbox{]})
+\item 
+\#define \hyperlink{group__uiparp_ga9f2196e2705036869611962425e404bf}{IPBUF}~((struct \hyperlink{structethip__hdr}{ethip\_\-hdr} $\ast$)\&\hyperlink{group__uipdevfunc_gab81e78f890dbbee50c533a9734b74fd9}{uip\_\-buf}\mbox{[}0\mbox{]})
+\item 
+\#define \hyperlink{group__uiparp_ga3e1562e8a6de32268e5df92a52152f91}{UIP\_\-ETHTYPE\_\-ARP}~0x0806
+\item 
+\#define \hyperlink{group__uiparp_ga03d140db75de3d3cdfbbab1c4fed8d8d}{UIP\_\-ETHTYPE\_\-IP}~0x0800
+\item 
+\#define \hyperlink{group__uiparp_gabb558f3a9b1ec015e83c314aba694e35}{UIP\_\-ETHTYPE\_\-IP6}~0x86dd
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__uiparp_ga2d9d28afa353f662b9bb5234fc419f72}{uip\_\-arp\_\-init} (void)
+\item 
+void \hyperlink{group__uiparp_ga058a8e6025f67b021862281f1911fcef}{uip\_\-arp\_\-timer} (void)
+\item 
+void \hyperlink{group__uiparp_ga5cf8d6974a89ad67c5faf9b19261cb7c}{uip\_\-arp\_\-ipin} (void)
+\item 
+void \hyperlink{group__uiparp_ga902c4a360134096224bc2655f623aa5f}{uip\_\-arp\_\-arpin} (void)
+\item 
+void \hyperlink{group__uiparp_ga54b27e45df15e10a0eb1a3e3a91417d2}{uip\_\-arp\_\-out} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structarp__hdr}{arp\_\-hdr} \hyperlink{group__uiparp_ga61953c615dbf189b18855737b02471ff}{PACK\_\-STRUCT\_\-END}
+\item 
+struct \hyperlink{structuip__eth__addr}{uip\_\-eth\_\-addr} \hyperlink{group__uiparp_ga499bb98a0b4ae9a98553ede81317606d}{uip\_\-ethaddr}
+\item 
+struct \hyperlink{structuip__eth__hdr}{uip\_\-eth\_\-hdr} \hyperlink{group__uiparp_ga1c9b41c7403c38cd943ecf0a91543119}{PACK\_\-STRUCT\_\-END}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The Address Resolution Protocol ARP is used for mapping between IP addresses and link level addresses such as the Ethernet MAC addresses. ARP uses broadcast queries to ask for the link level address of a known IP address and the host which is configured with the IP address for which the query was meant, will respond with its link level address.
+
+\begin{DoxyNote}{Note}
+This ARP implementation only supports Ethernet. 
+\end{DoxyNote}
+
+
+\subsection{Define Documentation}
+\hypertarget{group__uiparp_gabb56b549f7ab4d86e1cc39b8afc70d1e}{
+\index{uiparp@{uiparp}!ARP\_\-HWTYPE\_\-ETH@{ARP\_\-HWTYPE\_\-ETH}}
+\index{ARP\_\-HWTYPE\_\-ETH@{ARP\_\-HWTYPE\_\-ETH}!uiparp@{uiparp}}
+\subsubsection[{ARP\_\-HWTYPE\_\-ETH}]{\setlength{\rightskip}{0pt plus 5cm}\#define ARP\_\-HWTYPE\_\-ETH~1}}
+\label{group__uiparp_gabb56b549f7ab4d86e1cc39b8afc70d1e}
+
+
+Definition at line 113 of file uip\_\-arp.c.
+
+\hypertarget{group__uiparp_ga06ba7b414e718081998f2814090debf1}{
+\index{uiparp@{uiparp}!ARP\_\-REPLY@{ARP\_\-REPLY}}
+\index{ARP\_\-REPLY@{ARP\_\-REPLY}!uiparp@{uiparp}}
+\subsubsection[{ARP\_\-REPLY}]{\setlength{\rightskip}{0pt plus 5cm}\#define ARP\_\-REPLY~2}}
+\label{group__uiparp_ga06ba7b414e718081998f2814090debf1}
+
+
+Definition at line 111 of file uip\_\-arp.c.
+
+\hypertarget{group__uiparp_ga7a7c46ffaba30477b8c9e3e61bd2e106}{
+\index{uiparp@{uiparp}!ARP\_\-REQUEST@{ARP\_\-REQUEST}}
+\index{ARP\_\-REQUEST@{ARP\_\-REQUEST}!uiparp@{uiparp}}
+\subsubsection[{ARP\_\-REQUEST}]{\setlength{\rightskip}{0pt plus 5cm}\#define ARP\_\-REQUEST~1}}
+\label{group__uiparp_ga7a7c46ffaba30477b8c9e3e61bd2e106}
+
+
+Definition at line 110 of file uip\_\-arp.c.
+
+\hypertarget{group__uiparp_ga24f52ac52d6e714cb04a5aa01be3bdd0}{
+\index{uiparp@{uiparp}!BUF@{BUF}}
+\index{BUF@{BUF}!uiparp@{uiparp}}
+\subsubsection[{BUF}]{\setlength{\rightskip}{0pt plus 5cm}\#define BUF~((struct {\bf arp\_\-hdr} $\ast$)\&{\bf uip\_\-buf}\mbox{[}0\mbox{]})}}
+\label{group__uiparp_ga24f52ac52d6e714cb04a5aa01be3bdd0}
+
+
+Definition at line 132 of file uip\_\-arp.c.
+
+\hypertarget{group__uiparp_ga9f2196e2705036869611962425e404bf}{
+\index{uiparp@{uiparp}!IPBUF@{IPBUF}}
+\index{IPBUF@{IPBUF}!uiparp@{uiparp}}
+\subsubsection[{IPBUF}]{\setlength{\rightskip}{0pt plus 5cm}\#define IPBUF~((struct {\bf ethip\_\-hdr} $\ast$)\&{\bf uip\_\-buf}\mbox{[}0\mbox{]})}}
+\label{group__uiparp_ga9f2196e2705036869611962425e404bf}
+
+
+Definition at line 133 of file uip\_\-arp.c.
+
+\hypertarget{group__uiparp_ga3e1562e8a6de32268e5df92a52152f91}{
+\index{uiparp@{uiparp}!UIP\_\-ETHTYPE\_\-ARP@{UIP\_\-ETHTYPE\_\-ARP}}
+\index{UIP\_\-ETHTYPE\_\-ARP@{UIP\_\-ETHTYPE\_\-ARP}!uiparp@{uiparp}}
+\subsubsection[{UIP\_\-ETHTYPE\_\-ARP}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-ETHTYPE\_\-ARP~0x0806}}
+\label{group__uiparp_ga3e1562e8a6de32268e5df92a52152f91}
+
+
+Definition at line 77 of file uip\_\-arp.h.
+
+\hypertarget{group__uiparp_ga03d140db75de3d3cdfbbab1c4fed8d8d}{
+\index{uiparp@{uiparp}!UIP\_\-ETHTYPE\_\-IP@{UIP\_\-ETHTYPE\_\-IP}}
+\index{UIP\_\-ETHTYPE\_\-IP@{UIP\_\-ETHTYPE\_\-IP}!uiparp@{uiparp}}
+\subsubsection[{UIP\_\-ETHTYPE\_\-IP}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-ETHTYPE\_\-IP~0x0800}}
+\label{group__uiparp_ga03d140db75de3d3cdfbbab1c4fed8d8d}
+
+
+Definition at line 78 of file uip\_\-arp.h.
+
+\hypertarget{group__uiparp_gabb558f3a9b1ec015e83c314aba694e35}{
+\index{uiparp@{uiparp}!UIP\_\-ETHTYPE\_\-IP6@{UIP\_\-ETHTYPE\_\-IP6}}
+\index{UIP\_\-ETHTYPE\_\-IP6@{UIP\_\-ETHTYPE\_\-IP6}!uiparp@{uiparp}}
+\subsubsection[{UIP\_\-ETHTYPE\_\-IP6}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-ETHTYPE\_\-IP6~0x86dd}}
+\label{group__uiparp_gabb558f3a9b1ec015e83c314aba694e35}
+
+
+Definition at line 79 of file uip\_\-arp.h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{group__uiparp_ga902c4a360134096224bc2655f623aa5f}{
+\index{uiparp@{uiparp}!uip\_\-arp\_\-arpin@{uip\_\-arp\_\-arpin}}
+\index{uip\_\-arp\_\-arpin@{uip\_\-arp\_\-arpin}!uiparp@{uiparp}}
+\subsubsection[{uip\_\-arp\_\-arpin}]{\setlength{\rightskip}{0pt plus 5cm}void uip\_\-arp\_\-arpin (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__uiparp_ga902c4a360134096224bc2655f623aa5f}
+ARP processing for incoming ARP packets.
+
+This function should be called by the device driver when an ARP packet has been received. The function will act differently depending on the ARP packet type: if it is a reply for a request that we previously sent out, the ARP cache will be filled in with the values from the ARP reply. If the incoming ARP packet is an ARP request for our IP address, an ARP reply packet is created and put into the uip\_\-buf\mbox{[}\mbox{]} buffer.
+
+When the function returns, the value of the global variable uip\_\-len indicates whether the device driver should send out a packet or not. If uip\_\-len is zero, no packet should be sent. If uip\_\-len is non-\/zero, it contains the length of the outbound packet that is present in the uip\_\-buf\mbox{[}\mbox{]} buffer.
+
+This function expects an ARP packet with a prepended Ethernet header in the uip\_\-buf\mbox{[}\mbox{]} buffer, and the length of the packet in the global variable uip\_\-len. \hypertarget{group__uiparp_ga2d9d28afa353f662b9bb5234fc419f72}{
+\index{uiparp@{uiparp}!uip\_\-arp\_\-init@{uip\_\-arp\_\-init}}
+\index{uip\_\-arp\_\-init@{uip\_\-arp\_\-init}!uiparp@{uiparp}}
+\subsubsection[{uip\_\-arp\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void uip\_\-arp\_\-init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__uiparp_ga2d9d28afa353f662b9bb5234fc419f72}
+Initialize the ARP module. \hypertarget{group__uiparp_ga5cf8d6974a89ad67c5faf9b19261cb7c}{
+\index{uiparp@{uiparp}!uip\_\-arp\_\-ipin@{uip\_\-arp\_\-ipin}}
+\index{uip\_\-arp\_\-ipin@{uip\_\-arp\_\-ipin}!uiparp@{uiparp}}
+\subsubsection[{uip\_\-arp\_\-ipin}]{\setlength{\rightskip}{0pt plus 5cm}void uip\_\-arp\_\-ipin (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__uiparp_ga5cf8d6974a89ad67c5faf9b19261cb7c}
+ARP processing for incoming IP packets
+
+This function should be called by the device driver when an IP packet has been received. The function will check if the address is in the ARP cache, and if so the ARP cache entry will be refreshed. If no ARP cache entry was found, a new one is created.
+
+This function expects an IP packet with a prepended Ethernet header in the uip\_\-buf\mbox{[}\mbox{]} buffer, and the length of the packet in the global variable uip\_\-len. \hypertarget{group__uiparp_ga54b27e45df15e10a0eb1a3e3a91417d2}{
+\index{uiparp@{uiparp}!uip\_\-arp\_\-out@{uip\_\-arp\_\-out}}
+\index{uip\_\-arp\_\-out@{uip\_\-arp\_\-out}!uiparp@{uiparp}}
+\subsubsection[{uip\_\-arp\_\-out}]{\setlength{\rightskip}{0pt plus 5cm}void uip\_\-arp\_\-out (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__uiparp_ga54b27e45df15e10a0eb1a3e3a91417d2}
+Prepend Ethernet header to an outbound IP packet and see if we need to send out an ARP request.
+
+This function should be called before sending out an IP packet. The function checks the destination IP address of the IP packet to see what Ethernet MAC address that should be used as a destination MAC address on the Ethernet.
+
+If the destination IP address is in the local network (determined by logical ANDing of netmask and our IP address), the function checks the ARP cache to see if an entry for the destination IP address is found. If so, an Ethernet header is prepended and the function returns. If no ARP cache entry is found for the destination IP address, the packet in the uip\_\-buf\mbox{[}\mbox{]} is replaced by an ARP request packet for the IP address. The IP packet is dropped and it is assumed that they higher level protocols (e.g., TCP) eventually will retransmit the dropped packet.
+
+If the destination IP address is not on the local network, the IP address of the default router is used instead.
+
+When the function returns, a packet is present in the uip\_\-buf\mbox{[}\mbox{]} buffer, and the length of the packet is in the global variable uip\_\-len. \hypertarget{group__uiparp_ga058a8e6025f67b021862281f1911fcef}{
+\index{uiparp@{uiparp}!uip\_\-arp\_\-timer@{uip\_\-arp\_\-timer}}
+\index{uip\_\-arp\_\-timer@{uip\_\-arp\_\-timer}!uiparp@{uiparp}}
+\subsubsection[{uip\_\-arp\_\-timer}]{\setlength{\rightskip}{0pt plus 5cm}void uip\_\-arp\_\-timer (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__uiparp_ga058a8e6025f67b021862281f1911fcef}
+Periodic ARP processing function.
+
+This function performs periodic timer processing in the ARP module and should be called at regular intervals. The recommended interval is 10 seconds between the calls. 
+
+\subsection{Variable Documentation}
+\hypertarget{group__uiparp_ga1c9b41c7403c38cd943ecf0a91543119}{
+\index{uiparp@{uiparp}!PACK\_\-STRUCT\_\-END@{PACK\_\-STRUCT\_\-END}}
+\index{PACK\_\-STRUCT\_\-END@{PACK\_\-STRUCT\_\-END}!uiparp@{uiparp}}
+\subsubsection[{PACK\_\-STRUCT\_\-END}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf uip\_\-eth\_\-hdr} {\bf PACK\_\-STRUCT\_\-END}}}
+\label{group__uiparp_ga1c9b41c7403c38cd943ecf0a91543119}
+The Ethernet header. \hypertarget{group__uiparp_ga61953c615dbf189b18855737b02471ff}{
+\index{uiparp@{uiparp}!PACK\_\-STRUCT\_\-END@{PACK\_\-STRUCT\_\-END}}
+\index{PACK\_\-STRUCT\_\-END@{PACK\_\-STRUCT\_\-END}!uiparp@{uiparp}}
+\subsubsection[{PACK\_\-STRUCT\_\-END}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf ethip\_\-hdr}  {\bf PACK\_\-STRUCT\_\-END}}}
+\label{group__uiparp_ga61953c615dbf189b18855737b02471ff}
+\hypertarget{group__uiparp_ga499bb98a0b4ae9a98553ede81317606d}{
+\index{uiparp@{uiparp}!uip\_\-ethaddr@{uip\_\-ethaddr}}
+\index{uip\_\-ethaddr@{uip\_\-ethaddr}!uiparp@{uiparp}}
+\subsubsection[{uip\_\-ethaddr}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf uip\_\-eth\_\-addr} {\bf uip\_\-ethaddr}}}
+\label{group__uiparp_ga499bb98a0b4ae9a98553ede81317606d}
+
+
+Definition at line 134 of file uip.c.
+

@@ -1,0 +1,584 @@
+\hypertarget{cli__func_8c}{
+\section{cli/cli\_\-func.c File Reference}
+\label{cli__func_8c}\index{cli/cli\_\-func.c@{cli/cli\_\-func.c}}
+}
+
+
+Arquivos com a implementacao das funcoes chamadas pela CLI.  
+
+
+{\ttfamily \#include $<$string.h$>$}\par
+{\ttfamily \#include \char`\"{}cli\_\-func.h\char`\"{}}\par
+{\ttfamily \#include $<$uip.h$>$}\par
+{\ttfamily \#include $<$uip\_\-arp.h$>$}\par
+{\ttfamily \#include \char`\"{}file\_\-send.h\char`\"{}}\par
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \hyperlink{cli__func_8c_a06fc87d81c62e9abb8790b6e5713c55ba12a8dcf59c16b5aadfda3a08ba67d529}{GET} =  0, 
+\hyperlink{cli__func_8c_a06fc87d81c62e9abb8790b6e5713c55bab44c8101cc294c074709ec1b14211792}{SET}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{cli__func_8c_afe9b1fab4ded79f4682178dcdfcd33de}{get\_\-IP} (void)
+\begin{DoxyCompactList}\small\item\em funcao que retorna o IP. \item\end{DoxyCompactList}\item 
+void \hyperlink{cli__func_8c_aa5423d3ad34d4d6c41212e0aca1c994b}{set\_\-lcd\_\-init} ()
+\begin{DoxyCompactList}\small\item\em Funcao para trocar mensagem inicial do LCD. \item\end{DoxyCompactList}\item 
+void \hyperlink{cli__func_8c_a4f3e0e13762b98c369d2bb1ba3b9f409}{show\_\-lcd\_\-time} ()
+\begin{DoxyCompactList}\small\item\em Funcao para mostrar hora no display. \item\end{DoxyCompactList}\item 
+\hyperlink{api_8h_a330bb39259f2884e12b92081822f4a29}{break\_\-t} \hyperlink{cli__func_8c_ab3800d93d5f9e035438e615ce900886e}{do\_\-init} (\hyperlink{structstr__t}{str\_\-t} $\ast$tp)
+\begin{DoxyCompactList}\small\item\em Mensagem inicial da serial. \item\end{DoxyCompactList}\item 
+\hyperlink{api_8h_a330bb39259f2884e12b92081822f4a29}{break\_\-t} \hyperlink{cli__func_8c_a66ffc79d01fdb92dd2f44e75fb61e274}{do\_\-get\_\-temperature} (\hyperlink{structstr__t}{str\_\-t} $\ast$tp)
+\begin{DoxyCompactList}\small\item\em Funcao que retorna a temperatura ambiente. \item\end{DoxyCompactList}\item 
+\hyperlink{api_8h_a330bb39259f2884e12b92081822f4a29}{break\_\-t} \hyperlink{cli__func_8c_ad20b519413e429feb57f23679ec39bb3}{do\_\-chat} (\hyperlink{structstr__t}{str\_\-t} $\ast$tp)
+\begin{DoxyCompactList}\small\item\em Comando da CLI para chamada do Chat. \item\end{DoxyCompactList}\item 
+void \hyperlink{cli__func_8c_acd6bb1b137f7d98b5c65a0f769491274}{set\_\-IP} (void)
+\begin{DoxyCompactList}\small\item\em Funcao para configuracao do IP. \item\end{DoxyCompactList}\item 
+\hyperlink{api_8h_a330bb39259f2884e12b92081822f4a29}{break\_\-t} \hyperlink{cli__func_8c_a34b9a5eef53b9fa6b468f4520c505bf1}{do\_\-MAC} (\hyperlink{structstr__t}{str\_\-t} $\ast$tp)
+\begin{DoxyCompactList}\small\item\em Funcao que permite ver o endereco MAC. \item\end{DoxyCompactList}\item 
+\hyperlink{api_8h_a330bb39259f2884e12b92081822f4a29}{break\_\-t} \hyperlink{cli__func_8c_abab4e1430fef0cb0b0605c677751030b}{do\_\-IP} (\hyperlink{structstr__t}{str\_\-t} $\ast$tp)
+\begin{DoxyCompactList}\small\item\em Funcao da CLI para configuracao do IP. \item\end{DoxyCompactList}\item 
+void \hyperlink{cli__func_8c_a44fe1dc3c0b6374e39d18042d4f99e9d}{writeDataLcd} (char $\ast$data, int col, int linha)
+\begin{DoxyCompactList}\small\item\em Escreve dados no LCD. \item\end{DoxyCompactList}\item 
+\hyperlink{api_8h_a330bb39259f2884e12b92081822f4a29}{break\_\-t} \hyperlink{cli__func_8c_a4224fbf6472d999a94273641f4e85112}{do\_\-lcd} (\hyperlink{structstr__t}{str\_\-t} $\ast$tp)
+\begin{DoxyCompactList}\small\item\em Permite escrever uma mensagem no LCD. \item\end{DoxyCompactList}\item 
+void \hyperlink{cli__func_8c_a8860be85d1bfe31dd7c9b688824ee56e}{out\_\-data} (char $\ast$data)
+\item 
+void \hyperlink{cli__func_8c_a71559270e0f357a3da53ea277273f02f}{set\_\-Gateway} (void)
+\begin{DoxyCompactList}\small\item\em Funcao para alterar o GATEWAY do kit. \item\end{DoxyCompactList}\item 
+\hyperlink{api_8h_a330bb39259f2884e12b92081822f4a29}{break\_\-t} \hyperlink{cli__func_8c_ae1c5b34a67aef8497155b42b18379465}{do\_\-gateway} (\hyperlink{structstr__t}{str\_\-t} $\ast$tp)
+\begin{DoxyCompactList}\small\item\em Funcao da CLI paraconfiguracao do Gateway. \item\end{DoxyCompactList}\item 
+void \hyperlink{cli__func_8c_a2fef225f25b9aa2c8ece7d7a3cd1d4b4}{set\_\-Mask} (void)
+\begin{DoxyCompactList}\small\item\em Permite alterar a mascara de rede. \item\end{DoxyCompactList}\item 
+\hyperlink{api_8h_a330bb39259f2884e12b92081822f4a29}{break\_\-t} \hyperlink{cli__func_8c_a3765d9f71b15c00468e4aafbc46d0b3f}{do\_\-mask} (\hyperlink{structstr__t}{str\_\-t} $\ast$tp)
+\begin{DoxyCompactList}\small\item\em Funcao da CLi para configuracao da mascara de rede. \item\end{DoxyCompactList}\item 
+\hyperlink{api_8h_a330bb39259f2884e12b92081822f4a29}{break\_\-t} \hyperlink{cli__func_8c_a534f2f62889a0406a32f9b1641fda739}{do\_\-configIp} (\hyperlink{structstr__t}{str\_\-t} $\ast$tp)
+\begin{DoxyCompactList}\small\item\em Funcao da CLI que retorna enderecos da rede. \item\end{DoxyCompactList}\item 
+\hyperlink{api_8h_a330bb39259f2884e12b92081822f4a29}{break\_\-t} \hyperlink{cli__func_8c_aa87d5e84f2bde7e3545a134a4b7d97f4}{do\_\-ftp} (\hyperlink{structstr__t}{str\_\-t} $\ast$tp)
+\begin{DoxyCompactList}\small\item\em Funcao para conectar como FTP Client. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Marco Tulio Martins 
+\end{DoxyAuthor}
+
+
+Definition in file \hyperlink{cli__func_8c_source}{cli\_\-func.c}.
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{cli__func_8c_a06fc87d81c62e9abb8790b6e5713c55b}{
+\subsubsection[{"@0}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}
+\label{cli__func_8c_a06fc87d81c62e9abb8790b6e5713c55b}
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{GET@{GET}!cli\_\-func.c@{cli\_\-func.c}}\index{cli\_\-func.c@{cli\_\-func.c}!GET@{GET}}\item[{\em 
+\hypertarget{cli__func_8c_a06fc87d81c62e9abb8790b6e5713c55ba12a8dcf59c16b5aadfda3a08ba67d529}{
+GET}
+\label{cli__func_8c_a06fc87d81c62e9abb8790b6e5713c55ba12a8dcf59c16b5aadfda3a08ba67d529}
+}]\index{SET@{SET}!cli\_\-func.c@{cli\_\-func.c}}\index{cli\_\-func.c@{cli\_\-func.c}!SET@{SET}}\item[{\em 
+\hypertarget{cli__func_8c_a06fc87d81c62e9abb8790b6e5713c55bab44c8101cc294c074709ec1b14211792}{
+SET}
+\label{cli__func_8c_a06fc87d81c62e9abb8790b6e5713c55bab44c8101cc294c074709ec1b14211792}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 16 of file cli\_\-func.c.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{cli__func_8c_ad20b519413e429feb57f23679ec39bb3}{
+\index{cli\_\-func.c@{cli\_\-func.c}!do\_\-chat@{do\_\-chat}}
+\index{do\_\-chat@{do\_\-chat}!cli_func.c@{cli\_\-func.c}}
+\subsubsection[{do\_\-chat}]{\setlength{\rightskip}{0pt plus 5cm}{\bf break\_\-t} do\_\-chat (
+\begin{DoxyParamCaption}
+\item[{{\bf str\_\-t} $\ast$}]{ tp}
+\end{DoxyParamCaption}
+)}}
+\label{cli__func_8c_ad20b519413e429feb57f23679ec39bb3}
+Comando usado para inicializar o chat Deve ser passado como parametro junto ao comando a porta de acesso que sera usado no display.
+
+\begin{DoxyReturn}{Returns}
+RET\_\-OK para execucao com sucesso da funcao 
+\end{DoxyReturn}
+
+
+Definition at line 100 of file cli\_\-func.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{cli__func_8c_ad20b519413e429feb57f23679ec39bb3_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{cli__func_8c_a534f2f62889a0406a32f9b1641fda739}{
+\index{cli\_\-func.c@{cli\_\-func.c}!do\_\-configIp@{do\_\-configIp}}
+\index{do\_\-configIp@{do\_\-configIp}!cli_func.c@{cli\_\-func.c}}
+\subsubsection[{do\_\-configIp}]{\setlength{\rightskip}{0pt plus 5cm}{\bf break\_\-t} do\_\-configIp (
+\begin{DoxyParamCaption}
+\item[{{\bf str\_\-t} $\ast$}]{ tp}
+\end{DoxyParamCaption}
+)}}
+\label{cli__func_8c_a534f2f62889a0406a32f9b1641fda739}
+Funcao que permite gera como retorno o endereco de Mascara, Gateway e IP. 
+
+Definition at line 417 of file cli\_\-func.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{cli__func_8c_a534f2f62889a0406a32f9b1641fda739_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{cli__func_8c_aa87d5e84f2bde7e3545a134a4b7d97f4}{
+\index{cli\_\-func.c@{cli\_\-func.c}!do\_\-ftp@{do\_\-ftp}}
+\index{do\_\-ftp@{do\_\-ftp}!cli_func.c@{cli\_\-func.c}}
+\subsubsection[{do\_\-ftp}]{\setlength{\rightskip}{0pt plus 5cm}{\bf break\_\-t} do\_\-ftp (
+\begin{DoxyParamCaption}
+\item[{{\bf str\_\-t} $\ast$}]{ tp}
+\end{DoxyParamCaption}
+)}}
+\label{cli__func_8c_aa87d5e84f2bde7e3545a134a4b7d97f4}
+Funcao para conexao como FTP Client
+
+Descontinuado pois o kit possui pouca memória para armazenamento de arquivo para transmissao.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em tp}]Estrutura com os dados para interpretacao do comando. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+RET\_\-OK para execucao com sucesso da funcao ou RET\_\-ERROR 
+\end{DoxyReturn}
+
+
+Definition at line 457 of file cli\_\-func.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{cli__func_8c_aa87d5e84f2bde7e3545a134a4b7d97f4_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{cli__func_8c_ae1c5b34a67aef8497155b42b18379465}{
+\index{cli\_\-func.c@{cli\_\-func.c}!do\_\-gateway@{do\_\-gateway}}
+\index{do\_\-gateway@{do\_\-gateway}!cli_func.c@{cli\_\-func.c}}
+\subsubsection[{do\_\-gateway}]{\setlength{\rightskip}{0pt plus 5cm}{\bf break\_\-t} do\_\-gateway (
+\begin{DoxyParamCaption}
+\item[{{\bf str\_\-t} $\ast$}]{ tp}
+\end{DoxyParamCaption}
+)}}
+\label{cli__func_8c_ae1c5b34a67aef8497155b42b18379465}
+Funcao permite ler e alterar endereco do gateway
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em tp}]Estrutura com os dados para interpretacao do comando. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+RET\_\-OK para execucao com sucesso da funcao ou RET\_\-ERROR 
+\end{DoxyReturn}
+
+
+Definition at line 316 of file cli\_\-func.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{cli__func_8c_ae1c5b34a67aef8497155b42b18379465_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{cli__func_8c_a66ffc79d01fdb92dd2f44e75fb61e274}{
+\index{cli\_\-func.c@{cli\_\-func.c}!do\_\-get\_\-temperature@{do\_\-get\_\-temperature}}
+\index{do\_\-get\_\-temperature@{do\_\-get\_\-temperature}!cli_func.c@{cli\_\-func.c}}
+\subsubsection[{do\_\-get\_\-temperature}]{\setlength{\rightskip}{0pt plus 5cm}{\bf break\_\-t} do\_\-get\_\-temperature (
+\begin{DoxyParamCaption}
+\item[{{\bf str\_\-t} $\ast$}]{ tp}
+\end{DoxyParamCaption}
+)}}
+\label{cli__func_8c_a66ffc79d01fdb92dd2f44e75fb61e274}
+Funcao que le a temperatura do sensor de temperatura presente no kit e retorna para quem solicitou
+
+\begin{DoxyReturn}{Returns}
+RET\_\-OK para execucao com sucesso da funcao 
+\end{DoxyReturn}
+
+
+Definition at line 84 of file cli\_\-func.c.
+
+\hypertarget{cli__func_8c_ab3800d93d5f9e035438e615ce900886e}{
+\index{cli\_\-func.c@{cli\_\-func.c}!do\_\-init@{do\_\-init}}
+\index{do\_\-init@{do\_\-init}!cli_func.c@{cli\_\-func.c}}
+\subsubsection[{do\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}{\bf break\_\-t} do\_\-init (
+\begin{DoxyParamCaption}
+\item[{{\bf str\_\-t} $\ast$}]{ tp}
+\end{DoxyParamCaption}
+)}}
+\label{cli__func_8c_ab3800d93d5f9e035438e615ce900886e}
+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/
+\begin{DoxyItemize}
+\item TCC -\/ UIP MULTIPLE APLICATION -\/ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ $\ast$ \begin{DoxyReturn}{Returns}
+RET\_\-OK para execucao com sucesso da funcao 
+\end{DoxyReturn}
+
+\end{DoxyItemize}
+
+Definition at line 68 of file cli\_\-func.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{cli__func_8c_ab3800d93d5f9e035438e615ce900886e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{cli__func_8c_abab4e1430fef0cb0b0605c677751030b}{
+\index{cli\_\-func.c@{cli\_\-func.c}!do\_\-IP@{do\_\-IP}}
+\index{do\_\-IP@{do\_\-IP}!cli_func.c@{cli\_\-func.c}}
+\subsubsection[{do\_\-IP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf break\_\-t} do\_\-IP (
+\begin{DoxyParamCaption}
+\item[{{\bf str\_\-t} $\ast$}]{ tp}
+\end{DoxyParamCaption}
+)}}
+\label{cli__func_8c_abab4e1430fef0cb0b0605c677751030b}
+Funcao para ler ou alterar o endereco de IP.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em tp}]Estrutura com os dados para interpretacao do comando. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+RET\_\-OK para execucao com sucesso da funcao ou RET\_\-ERROR 
+\end{DoxyReturn}
+
+
+Definition at line 193 of file cli\_\-func.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{cli__func_8c_abab4e1430fef0cb0b0605c677751030b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{cli__func_8c_a4224fbf6472d999a94273641f4e85112}{
+\index{cli\_\-func.c@{cli\_\-func.c}!do\_\-lcd@{do\_\-lcd}}
+\index{do\_\-lcd@{do\_\-lcd}!cli_func.c@{cli\_\-func.c}}
+\subsubsection[{do\_\-lcd}]{\setlength{\rightskip}{0pt plus 5cm}{\bf break\_\-t} do\_\-lcd (
+\begin{DoxyParamCaption}
+\item[{{\bf str\_\-t} $\ast$}]{ tp}
+\end{DoxyParamCaption}
+)}}
+\label{cli__func_8c_a4224fbf6472d999a94273641f4e85112}
+Escreve mensagem no display 16x2 Funcao permite apenas comandos de SET.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em tp}]Estrutura com os dados para interpretacao do comando. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+RET\_\-OK para execucao com sucesso da funcao ou RET\_\-ERROR 
+\end{DoxyReturn}
+
+
+Definition at line 256 of file cli\_\-func.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{cli__func_8c_a4224fbf6472d999a94273641f4e85112_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{cli__func_8c_a34b9a5eef53b9fa6b468f4520c505bf1}{
+\index{cli\_\-func.c@{cli\_\-func.c}!do\_\-MAC@{do\_\-MAC}}
+\index{do\_\-MAC@{do\_\-MAC}!cli_func.c@{cli\_\-func.c}}
+\subsubsection[{do\_\-MAC}]{\setlength{\rightskip}{0pt plus 5cm}{\bf break\_\-t} do\_\-MAC (
+\begin{DoxyParamCaption}
+\item[{{\bf str\_\-t} $\ast$}]{ tp}
+\end{DoxyParamCaption}
+)}}
+\label{cli__func_8c_a34b9a5eef53b9fa6b468f4520c505bf1}
+Faz leitrura do endereco MAC do Kit Funcao de leitura apenas.
+
+\begin{DoxyReturn}{Returns}
+RET\_\-OK para execucao com sucesso da funcao 
+\end{DoxyReturn}
+
+
+Definition at line 174 of file cli\_\-func.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=396pt]{cli__func_8c_a34b9a5eef53b9fa6b468f4520c505bf1_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{cli__func_8c_a3765d9f71b15c00468e4aafbc46d0b3f}{
+\index{cli\_\-func.c@{cli\_\-func.c}!do\_\-mask@{do\_\-mask}}
+\index{do\_\-mask@{do\_\-mask}!cli_func.c@{cli\_\-func.c}}
+\subsubsection[{do\_\-mask}]{\setlength{\rightskip}{0pt plus 5cm}{\bf break\_\-t} do\_\-mask (
+\begin{DoxyParamCaption}
+\item[{{\bf str\_\-t} $\ast$}]{ tp}
+\end{DoxyParamCaption}
+)}}
+\label{cli__func_8c_a3765d9f71b15c00468e4aafbc46d0b3f}
+Funcao permite ler ou alterar o endereco de mascara.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em tp}]Estrutura com os dados para interpretacao do comando. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+RET\_\-OK para execucao com sucesso da funcao ou RET\_\-ERROR 
+\end{DoxyReturn}
+
+
+Definition at line 374 of file cli\_\-func.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{cli__func_8c_a3765d9f71b15c00468e4aafbc46d0b3f_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{cli__func_8c_afe9b1fab4ded79f4682178dcdfcd33de}{
+\index{cli\_\-func.c@{cli\_\-func.c}!get\_\-IP@{get\_\-IP}}
+\index{get\_\-IP@{get\_\-IP}!cli_func.c@{cli\_\-func.c}}
+\subsubsection[{get\_\-IP}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ get\_\-IP (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{cli__func_8c_afe9b1fab4ded79f4682178dcdfcd33de}
+Funcao que retorna o endereco IP.
+
+Funcao que faz leitura do endereco de IP.
+
+\begin{DoxyReturn}{Returns}
+Retorna o endereco de IP em uma string no formato xx.xx.xx.xx 
+\end{DoxyReturn}
+
+
+Definition at line 155 of file cli\_\-func.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=386pt]{cli__func_8c_afe9b1fab4ded79f4682178dcdfcd33de_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{cli__func_8c_a8860be85d1bfe31dd7c9b688824ee56e}{
+\index{cli\_\-func.c@{cli\_\-func.c}!out\_\-data@{out\_\-data}}
+\index{out\_\-data@{out\_\-data}!cli_func.c@{cli\_\-func.c}}
+\subsubsection[{out\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}void out\_\-data (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{ data}
+\end{DoxyParamCaption}
+)}}
+\label{cli__func_8c_a8860be85d1bfe31dd7c9b688824ee56e}
+
+
+Definition at line 288 of file cli\_\-func.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{cli__func_8c_a8860be85d1bfe31dd7c9b688824ee56e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{cli__func_8c_a71559270e0f357a3da53ea277273f02f}{
+\index{cli\_\-func.c@{cli\_\-func.c}!set\_\-Gateway@{set\_\-Gateway}}
+\index{set\_\-Gateway@{set\_\-Gateway}!cli_func.c@{cli\_\-func.c}}
+\subsubsection[{set\_\-Gateway}]{\setlength{\rightskip}{0pt plus 5cm}void set\_\-Gateway (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{cli__func_8c_a71559270e0f357a3da53ea277273f02f}
+Permite alterar o endereco do gateway de rede. obs: realizar esta alteracao apenas quando estiver conectado via serial. 
+
+Definition at line 300 of file cli\_\-func.c.
+
+\hypertarget{cli__func_8c_acd6bb1b137f7d98b5c65a0f769491274}{
+\index{cli\_\-func.c@{cli\_\-func.c}!set\_\-IP@{set\_\-IP}}
+\index{set\_\-IP@{set\_\-IP}!cli_func.c@{cli\_\-func.c}}
+\subsubsection[{set\_\-IP}]{\setlength{\rightskip}{0pt plus 5cm}void set\_\-IP (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{cli__func_8c_acd6bb1b137f7d98b5c65a0f769491274}
+Permite alterar o endereco de IP obs: deve se tomar o cuidado de fazer a troca com uma conexao serial pois a troca de IP é imediata.
+
+\begin{DoxyReturn}{Returns}
+RET\_\-OK para execucao com sucesso da funcao 
+\end{DoxyReturn}
+
+
+Definition at line 131 of file cli\_\-func.c.
+
+\hypertarget{cli__func_8c_aa5423d3ad34d4d6c41212e0aca1c994b}{
+\index{cli\_\-func.c@{cli\_\-func.c}!set\_\-lcd\_\-init@{set\_\-lcd\_\-init}}
+\index{set\_\-lcd\_\-init@{set\_\-lcd\_\-init}!cli_func.c@{cli\_\-func.c}}
+\subsubsection[{set\_\-lcd\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void set\_\-lcd\_\-init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{cli__func_8c_aa5423d3ad34d4d6c41212e0aca1c994b}
+Funcao que altera a mensagem que esta no display 16x2 quando o sistema e inicializado. 
+
+Definition at line 29 of file cli\_\-func.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{cli__func_8c_aa5423d3ad34d4d6c41212e0aca1c994b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{cli__func_8c_a2fef225f25b9aa2c8ece7d7a3cd1d4b4}{
+\index{cli\_\-func.c@{cli\_\-func.c}!set\_\-Mask@{set\_\-Mask}}
+\index{set\_\-Mask@{set\_\-Mask}!cli_func.c@{cli\_\-func.c}}
+\subsubsection[{set\_\-Mask}]{\setlength{\rightskip}{0pt plus 5cm}void set\_\-Mask (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{cli__func_8c_a2fef225f25b9aa2c8ece7d7a3cd1d4b4}
+
+
+Definition at line 357 of file cli\_\-func.c.
+
+\hypertarget{cli__func_8c_a4f3e0e13762b98c369d2bb1ba3b9f409}{
+\index{cli\_\-func.c@{cli\_\-func.c}!show\_\-lcd\_\-time@{show\_\-lcd\_\-time}}
+\index{show\_\-lcd\_\-time@{show\_\-lcd\_\-time}!cli_func.c@{cli\_\-func.c}}
+\subsubsection[{show\_\-lcd\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}void show\_\-lcd\_\-time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{cli__func_8c_a4f3e0e13762b98c369d2bb1ba3b9f409}
+Funcao que pega a hora atravesdo RTC e mosta no display no forma hh:mm:ss 
+
+Definition at line 49 of file cli\_\-func.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{cli__func_8c_a4f3e0e13762b98c369d2bb1ba3b9f409_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{cli__func_8c_a44fe1dc3c0b6374e39d18042d4f99e9d}{
+\index{cli\_\-func.c@{cli\_\-func.c}!writeDataLcd@{writeDataLcd}}
+\index{writeDataLcd@{writeDataLcd}!cli_func.c@{cli\_\-func.c}}
+\subsubsection[{writeDataLcd}]{\setlength{\rightskip}{0pt plus 5cm}void writeDataLcd (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{ data, }
+\item[{int}]{ col, }
+\item[{int}]{ linha}
+\end{DoxyParamCaption}
+)}}
+\label{cli__func_8c_a44fe1dc3c0b6374e39d18042d4f99e9d}
+Permite escrever uma mensagem no display de LCD.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em data}]Mensagem para ser mostrada no display \item[{\em col}]Coluna onde o cursor deve estar. \item[{\em linha}]Linha onde o cursor deve estar. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+RET\_\-OK para execucao com sucesso da funcao ou RET\_\-ERROR 
+\end{DoxyReturn}
+
+
+Definition at line 237 of file cli\_\-func.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{cli__func_8c_a44fe1dc3c0b6374e39d18042d4f99e9d_cgraph}
+\end{center}
+\end{figure}
+
+

@@ -1,0 +1,1489 @@
+\hypertarget{group__uip}{
+\section{The uIP TCP/IP stack}
+\label{group__uip}\index{The uIP TCP/IP stack@{The uIP TCP/IP stack}}
+}
+
+
+Collaboration diagram for The uIP TCP/IP stack:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{group__uip}
+\end{center}
+\end{figure}
+
+
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structuip__conn}{uip\_\-conn}
+\item 
+struct \hyperlink{structuip__udp__conn}{uip\_\-udp\_\-conn}
+\item 
+struct \hyperlink{structuip__stats}{uip\_\-stats}
+\item 
+struct \hyperlink{structuip__tcpip__hdr}{uip\_\-tcpip\_\-hdr}
+\item 
+struct \hyperlink{structuip__icmpip__hdr}{uip\_\-icmpip\_\-hdr}
+\item 
+struct \hyperlink{structuip__udpip__hdr}{uip\_\-udpip\_\-hdr}
+\item 
+struct \hyperlink{structuip__eth__addr}{uip\_\-eth\_\-addr}
+\end{DoxyCompactItemize}
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group__uipfw}{uIP packet forwarding}
+\item 
+\hyperlink{group__uipsplit}{uIP TCP throughput booster hack}
+\item 
+\hyperlink{group__uipconffunc}{uIP configuration functions}
+\item 
+\hyperlink{group__uipinit}{uIP initialization functions}
+\item 
+\hyperlink{group__uipdevfunc}{uIP device driver functions}
+\item 
+\hyperlink{group__uipappfunc}{uIP application functions}
+\item 
+\hyperlink{group__uipconvfunc}{uIP conversion functions}
+\item 
+\hyperlink{group__uipdrivervars}{Variables used in uIP device drivers}
+\item 
+\hyperlink{group__uiparp}{uIP Address Resolution Protocol}
+\item 
+\hyperlink{group__uiparch}{Architecture specific uIP functions}
+\end{DoxyCompactItemize}
+\subsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file \hyperlink{uip_8c}{uip.c}
+\item 
+file \hyperlink{uip_8h}{uip.h}
+\end{DoxyCompactItemize}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__uip_ga88e60aa2cf23e1c65d630701db08c743}{TCP\_\-FIN}~0x01
+\item 
+\#define \hyperlink{group__uip_ga6020613f5062417d9811cfa837215c83}{TCP\_\-SYN}~0x02
+\item 
+\#define \hyperlink{group__uip_ga5ca559def464ef20d8b1f7d32f2f160d}{TCP\_\-RST}~0x04
+\item 
+\#define \hyperlink{group__uip_ga1320fd0006a2f70138bc2d0018dda829}{TCP\_\-PSH}~0x08
+\item 
+\#define \hyperlink{group__uip_ga44b3b1ab31a403ba28ec135adfcbefef}{TCP\_\-ACK}~0x10
+\item 
+\#define \hyperlink{group__uip_gac84f499cba8a02fc0e306c10b2acabf0}{TCP\_\-URG}~0x20
+\item 
+\#define \hyperlink{group__uip_ga1425d4a0c2760adb653a04c0fb137a8d}{TCP\_\-CTL}~0x3f
+\item 
+\#define \hyperlink{group__uip_ga1215163245304bad20d6c5608ad75ab7}{TCP\_\-OPT\_\-END}~0
+\item 
+\#define \hyperlink{group__uip_ga9f1822e1d231235edacad691f3cb7bbb}{TCP\_\-OPT\_\-NOOP}~1
+\item 
+\#define \hyperlink{group__uip_ga691688604655ea8943d15f14c60027d8}{TCP\_\-OPT\_\-MSS}~2
+\item 
+\#define \hyperlink{group__uip_ga12f3bf821224b8e7b48a57ed3cea15cf}{TCP\_\-OPT\_\-MSS\_\-LEN}~4
+\item 
+\#define \hyperlink{group__uip_ga5c5b1834e497f53ad0ef947bbe9777fa}{ICMP\_\-ECHO\_\-REPLY}~0
+\item 
+\#define \hyperlink{group__uip_gad58231410d58e34b455328b888a9e73c}{ICMP\_\-ECHO}~8
+\item 
+\#define \hyperlink{group__uip_ga207d17b633cd095120a74bc1f2257b17}{ICMP6\_\-ECHO\_\-REPLY}~129
+\item 
+\#define \hyperlink{group__uip_ga4cc3e223b63f27b546d62e9a258dba5a}{ICMP6\_\-ECHO}~128
+\item 
+\#define \hyperlink{group__uip_ga1cea57e3ea526f210b1068e6dcf7b4f4}{ICMP6\_\-NEIGHBOR\_\-SOLICITATION}~135
+\item 
+\#define \hyperlink{group__uip_ga62c03e0a308cc23929a80fe8d8f9dc1e}{ICMP6\_\-NEIGHBOR\_\-ADVERTISEMENT}~136
+\item 
+\#define \hyperlink{group__uip_ga1d3211dbbdfb22d6a47b60dddcf945e8}{ICMP6\_\-FLAG\_\-S}~(1 $<$$<$ 6)
+\item 
+\#define \hyperlink{group__uip_ga42288d5c3cf4b10becefec657f441e54}{ICMP6\_\-OPTION\_\-SOURCE\_\-LINK\_\-ADDRESS}~1
+\item 
+\#define \hyperlink{group__uip_ga8387881de3a8bfd3c0d57b9d04ac9b7e}{ICMP6\_\-OPTION\_\-TARGET\_\-LINK\_\-ADDRESS}~2
+\item 
+\#define \hyperlink{group__uip_ga24f52ac52d6e714cb04a5aa01be3bdd0}{BUF}~((struct \hyperlink{structuip__tcpip__hdr}{uip\_\-tcpip\_\-hdr} $\ast$)\&\hyperlink{group__uipdevfunc_gab81e78f890dbbee50c533a9734b74fd9}{uip\_\-buf}\mbox{[}UIP\_\-LLH\_\-LEN\mbox{]})
+\item 
+\#define \hyperlink{group__uip_ga96544dedc1cdc71ad2ad54bf1d5e5433}{FBUF}~((struct \hyperlink{structuip__tcpip__hdr}{uip\_\-tcpip\_\-hdr} $\ast$)\&uip\_\-reassbuf\mbox{[}0\mbox{]})
+\item 
+\#define \hyperlink{group__uip_ga4309376690872fa4beb4f025f5cc199b}{ICMPBUF}~((struct \hyperlink{structuip__icmpip__hdr}{uip\_\-icmpip\_\-hdr} $\ast$)\&\hyperlink{group__uipdevfunc_gab81e78f890dbbee50c533a9734b74fd9}{uip\_\-buf}\mbox{[}UIP\_\-LLH\_\-LEN\mbox{]})
+\item 
+\#define \hyperlink{group__uip_gab9435261753469accec0c9bf8a5a2686}{UDPBUF}~((struct \hyperlink{structuip__udpip__hdr}{uip\_\-udpip\_\-hdr} $\ast$)\&\hyperlink{group__uipdevfunc_gab81e78f890dbbee50c533a9734b74fd9}{uip\_\-buf}\mbox{[}UIP\_\-LLH\_\-LEN\mbox{]})
+\item 
+\#define \hyperlink{group__uip_ga9c0814ed491fa452ec97910c0728d410}{UIP\_\-STAT}(s)~s
+\item 
+\#define \hyperlink{group__uip_ga013c3a06a8b58589a77f4a3442f89c2a}{UIP\_\-LOG}(m)
+\item 
+\#define \hyperlink{group__uip_ga6bfa488f87f68a6f7f4a3efb9e45eaf8}{UIP\_\-ACKDATA}~1
+\item 
+\#define \hyperlink{group__uip_ga39ce739bd352d7e348e37395ce903e43}{UIP\_\-NEWDATA}~2
+\item 
+\#define \hyperlink{group__uip_gaf848ce44c810492e7a35c2d23a429f45}{UIP\_\-REXMIT}~4
+\item 
+\#define \hyperlink{group__uip_gaf0ed78fd2be24d849cdd5af75e3b2674}{UIP\_\-POLL}~8
+\item 
+\#define \hyperlink{group__uip_ga57e6dc1d58a36d0ed53a3dd29ccc5798}{UIP\_\-CLOSE}~16
+\item 
+\#define \hyperlink{group__uip_gaa4c4310e54f18541b09e1e251fe7b22d}{UIP\_\-ABORT}~32
+\item 
+\#define \hyperlink{group__uip_gaf84316f469ce0726985c0702db49a989}{UIP\_\-CONNECTED}~64
+\item 
+\#define \hyperlink{group__uip_ga2d3ba4b14d6d2f6576f9b547800b7945}{UIP\_\-TIMEDOUT}~128
+\item 
+\#define \hyperlink{group__uip_gaabc40c09f49d15acb1b1a7f02bb3a807}{UIP\_\-DATA}~1
+\item 
+\#define \hyperlink{group__uip_ga041aea91aa6ef84dcc6cac3c51db9b2f}{UIP\_\-TIMER}~2
+\item 
+\#define \hyperlink{group__uip_gad605357e29affb0d3104294c90f09905}{UIP\_\-POLL\_\-REQUEST}~3
+\item 
+\#define \hyperlink{group__uip_ga5c97ae587595b5444be80f5ecc1d3382}{UIP\_\-UDP\_\-SEND\_\-CONN}~4
+\item 
+\#define \hyperlink{group__uip_gaf0ccbc3bb2a3ba1ebc255c7b3fcedd24}{UIP\_\-UDP\_\-TIMER}~5
+\item 
+\#define \hyperlink{group__uip_ga28eda870cff3d8e3cf2949e6f57a502b}{UIP\_\-CLOSED}~0
+\item 
+\#define \hyperlink{group__uip_gaa5e3c856b86725125d19fccc34cd9eb5}{UIP\_\-SYN\_\-RCVD}~1
+\item 
+\#define \hyperlink{group__uip_ga8af482dec973db57d8b3bd3f69461488}{UIP\_\-SYN\_\-SENT}~2
+\item 
+\#define \hyperlink{group__uip_gaae59b70658f28ee6e998eaaab05e423f}{UIP\_\-ESTABLISHED}~3
+\item 
+\#define \hyperlink{group__uip_gaa533c394b1fa0030205534befa31c525}{UIP\_\-FIN\_\-WAIT\_\-1}~4
+\item 
+\#define \hyperlink{group__uip_ga160128ab5d2ea3cc497b91ee4eb4ef99}{UIP\_\-FIN\_\-WAIT\_\-2}~5
+\item 
+\#define \hyperlink{group__uip_ga64d9affc680a445d708234e70450477b}{UIP\_\-CLOSING}~6
+\item 
+\#define \hyperlink{group__uip_gafff0ed43201bf1e2020de1a0d6cac070}{UIP\_\-TIME\_\-WAIT}~7
+\item 
+\#define \hyperlink{group__uip_gad135fb0cfdfb2c212f0f51865a3640e4}{UIP\_\-LAST\_\-ACK}~8
+\item 
+\#define \hyperlink{group__uip_ga13dfcb4a5f920e108253ade527a66cc2}{UIP\_\-TS\_\-MASK}~15
+\item 
+\#define \hyperlink{group__uip_gade29ec025e6754afd8cc24c954a8dec8}{UIP\_\-STOPPED}~16
+\item 
+\#define \hyperlink{group__uip_gae0825474feee11b4e038bfe71757875f}{UIP\_\-APPDATA\_\-SIZE}
+\item 
+\#define \hyperlink{group__uip_ga359951eecd80541c2101f628a9da9146}{UIP\_\-PROTO\_\-ICMP}~1
+\item 
+\#define \hyperlink{group__uip_ga517c770991459cc62dc009c0d3875c6a}{UIP\_\-PROTO\_\-TCP}~6
+\item 
+\#define \hyperlink{group__uip_gaf72d7b9a737707dcfb2c41fec2b6792e}{UIP\_\-PROTO\_\-UDP}~17
+\item 
+\#define \hyperlink{group__uip_gaad0321f4c570f9983c6de81ece3ddc20}{UIP\_\-PROTO\_\-ICMP6}~58
+\item 
+\#define \hyperlink{group__uip_ga6bc12c6c7b56f73ce5d57abfdcdc6eb5}{UIP\_\-IPH\_\-LEN}~20
+\item 
+\#define \hyperlink{group__uip_gab948296aea6b6b3aa1f156799c4d479c}{UIP\_\-UDPH\_\-LEN}~8
+\item 
+\#define \hyperlink{group__uip_ga17d111686f98e4c09db73a770ac3f1a4}{UIP\_\-TCPH\_\-LEN}~20
+\item 
+\#define \hyperlink{group__uip_ga6f2b90c597ec23f39ec716ccec11233c}{UIP\_\-IPUDPH\_\-LEN}~(UIP\_\-UDPH\_\-LEN + UIP\_\-IPH\_\-LEN)
+\item 
+\#define \hyperlink{group__uip_ga15f2617f7dc1713f9d10282125c6027b}{UIP\_\-IPTCPH\_\-LEN}~(UIP\_\-TCPH\_\-LEN + UIP\_\-IPH\_\-LEN)
+\item 
+\#define \hyperlink{group__uip_gaee37386b2ab828787c05227eb109def7}{UIP\_\-TCPIP\_\-HLEN}~UIP\_\-IPTCPH\_\-LEN
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} \hyperlink{group__uip_ga20ceef9d0868d391c2f33041b02cb1f1}{uip\_\-ip4addr\_\-t} \mbox{[}2\mbox{]}
+\item 
+typedef \hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} \hyperlink{group__uip_ga9ebb4dac683163840eab9c6c41ad61f7}{uip\_\-ip6addr\_\-t} \mbox{[}8\mbox{]}
+\item 
+typedef \hyperlink{group__uip_ga20ceef9d0868d391c2f33041b02cb1f1}{uip\_\-ip4addr\_\-t} \hyperlink{group__uip_ga1ef35301f43a5bbb9f89f07b5a36b9a0}{uip\_\-ipaddr\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__uip_ga22f140b02c354dfebcc7ad481c3bcd68}{uip\_\-setipid} (\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} id)
+\item 
+void \hyperlink{group__uip_ga6832e4d2d046536b6472f7ac92340f68}{uip\_\-add32} (\hyperlink{group__uipfw_ga4caecabca98b43919dd11be1c0d4cd8e}{u8\_\-t} $\ast$op32, \hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} op16)
+\item 
+\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} \hyperlink{group__uip_ga6affe021225ed773018fb00814bbce06}{uip\_\-chksum} (\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} $\ast$data, \hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} len)
+\item 
+\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} \hyperlink{group__uip_ga2addf34c7d457c1a7899a7e2171ef1e9}{uip\_\-ipchksum} (void)
+\item 
+\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} \hyperlink{group__uip_ga85b65e38aa74eba18979156f97a94a87}{uip\_\-tcpchksum} (void)
+\item 
+\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} \hyperlink{group__uip_ga7023a34ba9e9d03b5fbedbcb32924453}{uip\_\-udpchksum} (void)
+\item 
+void \hyperlink{group__uip_gac48ed5f0d27721ef62a3ed02a5ad8d2e}{uip\_\-init} (void)
+\item 
+struct \hyperlink{structuip__conn}{uip\_\-conn} $\ast$ \hyperlink{group__uip_ga9c24fba2cd8f7f62accb0a0d5bbe4dad}{uip\_\-connect} (\hyperlink{group__uip_ga1ef35301f43a5bbb9f89f07b5a36b9a0}{uip\_\-ipaddr\_\-t} $\ast$ripaddr, \hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} rport)
+\item 
+struct \hyperlink{structuip__udp__conn}{uip\_\-udp\_\-conn} $\ast$ \hyperlink{group__uip_ga79c4110211247df3fb30b8cf1c4c02af}{uip\_\-udp\_\-new} (\hyperlink{group__uip_ga1ef35301f43a5bbb9f89f07b5a36b9a0}{uip\_\-ipaddr\_\-t} $\ast$ripaddr, \hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} rport)
+\item 
+void \hyperlink{group__uip_gaaa585784b0914cac1d37f07f85457008}{uip\_\-unlisten} (\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} port)
+\item 
+void \hyperlink{group__uip_gadd1ab3704ecd4900eec61a6897d32dc8}{uip\_\-listen} (\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} port)
+\item 
+void \hyperlink{group__uip_ga266263ac78a1361a2b1d15741d3b0675}{uip\_\-process} (\hyperlink{group__uipfw_ga4caecabca98b43919dd11be1c0d4cd8e}{u8\_\-t} \hyperlink{client__msg_8c_adf916204820072417ed73a32de1cefcf}{flag})
+\item 
+\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} \hyperlink{group__uip_gaa22b04cac8cf283ca12f028578bebc06}{htons} (\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} val)
+\item 
+void \hyperlink{group__uip_ga04b053a623aac7cd4195157d470661b3}{uip\_\-send} (const void $\ast$data, int len)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group__uip_ga1ef35301f43a5bbb9f89f07b5a36b9a0}{uip\_\-ipaddr\_\-t} \hyperlink{group__uip_ga7d3673f52f5846b6961d23b150decd54}{uip\_\-hostaddr}
+\item 
+\hyperlink{group__uip_ga1ef35301f43a5bbb9f89f07b5a36b9a0}{uip\_\-ipaddr\_\-t} \hyperlink{group__uip_ga20df5c82f2a15a508c19e505b5d9de2b}{uip\_\-draddr}
+\item 
+\hyperlink{group__uip_ga1ef35301f43a5bbb9f89f07b5a36b9a0}{uip\_\-ipaddr\_\-t} \hyperlink{group__uip_ga3237be0d9ec457de0177689ee23c0d5c}{uip\_\-netmask}
+\item 
+struct \hyperlink{structuip__eth__addr}{uip\_\-eth\_\-addr} \hyperlink{group__uip_ga499bb98a0b4ae9a98553ede81317606d}{uip\_\-ethaddr} = \{\{0,0,0,0,0,0\}\}
+\item 
+\hyperlink{group__uipfw_ga4caecabca98b43919dd11be1c0d4cd8e}{u8\_\-t} \hyperlink{group__uipdevfunc_gab81e78f890dbbee50c533a9734b74fd9}{uip\_\-buf}\mbox{[}UIP\_\-BUFSIZE+2\mbox{]} \hyperlink{group__uip_gaae09fef3a4ae13ad85a537d46c55f201}{ALIGN\_\-STRUCT\_\-END}
+\item 
+void $\ast$ \hyperlink{group__uip_ga561b8eda32e059d4e7397f776268cc63}{uip\_\-appdata}
+\item 
+void $\ast$ \hyperlink{group__uip_gaa05a3dde2048480fa3ab2a5961898d18}{uip\_\-sappdata}
+\item 
+\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} \hyperlink{group__uip_ga12a33f0c09711167bdf3dd7d7cf8c5a1}{uip\_\-len}
+\item 
+\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} \hyperlink{group__uip_ga5b5615dc240daed20949c0fded2b4679}{uip\_\-slen}
+\item 
+\hyperlink{group__uipfw_ga4caecabca98b43919dd11be1c0d4cd8e}{u8\_\-t} \hyperlink{group__uip_gab4ef6b00924990e7a293f66715b6d1d1}{uip\_\-flags}
+\item 
+struct \hyperlink{structuip__conn}{uip\_\-conn} $\ast$ \hyperlink{group__uip_ga788ffac72342f6172343d7f8099cbe1a}{uip\_\-conn}
+\item 
+struct \hyperlink{structuip__conn}{uip\_\-conn} \hyperlink{group__uip_gaf703683056d2bfa5c81fa157dcb20fe2}{uip\_\-conns} \mbox{[}UIP\_\-CONNS\mbox{]}
+\item 
+\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} \hyperlink{group__uip_ga236d5c7872f59c8fe7b701c7252b976e}{uip\_\-listenports} \mbox{[}UIP\_\-LISTENPORTS\mbox{]}
+\item 
+struct \hyperlink{structuip__udp__conn}{uip\_\-udp\_\-conn} $\ast$ \hyperlink{group__uip_ga210f227119fc972e6222c9cb452e15a9}{uip\_\-udp\_\-conn}
+\item 
+struct \hyperlink{structuip__udp__conn}{uip\_\-udp\_\-conn} \hyperlink{group__uip_gaeb533744817cf6695d75293369c2248b}{uip\_\-udp\_\-conns} \mbox{[}UIP\_\-UDP\_\-CONNS\mbox{]}
+\item 
+\hyperlink{group__uipfw_ga4caecabca98b43919dd11be1c0d4cd8e}{u8\_\-t} \hyperlink{group__uip_ga2a0cf5d86c58fab216414ce59bf1fea1}{uip\_\-acc32} \mbox{[}4\mbox{]}
+\item 
+struct \hyperlink{structuip__stats}{uip\_\-stats} \hyperlink{group__uip_ga9ee50a40597e67fce96541ab56c3b712}{uip\_\-stat}
+\item 
+void $\ast$ \hyperlink{group__uip_ga561b8eda32e059d4e7397f776268cc63}{uip\_\-appdata}
+\item 
+struct \hyperlink{structuip__conn}{uip\_\-conn} $\ast$ \hyperlink{group__uip_ga788ffac72342f6172343d7f8099cbe1a}{uip\_\-conn}
+\item 
+struct \hyperlink{structuip__conn}{uip\_\-conn} \hyperlink{group__uip_gaf703683056d2bfa5c81fa157dcb20fe2}{uip\_\-conns} \mbox{[}UIP\_\-CONNS\mbox{]}
+\item 
+struct \hyperlink{structuip__udp__conn}{uip\_\-udp\_\-conn} $\ast$ \hyperlink{group__uip_ga210f227119fc972e6222c9cb452e15a9}{uip\_\-udp\_\-conn}
+\item 
+struct \hyperlink{structuip__udp__conn}{uip\_\-udp\_\-conn} \hyperlink{group__uip_gaeb533744817cf6695d75293369c2248b}{uip\_\-udp\_\-conns} \mbox{[}UIP\_\-UDP\_\-CONNS\mbox{]}
+\item 
+struct \hyperlink{structuip__stats}{uip\_\-stats} \hyperlink{group__uip_ga9ee50a40597e67fce96541ab56c3b712}{uip\_\-stat}
+\item 
+\hyperlink{group__uipfw_ga4caecabca98b43919dd11be1c0d4cd8e}{u8\_\-t} \hyperlink{group__uip_gab4ef6b00924990e7a293f66715b6d1d1}{uip\_\-flags}
+\item 
+struct \hyperlink{structuip__tcpip__hdr}{uip\_\-tcpip\_\-hdr} \hyperlink{group__uip_ga2bd9dfb47fe5347b46dab0c6b93f9b4e}{PACK\_\-STRUCT\_\-END}
+\item 
+\hyperlink{group__uip_ga1ef35301f43a5bbb9f89f07b5a36b9a0}{uip\_\-ipaddr\_\-t} \hyperlink{group__uip_ga7d3673f52f5846b6961d23b150decd54}{uip\_\-hostaddr}
+\item 
+\hyperlink{group__uip_ga1ef35301f43a5bbb9f89f07b5a36b9a0}{uip\_\-ipaddr\_\-t} \hyperlink{group__uip_ga3237be0d9ec457de0177689ee23c0d5c}{uip\_\-netmask}
+\item 
+\hyperlink{group__uip_ga1ef35301f43a5bbb9f89f07b5a36b9a0}{uip\_\-ipaddr\_\-t} \hyperlink{group__uip_ga20df5c82f2a15a508c19e505b5d9de2b}{uip\_\-draddr}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+uIP is an implementation of the TCP/IP protocol stack intended for small 8-\/bit and 16-\/bit microcontrollers.
+
+uIP provides the necessary protocols for Internet communication, with a very small code footprint and RAM requirements -\/ the uIP code size is on the order of a few kilobytes and RAM usage is on the order of a few hundred bytes.
+
+\{@ 
+
+\subsection{Define Documentation}
+\hypertarget{group__uip_ga24f52ac52d6e714cb04a5aa01be3bdd0}{
+\index{uip@{uip}!BUF@{BUF}}
+\index{BUF@{BUF}!uip@{uip}}
+\subsubsection[{BUF}]{\setlength{\rightskip}{0pt plus 5cm}\#define BUF~((struct {\bf uip\_\-tcpip\_\-hdr} $\ast$)\&{\bf uip\_\-buf}\mbox{[}UIP\_\-LLH\_\-LEN\mbox{]})}}
+\label{group__uip_ga24f52ac52d6e714cb04a5aa01be3bdd0}
+
+
+Definition at line 231 of file uip.c.
+
+\hypertarget{group__uip_ga96544dedc1cdc71ad2ad54bf1d5e5433}{
+\index{uip@{uip}!FBUF@{FBUF}}
+\index{FBUF@{FBUF}!uip@{uip}}
+\subsubsection[{FBUF}]{\setlength{\rightskip}{0pt plus 5cm}\#define FBUF~((struct {\bf uip\_\-tcpip\_\-hdr} $\ast$)\&uip\_\-reassbuf\mbox{[}0\mbox{]})}}
+\label{group__uip_ga96544dedc1cdc71ad2ad54bf1d5e5433}
+
+
+Definition at line 232 of file uip.c.
+
+\hypertarget{group__uip_ga4cc3e223b63f27b546d62e9a258dba5a}{
+\index{uip@{uip}!ICMP6\_\-ECHO@{ICMP6\_\-ECHO}}
+\index{ICMP6\_\-ECHO@{ICMP6\_\-ECHO}!uip@{uip}}
+\subsubsection[{ICMP6\_\-ECHO}]{\setlength{\rightskip}{0pt plus 5cm}\#define ICMP6\_\-ECHO~128}}
+\label{group__uip_ga4cc3e223b63f27b546d62e9a258dba5a}
+
+
+Definition at line 220 of file uip.c.
+
+\hypertarget{group__uip_ga207d17b633cd095120a74bc1f2257b17}{
+\index{uip@{uip}!ICMP6\_\-ECHO\_\-REPLY@{ICMP6\_\-ECHO\_\-REPLY}}
+\index{ICMP6\_\-ECHO\_\-REPLY@{ICMP6\_\-ECHO\_\-REPLY}!uip@{uip}}
+\subsubsection[{ICMP6\_\-ECHO\_\-REPLY}]{\setlength{\rightskip}{0pt plus 5cm}\#define ICMP6\_\-ECHO\_\-REPLY~129}}
+\label{group__uip_ga207d17b633cd095120a74bc1f2257b17}
+
+
+Definition at line 219 of file uip.c.
+
+\hypertarget{group__uip_ga1d3211dbbdfb22d6a47b60dddcf945e8}{
+\index{uip@{uip}!ICMP6\_\-FLAG\_\-S@{ICMP6\_\-FLAG\_\-S}}
+\index{ICMP6\_\-FLAG\_\-S@{ICMP6\_\-FLAG\_\-S}!uip@{uip}}
+\subsubsection[{ICMP6\_\-FLAG\_\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define ICMP6\_\-FLAG\_\-S~(1 $<$$<$ 6)}}
+\label{group__uip_ga1d3211dbbdfb22d6a47b60dddcf945e8}
+
+
+Definition at line 224 of file uip.c.
+
+\hypertarget{group__uip_ga62c03e0a308cc23929a80fe8d8f9dc1e}{
+\index{uip@{uip}!ICMP6\_\-NEIGHBOR\_\-ADVERTISEMENT@{ICMP6\_\-NEIGHBOR\_\-ADVERTISEMENT}}
+\index{ICMP6\_\-NEIGHBOR\_\-ADVERTISEMENT@{ICMP6\_\-NEIGHBOR\_\-ADVERTISEMENT}!uip@{uip}}
+\subsubsection[{ICMP6\_\-NEIGHBOR\_\-ADVERTISEMENT}]{\setlength{\rightskip}{0pt plus 5cm}\#define ICMP6\_\-NEIGHBOR\_\-ADVERTISEMENT~136}}
+\label{group__uip_ga62c03e0a308cc23929a80fe8d8f9dc1e}
+
+
+Definition at line 222 of file uip.c.
+
+\hypertarget{group__uip_ga1cea57e3ea526f210b1068e6dcf7b4f4}{
+\index{uip@{uip}!ICMP6\_\-NEIGHBOR\_\-SOLICITATION@{ICMP6\_\-NEIGHBOR\_\-SOLICITATION}}
+\index{ICMP6\_\-NEIGHBOR\_\-SOLICITATION@{ICMP6\_\-NEIGHBOR\_\-SOLICITATION}!uip@{uip}}
+\subsubsection[{ICMP6\_\-NEIGHBOR\_\-SOLICITATION}]{\setlength{\rightskip}{0pt plus 5cm}\#define ICMP6\_\-NEIGHBOR\_\-SOLICITATION~135}}
+\label{group__uip_ga1cea57e3ea526f210b1068e6dcf7b4f4}
+
+
+Definition at line 221 of file uip.c.
+
+\hypertarget{group__uip_ga42288d5c3cf4b10becefec657f441e54}{
+\index{uip@{uip}!ICMP6\_\-OPTION\_\-SOURCE\_\-LINK\_\-ADDRESS@{ICMP6\_\-OPTION\_\-SOURCE\_\-LINK\_\-ADDRESS}}
+\index{ICMP6\_\-OPTION\_\-SOURCE\_\-LINK\_\-ADDRESS@{ICMP6\_\-OPTION\_\-SOURCE\_\-LINK\_\-ADDRESS}!uip@{uip}}
+\subsubsection[{ICMP6\_\-OPTION\_\-SOURCE\_\-LINK\_\-ADDRESS}]{\setlength{\rightskip}{0pt plus 5cm}\#define ICMP6\_\-OPTION\_\-SOURCE\_\-LINK\_\-ADDRESS~1}}
+\label{group__uip_ga42288d5c3cf4b10becefec657f441e54}
+
+
+Definition at line 226 of file uip.c.
+
+\hypertarget{group__uip_ga8387881de3a8bfd3c0d57b9d04ac9b7e}{
+\index{uip@{uip}!ICMP6\_\-OPTION\_\-TARGET\_\-LINK\_\-ADDRESS@{ICMP6\_\-OPTION\_\-TARGET\_\-LINK\_\-ADDRESS}}
+\index{ICMP6\_\-OPTION\_\-TARGET\_\-LINK\_\-ADDRESS@{ICMP6\_\-OPTION\_\-TARGET\_\-LINK\_\-ADDRESS}!uip@{uip}}
+\subsubsection[{ICMP6\_\-OPTION\_\-TARGET\_\-LINK\_\-ADDRESS}]{\setlength{\rightskip}{0pt plus 5cm}\#define ICMP6\_\-OPTION\_\-TARGET\_\-LINK\_\-ADDRESS~2}}
+\label{group__uip_ga8387881de3a8bfd3c0d57b9d04ac9b7e}
+
+
+Definition at line 227 of file uip.c.
+
+\hypertarget{group__uip_gad58231410d58e34b455328b888a9e73c}{
+\index{uip@{uip}!ICMP\_\-ECHO@{ICMP\_\-ECHO}}
+\index{ICMP\_\-ECHO@{ICMP\_\-ECHO}!uip@{uip}}
+\subsubsection[{ICMP\_\-ECHO}]{\setlength{\rightskip}{0pt plus 5cm}\#define ICMP\_\-ECHO~8}}
+\label{group__uip_gad58231410d58e34b455328b888a9e73c}
+
+
+Definition at line 217 of file uip.c.
+
+\hypertarget{group__uip_ga5c5b1834e497f53ad0ef947bbe9777fa}{
+\index{uip@{uip}!ICMP\_\-ECHO\_\-REPLY@{ICMP\_\-ECHO\_\-REPLY}}
+\index{ICMP\_\-ECHO\_\-REPLY@{ICMP\_\-ECHO\_\-REPLY}!uip@{uip}}
+\subsubsection[{ICMP\_\-ECHO\_\-REPLY}]{\setlength{\rightskip}{0pt plus 5cm}\#define ICMP\_\-ECHO\_\-REPLY~0}}
+\label{group__uip_ga5c5b1834e497f53ad0ef947bbe9777fa}
+
+
+Definition at line 216 of file uip.c.
+
+\hypertarget{group__uip_ga4309376690872fa4beb4f025f5cc199b}{
+\index{uip@{uip}!ICMPBUF@{ICMPBUF}}
+\index{ICMPBUF@{ICMPBUF}!uip@{uip}}
+\subsubsection[{ICMPBUF}]{\setlength{\rightskip}{0pt plus 5cm}\#define ICMPBUF~((struct {\bf uip\_\-icmpip\_\-hdr} $\ast$)\&{\bf uip\_\-buf}\mbox{[}UIP\_\-LLH\_\-LEN\mbox{]})}}
+\label{group__uip_ga4309376690872fa4beb4f025f5cc199b}
+
+
+Definition at line 233 of file uip.c.
+
+\hypertarget{group__uip_ga44b3b1ab31a403ba28ec135adfcbefef}{
+\index{uip@{uip}!TCP\_\-ACK@{TCP\_\-ACK}}
+\index{TCP\_\-ACK@{TCP\_\-ACK}!uip@{uip}}
+\subsubsection[{TCP\_\-ACK}]{\setlength{\rightskip}{0pt plus 5cm}\#define TCP\_\-ACK~0x10}}
+\label{group__uip_ga44b3b1ab31a403ba28ec135adfcbefef}
+
+
+Definition at line 206 of file uip.c.
+
+\hypertarget{group__uip_ga1425d4a0c2760adb653a04c0fb137a8d}{
+\index{uip@{uip}!TCP\_\-CTL@{TCP\_\-CTL}}
+\index{TCP\_\-CTL@{TCP\_\-CTL}!uip@{uip}}
+\subsubsection[{TCP\_\-CTL}]{\setlength{\rightskip}{0pt plus 5cm}\#define TCP\_\-CTL~0x3f}}
+\label{group__uip_ga1425d4a0c2760adb653a04c0fb137a8d}
+
+
+Definition at line 208 of file uip.c.
+
+\hypertarget{group__uip_ga88e60aa2cf23e1c65d630701db08c743}{
+\index{uip@{uip}!TCP\_\-FIN@{TCP\_\-FIN}}
+\index{TCP\_\-FIN@{TCP\_\-FIN}!uip@{uip}}
+\subsubsection[{TCP\_\-FIN}]{\setlength{\rightskip}{0pt plus 5cm}\#define TCP\_\-FIN~0x01}}
+\label{group__uip_ga88e60aa2cf23e1c65d630701db08c743}
+
+
+Definition at line 202 of file uip.c.
+
+\hypertarget{group__uip_ga1215163245304bad20d6c5608ad75ab7}{
+\index{uip@{uip}!TCP\_\-OPT\_\-END@{TCP\_\-OPT\_\-END}}
+\index{TCP\_\-OPT\_\-END@{TCP\_\-OPT\_\-END}!uip@{uip}}
+\subsubsection[{TCP\_\-OPT\_\-END}]{\setlength{\rightskip}{0pt plus 5cm}\#define TCP\_\-OPT\_\-END~0}}
+\label{group__uip_ga1215163245304bad20d6c5608ad75ab7}
+
+
+Definition at line 210 of file uip.c.
+
+\hypertarget{group__uip_ga691688604655ea8943d15f14c60027d8}{
+\index{uip@{uip}!TCP\_\-OPT\_\-MSS@{TCP\_\-OPT\_\-MSS}}
+\index{TCP\_\-OPT\_\-MSS@{TCP\_\-OPT\_\-MSS}!uip@{uip}}
+\subsubsection[{TCP\_\-OPT\_\-MSS}]{\setlength{\rightskip}{0pt plus 5cm}\#define TCP\_\-OPT\_\-MSS~2}}
+\label{group__uip_ga691688604655ea8943d15f14c60027d8}
+
+
+Definition at line 212 of file uip.c.
+
+\hypertarget{group__uip_ga12f3bf821224b8e7b48a57ed3cea15cf}{
+\index{uip@{uip}!TCP\_\-OPT\_\-MSS\_\-LEN@{TCP\_\-OPT\_\-MSS\_\-LEN}}
+\index{TCP\_\-OPT\_\-MSS\_\-LEN@{TCP\_\-OPT\_\-MSS\_\-LEN}!uip@{uip}}
+\subsubsection[{TCP\_\-OPT\_\-MSS\_\-LEN}]{\setlength{\rightskip}{0pt plus 5cm}\#define TCP\_\-OPT\_\-MSS\_\-LEN~4}}
+\label{group__uip_ga12f3bf821224b8e7b48a57ed3cea15cf}
+
+
+Definition at line 214 of file uip.c.
+
+\hypertarget{group__uip_ga9f1822e1d231235edacad691f3cb7bbb}{
+\index{uip@{uip}!TCP\_\-OPT\_\-NOOP@{TCP\_\-OPT\_\-NOOP}}
+\index{TCP\_\-OPT\_\-NOOP@{TCP\_\-OPT\_\-NOOP}!uip@{uip}}
+\subsubsection[{TCP\_\-OPT\_\-NOOP}]{\setlength{\rightskip}{0pt plus 5cm}\#define TCP\_\-OPT\_\-NOOP~1}}
+\label{group__uip_ga9f1822e1d231235edacad691f3cb7bbb}
+
+
+Definition at line 211 of file uip.c.
+
+\hypertarget{group__uip_ga1320fd0006a2f70138bc2d0018dda829}{
+\index{uip@{uip}!TCP\_\-PSH@{TCP\_\-PSH}}
+\index{TCP\_\-PSH@{TCP\_\-PSH}!uip@{uip}}
+\subsubsection[{TCP\_\-PSH}]{\setlength{\rightskip}{0pt plus 5cm}\#define TCP\_\-PSH~0x08}}
+\label{group__uip_ga1320fd0006a2f70138bc2d0018dda829}
+
+
+Definition at line 205 of file uip.c.
+
+\hypertarget{group__uip_ga5ca559def464ef20d8b1f7d32f2f160d}{
+\index{uip@{uip}!TCP\_\-RST@{TCP\_\-RST}}
+\index{TCP\_\-RST@{TCP\_\-RST}!uip@{uip}}
+\subsubsection[{TCP\_\-RST}]{\setlength{\rightskip}{0pt plus 5cm}\#define TCP\_\-RST~0x04}}
+\label{group__uip_ga5ca559def464ef20d8b1f7d32f2f160d}
+
+
+Definition at line 204 of file uip.c.
+
+\hypertarget{group__uip_ga6020613f5062417d9811cfa837215c83}{
+\index{uip@{uip}!TCP\_\-SYN@{TCP\_\-SYN}}
+\index{TCP\_\-SYN@{TCP\_\-SYN}!uip@{uip}}
+\subsubsection[{TCP\_\-SYN}]{\setlength{\rightskip}{0pt plus 5cm}\#define TCP\_\-SYN~0x02}}
+\label{group__uip_ga6020613f5062417d9811cfa837215c83}
+
+
+Definition at line 203 of file uip.c.
+
+\hypertarget{group__uip_gac84f499cba8a02fc0e306c10b2acabf0}{
+\index{uip@{uip}!TCP\_\-URG@{TCP\_\-URG}}
+\index{TCP\_\-URG@{TCP\_\-URG}!uip@{uip}}
+\subsubsection[{TCP\_\-URG}]{\setlength{\rightskip}{0pt plus 5cm}\#define TCP\_\-URG~0x20}}
+\label{group__uip_gac84f499cba8a02fc0e306c10b2acabf0}
+
+
+Definition at line 207 of file uip.c.
+
+\hypertarget{group__uip_gab9435261753469accec0c9bf8a5a2686}{
+\index{uip@{uip}!UDPBUF@{UDPBUF}}
+\index{UDPBUF@{UDPBUF}!uip@{uip}}
+\subsubsection[{UDPBUF}]{\setlength{\rightskip}{0pt plus 5cm}\#define UDPBUF~((struct {\bf uip\_\-udpip\_\-hdr} $\ast$)\&{\bf uip\_\-buf}\mbox{[}UIP\_\-LLH\_\-LEN\mbox{]})}}
+\label{group__uip_gab9435261753469accec0c9bf8a5a2686}
+
+
+Definition at line 234 of file uip.c.
+
+\hypertarget{group__uip_gaa4c4310e54f18541b09e1e251fe7b22d}{
+\index{uip@{uip}!UIP\_\-ABORT@{UIP\_\-ABORT}}
+\index{UIP\_\-ABORT@{UIP\_\-ABORT}!uip@{uip}}
+\subsubsection[{UIP\_\-ABORT}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-ABORT~32}}
+\label{group__uip_gaa4c4310e54f18541b09e1e251fe7b22d}
+
+
+Definition at line 1337 of file uip.h.
+
+\hypertarget{group__uip_ga6bfa488f87f68a6f7f4a3efb9e45eaf8}{
+\index{uip@{uip}!UIP\_\-ACKDATA@{UIP\_\-ACKDATA}}
+\index{UIP\_\-ACKDATA@{UIP\_\-ACKDATA}!uip@{uip}}
+\subsubsection[{UIP\_\-ACKDATA}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-ACKDATA~1}}
+\label{group__uip_ga6bfa488f87f68a6f7f4a3efb9e45eaf8}
+
+
+Definition at line 1321 of file uip.h.
+
+\hypertarget{group__uip_gae0825474feee11b4e038bfe71757875f}{
+\index{uip@{uip}!UIP\_\-APPDATA\_\-SIZE@{UIP\_\-APPDATA\_\-SIZE}}
+\index{UIP\_\-APPDATA\_\-SIZE@{UIP\_\-APPDATA\_\-SIZE}!uip@{uip}}
+\subsubsection[{UIP\_\-APPDATA\_\-SIZE}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-APPDATA\_\-SIZE}}
+\label{group__uip_gae0825474feee11b4e038bfe71757875f}
+The buffer size available for user data in the \hyperlink{group__uipdevfunc_gab81e78f890dbbee50c533a9734b74fd9}{uip\_\-buf} buffer.
+
+This macro holds the available size for user data in the \hyperlink{group__uipdevfunc_gab81e78f890dbbee50c533a9734b74fd9}{uip\_\-buf} buffer. The macro is intended to be used for checking bounds of available user data.
+
+Example: 
+\begin{DoxyCode}
+ snprintf(uip_appdata, UIP_APPDATA_SIZE, "%u\n", i);
+\end{DoxyCode}
+ 
+
+Definition at line 1538 of file uip.h.
+
+\hypertarget{group__uip_ga57e6dc1d58a36d0ed53a3dd29ccc5798}{
+\index{uip@{uip}!UIP\_\-CLOSE@{UIP\_\-CLOSE}}
+\index{UIP\_\-CLOSE@{UIP\_\-CLOSE}!uip@{uip}}
+\subsubsection[{UIP\_\-CLOSE}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-CLOSE~16}}
+\label{group__uip_ga57e6dc1d58a36d0ed53a3dd29ccc5798}
+
+
+Definition at line 1332 of file uip.h.
+
+\hypertarget{group__uip_ga28eda870cff3d8e3cf2949e6f57a502b}{
+\index{uip@{uip}!UIP\_\-CLOSED@{UIP\_\-CLOSED}}
+\index{UIP\_\-CLOSED@{UIP\_\-CLOSED}!uip@{uip}}
+\subsubsection[{UIP\_\-CLOSED}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-CLOSED~0}}
+\label{group__uip_ga28eda870cff3d8e3cf2949e6f57a502b}
+
+
+Definition at line 1379 of file uip.h.
+
+\hypertarget{group__uip_ga64d9affc680a445d708234e70450477b}{
+\index{uip@{uip}!UIP\_\-CLOSING@{UIP\_\-CLOSING}}
+\index{UIP\_\-CLOSING@{UIP\_\-CLOSING}!uip@{uip}}
+\subsubsection[{UIP\_\-CLOSING}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-CLOSING~6}}
+\label{group__uip_ga64d9affc680a445d708234e70450477b}
+
+
+Definition at line 1385 of file uip.h.
+
+\hypertarget{group__uip_gaf84316f469ce0726985c0702db49a989}{
+\index{uip@{uip}!UIP\_\-CONNECTED@{UIP\_\-CONNECTED}}
+\index{UIP\_\-CONNECTED@{UIP\_\-CONNECTED}!uip@{uip}}
+\subsubsection[{UIP\_\-CONNECTED}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-CONNECTED~64}}
+\label{group__uip_gaf84316f469ce0726985c0702db49a989}
+
+
+Definition at line 1342 of file uip.h.
+
+\hypertarget{group__uip_gaabc40c09f49d15acb1b1a7f02bb3a807}{
+\index{uip@{uip}!UIP\_\-DATA@{UIP\_\-DATA}}
+\index{UIP\_\-DATA@{UIP\_\-DATA}!uip@{uip}}
+\subsubsection[{UIP\_\-DATA}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-DATA~1}}
+\label{group__uip_gaabc40c09f49d15acb1b1a7f02bb3a807}
+
+
+Definition at line 1363 of file uip.h.
+
+\hypertarget{group__uip_gaae59b70658f28ee6e998eaaab05e423f}{
+\index{uip@{uip}!UIP\_\-ESTABLISHED@{UIP\_\-ESTABLISHED}}
+\index{UIP\_\-ESTABLISHED@{UIP\_\-ESTABLISHED}!uip@{uip}}
+\subsubsection[{UIP\_\-ESTABLISHED}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-ESTABLISHED~3}}
+\label{group__uip_gaae59b70658f28ee6e998eaaab05e423f}
+
+
+Definition at line 1382 of file uip.h.
+
+\hypertarget{group__uip_gaa533c394b1fa0030205534befa31c525}{
+\index{uip@{uip}!UIP\_\-FIN\_\-WAIT\_\-1@{UIP\_\-FIN\_\-WAIT\_\-1}}
+\index{UIP\_\-FIN\_\-WAIT\_\-1@{UIP\_\-FIN\_\-WAIT\_\-1}!uip@{uip}}
+\subsubsection[{UIP\_\-FIN\_\-WAIT\_\-1}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-FIN\_\-WAIT\_\-1~4}}
+\label{group__uip_gaa533c394b1fa0030205534befa31c525}
+
+
+Definition at line 1383 of file uip.h.
+
+\hypertarget{group__uip_ga160128ab5d2ea3cc497b91ee4eb4ef99}{
+\index{uip@{uip}!UIP\_\-FIN\_\-WAIT\_\-2@{UIP\_\-FIN\_\-WAIT\_\-2}}
+\index{UIP\_\-FIN\_\-WAIT\_\-2@{UIP\_\-FIN\_\-WAIT\_\-2}!uip@{uip}}
+\subsubsection[{UIP\_\-FIN\_\-WAIT\_\-2}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-FIN\_\-WAIT\_\-2~5}}
+\label{group__uip_ga160128ab5d2ea3cc497b91ee4eb4ef99}
+
+
+Definition at line 1384 of file uip.h.
+
+\hypertarget{group__uip_ga6bc12c6c7b56f73ce5d57abfdcdc6eb5}{
+\index{uip@{uip}!UIP\_\-IPH\_\-LEN@{UIP\_\-IPH\_\-LEN}}
+\index{UIP\_\-IPH\_\-LEN@{UIP\_\-IPH\_\-LEN}!uip@{uip}}
+\subsubsection[{UIP\_\-IPH\_\-LEN}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-IPH\_\-LEN~20}}
+\label{group__uip_ga6bc12c6c7b56f73ce5d57abfdcdc6eb5}
+
+
+Definition at line 1550 of file uip.h.
+
+\hypertarget{group__uip_ga15f2617f7dc1713f9d10282125c6027b}{
+\index{uip@{uip}!UIP\_\-IPTCPH\_\-LEN@{UIP\_\-IPTCPH\_\-LEN}}
+\index{UIP\_\-IPTCPH\_\-LEN@{UIP\_\-IPTCPH\_\-LEN}!uip@{uip}}
+\subsubsection[{UIP\_\-IPTCPH\_\-LEN}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-IPTCPH\_\-LEN~(UIP\_\-TCPH\_\-LEN + UIP\_\-IPH\_\-LEN)}}
+\label{group__uip_ga15f2617f7dc1713f9d10282125c6027b}
+
+
+Definition at line 1557 of file uip.h.
+
+\hypertarget{group__uip_ga6f2b90c597ec23f39ec716ccec11233c}{
+\index{uip@{uip}!UIP\_\-IPUDPH\_\-LEN@{UIP\_\-IPUDPH\_\-LEN}}
+\index{UIP\_\-IPUDPH\_\-LEN@{UIP\_\-IPUDPH\_\-LEN}!uip@{uip}}
+\subsubsection[{UIP\_\-IPUDPH\_\-LEN}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-IPUDPH\_\-LEN~(UIP\_\-UDPH\_\-LEN + UIP\_\-IPH\_\-LEN)}}
+\label{group__uip_ga6f2b90c597ec23f39ec716ccec11233c}
+
+
+Definition at line 1554 of file uip.h.
+
+\hypertarget{group__uip_gad135fb0cfdfb2c212f0f51865a3640e4}{
+\index{uip@{uip}!UIP\_\-LAST\_\-ACK@{UIP\_\-LAST\_\-ACK}}
+\index{UIP\_\-LAST\_\-ACK@{UIP\_\-LAST\_\-ACK}!uip@{uip}}
+\subsubsection[{UIP\_\-LAST\_\-ACK}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-LAST\_\-ACK~8}}
+\label{group__uip_gad135fb0cfdfb2c212f0f51865a3640e4}
+
+
+Definition at line 1387 of file uip.h.
+
+\hypertarget{group__uip_ga013c3a06a8b58589a77f4a3442f89c2a}{
+\index{uip@{uip}!UIP\_\-LOG@{UIP\_\-LOG}}
+\index{UIP\_\-LOG@{UIP\_\-LOG}!uip@{uip}}
+\subsubsection[{UIP\_\-LOG}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-LOG(
+\begin{DoxyParamCaption}
+\item[{}]{m}
+\end{DoxyParamCaption}
+)}}
+\label{group__uip_ga013c3a06a8b58589a77f4a3442f89c2a}
+
+
+Definition at line 249 of file uip.c.
+
+\hypertarget{group__uip_ga39ce739bd352d7e348e37395ce903e43}{
+\index{uip@{uip}!UIP\_\-NEWDATA@{UIP\_\-NEWDATA}}
+\index{UIP\_\-NEWDATA@{UIP\_\-NEWDATA}!uip@{uip}}
+\subsubsection[{UIP\_\-NEWDATA}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-NEWDATA~2}}
+\label{group__uip_ga39ce739bd352d7e348e37395ce903e43}
+
+
+Definition at line 1325 of file uip.h.
+
+\hypertarget{group__uip_gaf0ed78fd2be24d849cdd5af75e3b2674}{
+\index{uip@{uip}!UIP\_\-POLL@{UIP\_\-POLL}}
+\index{UIP\_\-POLL@{UIP\_\-POLL}!uip@{uip}}
+\subsubsection[{UIP\_\-POLL}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-POLL~8}}
+\label{group__uip_gaf0ed78fd2be24d849cdd5af75e3b2674}
+
+
+Definition at line 1329 of file uip.h.
+
+\hypertarget{group__uip_gad605357e29affb0d3104294c90f09905}{
+\index{uip@{uip}!UIP\_\-POLL\_\-REQUEST@{UIP\_\-POLL\_\-REQUEST}}
+\index{UIP\_\-POLL\_\-REQUEST@{UIP\_\-POLL\_\-REQUEST}!uip@{uip}}
+\subsubsection[{UIP\_\-POLL\_\-REQUEST}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-POLL\_\-REQUEST~3}}
+\label{group__uip_gad605357e29affb0d3104294c90f09905}
+
+
+Definition at line 1369 of file uip.h.
+
+\hypertarget{group__uip_ga359951eecd80541c2101f628a9da9146}{
+\index{uip@{uip}!UIP\_\-PROTO\_\-ICMP@{UIP\_\-PROTO\_\-ICMP}}
+\index{UIP\_\-PROTO\_\-ICMP@{UIP\_\-PROTO\_\-ICMP}!uip@{uip}}
+\subsubsection[{UIP\_\-PROTO\_\-ICMP}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-PROTO\_\-ICMP~1}}
+\label{group__uip_ga359951eecd80541c2101f628a9da9146}
+
+
+Definition at line 1541 of file uip.h.
+
+\hypertarget{group__uip_gaad0321f4c570f9983c6de81ece3ddc20}{
+\index{uip@{uip}!UIP\_\-PROTO\_\-ICMP6@{UIP\_\-PROTO\_\-ICMP6}}
+\index{UIP\_\-PROTO\_\-ICMP6@{UIP\_\-PROTO\_\-ICMP6}!uip@{uip}}
+\subsubsection[{UIP\_\-PROTO\_\-ICMP6}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-PROTO\_\-ICMP6~58}}
+\label{group__uip_gaad0321f4c570f9983c6de81ece3ddc20}
+
+
+Definition at line 1544 of file uip.h.
+
+\hypertarget{group__uip_ga517c770991459cc62dc009c0d3875c6a}{
+\index{uip@{uip}!UIP\_\-PROTO\_\-TCP@{UIP\_\-PROTO\_\-TCP}}
+\index{UIP\_\-PROTO\_\-TCP@{UIP\_\-PROTO\_\-TCP}!uip@{uip}}
+\subsubsection[{UIP\_\-PROTO\_\-TCP}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-PROTO\_\-TCP~6}}
+\label{group__uip_ga517c770991459cc62dc009c0d3875c6a}
+
+
+Definition at line 1542 of file uip.h.
+
+\hypertarget{group__uip_gaf72d7b9a737707dcfb2c41fec2b6792e}{
+\index{uip@{uip}!UIP\_\-PROTO\_\-UDP@{UIP\_\-PROTO\_\-UDP}}
+\index{UIP\_\-PROTO\_\-UDP@{UIP\_\-PROTO\_\-UDP}!uip@{uip}}
+\subsubsection[{UIP\_\-PROTO\_\-UDP}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-PROTO\_\-UDP~17}}
+\label{group__uip_gaf72d7b9a737707dcfb2c41fec2b6792e}
+
+
+Definition at line 1543 of file uip.h.
+
+\hypertarget{group__uip_gaf848ce44c810492e7a35c2d23a429f45}{
+\index{uip@{uip}!UIP\_\-REXMIT@{UIP\_\-REXMIT}}
+\index{UIP\_\-REXMIT@{UIP\_\-REXMIT}!uip@{uip}}
+\subsubsection[{UIP\_\-REXMIT}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-REXMIT~4}}
+\label{group__uip_gaf848ce44c810492e7a35c2d23a429f45}
+
+
+Definition at line 1327 of file uip.h.
+
+\hypertarget{group__uip_ga9c0814ed491fa452ec97910c0728d410}{
+\index{uip@{uip}!UIP\_\-STAT@{UIP\_\-STAT}}
+\index{UIP\_\-STAT@{UIP\_\-STAT}!uip@{uip}}
+\subsubsection[{UIP\_\-STAT}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-STAT(
+\begin{DoxyParamCaption}
+\item[{}]{s}
+\end{DoxyParamCaption}
+)~s}}
+\label{group__uip_ga9c0814ed491fa452ec97910c0728d410}
+
+
+Definition at line 239 of file uip.c.
+
+\hypertarget{group__uip_gade29ec025e6754afd8cc24c954a8dec8}{
+\index{uip@{uip}!UIP\_\-STOPPED@{UIP\_\-STOPPED}}
+\index{UIP\_\-STOPPED@{UIP\_\-STOPPED}!uip@{uip}}
+\subsubsection[{UIP\_\-STOPPED}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-STOPPED~16}}
+\label{group__uip_gade29ec025e6754afd8cc24c954a8dec8}
+
+
+Definition at line 1390 of file uip.h.
+
+\hypertarget{group__uip_gaa5e3c856b86725125d19fccc34cd9eb5}{
+\index{uip@{uip}!UIP\_\-SYN\_\-RCVD@{UIP\_\-SYN\_\-RCVD}}
+\index{UIP\_\-SYN\_\-RCVD@{UIP\_\-SYN\_\-RCVD}!uip@{uip}}
+\subsubsection[{UIP\_\-SYN\_\-RCVD}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-SYN\_\-RCVD~1}}
+\label{group__uip_gaa5e3c856b86725125d19fccc34cd9eb5}
+
+
+Definition at line 1380 of file uip.h.
+
+\hypertarget{group__uip_ga8af482dec973db57d8b3bd3f69461488}{
+\index{uip@{uip}!UIP\_\-SYN\_\-SENT@{UIP\_\-SYN\_\-SENT}}
+\index{UIP\_\-SYN\_\-SENT@{UIP\_\-SYN\_\-SENT}!uip@{uip}}
+\subsubsection[{UIP\_\-SYN\_\-SENT}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-SYN\_\-SENT~2}}
+\label{group__uip_ga8af482dec973db57d8b3bd3f69461488}
+
+
+Definition at line 1381 of file uip.h.
+
+\hypertarget{group__uip_ga17d111686f98e4c09db73a770ac3f1a4}{
+\index{uip@{uip}!UIP\_\-TCPH\_\-LEN@{UIP\_\-TCPH\_\-LEN}}
+\index{UIP\_\-TCPH\_\-LEN@{UIP\_\-TCPH\_\-LEN}!uip@{uip}}
+\subsubsection[{UIP\_\-TCPH\_\-LEN}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-TCPH\_\-LEN~20}}
+\label{group__uip_ga17d111686f98e4c09db73a770ac3f1a4}
+
+
+Definition at line 1553 of file uip.h.
+
+\hypertarget{group__uip_gaee37386b2ab828787c05227eb109def7}{
+\index{uip@{uip}!UIP\_\-TCPIP\_\-HLEN@{UIP\_\-TCPIP\_\-HLEN}}
+\index{UIP\_\-TCPIP\_\-HLEN@{UIP\_\-TCPIP\_\-HLEN}!uip@{uip}}
+\subsubsection[{UIP\_\-TCPIP\_\-HLEN}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-TCPIP\_\-HLEN~UIP\_\-IPTCPH\_\-LEN}}
+\label{group__uip_gaee37386b2ab828787c05227eb109def7}
+
+
+Definition at line 1560 of file uip.h.
+
+\hypertarget{group__uip_gafff0ed43201bf1e2020de1a0d6cac070}{
+\index{uip@{uip}!UIP\_\-TIME\_\-WAIT@{UIP\_\-TIME\_\-WAIT}}
+\index{UIP\_\-TIME\_\-WAIT@{UIP\_\-TIME\_\-WAIT}!uip@{uip}}
+\subsubsection[{UIP\_\-TIME\_\-WAIT}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-TIME\_\-WAIT~7}}
+\label{group__uip_gafff0ed43201bf1e2020de1a0d6cac070}
+
+
+Definition at line 1386 of file uip.h.
+
+\hypertarget{group__uip_ga2d3ba4b14d6d2f6576f9b547800b7945}{
+\index{uip@{uip}!UIP\_\-TIMEDOUT@{UIP\_\-TIMEDOUT}}
+\index{UIP\_\-TIMEDOUT@{UIP\_\-TIMEDOUT}!uip@{uip}}
+\subsubsection[{UIP\_\-TIMEDOUT}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-TIMEDOUT~128}}
+\label{group__uip_ga2d3ba4b14d6d2f6576f9b547800b7945}
+
+
+Definition at line 1347 of file uip.h.
+
+\hypertarget{group__uip_ga041aea91aa6ef84dcc6cac3c51db9b2f}{
+\index{uip@{uip}!UIP\_\-TIMER@{UIP\_\-TIMER}}
+\index{UIP\_\-TIMER@{UIP\_\-TIMER}!uip@{uip}}
+\subsubsection[{UIP\_\-TIMER}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-TIMER~2}}
+\label{group__uip_ga041aea91aa6ef84dcc6cac3c51db9b2f}
+
+
+Definition at line 1367 of file uip.h.
+
+\hypertarget{group__uip_ga13dfcb4a5f920e108253ade527a66cc2}{
+\index{uip@{uip}!UIP\_\-TS\_\-MASK@{UIP\_\-TS\_\-MASK}}
+\index{UIP\_\-TS\_\-MASK@{UIP\_\-TS\_\-MASK}!uip@{uip}}
+\subsubsection[{UIP\_\-TS\_\-MASK}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-TS\_\-MASK~15}}
+\label{group__uip_ga13dfcb4a5f920e108253ade527a66cc2}
+
+
+Definition at line 1388 of file uip.h.
+
+\hypertarget{group__uip_ga5c97ae587595b5444be80f5ecc1d3382}{
+\index{uip@{uip}!UIP\_\-UDP\_\-SEND\_\-CONN@{UIP\_\-UDP\_\-SEND\_\-CONN}}
+\index{UIP\_\-UDP\_\-SEND\_\-CONN@{UIP\_\-UDP\_\-SEND\_\-CONN}!uip@{uip}}
+\subsubsection[{UIP\_\-UDP\_\-SEND\_\-CONN}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-UDP\_\-SEND\_\-CONN~4}}
+\label{group__uip_ga5c97ae587595b5444be80f5ecc1d3382}
+
+
+Definition at line 1371 of file uip.h.
+
+\hypertarget{group__uip_gaf0ccbc3bb2a3ba1ebc255c7b3fcedd24}{
+\index{uip@{uip}!UIP\_\-UDP\_\-TIMER@{UIP\_\-UDP\_\-TIMER}}
+\index{UIP\_\-UDP\_\-TIMER@{UIP\_\-UDP\_\-TIMER}!uip@{uip}}
+\subsubsection[{UIP\_\-UDP\_\-TIMER}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-UDP\_\-TIMER~5}}
+\label{group__uip_gaf0ccbc3bb2a3ba1ebc255c7b3fcedd24}
+
+
+Definition at line 1375 of file uip.h.
+
+\hypertarget{group__uip_gab948296aea6b6b3aa1f156799c4d479c}{
+\index{uip@{uip}!UIP\_\-UDPH\_\-LEN@{UIP\_\-UDPH\_\-LEN}}
+\index{UIP\_\-UDPH\_\-LEN@{UIP\_\-UDPH\_\-LEN}!uip@{uip}}
+\subsubsection[{UIP\_\-UDPH\_\-LEN}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-UDPH\_\-LEN~8}}
+\label{group__uip_gab948296aea6b6b3aa1f156799c4d479c}
+
+
+Definition at line 1552 of file uip.h.
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{group__uip_ga20ceef9d0868d391c2f33041b02cb1f1}{
+\index{uip@{uip}!uip\_\-ip4addr\_\-t@{uip\_\-ip4addr\_\-t}}
+\index{uip\_\-ip4addr\_\-t@{uip\_\-ip4addr\_\-t}!uip@{uip}}
+\subsubsection[{uip\_\-ip4addr\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf u16\_\-t} {\bf uip\_\-ip4addr\_\-t}\mbox{[}2\mbox{]}}}
+\label{group__uip_ga20ceef9d0868d391c2f33041b02cb1f1}
+Repressentation of an IP address. 
+
+Definition at line 65 of file uip.h.
+
+\hypertarget{group__uip_ga9ebb4dac683163840eab9c6c41ad61f7}{
+\index{uip@{uip}!uip\_\-ip6addr\_\-t@{uip\_\-ip6addr\_\-t}}
+\index{uip\_\-ip6addr\_\-t@{uip\_\-ip6addr\_\-t}!uip@{uip}}
+\subsubsection[{uip\_\-ip6addr\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf u16\_\-t} {\bf uip\_\-ip6addr\_\-t}\mbox{[}8\mbox{]}}}
+\label{group__uip_ga9ebb4dac683163840eab9c6c41ad61f7}
+
+
+Definition at line 66 of file uip.h.
+
+\hypertarget{group__uip_ga1ef35301f43a5bbb9f89f07b5a36b9a0}{
+\index{uip@{uip}!uip\_\-ipaddr\_\-t@{uip\_\-ipaddr\_\-t}}
+\index{uip\_\-ipaddr\_\-t@{uip\_\-ipaddr\_\-t}!uip@{uip}}
+\subsubsection[{uip\_\-ipaddr\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf uip\_\-ip4addr\_\-t} {\bf uip\_\-ipaddr\_\-t}}}
+\label{group__uip_ga1ef35301f43a5bbb9f89f07b5a36b9a0}
+
+
+Definition at line 70 of file uip.h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{group__uip_gaa22b04cac8cf283ca12f028578bebc06}{
+\index{uip@{uip}!htons@{htons}}
+\index{htons@{htons}!uip@{uip}}
+\subsubsection[{htons}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u16\_\-t} htons (
+\begin{DoxyParamCaption}
+\item[{{\bf u16\_\-t}}]{ val}
+\end{DoxyParamCaption}
+)}}
+\label{group__uip_gaa22b04cac8cf283ca12f028578bebc06}
+Convert 16-\/bit quantity from host byte order to network byte order.
+
+This function is primarily used for converting variables from host byte order to network byte order. For converting constants to network byte order, use the \hyperlink{group__uipconvfunc_ga69a7a4951ff21b302267532c21ee78fc}{HTONS()} macro instead. 
+
+Definition at line 1901 of file uip.c.
+
+\hypertarget{group__uip_ga6832e4d2d046536b6472f7ac92340f68}{
+\index{uip@{uip}!uip\_\-add32@{uip\_\-add32}}
+\index{uip\_\-add32@{uip\_\-add32}!uip@{uip}}
+\subsubsection[{uip\_\-add32}]{\setlength{\rightskip}{0pt plus 5cm}void uip\_\-add32 (
+\begin{DoxyParamCaption}
+\item[{{\bf u8\_\-t} $\ast$}]{ op32, }
+\item[{{\bf u16\_\-t}}]{ op16}
+\end{DoxyParamCaption}
+)}}
+\label{group__uip_ga6832e4d2d046536b6472f7ac92340f68}
+Carry out a 32-\/bit addition.
+
+Because not all architectures for which uIP is intended has native 32-\/bit arithmetic, uIP uses an external C function for doing the required 32-\/bit additions in the TCP protocol processing. This function should add the two arguments and place the result in the global variable uip\_\-acc32.
+
+\begin{DoxyNote}{Note}
+The 32-\/bit integer pointed to by the op32 parameter and the result in the uip\_\-acc32 variable are in network byte order (big endian).
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em op32}]A pointer to a 4-\/byte array representing a 32-\/bit integer in network byte order (big endian).\item[{\em op16}]A 16-\/bit integer in host byte order. \end{DoxyParams}
+
+
+Definition at line 254 of file uip.c.
+
+\hypertarget{group__uip_ga6affe021225ed773018fb00814bbce06}{
+\index{uip@{uip}!uip\_\-chksum@{uip\_\-chksum}}
+\index{uip\_\-chksum@{uip\_\-chksum}!uip@{uip}}
+\subsubsection[{uip\_\-chksum}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u16\_\-t} uip\_\-chksum (
+\begin{DoxyParamCaption}
+\item[{{\bf u16\_\-t} $\ast$}]{ buf, }
+\item[{{\bf u16\_\-t}}]{ len}
+\end{DoxyParamCaption}
+)}}
+\label{group__uip_ga6affe021225ed773018fb00814bbce06}
+Calculate the Internet checksum over a buffer.
+
+The Internet checksum is the one's complement of the one's complement sum of all 16-\/bit words in the buffer.
+
+See RFC1071.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em buf}]A pointer to the buffer over which the checksum is to be computed.\item[{\em len}]The length of the buffer over which the checksum is to be computed.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Internet checksum of the buffer. 
+\end{DoxyReturn}
+\hypertarget{group__uip_ga9c24fba2cd8f7f62accb0a0d5bbe4dad}{
+\index{uip@{uip}!uip\_\-connect@{uip\_\-connect}}
+\index{uip\_\-connect@{uip\_\-connect}!uip@{uip}}
+\subsubsection[{uip\_\-connect}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf uip\_\-conn}$\ast$ uip\_\-connect (
+\begin{DoxyParamCaption}
+\item[{{\bf uip\_\-ipaddr\_\-t} $\ast$}]{ ripaddr, }
+\item[{{\bf u16\_\-t}}]{ port}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}
+\label{group__uip_ga9c24fba2cd8f7f62accb0a0d5bbe4dad}
+Connect to a remote host using TCP.
+
+This function is used to start a new connection to the specified port on the specied host. It allocates a new connection identifier, sets the connection to the SYN\_\-SENT state and sets the retransmission timer to 0. This will cause a TCP SYN segment to be sent out the next time this connection is periodically processed, which usually is done within 0.5 seconds after the call to \hyperlink{group__uip_ga9c24fba2cd8f7f62accb0a0d5bbe4dad}{uip\_\-connect()}.
+
+\begin{DoxyNote}{Note}
+This function is avaliable only if support for active open has been configured by defining UIP\_\-ACTIVE\_\-OPEN to 1 in \hyperlink{uipopt_8h}{uipopt.h}.
+
+Since this function requires the port number to be in network byte order, a conversion using \hyperlink{group__uipconvfunc_ga69a7a4951ff21b302267532c21ee78fc}{HTONS()} or \hyperlink{group__uip_gaa22b04cac8cf283ca12f028578bebc06}{htons()} is necessary.
+\end{DoxyNote}
+
+\begin{DoxyCode}
+ uip_ipaddr_t ipaddr;
+
+ uip_ipaddr(&ipaddr, 192,168,1,2);
+ uip_connect(&ipaddr, HTONS(80));
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em ripaddr}]The IP address of the remote hot.\item[{\em port}]A 16-\/bit port number in network byte order.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the uIP connection identifier for the new connection, or NULL if no connection could be allocated. 
+\end{DoxyReturn}
+
+
+Definition at line 412 of file uip.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{group__uip_ga9c24fba2cd8f7f62accb0a0d5bbe4dad_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{group__uip_gac48ed5f0d27721ef62a3ed02a5ad8d2e}{
+\index{uip@{uip}!uip\_\-init@{uip\_\-init}}
+\index{uip\_\-init@{uip\_\-init}!uip@{uip}}
+\subsubsection[{uip\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void uip\_\-init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__uip_gac48ed5f0d27721ef62a3ed02a5ad8d2e}
+uIP initialization function.
+
+This function should be called at boot up to initilize the uIP TCP/IP stack. 
+
+Definition at line 384 of file uip.c.
+
+\hypertarget{group__uip_ga2addf34c7d457c1a7899a7e2171ef1e9}{
+\index{uip@{uip}!uip\_\-ipchksum@{uip\_\-ipchksum}}
+\index{uip\_\-ipchksum@{uip\_\-ipchksum}!uip@{uip}}
+\subsubsection[{uip\_\-ipchksum}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u16\_\-t} uip\_\-ipchksum (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__uip_ga2addf34c7d457c1a7899a7e2171ef1e9}
+Calculate the IP header checksum of the packet header in uip\_\-buf.
+
+The IP header checksum is the Internet checksum of the 20 bytes of the IP header.
+
+\begin{DoxyReturn}{Returns}
+The IP header checksum of the IP header in the uip\_\-buf buffer. 
+\end{DoxyReturn}
+\hypertarget{group__uip_gadd1ab3704ecd4900eec61a6897d32dc8}{
+\index{uip@{uip}!uip\_\-listen@{uip\_\-listen}}
+\index{uip\_\-listen@{uip\_\-listen}!uip@{uip}}
+\subsubsection[{uip\_\-listen}]{\setlength{\rightskip}{0pt plus 5cm}void uip\_\-listen (
+\begin{DoxyParamCaption}
+\item[{{\bf u16\_\-t}}]{ port}
+\end{DoxyParamCaption}
+)}}
+\label{group__uip_gadd1ab3704ecd4900eec61a6897d32dc8}
+Start listening to the specified port.
+
+\begin{DoxyNote}{Note}
+Since this function expects the port number in network byte order, a conversion using \hyperlink{group__uipconvfunc_ga69a7a4951ff21b302267532c21ee78fc}{HTONS()} or \hyperlink{group__uip_gaa22b04cac8cf283ca12f028578bebc06}{htons()} is necessary.
+\end{DoxyNote}
+
+\begin{DoxyCode}
+ uip_listen(HTONS(80));
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em port}]A 16-\/bit port number in network byte order. \end{DoxyParams}
+
+
+Definition at line 534 of file uip.c.
+
+\hypertarget{group__uip_ga266263ac78a1361a2b1d15741d3b0675}{
+\index{uip@{uip}!uip\_\-process@{uip\_\-process}}
+\index{uip\_\-process@{uip\_\-process}!uip@{uip}}
+\subsubsection[{uip\_\-process}]{\setlength{\rightskip}{0pt plus 5cm}void uip\_\-process (
+\begin{DoxyParamCaption}
+\item[{{\bf u8\_\-t}}]{ flag}
+\end{DoxyParamCaption}
+)}}
+\label{group__uip_ga266263ac78a1361a2b1d15741d3b0675}
+\hypertarget{group__uip_ga04b053a623aac7cd4195157d470661b3}{
+\index{uip@{uip}!uip\_\-send@{uip\_\-send}}
+\index{uip\_\-send@{uip\_\-send}!uip@{uip}}
+\subsubsection[{uip\_\-send}]{\setlength{\rightskip}{0pt plus 5cm}void uip\_\-send (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{ data, }
+\item[{int}]{ len}
+\end{DoxyParamCaption}
+)}}
+\label{group__uip_ga04b053a623aac7cd4195157d470661b3}
+Send data on the current connection.
+
+This function is used to send out a single segment of TCP data. Only applications that have been invoked by uIP for event processing can send data.
+
+The amount of data that actually is sent out after a call to this funcion is determined by the maximum amount of data TCP allows. uIP will automatically crop the data so that only the appropriate amount of data is sent. The function \hyperlink{group__uipappfunc_gab5fecbc62edd128012cea0f47b57ab9f}{uip\_\-mss()} can be used to query uIP for the amount of data that actually will be sent.
+
+\begin{DoxyNote}{Note}
+This function does not guarantee that the sent data will arrive at the destination. If the data is lost in the network, the application will be invoked with the \hyperlink{group__uipappfunc_gaa8933ad15a2e2947dae4a5cff50e6007}{uip\_\-rexmit()} event being set. The application will then have to resend the data using this function.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em data}]A pointer to the data which is to be sent.\item[{\em len}]The maximum amount of data bytes to be sent. \end{DoxyParams}
+
+
+Definition at line 1907 of file uip.c.
+
+\hypertarget{group__uip_ga22f140b02c354dfebcc7ad481c3bcd68}{
+\index{uip@{uip}!uip\_\-setipid@{uip\_\-setipid}}
+\index{uip\_\-setipid@{uip\_\-setipid}!uip@{uip}}
+\subsubsection[{uip\_\-setipid}]{\setlength{\rightskip}{0pt plus 5cm}void uip\_\-setipid (
+\begin{DoxyParamCaption}
+\item[{{\bf u16\_\-t}}]{ id}
+\end{DoxyParamCaption}
+)}}
+\label{group__uip_ga22f140b02c354dfebcc7ad481c3bcd68}
+uIP initialization function.
+
+This function may be used at boot time to set the initial ip\_\-id. 
+
+Definition at line 186 of file uip.c.
+
+\hypertarget{group__uip_ga85b65e38aa74eba18979156f97a94a87}{
+\index{uip@{uip}!uip\_\-tcpchksum@{uip\_\-tcpchksum}}
+\index{uip\_\-tcpchksum@{uip\_\-tcpchksum}!uip@{uip}}
+\subsubsection[{uip\_\-tcpchksum}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u16\_\-t} uip\_\-tcpchksum (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__uip_ga85b65e38aa74eba18979156f97a94a87}
+Calculate the TCP checksum of the packet in uip\_\-buf and uip\_\-appdata.
+
+The TCP checksum is the Internet checksum of data contents of the TCP segment, and a pseudo-\/header as defined in RFC793.
+
+\begin{DoxyReturn}{Returns}
+The TCP checksum of the TCP segment in uip\_\-buf and pointed to by uip\_\-appdata. 
+\end{DoxyReturn}
+\hypertarget{group__uip_ga79c4110211247df3fb30b8cf1c4c02af}{
+\index{uip@{uip}!uip\_\-udp\_\-new@{uip\_\-udp\_\-new}}
+\index{uip\_\-udp\_\-new@{uip\_\-udp\_\-new}!uip@{uip}}
+\subsubsection[{uip\_\-udp\_\-new}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf uip\_\-udp\_\-conn}$\ast$ uip\_\-udp\_\-new (
+\begin{DoxyParamCaption}
+\item[{{\bf uip\_\-ipaddr\_\-t} $\ast$}]{ ripaddr, }
+\item[{{\bf u16\_\-t}}]{ rport}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}
+\label{group__uip_ga79c4110211247df3fb30b8cf1c4c02af}
+Set up a new UDP connection.
+
+This function sets up a new UDP connection. The function will automatically allocate an unused local port for the new connection. However, another port can be chosen by using the \hyperlink{group__uipappfunc_gaa20812098a4663c8a9fc4ce8e95391b6}{uip\_\-udp\_\-bind()} call, after the \hyperlink{group__uip_ga79c4110211247df3fb30b8cf1c4c02af}{uip\_\-udp\_\-new()} function has been called.
+
+Example: 
+\begin{DoxyCode}
+ uip_ipaddr_t addr;
+ struct uip_udp_conn *c;
+
+ uip_ipaddr(&addr, 192,168,2,1);
+ c = uip_udp_new(&addr, HTONS(12345));
+ if(c != NULL) {
+   uip_udp_bind(c, HTONS(12344));
+ }
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+\item[{\em ripaddr}]The IP address of the remote host.\item[{\em rport}]The remote port number in network byte order.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{structuip__udp__conn}{uip\_\-udp\_\-conn} structure for the new connection or NULL if no connection could be allocated. 
+\end{DoxyReturn}
+
+
+Definition at line 478 of file uip.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{group__uip_ga79c4110211247df3fb30b8cf1c4c02af_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{group__uip_ga7023a34ba9e9d03b5fbedbcb32924453}{
+\index{uip@{uip}!uip\_\-udpchksum@{uip\_\-udpchksum}}
+\index{uip\_\-udpchksum@{uip\_\-udpchksum}!uip@{uip}}
+\subsubsection[{uip\_\-udpchksum}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u16\_\-t} uip\_\-udpchksum (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__uip_ga7023a34ba9e9d03b5fbedbcb32924453}
+Calculate the UDP checksum of the packet in uip\_\-buf and uip\_\-appdata.
+
+The UDP checksum is the Internet checksum of data contents of the UDP segment, and a pseudo-\/header as defined in RFC768.
+
+\begin{DoxyReturn}{Returns}
+The UDP checksum of the UDP segment in uip\_\-buf and pointed to by uip\_\-appdata. 
+\end{DoxyReturn}
+\hypertarget{group__uip_gaaa585784b0914cac1d37f07f85457008}{
+\index{uip@{uip}!uip\_\-unlisten@{uip\_\-unlisten}}
+\index{uip\_\-unlisten@{uip\_\-unlisten}!uip@{uip}}
+\subsubsection[{uip\_\-unlisten}]{\setlength{\rightskip}{0pt plus 5cm}void uip\_\-unlisten (
+\begin{DoxyParamCaption}
+\item[{{\bf u16\_\-t}}]{ port}
+\end{DoxyParamCaption}
+)}}
+\label{group__uip_gaaa585784b0914cac1d37f07f85457008}
+Stop listening to the specified port.
+
+\begin{DoxyNote}{Note}
+Since this function expects the port number in network byte order, a conversion using \hyperlink{group__uipconvfunc_ga69a7a4951ff21b302267532c21ee78fc}{HTONS()} or \hyperlink{group__uip_gaa22b04cac8cf283ca12f028578bebc06}{htons()} is necessary.
+\end{DoxyNote}
+
+\begin{DoxyCode}
+ uip_unlisten(HTONS(80));
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em port}]A 16-\/bit port number in network byte order. \end{DoxyParams}
+
+
+Definition at line 523 of file uip.c.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{group__uip_gaae09fef3a4ae13ad85a537d46c55f201}{
+\index{uip@{uip}!ALIGN\_\-STRUCT\_\-END@{ALIGN\_\-STRUCT\_\-END}}
+\index{ALIGN\_\-STRUCT\_\-END@{ALIGN\_\-STRUCT\_\-END}!uip@{uip}}
+\subsubsection[{ALIGN\_\-STRUCT\_\-END}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u8\_\-t} {\bf uip\_\-buf} \mbox{[}UIP\_\-BUFSIZE + 2\mbox{]} {\bf ALIGN\_\-STRUCT\_\-END}}}
+\label{group__uip_gaae09fef3a4ae13ad85a537d46c55f201}
+
+
+Definition at line 143 of file uip.c.
+
+\hypertarget{group__uip_ga2bd9dfb47fe5347b46dab0c6b93f9b4e}{
+\index{uip@{uip}!PACK\_\-STRUCT\_\-END@{PACK\_\-STRUCT\_\-END}}
+\index{PACK\_\-STRUCT\_\-END@{PACK\_\-STRUCT\_\-END}!uip@{uip}}
+\subsubsection[{PACK\_\-STRUCT\_\-END}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf uip\_\-eth\_\-addr}  {\bf PACK\_\-STRUCT\_\-END}}}
+\label{group__uip_ga2bd9dfb47fe5347b46dab0c6b93f9b4e}
+Representation of a 48-\/bit Ethernet address. \hypertarget{group__uip_ga2a0cf5d86c58fab216414ce59bf1fea1}{
+\index{uip@{uip}!uip\_\-acc32@{uip\_\-acc32}}
+\index{uip\_\-acc32@{uip\_\-acc32}!uip@{uip}}
+\subsubsection[{uip\_\-acc32}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u8\_\-t} {\bf uip\_\-acc32}\mbox{[}4\mbox{]}}}
+\label{group__uip_ga2a0cf5d86c58fab216414ce59bf1fea1}
+4-\/byte array used for the 32-\/bit sequence number calculations. 
+
+Definition at line 197 of file uip.c.
+
+\hypertarget{group__uip_ga561b8eda32e059d4e7397f776268cc63}{
+\index{uip@{uip}!uip\_\-appdata@{uip\_\-appdata}}
+\index{uip\_\-appdata@{uip\_\-appdata}!uip@{uip}}
+\subsubsection[{uip\_\-appdata}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ {\bf uip\_\-appdata}}}
+\label{group__uip_ga561b8eda32e059d4e7397f776268cc63}
+Pointer to the application data in the packet buffer.
+
+This pointer points to the application data when the application is called. If the application wishes to send data, the application may use this space to write the data into before calling \hyperlink{group__uip_ga04b053a623aac7cd4195157d470661b3}{uip\_\-send()}. 
+
+Definition at line 148 of file uip.c.
+
+\hypertarget{group__uip_ga561b8eda32e059d4e7397f776268cc63}{
+\index{uip@{uip}!uip\_\-appdata@{uip\_\-appdata}}
+\index{uip\_\-appdata@{uip\_\-appdata}!uip@{uip}}
+\subsubsection[{uip\_\-appdata}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ {\bf uip\_\-appdata}}}
+\label{group__uip_ga561b8eda32e059d4e7397f776268cc63}
+Pointer to the application data in the packet buffer.
+
+This pointer points to the application data when the application is called. If the application wishes to send data, the application may use this space to write the data into before calling \hyperlink{group__uip_ga04b053a623aac7cd4195157d470661b3}{uip\_\-send()}. 
+
+Definition at line 148 of file uip.c.
+
+\hypertarget{group__uip_ga788ffac72342f6172343d7f8099cbe1a}{
+\index{uip@{uip}!uip\_\-conn@{uip\_\-conn}}
+\index{uip\_\-conn@{uip\_\-conn}!uip@{uip}}
+\subsubsection[{uip\_\-conn}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf uip\_\-conn}$\ast$ {\bf uip\_\-conn}}}
+\label{group__uip_ga788ffac72342f6172343d7f8099cbe1a}
+Pointer to the current TCP connection.
+
+The \hyperlink{structuip__conn}{uip\_\-conn} pointer can be used to access the current TCP connection. 
+
+Definition at line 168 of file uip.c.
+
+\hypertarget{group__uip_ga788ffac72342f6172343d7f8099cbe1a}{
+\index{uip@{uip}!uip\_\-conn@{uip\_\-conn}}
+\index{uip\_\-conn@{uip\_\-conn}!uip@{uip}}
+\subsubsection[{uip\_\-conn}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf uip\_\-conn}$\ast$ {\bf uip\_\-conn}}}
+\label{group__uip_ga788ffac72342f6172343d7f8099cbe1a}
+Pointer to the current TCP connection.
+
+The \hyperlink{structuip__conn}{uip\_\-conn} pointer can be used to access the current TCP connection. 
+
+Definition at line 168 of file uip.c.
+
+\hypertarget{group__uip_gaf703683056d2bfa5c81fa157dcb20fe2}{
+\index{uip@{uip}!uip\_\-conns@{uip\_\-conns}}
+\index{uip\_\-conns@{uip\_\-conns}!uip@{uip}}
+\subsubsection[{uip\_\-conns}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf uip\_\-conn} {\bf uip\_\-conns}\mbox{[}UIP\_\-CONNS\mbox{]}}}
+\label{group__uip_gaf703683056d2bfa5c81fa157dcb20fe2}
+
+
+Definition at line 171 of file uip.c.
+
+\hypertarget{group__uip_gaf703683056d2bfa5c81fa157dcb20fe2}{
+\index{uip@{uip}!uip\_\-conns@{uip\_\-conns}}
+\index{uip\_\-conns@{uip\_\-conns}!uip@{uip}}
+\subsubsection[{uip\_\-conns}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf uip\_\-conn} {\bf uip\_\-conns}\mbox{[}UIP\_\-CONNS\mbox{]}}}
+\label{group__uip_gaf703683056d2bfa5c81fa157dcb20fe2}
+
+
+Definition at line 171 of file uip.c.
+
+\hypertarget{group__uip_ga20df5c82f2a15a508c19e505b5d9de2b}{
+\index{uip@{uip}!uip\_\-draddr@{uip\_\-draddr}}
+\index{uip\_\-draddr@{uip\_\-draddr}!uip@{uip}}
+\subsubsection[{uip\_\-draddr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uip\_\-ipaddr\_\-t} {\bf uip\_\-draddr}}}
+\label{group__uip_ga20df5c82f2a15a508c19e505b5d9de2b}
+
+
+Definition at line 110 of file uip.c.
+
+\hypertarget{group__uip_ga20df5c82f2a15a508c19e505b5d9de2b}{
+\index{uip@{uip}!uip\_\-draddr@{uip\_\-draddr}}
+\index{uip\_\-draddr@{uip\_\-draddr}!uip@{uip}}
+\subsubsection[{uip\_\-draddr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uip\_\-ipaddr\_\-t} {\bf uip\_\-draddr}}}
+\label{group__uip_ga20df5c82f2a15a508c19e505b5d9de2b}
+
+
+Definition at line 110 of file uip.c.
+
+\hypertarget{group__uip_ga499bb98a0b4ae9a98553ede81317606d}{
+\index{uip@{uip}!uip\_\-ethaddr@{uip\_\-ethaddr}}
+\index{uip\_\-ethaddr@{uip\_\-ethaddr}!uip@{uip}}
+\subsubsection[{uip\_\-ethaddr}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf uip\_\-eth\_\-addr} {\bf uip\_\-ethaddr} = \{\{0,0,0,0,0,0\}\}}}
+\label{group__uip_ga499bb98a0b4ae9a98553ede81317606d}
+
+
+Definition at line 134 of file uip.c.
+
+\hypertarget{group__uip_gab4ef6b00924990e7a293f66715b6d1d1}{
+\index{uip@{uip}!uip\_\-flags@{uip\_\-flags}}
+\index{uip\_\-flags@{uip\_\-flags}!uip@{uip}}
+\subsubsection[{uip\_\-flags}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u8\_\-t} {\bf uip\_\-flags}}}
+\label{group__uip_gab4ef6b00924990e7a293f66715b6d1d1}
+
+
+Definition at line 165 of file uip.c.
+
+\hypertarget{group__uip_gab4ef6b00924990e7a293f66715b6d1d1}{
+\index{uip@{uip}!uip\_\-flags@{uip\_\-flags}}
+\index{uip\_\-flags@{uip\_\-flags}!uip@{uip}}
+\subsubsection[{uip\_\-flags}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u8\_\-t} {\bf uip\_\-flags}}}
+\label{group__uip_gab4ef6b00924990e7a293f66715b6d1d1}
+
+
+Definition at line 165 of file uip.c.
+
+\hypertarget{group__uip_ga7d3673f52f5846b6961d23b150decd54}{
+\index{uip@{uip}!uip\_\-hostaddr@{uip\_\-hostaddr}}
+\index{uip\_\-hostaddr@{uip\_\-hostaddr}!uip@{uip}}
+\subsubsection[{uip\_\-hostaddr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uip\_\-ipaddr\_\-t} {\bf uip\_\-hostaddr}}}
+\label{group__uip_ga7d3673f52f5846b6961d23b150decd54}
+
+
+Definition at line 110 of file uip.c.
+
+\hypertarget{group__uip_ga7d3673f52f5846b6961d23b150decd54}{
+\index{uip@{uip}!uip\_\-hostaddr@{uip\_\-hostaddr}}
+\index{uip\_\-hostaddr@{uip\_\-hostaddr}!uip@{uip}}
+\subsubsection[{uip\_\-hostaddr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uip\_\-ipaddr\_\-t} {\bf uip\_\-hostaddr}}}
+\label{group__uip_ga7d3673f52f5846b6961d23b150decd54}
+
+
+Definition at line 110 of file uip.c.
+
+\hypertarget{group__uip_ga12a33f0c09711167bdf3dd7d7cf8c5a1}{
+\index{uip@{uip}!uip\_\-len@{uip\_\-len}}
+\index{uip\_\-len@{uip\_\-len}!uip@{uip}}
+\subsubsection[{uip\_\-len}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u16\_\-t} {\bf uip\_\-len}}}
+\label{group__uip_ga12a33f0c09711167bdf3dd7d7cf8c5a1}
+The length of the packet in the uip\_\-buf buffer.
+
+The global variable uip\_\-len holds the length of the packet in the uip\_\-buf buffer.
+
+When the network device driver calls the uIP input function, uip\_\-len should be set to the length of the packet in the uip\_\-buf buffer.
+
+When sending packets, the device driver should use the contents of the uip\_\-len variable to determine the length of the outgoing packet. 
+
+Definition at line 160 of file uip.c.
+
+\hypertarget{group__uip_ga236d5c7872f59c8fe7b701c7252b976e}{
+\index{uip@{uip}!uip\_\-listenports@{uip\_\-listenports}}
+\index{uip\_\-listenports@{uip\_\-listenports}!uip@{uip}}
+\subsubsection[{uip\_\-listenports}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u16\_\-t} {\bf uip\_\-listenports}\mbox{[}UIP\_\-LISTENPORTS\mbox{]}}}
+\label{group__uip_ga236d5c7872f59c8fe7b701c7252b976e}
+
+
+Definition at line 174 of file uip.c.
+
+\hypertarget{group__uip_ga3237be0d9ec457de0177689ee23c0d5c}{
+\index{uip@{uip}!uip\_\-netmask@{uip\_\-netmask}}
+\index{uip\_\-netmask@{uip\_\-netmask}!uip@{uip}}
+\subsubsection[{uip\_\-netmask}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uip\_\-ipaddr\_\-t} {\bf uip\_\-netmask}}}
+\label{group__uip_ga3237be0d9ec457de0177689ee23c0d5c}
+
+
+Definition at line 110 of file uip.c.
+
+\hypertarget{group__uip_ga3237be0d9ec457de0177689ee23c0d5c}{
+\index{uip@{uip}!uip\_\-netmask@{uip\_\-netmask}}
+\index{uip\_\-netmask@{uip\_\-netmask}!uip@{uip}}
+\subsubsection[{uip\_\-netmask}]{\setlength{\rightskip}{0pt plus 5cm}{\bf uip\_\-ipaddr\_\-t} {\bf uip\_\-netmask}}}
+\label{group__uip_ga3237be0d9ec457de0177689ee23c0d5c}
+
+
+Definition at line 110 of file uip.c.
+
+\hypertarget{group__uip_gaa05a3dde2048480fa3ab2a5961898d18}{
+\index{uip@{uip}!uip\_\-sappdata@{uip\_\-sappdata}}
+\index{uip\_\-sappdata@{uip\_\-sappdata}!uip@{uip}}
+\subsubsection[{uip\_\-sappdata}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ {\bf uip\_\-sappdata}}}
+\label{group__uip_gaa05a3dde2048480fa3ab2a5961898d18}
+
+
+Definition at line 150 of file uip.c.
+
+\hypertarget{group__uip_ga5b5615dc240daed20949c0fded2b4679}{
+\index{uip@{uip}!uip\_\-slen@{uip\_\-slen}}
+\index{uip\_\-slen@{uip\_\-slen}!uip@{uip}}
+\subsubsection[{uip\_\-slen}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u16\_\-t} {\bf uip\_\-slen}}}
+\label{group__uip_ga5b5615dc240daed20949c0fded2b4679}
+
+
+Definition at line 160 of file uip.c.
+
+\hypertarget{group__uip_ga9ee50a40597e67fce96541ab56c3b712}{
+\index{uip@{uip}!uip\_\-stat@{uip\_\-stat}}
+\index{uip\_\-stat@{uip\_\-stat}!uip@{uip}}
+\subsubsection[{uip\_\-stat}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf uip\_\-stats} {\bf uip\_\-stat}}}
+\label{group__uip_ga9ee50a40597e67fce96541ab56c3b712}
+The uIP TCP/IP statistics.
+
+This is the variable in which the uIP TCP/IP statistics are gathered. 
+
+Definition at line 238 of file uip.c.
+
+\hypertarget{group__uip_ga9ee50a40597e67fce96541ab56c3b712}{
+\index{uip@{uip}!uip\_\-stat@{uip\_\-stat}}
+\index{uip\_\-stat@{uip\_\-stat}!uip@{uip}}
+\subsubsection[{uip\_\-stat}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf uip\_\-stats} {\bf uip\_\-stat}}}
+\label{group__uip_ga9ee50a40597e67fce96541ab56c3b712}
+The uIP TCP/IP statistics.
+
+This is the variable in which the uIP TCP/IP statistics are gathered. 
+
+Definition at line 238 of file uip.c.
+
+\hypertarget{group__uip_ga210f227119fc972e6222c9cb452e15a9}{
+\index{uip@{uip}!uip\_\-udp\_\-conn@{uip\_\-udp\_\-conn}}
+\index{uip\_\-udp\_\-conn@{uip\_\-udp\_\-conn}!uip@{uip}}
+\subsubsection[{uip\_\-udp\_\-conn}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf uip\_\-udp\_\-conn}$\ast$ {\bf uip\_\-udp\_\-conn}}}
+\label{group__uip_ga210f227119fc972e6222c9cb452e15a9}
+The current UDP connection. 
+
+Definition at line 178 of file uip.c.
+
+\hypertarget{group__uip_ga210f227119fc972e6222c9cb452e15a9}{
+\index{uip@{uip}!uip\_\-udp\_\-conn@{uip\_\-udp\_\-conn}}
+\index{uip\_\-udp\_\-conn@{uip\_\-udp\_\-conn}!uip@{uip}}
+\subsubsection[{uip\_\-udp\_\-conn}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf uip\_\-udp\_\-conn}$\ast$ {\bf uip\_\-udp\_\-conn}}}
+\label{group__uip_ga210f227119fc972e6222c9cb452e15a9}
+The current UDP connection. 
+
+Definition at line 178 of file uip.c.
+
+\hypertarget{group__uip_gaeb533744817cf6695d75293369c2248b}{
+\index{uip@{uip}!uip\_\-udp\_\-conns@{uip\_\-udp\_\-conns}}
+\index{uip\_\-udp\_\-conns@{uip\_\-udp\_\-conns}!uip@{uip}}
+\subsubsection[{uip\_\-udp\_\-conns}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf uip\_\-udp\_\-conn} {\bf uip\_\-udp\_\-conns}\mbox{[}UIP\_\-UDP\_\-CONNS\mbox{]}}}
+\label{group__uip_gaeb533744817cf6695d75293369c2248b}
+
+
+Definition at line 179 of file uip.c.
+
+\hypertarget{group__uip_gaeb533744817cf6695d75293369c2248b}{
+\index{uip@{uip}!uip\_\-udp\_\-conns@{uip\_\-udp\_\-conns}}
+\index{uip\_\-udp\_\-conns@{uip\_\-udp\_\-conns}!uip@{uip}}
+\subsubsection[{uip\_\-udp\_\-conns}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf uip\_\-udp\_\-conn} {\bf uip\_\-udp\_\-conns}\mbox{[}UIP\_\-UDP\_\-CONNS\mbox{]}}}
+\label{group__uip_gaeb533744817cf6695d75293369c2248b}
+
+
+Definition at line 179 of file uip.c.
+

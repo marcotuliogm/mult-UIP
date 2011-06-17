@@ -1,0 +1,65 @@
+\hypertarget{group__uipsplit}{
+\section{uIP TCP throughput booster hack}
+\label{group__uipsplit}\index{uIP TCP throughput booster hack@{uIP TCP throughput booster hack}}
+}
+
+
+Collaboration diagram for uIP TCP throughput booster hack:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{group__uipsplit}
+\end{center}
+\end{figure}
+
+
+\subsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file \hyperlink{uip-split_8h}{uip-\/split.h}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__uipsplit_gab4b17aaf20d630f30919b19937b966a3}{uip\_\-split\_\-output} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The basic uIP TCP implementation only allows each TCP connection to have a single TCP segment in flight at any given time. Because of the delayed ACK algorithm employed by most TCP receivers, uIP's limit on the amount of in-\/flight TCP segments seriously reduces the maximum achievable throughput for sending data from uIP.
+
+The uip-\/split module is a hack which tries to remedy this situation. By splitting maximum sized outgoing TCP segments into two, the delayed ACK algorithm is not invoked at TCP receivers. This improves the throughput when sending data from uIP by orders of magnitude.
+
+The uip-\/split module uses the uip-\/fw module (uIP IP packet forwarding) for sending packets. Therefore, the uip-\/fw module must be set up with the appropriate network interfaces for this module to work. 
+
+\subsection{Function Documentation}
+\hypertarget{group__uipsplit_gab4b17aaf20d630f30919b19937b966a3}{
+\index{uipsplit@{uipsplit}!uip\_\-split\_\-output@{uip\_\-split\_\-output}}
+\index{uip\_\-split\_\-output@{uip\_\-split\_\-output}!uipsplit@{uipsplit}}
+\subsubsection[{uip\_\-split\_\-output}]{\setlength{\rightskip}{0pt plus 5cm}void uip\_\-split\_\-output (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__uipsplit_gab4b17aaf20d630f30919b19937b966a3}
+Handle outgoing packets.
+
+This function inspects an outgoing packet in the uip\_\-buf buffer and sends it out using the \hyperlink{group__uipfw_gabc6fe2d1544b0a16ee3f3fc1c1ccf93a}{uip\_\-fw\_\-output()} function. If the packet is a full-\/sized TCP segment it will be split into two segments and transmitted separately. This function should be called instead of the actual device driver output function, or the \hyperlink{group__uipfw_gabc6fe2d1544b0a16ee3f3fc1c1ccf93a}{uip\_\-fw\_\-output()} function.
+
+The headers of the outgoing packet is assumed to be in the uip\_\-buf buffer and the payload is assumed to be wherever uip\_\-appdata points. The length of the outgoing packet is assumed to be in the uip\_\-len variable. 
+
+Definition at line 49 of file uip-\/split.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{group__uipsplit_gab4b17aaf20d630f30919b19937b966a3_cgraph}
+\end{center}
+\end{figure}
+
+

@@ -1,0 +1,426 @@
+\hypertarget{rtc_8h}{
+\section{rtc/rtc.h File Reference}
+\label{rtc_8h}\index{rtc/rtc.h@{rtc/rtc.h}}
+}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structRTCTime}{RTCTime}
+\end{DoxyCompactItemize}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{rtc_8h_a1b6f09007454f5b64876076dccc72330}{IMSEC}~0x00000001
+\item 
+\#define \hyperlink{rtc_8h_ae7c36e5a903260e03dc8cd73682f2fb5}{IMMIN}~0x00000002
+\item 
+\#define \hyperlink{rtc_8h_a103ad8758c17dc0af41db9d934397adb}{IMHOUR}~0x00000004
+\item 
+\#define \hyperlink{rtc_8h_a7443f8c7416f8ff4e6b5b97ac172ded0}{IMDOM}~0x00000008
+\item 
+\#define \hyperlink{rtc_8h_a476f42a43110b1ec408af9ec668ac1f2}{IMDOW}~0x00000010
+\item 
+\#define \hyperlink{rtc_8h_acbd415af104cf0b19bdcdfb3ad9a5eac}{IMDOY}~0x00000020
+\item 
+\#define \hyperlink{rtc_8h_ae076a9c27c87e7a39005c0740d405419}{IMMON}~0x00000040
+\item 
+\#define \hyperlink{rtc_8h_a05d771d5a70d9048f44edecd5c5e7c6b}{IMYEAR}~0x00000080
+\item 
+\#define \hyperlink{rtc_8h_a02a45e689ec2748fdb042c892e70c001}{AMRSEC}~0x00000001
+\item 
+\#define \hyperlink{rtc_8h_a6b5f434ac87a9141c97367ec20db9af6}{AMRMIN}~0x00000002
+\item 
+\#define \hyperlink{rtc_8h_a38b8c91bdc4fc71958ecdf256e118c81}{AMRHOUR}~0x00000004
+\item 
+\#define \hyperlink{rtc_8h_a90c86f1d42f24a5a0fbaa85be37b64d9}{AMRDOM}~0x00000008
+\item 
+\#define \hyperlink{rtc_8h_ab28eebe33078a8b88d8b29a8b50b9a46}{AMRDOW}~0x00000010
+\item 
+\#define \hyperlink{rtc_8h_a80cf73f4235cb3afa0f83bb0b4e82a00}{AMRDOY}~0x00000020
+\item 
+\#define \hyperlink{rtc_8h_ae6d22d14f31f1adb8e4b0a84d3e632bb}{AMRMON}~0x00000040
+\item 
+\#define \hyperlink{rtc_8h_aafe7deeea872b581d3ceb9a948280424}{AMRYEAR}~0x00000080
+\item 
+\#define \hyperlink{rtc_8h_ab26c43e0b3e0b8531adfafd3dbb55970}{PREINT\_\-RTC}~0x000001C8
+\item 
+\#define \hyperlink{rtc_8h_ad2a9027e8f848af37889d6a79fb1e139}{PREFRAC\_\-RTC}~0x000061C0
+\item 
+\#define \hyperlink{rtc_8h_a324b2baf059a92396b6555d0cab865de}{ILR\_\-RTCCIF}~0x01
+\item 
+\#define \hyperlink{rtc_8h_a6c906de66ed26cba7426fbce1afb7fe6}{ILR\_\-RTCALF}~0x02
+\item 
+\#define \hyperlink{rtc_8h_aa53fee9cbcdc8a1187fa06f12de3602b}{CCR\_\-CLKEN}~0x01
+\item 
+\#define \hyperlink{rtc_8h_ad48ca2ddec829b5d9e4f9e0cff37abc2}{CCR\_\-CTCRST}~0x02
+\item 
+\#define \hyperlink{rtc_8h_a9f78da63c2bbb1eb4714a6eb5bbb8863}{CCR\_\-CLKSRC}~0x10
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef int \hyperlink{rtc_8h_a95e001ec9ba8a0755d5a5b087a733d4e}{DWORD}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{rtc_8h_ae39b64b3d054ebab4c5672ccac1b576e}{RTCInit} (void)
+\item 
+void \hyperlink{rtc_8h_a35a5a2256826045b4b16c8005296c5d9}{RTCStart} (void)
+\item 
+void \hyperlink{rtc_8h_ad4420282a5e01ceb6dc86b2bf832c523}{RTCStop} (void)
+\item 
+void \hyperlink{rtc_8h_a01ea8a02ff716fb7fb79f4ab1d808315}{RTC\_\-CTCReset} (void)
+\item 
+void \hyperlink{rtc_8h_abc9cae479e311b34b0bf2a5a426ab7ed}{RTCSetTime} (\hyperlink{structRTCTime}{RTCTime})
+\item 
+\hyperlink{structRTCTime}{RTCTime} \hyperlink{rtc_8h_a0ace81a0e0d8d3b18c4054c63959fe11}{RTCGetTime} (void)
+\item 
+void \hyperlink{rtc_8h_a92452bc3392d034d0d31dc4b854679f1}{RTCSetAlarm} (\hyperlink{structRTCTime}{RTCTime})
+\item 
+void \hyperlink{rtc_8h_aeb74c10687db6f9d6c8206b5dd7e82b8}{RTCSetAlarmMask} (\hyperlink{rtc_8h_a95e001ec9ba8a0755d5a5b087a733d4e}{DWORD} AlarmMask)
+\item 
+void \hyperlink{rtc_8h_aa76a2752904719797763920ae2225b80}{RTCClearTime} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Define Documentation}
+\hypertarget{rtc_8h_a90c86f1d42f24a5a0fbaa85be37b64d9}{
+\index{rtc.h@{rtc.h}!AMRDOM@{AMRDOM}}
+\index{AMRDOM@{AMRDOM}!rtc.h@{rtc.h}}
+\subsubsection[{AMRDOM}]{\setlength{\rightskip}{0pt plus 5cm}\#define AMRDOM~0x00000008}}
+\label{rtc_8h_a90c86f1d42f24a5a0fbaa85be37b64d9}
+
+
+Definition at line 39 of file rtc.h.
+
+\hypertarget{rtc_8h_ab28eebe33078a8b88d8b29a8b50b9a46}{
+\index{rtc.h@{rtc.h}!AMRDOW@{AMRDOW}}
+\index{AMRDOW@{AMRDOW}!rtc.h@{rtc.h}}
+\subsubsection[{AMRDOW}]{\setlength{\rightskip}{0pt plus 5cm}\#define AMRDOW~0x00000010}}
+\label{rtc_8h_ab28eebe33078a8b88d8b29a8b50b9a46}
+
+
+Definition at line 40 of file rtc.h.
+
+\hypertarget{rtc_8h_a80cf73f4235cb3afa0f83bb0b4e82a00}{
+\index{rtc.h@{rtc.h}!AMRDOY@{AMRDOY}}
+\index{AMRDOY@{AMRDOY}!rtc.h@{rtc.h}}
+\subsubsection[{AMRDOY}]{\setlength{\rightskip}{0pt plus 5cm}\#define AMRDOY~0x00000020}}
+\label{rtc_8h_a80cf73f4235cb3afa0f83bb0b4e82a00}
+
+
+Definition at line 41 of file rtc.h.
+
+\hypertarget{rtc_8h_a38b8c91bdc4fc71958ecdf256e118c81}{
+\index{rtc.h@{rtc.h}!AMRHOUR@{AMRHOUR}}
+\index{AMRHOUR@{AMRHOUR}!rtc.h@{rtc.h}}
+\subsubsection[{AMRHOUR}]{\setlength{\rightskip}{0pt plus 5cm}\#define AMRHOUR~0x00000004}}
+\label{rtc_8h_a38b8c91bdc4fc71958ecdf256e118c81}
+
+
+Definition at line 38 of file rtc.h.
+
+\hypertarget{rtc_8h_a6b5f434ac87a9141c97367ec20db9af6}{
+\index{rtc.h@{rtc.h}!AMRMIN@{AMRMIN}}
+\index{AMRMIN@{AMRMIN}!rtc.h@{rtc.h}}
+\subsubsection[{AMRMIN}]{\setlength{\rightskip}{0pt plus 5cm}\#define AMRMIN~0x00000002}}
+\label{rtc_8h_a6b5f434ac87a9141c97367ec20db9af6}
+
+
+Definition at line 37 of file rtc.h.
+
+\hypertarget{rtc_8h_ae6d22d14f31f1adb8e4b0a84d3e632bb}{
+\index{rtc.h@{rtc.h}!AMRMON@{AMRMON}}
+\index{AMRMON@{AMRMON}!rtc.h@{rtc.h}}
+\subsubsection[{AMRMON}]{\setlength{\rightskip}{0pt plus 5cm}\#define AMRMON~0x00000040}}
+\label{rtc_8h_ae6d22d14f31f1adb8e4b0a84d3e632bb}
+
+
+Definition at line 42 of file rtc.h.
+
+\hypertarget{rtc_8h_a02a45e689ec2748fdb042c892e70c001}{
+\index{rtc.h@{rtc.h}!AMRSEC@{AMRSEC}}
+\index{AMRSEC@{AMRSEC}!rtc.h@{rtc.h}}
+\subsubsection[{AMRSEC}]{\setlength{\rightskip}{0pt plus 5cm}\#define AMRSEC~0x00000001}}
+\label{rtc_8h_a02a45e689ec2748fdb042c892e70c001}
+
+
+Definition at line 36 of file rtc.h.
+
+\hypertarget{rtc_8h_aafe7deeea872b581d3ceb9a948280424}{
+\index{rtc.h@{rtc.h}!AMRYEAR@{AMRYEAR}}
+\index{AMRYEAR@{AMRYEAR}!rtc.h@{rtc.h}}
+\subsubsection[{AMRYEAR}]{\setlength{\rightskip}{0pt plus 5cm}\#define AMRYEAR~0x00000080}}
+\label{rtc_8h_aafe7deeea872b581d3ceb9a948280424}
+
+
+Definition at line 43 of file rtc.h.
+
+\hypertarget{rtc_8h_aa53fee9cbcdc8a1187fa06f12de3602b}{
+\index{rtc.h@{rtc.h}!CCR\_\-CLKEN@{CCR\_\-CLKEN}}
+\index{CCR\_\-CLKEN@{CCR\_\-CLKEN}!rtc.h@{rtc.h}}
+\subsubsection[{CCR\_\-CLKEN}]{\setlength{\rightskip}{0pt plus 5cm}\#define CCR\_\-CLKEN~0x01}}
+\label{rtc_8h_aa53fee9cbcdc8a1187fa06f12de3602b}
+
+
+Definition at line 52 of file rtc.h.
+
+\hypertarget{rtc_8h_a9f78da63c2bbb1eb4714a6eb5bbb8863}{
+\index{rtc.h@{rtc.h}!CCR\_\-CLKSRC@{CCR\_\-CLKSRC}}
+\index{CCR\_\-CLKSRC@{CCR\_\-CLKSRC}!rtc.h@{rtc.h}}
+\subsubsection[{CCR\_\-CLKSRC}]{\setlength{\rightskip}{0pt plus 5cm}\#define CCR\_\-CLKSRC~0x10}}
+\label{rtc_8h_a9f78da63c2bbb1eb4714a6eb5bbb8863}
+
+
+Definition at line 54 of file rtc.h.
+
+\hypertarget{rtc_8h_ad48ca2ddec829b5d9e4f9e0cff37abc2}{
+\index{rtc.h@{rtc.h}!CCR\_\-CTCRST@{CCR\_\-CTCRST}}
+\index{CCR\_\-CTCRST@{CCR\_\-CTCRST}!rtc.h@{rtc.h}}
+\subsubsection[{CCR\_\-CTCRST}]{\setlength{\rightskip}{0pt plus 5cm}\#define CCR\_\-CTCRST~0x02}}
+\label{rtc_8h_ad48ca2ddec829b5d9e4f9e0cff37abc2}
+
+
+Definition at line 53 of file rtc.h.
+
+\hypertarget{rtc_8h_a6c906de66ed26cba7426fbce1afb7fe6}{
+\index{rtc.h@{rtc.h}!ILR\_\-RTCALF@{ILR\_\-RTCALF}}
+\index{ILR\_\-RTCALF@{ILR\_\-RTCALF}!rtc.h@{rtc.h}}
+\subsubsection[{ILR\_\-RTCALF}]{\setlength{\rightskip}{0pt plus 5cm}\#define ILR\_\-RTCALF~0x02}}
+\label{rtc_8h_a6c906de66ed26cba7426fbce1afb7fe6}
+
+
+Definition at line 50 of file rtc.h.
+
+\hypertarget{rtc_8h_a324b2baf059a92396b6555d0cab865de}{
+\index{rtc.h@{rtc.h}!ILR\_\-RTCCIF@{ILR\_\-RTCCIF}}
+\index{ILR\_\-RTCCIF@{ILR\_\-RTCCIF}!rtc.h@{rtc.h}}
+\subsubsection[{ILR\_\-RTCCIF}]{\setlength{\rightskip}{0pt plus 5cm}\#define ILR\_\-RTCCIF~0x01}}
+\label{rtc_8h_a324b2baf059a92396b6555d0cab865de}
+
+
+Definition at line 49 of file rtc.h.
+
+\hypertarget{rtc_8h_a7443f8c7416f8ff4e6b5b97ac172ded0}{
+\index{rtc.h@{rtc.h}!IMDOM@{IMDOM}}
+\index{IMDOM@{IMDOM}!rtc.h@{rtc.h}}
+\subsubsection[{IMDOM}]{\setlength{\rightskip}{0pt plus 5cm}\#define IMDOM~0x00000008}}
+\label{rtc_8h_a7443f8c7416f8ff4e6b5b97ac172ded0}
+
+
+Definition at line 30 of file rtc.h.
+
+\hypertarget{rtc_8h_a476f42a43110b1ec408af9ec668ac1f2}{
+\index{rtc.h@{rtc.h}!IMDOW@{IMDOW}}
+\index{IMDOW@{IMDOW}!rtc.h@{rtc.h}}
+\subsubsection[{IMDOW}]{\setlength{\rightskip}{0pt plus 5cm}\#define IMDOW~0x00000010}}
+\label{rtc_8h_a476f42a43110b1ec408af9ec668ac1f2}
+
+
+Definition at line 31 of file rtc.h.
+
+\hypertarget{rtc_8h_acbd415af104cf0b19bdcdfb3ad9a5eac}{
+\index{rtc.h@{rtc.h}!IMDOY@{IMDOY}}
+\index{IMDOY@{IMDOY}!rtc.h@{rtc.h}}
+\subsubsection[{IMDOY}]{\setlength{\rightskip}{0pt plus 5cm}\#define IMDOY~0x00000020}}
+\label{rtc_8h_acbd415af104cf0b19bdcdfb3ad9a5eac}
+
+
+Definition at line 32 of file rtc.h.
+
+\hypertarget{rtc_8h_a103ad8758c17dc0af41db9d934397adb}{
+\index{rtc.h@{rtc.h}!IMHOUR@{IMHOUR}}
+\index{IMHOUR@{IMHOUR}!rtc.h@{rtc.h}}
+\subsubsection[{IMHOUR}]{\setlength{\rightskip}{0pt plus 5cm}\#define IMHOUR~0x00000004}}
+\label{rtc_8h_a103ad8758c17dc0af41db9d934397adb}
+
+
+Definition at line 29 of file rtc.h.
+
+\hypertarget{rtc_8h_ae7c36e5a903260e03dc8cd73682f2fb5}{
+\index{rtc.h@{rtc.h}!IMMIN@{IMMIN}}
+\index{IMMIN@{IMMIN}!rtc.h@{rtc.h}}
+\subsubsection[{IMMIN}]{\setlength{\rightskip}{0pt plus 5cm}\#define IMMIN~0x00000002}}
+\label{rtc_8h_ae7c36e5a903260e03dc8cd73682f2fb5}
+
+
+Definition at line 28 of file rtc.h.
+
+\hypertarget{rtc_8h_ae076a9c27c87e7a39005c0740d405419}{
+\index{rtc.h@{rtc.h}!IMMON@{IMMON}}
+\index{IMMON@{IMMON}!rtc.h@{rtc.h}}
+\subsubsection[{IMMON}]{\setlength{\rightskip}{0pt plus 5cm}\#define IMMON~0x00000040}}
+\label{rtc_8h_ae076a9c27c87e7a39005c0740d405419}
+
+
+Definition at line 33 of file rtc.h.
+
+\hypertarget{rtc_8h_a1b6f09007454f5b64876076dccc72330}{
+\index{rtc.h@{rtc.h}!IMSEC@{IMSEC}}
+\index{IMSEC@{IMSEC}!rtc.h@{rtc.h}}
+\subsubsection[{IMSEC}]{\setlength{\rightskip}{0pt plus 5cm}\#define IMSEC~0x00000001}}
+\label{rtc_8h_a1b6f09007454f5b64876076dccc72330}
+
+
+Definition at line 27 of file rtc.h.
+
+\hypertarget{rtc_8h_a05d771d5a70d9048f44edecd5c5e7c6b}{
+\index{rtc.h@{rtc.h}!IMYEAR@{IMYEAR}}
+\index{IMYEAR@{IMYEAR}!rtc.h@{rtc.h}}
+\subsubsection[{IMYEAR}]{\setlength{\rightskip}{0pt plus 5cm}\#define IMYEAR~0x00000080}}
+\label{rtc_8h_a05d771d5a70d9048f44edecd5c5e7c6b}
+
+
+Definition at line 34 of file rtc.h.
+
+\hypertarget{rtc_8h_ad2a9027e8f848af37889d6a79fb1e139}{
+\index{rtc.h@{rtc.h}!PREFRAC\_\-RTC@{PREFRAC\_\-RTC}}
+\index{PREFRAC\_\-RTC@{PREFRAC\_\-RTC}!rtc.h@{rtc.h}}
+\subsubsection[{PREFRAC\_\-RTC}]{\setlength{\rightskip}{0pt plus 5cm}\#define PREFRAC\_\-RTC~0x000061C0}}
+\label{rtc_8h_ad2a9027e8f848af37889d6a79fb1e139}
+
+
+Definition at line 47 of file rtc.h.
+
+\hypertarget{rtc_8h_ab26c43e0b3e0b8531adfafd3dbb55970}{
+\index{rtc.h@{rtc.h}!PREINT\_\-RTC@{PREINT\_\-RTC}}
+\index{PREINT\_\-RTC@{PREINT\_\-RTC}!rtc.h@{rtc.h}}
+\subsubsection[{PREINT\_\-RTC}]{\setlength{\rightskip}{0pt plus 5cm}\#define PREINT\_\-RTC~0x000001C8}}
+\label{rtc_8h_ab26c43e0b3e0b8531adfafd3dbb55970}
+
+
+Definition at line 45 of file rtc.h.
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{rtc_8h_a95e001ec9ba8a0755d5a5b087a733d4e}{
+\index{rtc.h@{rtc.h}!DWORD@{DWORD}}
+\index{DWORD@{DWORD}!rtc.h@{rtc.h}}
+\subsubsection[{DWORD}]{\setlength{\rightskip}{0pt plus 5cm}typedef int {\bf DWORD}}}
+\label{rtc_8h_a95e001ec9ba8a0755d5a5b087a733d4e}
+
+
+Definition at line 14 of file rtc.h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{rtc_8h_a01ea8a02ff716fb7fb79f4ab1d808315}{
+\index{rtc.h@{rtc.h}!RTC\_\-CTCReset@{RTC\_\-CTCReset}}
+\index{RTC\_\-CTCReset@{RTC\_\-CTCReset}!rtc.h@{rtc.h}}
+\subsubsection[{RTC\_\-CTCReset}]{\setlength{\rightskip}{0pt plus 5cm}void RTC\_\-CTCReset (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{rtc_8h_a01ea8a02ff716fb7fb79f4ab1d808315}
+
+
+Definition at line 102 of file rtc.c.
+
+\hypertarget{rtc_8h_aa76a2752904719797763920ae2225b80}{
+\index{rtc.h@{rtc.h}!RTCClearTime@{RTCClearTime}}
+\index{RTCClearTime@{RTCClearTime}!rtc.h@{rtc.h}}
+\subsubsection[{RTCClearTime}]{\setlength{\rightskip}{0pt plus 5cm}void RTCClearTime (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{rtc_8h_aa76a2752904719797763920ae2225b80}
+
+
+Definition at line 163 of file rtc.c.
+
+\hypertarget{rtc_8h_a0ace81a0e0d8d3b18c4054c63959fe11}{
+\index{rtc.h@{rtc.h}!RTCGetTime@{RTCGetTime}}
+\index{RTCGetTime@{RTCGetTime}!rtc.h@{rtc.h}}
+\subsubsection[{RTCGetTime}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RTCTime} RTCGetTime (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{rtc_8h_a0ace81a0e0d8d3b18c4054c63959fe11}
+
+
+Definition at line 185 of file rtc.c.
+
+\hypertarget{rtc_8h_ae39b64b3d054ebab4c5672ccac1b576e}{
+\index{rtc.h@{rtc.h}!RTCInit@{RTCInit}}
+\index{RTCInit@{RTCInit}!rtc.h@{rtc.h}}
+\subsubsection[{RTCInit}]{\setlength{\rightskip}{0pt plus 5cm}void RTCInit (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{rtc_8h_ae39b64b3d054ebab4c5672ccac1b576e}
+
+
+Definition at line 46 of file rtc.c.
+
+\hypertarget{rtc_8h_a92452bc3392d034d0d31dc4b854679f1}{
+\index{rtc.h@{rtc.h}!RTCSetAlarm@{RTCSetAlarm}}
+\index{RTCSetAlarm@{RTCSetAlarm}!rtc.h@{rtc.h}}
+\subsubsection[{RTCSetAlarm}]{\setlength{\rightskip}{0pt plus 5cm}void RTCSetAlarm (
+\begin{DoxyParamCaption}
+\item[{{\bf RTCTime}}]{}
+\end{DoxyParamCaption}
+)}}
+\label{rtc_8h_a92452bc3392d034d0d31dc4b854679f1}
+
+
+Definition at line 140 of file rtc.c.
+
+\hypertarget{rtc_8h_aeb74c10687db6f9d6c8206b5dd7e82b8}{
+\index{rtc.h@{rtc.h}!RTCSetAlarmMask@{RTCSetAlarmMask}}
+\index{RTCSetAlarmMask@{RTCSetAlarmMask}!rtc.h@{rtc.h}}
+\subsubsection[{RTCSetAlarmMask}]{\setlength{\rightskip}{0pt plus 5cm}void RTCSetAlarmMask (
+\begin{DoxyParamCaption}
+\item[{{\bf DWORD}}]{ AlarmMask}
+\end{DoxyParamCaption}
+)}}
+\label{rtc_8h_aeb74c10687db6f9d6c8206b5dd7e82b8}
+
+
+Definition at line 209 of file rtc.c.
+
+\hypertarget{rtc_8h_abc9cae479e311b34b0bf2a5a426ab7ed}{
+\index{rtc.h@{rtc.h}!RTCSetTime@{RTCSetTime}}
+\index{RTCSetTime@{RTCSetTime}!rtc.h@{rtc.h}}
+\subsubsection[{RTCSetTime}]{\setlength{\rightskip}{0pt plus 5cm}void RTCSetTime (
+\begin{DoxyParamCaption}
+\item[{{\bf RTCTime}}]{}
+\end{DoxyParamCaption}
+)}}
+\label{rtc_8h_abc9cae479e311b34b0bf2a5a426ab7ed}
+
+
+Definition at line 118 of file rtc.c.
+
+\hypertarget{rtc_8h_a35a5a2256826045b4b16c8005296c5d9}{
+\index{rtc.h@{rtc.h}!RTCStart@{RTCStart}}
+\index{RTCStart@{RTCStart}!rtc.h@{rtc.h}}
+\subsubsection[{RTCStart}]{\setlength{\rightskip}{0pt plus 5cm}void RTCStart (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{rtc_8h_a35a5a2256826045b4b16c8005296c5d9}
+
+
+Definition at line 69 of file rtc.c.
+
+\hypertarget{rtc_8h_ad4420282a5e01ceb6dc86b2bf832c523}{
+\index{rtc.h@{rtc.h}!RTCStop@{RTCStop}}
+\index{RTCStop@{RTCStop}!rtc.h@{rtc.h}}
+\subsubsection[{RTCStop}]{\setlength{\rightskip}{0pt plus 5cm}void RTCStop (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{rtc_8h_ad4420282a5e01ceb6dc86b2bf832c523}
+
+
+Definition at line 86 of file rtc.c.
+

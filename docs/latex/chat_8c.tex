@@ -1,0 +1,50 @@
+\hypertarget{chat_8c}{
+\section{tools/chat/chat.c File Reference}
+\label{chat_8c}\index{tools/chat/chat.c@{tools/chat/chat.c}}
+}
+
+
+comunicação entre dois ambientes com sockets.  
+
+
+{\ttfamily \#include $<$sys/types.h$>$}\par
+{\ttfamily \#include $<$sys/socket.h$>$}\par
+{\ttfamily \#include $<$sys/stat.h$>$}\par
+{\ttfamily \#include $<$netinet/in.h$>$}\par
+{\ttfamily \#include $<$netdb.h$>$}\par
+{\ttfamily \#include $<$stdio.h$>$}\par
+{\ttfamily \#include $<$string.h$>$}\par
+{\ttfamily \#include $<$stdlib.h$>$}\par
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__tools_gafeedb41f2b3a57bebfb2f7b06e740ff9}{TAMMSG}~80
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{group__tools_ga0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Funcao que gerencia execucao programa. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Comunicacao usando sockets.
+
+Para executar o chat: primeiro deve configurar ele no arm, depois chamar o sistema que fara troca de mensagem.
+
+\begin{DoxyAuthor}{Author}
+Marco Tulio Martins
+\end{DoxyAuthor}
+Para executar o chat:
+
+Chamar no terminal o chat chat $<$porta$>$
+
+Colocar o servidor para executar... acesse: cd tools/ chame o programa ./chat $<$endereco$>$ $<$port$>$
+
+\begin{DoxyAuthor}{Author}
+Marco Tulio Martins 
+\end{DoxyAuthor}
+
+
+Definition in file \hyperlink{chat_8c_source}{chat.c}.
+

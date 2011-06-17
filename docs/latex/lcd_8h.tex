@@ -1,0 +1,238 @@
+\hypertarget{lcd_8h}{
+\section{lcd/lcd.h File Reference}
+\label{lcd_8h}\index{lcd/lcd.h@{lcd/lcd.h}}
+}
+{\ttfamily \#include \char`\"{}../lpc\_\-config.h\char`\"{}}\par
+{\ttfamily \#include $<$stdio.h$>$}\par
+{\ttfamily \#include \char`\"{}../timer/timer.h\char`\"{}}\par
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{lcd_8h_a3c5f422dc2519972153da59ad4b9fc9e}{lcd\_\-dados}~0xFF
+\item 
+\#define \hyperlink{lcd_8h_afe241c34b6ea89907410b3749f6d0883}{lcd\_\-en}~(1$<$$<$24)
+\item 
+\#define \hyperlink{lcd_8h_aedbb5aee655c073edfdf806cde51930d}{lcd\_\-rs}~(1$<$$<$25)
+\item 
+\#define \hyperlink{lcd_8h_ab9f2e6d92dc859935ae48f83b0efbfb2}{lcd\_\-rw}~(1$<$$<$30)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{lcd_8h_a61861ecf300804956fed472f7d2e5386}{lcd\_\-command} (int comando)
+\begin{DoxyCompactList}\small\item\em Executa um comando passado por parametro. \item\end{DoxyCompactList}\item 
+void \hyperlink{lcd_8h_a3a0eee458ca59d20c1404197b264427c}{lcd\_\-putc} (int dado)
+\begin{DoxyCompactList}\small\item\em Escreve um caracter no display. \item\end{DoxyCompactList}\item 
+void \hyperlink{lcd_8h_a45d3f718be64b55bd729d907c193234a}{lcd\_\-string} (char $\ast$dado)
+\begin{DoxyCompactList}\small\item\em Escreve uma string de dados passados por parametro. \item\end{DoxyCompactList}\item 
+void \hyperlink{lcd_8h_ad811dd0c9e670cbb853c0435f42b9ad8}{lcd\_\-goto} (int linha, int coluna)
+\begin{DoxyCompactList}\small\item\em Posiciona o cursorno display. \item\end{DoxyCompactList}\item 
+void \hyperlink{lcd_8h_aafed2ade168a085630c2fe8d776432f2}{init\_\-lcd} (void)
+\begin{DoxyCompactList}\small\item\em Inicialia o display de lcd. \item\end{DoxyCompactList}\item 
+void \hyperlink{lcd_8h_a33e140c8175d738415fb9c72e73a8cef}{lcd\_\-clr} (void)
+\begin{DoxyCompactList}\small\item\em Limpa todos os dados do display. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Define Documentation}
+\hypertarget{lcd_8h_a3c5f422dc2519972153da59ad4b9fc9e}{
+\index{lcd.h@{lcd.h}!lcd\_\-dados@{lcd\_\-dados}}
+\index{lcd\_\-dados@{lcd\_\-dados}!lcd.h@{lcd.h}}
+\subsubsection[{lcd\_\-dados}]{\setlength{\rightskip}{0pt plus 5cm}\#define lcd\_\-dados~0xFF}}
+\label{lcd_8h_a3c5f422dc2519972153da59ad4b9fc9e}
+
+
+Definition at line 19 of file lcd.h.
+
+\hypertarget{lcd_8h_afe241c34b6ea89907410b3749f6d0883}{
+\index{lcd.h@{lcd.h}!lcd\_\-en@{lcd\_\-en}}
+\index{lcd\_\-en@{lcd\_\-en}!lcd.h@{lcd.h}}
+\subsubsection[{lcd\_\-en}]{\setlength{\rightskip}{0pt plus 5cm}\#define lcd\_\-en~(1$<$$<$24)}}
+\label{lcd_8h_afe241c34b6ea89907410b3749f6d0883}
+
+
+Definition at line 20 of file lcd.h.
+
+\hypertarget{lcd_8h_aedbb5aee655c073edfdf806cde51930d}{
+\index{lcd.h@{lcd.h}!lcd\_\-rs@{lcd\_\-rs}}
+\index{lcd\_\-rs@{lcd\_\-rs}!lcd.h@{lcd.h}}
+\subsubsection[{lcd\_\-rs}]{\setlength{\rightskip}{0pt plus 5cm}\#define lcd\_\-rs~(1$<$$<$25)}}
+\label{lcd_8h_aedbb5aee655c073edfdf806cde51930d}
+
+
+Definition at line 21 of file lcd.h.
+
+\hypertarget{lcd_8h_ab9f2e6d92dc859935ae48f83b0efbfb2}{
+\index{lcd.h@{lcd.h}!lcd\_\-rw@{lcd\_\-rw}}
+\index{lcd\_\-rw@{lcd\_\-rw}!lcd.h@{lcd.h}}
+\subsubsection[{lcd\_\-rw}]{\setlength{\rightskip}{0pt plus 5cm}\#define lcd\_\-rw~(1$<$$<$30)}}
+\label{lcd_8h_ab9f2e6d92dc859935ae48f83b0efbfb2}
+
+
+Definition at line 22 of file lcd.h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{lcd_8h_aafed2ade168a085630c2fe8d776432f2}{
+\index{lcd.h@{lcd.h}!init\_\-lcd@{init\_\-lcd}}
+\index{init\_\-lcd@{init\_\-lcd}!lcd.h@{lcd.h}}
+\subsubsection[{init\_\-lcd}]{\setlength{\rightskip}{0pt plus 5cm}void init\_\-lcd (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{lcd_8h_aafed2ade168a085630c2fe8d776432f2}
+
+
+Definition at line 105 of file lcd.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=352pt]{lcd_8h_aafed2ade168a085630c2fe8d776432f2_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{lcd_8h_a33e140c8175d738415fb9c72e73a8cef}{
+\index{lcd.h@{lcd.h}!lcd\_\-clr@{lcd\_\-clr}}
+\index{lcd\_\-clr@{lcd\_\-clr}!lcd.h@{lcd.h}}
+\subsubsection[{lcd\_\-clr}]{\setlength{\rightskip}{0pt plus 5cm}void lcd\_\-clr (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{lcd_8h_a33e140c8175d738415fb9c72e73a8cef}
+
+
+Definition at line 59 of file lcd.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lcd_8h_a33e140c8175d738415fb9c72e73a8cef_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{lcd_8h_a61861ecf300804956fed472f7d2e5386}{
+\index{lcd.h@{lcd.h}!lcd\_\-command@{lcd\_\-command}}
+\index{lcd\_\-command@{lcd\_\-command}!lcd.h@{lcd.h}}
+\subsubsection[{lcd\_\-command}]{\setlength{\rightskip}{0pt plus 5cm}void lcd\_\-command (
+\begin{DoxyParamCaption}
+\item[{int}]{ comando}
+\end{DoxyParamCaption}
+)}}
+\label{lcd_8h_a61861ecf300804956fed472f7d2e5386}
+================================================================================== Funções LCD ================================================================================== 
+\begin{DoxyParams}{Parameters}
+\item[{\em comando}]Comando para ser enviado para o display. \end{DoxyParams}
+
+
+Definition at line 24 of file lcd.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{lcd_8h_a61861ecf300804956fed472f7d2e5386_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{lcd_8h_ad811dd0c9e670cbb853c0435f42b9ad8}{
+\index{lcd.h@{lcd.h}!lcd\_\-goto@{lcd\_\-goto}}
+\index{lcd\_\-goto@{lcd\_\-goto}!lcd.h@{lcd.h}}
+\subsubsection[{lcd\_\-goto}]{\setlength{\rightskip}{0pt plus 5cm}void lcd\_\-goto (
+\begin{DoxyParamCaption}
+\item[{int}]{ linha, }
+\item[{int}]{ coluna}
+\end{DoxyParamCaption}
+)}}
+\label{lcd_8h_ad811dd0c9e670cbb853c0435f42b9ad8}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em linha}]Linha onde o curso e para ficar. \item[{\em coluna}]Coluna onde o curso tem que estar. \end{DoxyParams}
+
+
+Definition at line 94 of file lcd.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=360pt]{lcd_8h_ad811dd0c9e670cbb853c0435f42b9ad8_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{lcd_8h_a3a0eee458ca59d20c1404197b264427c}{
+\index{lcd.h@{lcd.h}!lcd\_\-putc@{lcd\_\-putc}}
+\index{lcd\_\-putc@{lcd\_\-putc}!lcd.h@{lcd.h}}
+\subsubsection[{lcd\_\-putc}]{\setlength{\rightskip}{0pt plus 5cm}void lcd\_\-putc (
+\begin{DoxyParamCaption}
+\item[{int}]{ dado}
+\end{DoxyParamCaption}
+)}}
+\label{lcd_8h_a3a0eee458ca59d20c1404197b264427c}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em dado}]Caracter a ser enviado para o display. \end{DoxyParams}
+
+
+Definition at line 42 of file lcd.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{lcd_8h_a3a0eee458ca59d20c1404197b264427c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{lcd_8h_a45d3f718be64b55bd729d907c193234a}{
+\index{lcd.h@{lcd.h}!lcd\_\-string@{lcd\_\-string}}
+\index{lcd\_\-string@{lcd\_\-string}!lcd.h@{lcd.h}}
+\subsubsection[{lcd\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}void lcd\_\-string (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{ str}
+\end{DoxyParamCaption}
+)}}
+\label{lcd_8h_a45d3f718be64b55bd729d907c193234a}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em str}]String como a mensagem a ser transmitida. \end{DoxyParams}
+
+
+Definition at line 69 of file lcd.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{lcd_8h_a45d3f718be64b55bd729d907c193234a_cgraph}
+\end{center}
+\end{figure}
+
+

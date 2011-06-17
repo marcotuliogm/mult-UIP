@@ -1,0 +1,956 @@
+\hypertarget{group__tools}{
+\section{Tools}
+\label{group__tools}\index{Tools@{Tools}}
+}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structsft__hdr}{sft\_\-hdr}
+\begin{DoxyCompactList}\small\item\em \hyperlink{structsft__hdr}{sft\_\-hdr} Estrutura do pacote SFT. Todos foram acrescentados 1 caracter para ser o . A struct com o protocolo é enviada por parametro via socket. \item\end{DoxyCompactList}\item 
+struct \hyperlink{structCOR}{COR}
+\begin{DoxyCompactList}\small\item\em Conversor BMP para C header RAW R1G1B1R2G2B2 comprimido com RLE. \item\end{DoxyCompactList}\item 
+struct \hyperlink{structRLE8}{RLE8}
+\item 
+struct \hyperlink{structCABECALHO}{CABECALHO}
+\end{DoxyCompactItemize}
+\subsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file \hyperlink{chat_8c}{chat.c}
+
+
+\begin{DoxyCompactList}\small\item\em comunicação entre dois ambientes com sockets. \item\end{DoxyCompactList}
+
+\item 
+file \hyperlink{sft_8c}{sft.c}
+
+
+\begin{DoxyCompactList}\small\item\em Servidor usado peloprotocolo SFT. \item\end{DoxyCompactList}
+
+\item 
+file \hyperlink{sft_8c}{sft.c}
+
+
+\begin{DoxyCompactList}\small\item\em Servidor usado peloprotocolo SFT. \item\end{DoxyCompactList}
+
+\item 
+file \hyperlink{sft_8c}{sft.c}
+
+
+\begin{DoxyCompactList}\small\item\em Servidor usado peloprotocolo SFT. \item\end{DoxyCompactList}
+
+\end{DoxyCompactItemize}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__tools_gafeedb41f2b3a57bebfb2f7b06e740ff9}{TAMMSG}~80
+\item 
+\#define \hyperlink{group__tools_gafeedb41f2b3a57bebfb2f7b06e740ff9}{TAMMSG}~1100
+\item 
+\#define \hyperlink{group__tools_gad5edc192bf3e9fd388921b3d378c24a0}{SFT\_\-PORT}~45
+\item 
+\#define \hyperlink{group__tools_ga7bbd4dd96f752e1a658cd868530e3fdd}{SFTD\_\-BUFFER\_\-DATA}~1000
+\item 
+\#define \hyperlink{group__tools_gafeedb41f2b3a57bebfb2f7b06e740ff9}{TAMMSG}~1100
+\item 
+\#define \hyperlink{group__tools_gad5edc192bf3e9fd388921b3d378c24a0}{SFT\_\-PORT}~45
+\item 
+\#define \hyperlink{group__tools_ga7bbd4dd96f752e1a658cd868530e3fdd}{SFTD\_\-BUFFER\_\-DATA}~1000
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4f}{cmd\_\-sft} \{ \par
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa91dd4f615594c8882f25e5457596ac25}{CMD\_\-RECV} = 0, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fabd786962c55320c4cb40358afaed468f}{CMD\_\-RECV\_\-ANS}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa1e0ceff2d6f13742786f42dac58149bc}{CMD\_\-STOP}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa9d46894e135999a4db05e1670dcf2b69}{CMD\_\-RECV\_\-SEQ}, 
+\par
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4fe06469b0604dc5a26a64882560c5da}{CMD\_\-FINISHED}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa8b4a95e680f732e89f2737fba63ee7b7}{CMD\_\-RECV\_\-X}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4faf19ed9b5eb85a1f1f9931bd69f6cd748}{CMD\_\-RECVU}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa3e631e656523983cc0e572e93cae27c6}{CMD\_\-ERROR}, 
+\par
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa384b8b0439817da86b68b1dad85c9993}{CMD\_\-MSG}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa00c26130ae6ce63965ca64eb0010508f}{CMD\_\-SEND} = 0, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa0528f4b967392245553f29c25b8a881a}{CMD\_\-SEND\_\-WAIT}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa1e0ceff2d6f13742786f42dac58149bc}{CMD\_\-STOP}, 
+\par
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4360eb301345df97962cb1464ee8473a}{CMD\_\-SEND\_\-SEQ}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4fe06469b0604dc5a26a64882560c5da}{CMD\_\-FINISHED}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa615aafaeecf11e971ebdddf41bde2e17}{CMD\_\-SEND\_\-X}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4faa7a0078d43616f6ad11c7429303070fb}{CMD\_\-SENDU}, 
+\par
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa3e631e656523983cc0e572e93cae27c6}{CMD\_\-ERROR}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa00c26130ae6ce63965ca64eb0010508f}{CMD\_\-SEND} = 0, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa0528f4b967392245553f29c25b8a881a}{CMD\_\-SEND\_\-WAIT}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa1e0ceff2d6f13742786f42dac58149bc}{CMD\_\-STOP}, 
+\par
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4360eb301345df97962cb1464ee8473a}{CMD\_\-SEND\_\-SEQ}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4fe06469b0604dc5a26a64882560c5da}{CMD\_\-FINISHED}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa615aafaeecf11e971ebdddf41bde2e17}{CMD\_\-SEND\_\-X}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4faa7a0078d43616f6ad11c7429303070fb}{CMD\_\-SENDU}, 
+\par
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa3e631e656523983cc0e572e93cae27c6}{CMD\_\-ERROR}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa00c26130ae6ce63965ca64eb0010508f}{CMD\_\-SEND} = 0, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa0528f4b967392245553f29c25b8a881a}{CMD\_\-SEND\_\-WAIT}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa1e0ceff2d6f13742786f42dac58149bc}{CMD\_\-STOP}, 
+\par
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4360eb301345df97962cb1464ee8473a}{CMD\_\-SEND\_\-SEQ}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4fe06469b0604dc5a26a64882560c5da}{CMD\_\-FINISHED}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa615aafaeecf11e971ebdddf41bde2e17}{CMD\_\-SEND\_\-X}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4faa7a0078d43616f6ad11c7429303070fb}{CMD\_\-SENDU}, 
+\par
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa3e631e656523983cc0e572e93cae27c6}{CMD\_\-ERROR}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa384b8b0439817da86b68b1dad85c9993}{CMD\_\-MSG}
+ \}
+\begin{DoxyCompactList}\small\item\em cmd\_\-sft Tipos de comandos suportados pelo protocolo SFT. \item\end{DoxyCompactList}\item 
+enum \hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4f}{cmd\_\-sft} \{ \par
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa91dd4f615594c8882f25e5457596ac25}{CMD\_\-RECV} = 0, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fabd786962c55320c4cb40358afaed468f}{CMD\_\-RECV\_\-ANS}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa1e0ceff2d6f13742786f42dac58149bc}{CMD\_\-STOP}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa9d46894e135999a4db05e1670dcf2b69}{CMD\_\-RECV\_\-SEQ}, 
+\par
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4fe06469b0604dc5a26a64882560c5da}{CMD\_\-FINISHED}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa8b4a95e680f732e89f2737fba63ee7b7}{CMD\_\-RECV\_\-X}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4faf19ed9b5eb85a1f1f9931bd69f6cd748}{CMD\_\-RECVU}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa3e631e656523983cc0e572e93cae27c6}{CMD\_\-ERROR}, 
+\par
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa384b8b0439817da86b68b1dad85c9993}{CMD\_\-MSG}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa00c26130ae6ce63965ca64eb0010508f}{CMD\_\-SEND} = 0, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa0528f4b967392245553f29c25b8a881a}{CMD\_\-SEND\_\-WAIT}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa1e0ceff2d6f13742786f42dac58149bc}{CMD\_\-STOP}, 
+\par
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4360eb301345df97962cb1464ee8473a}{CMD\_\-SEND\_\-SEQ}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4fe06469b0604dc5a26a64882560c5da}{CMD\_\-FINISHED}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa615aafaeecf11e971ebdddf41bde2e17}{CMD\_\-SEND\_\-X}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4faa7a0078d43616f6ad11c7429303070fb}{CMD\_\-SENDU}, 
+\par
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa3e631e656523983cc0e572e93cae27c6}{CMD\_\-ERROR}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa00c26130ae6ce63965ca64eb0010508f}{CMD\_\-SEND} = 0, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa0528f4b967392245553f29c25b8a881a}{CMD\_\-SEND\_\-WAIT}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa1e0ceff2d6f13742786f42dac58149bc}{CMD\_\-STOP}, 
+\par
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4360eb301345df97962cb1464ee8473a}{CMD\_\-SEND\_\-SEQ}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4fe06469b0604dc5a26a64882560c5da}{CMD\_\-FINISHED}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa615aafaeecf11e971ebdddf41bde2e17}{CMD\_\-SEND\_\-X}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4faa7a0078d43616f6ad11c7429303070fb}{CMD\_\-SENDU}, 
+\par
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa3e631e656523983cc0e572e93cae27c6}{CMD\_\-ERROR}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa00c26130ae6ce63965ca64eb0010508f}{CMD\_\-SEND} = 0, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa0528f4b967392245553f29c25b8a881a}{CMD\_\-SEND\_\-WAIT}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa1e0ceff2d6f13742786f42dac58149bc}{CMD\_\-STOP}, 
+\par
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4360eb301345df97962cb1464ee8473a}{CMD\_\-SEND\_\-SEQ}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4fe06469b0604dc5a26a64882560c5da}{CMD\_\-FINISHED}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa615aafaeecf11e971ebdddf41bde2e17}{CMD\_\-SEND\_\-X}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4faa7a0078d43616f6ad11c7429303070fb}{CMD\_\-SENDU}, 
+\par
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa3e631e656523983cc0e572e93cae27c6}{CMD\_\-ERROR}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa384b8b0439817da86b68b1dad85c9993}{CMD\_\-MSG}
+ \}
+\begin{DoxyCompactList}\small\item\em cmd\_\-sft Tipos de comandos suportados pelo protocolo SFT. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{group__tools_ga0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Funcao que gerencia execucao programa. \item\end{DoxyCompactList}\item 
+struct hostent $\ast$ \hyperlink{group__tools_gad7ff056dc2e24806b50deab1a1dcc4d5}{gethostbyname} ()
+\item 
+int \hyperlink{group__tools_ga3aa69e98b6e896f4620e18ce70203826}{sft\_\-send\_\-x} (char $\ast$data)
+\item 
+int \hyperlink{group__tools_gabba736c5a748cafb42da716e76cb3bc0}{sft\_\-sendu} (char $\ast$data)
+\begin{DoxyCompactList}\small\item\em Monta pacotes para ser enviado pelo protocolo SFT. \item\end{DoxyCompactList}\item 
+int \hyperlink{group__tools_gae277076e8df537a2e2a9be5eb986dfae}{sft\_\-send\_\-seq} (char $\ast$data)
+\begin{DoxyCompactList}\small\item\em Envia uma sequencia de imagens. \item\end{DoxyCompactList}\item 
+int \hyperlink{group__tools_ga169e8375031166aa98b2a4ce8f8f05e5}{sft\_\-send\_\-loop} (char $\ast$data)
+\begin{DoxyCompactList}\small\item\em Chama o envio de imagens sequenciais. \item\end{DoxyCompactList}\item 
+int \hyperlink{group__tools_ga21607e3d9ec877c9182082896d652e1a}{send\_\-pkt} (void)
+\begin{DoxyCompactList}\small\item\em Envia um pacote com seguranca. \item\end{DoxyCompactList}\item 
+int \hyperlink{group__tools_ga646bc80af309b73ef8ec75af642823da}{sft\_\-send} (char $\ast$data)
+\begin{DoxyCompactList}\small\item\em Monta pacotes para ser enviado pelo protocolo SFT. \item\end{DoxyCompactList}\item 
+int \hyperlink{group__tools_gaa659288168d650321cd44c9b2c58fab1}{send\_\-stop} (void)
+\begin{DoxyCompactList}\small\item\em Finaliza arquivo enviado. \item\end{DoxyCompactList}\item 
+int \hyperlink{group__tools_ga87766379c1067492aa58573ab7103a55}{trata\_\-sft} ()
+\begin{DoxyCompactList}\small\item\em Verifica o que foi digitado pedindo. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{group__tools_gacfb6b9e2b00e34da4313b463c341e597}{s1}
+\item 
+int \hyperlink{group__tools_gacb559820d9ca11295b4500f179ef6392}{i}
+\item 
+int \hyperlink{group__tools_ga80da5edc9ed66d0e87785ab0e5d3de73}{gif}
+\item 
+struct sockaddr\_\-in \hyperlink{group__tools_ga437cecc27162b023659813375ca67d62}{server}
+\item 
+struct hostent $\ast$ \hyperlink{group__tools_gaa0f575fa3882aa394cc287edba645a35}{hp}
+\item 
+int \hyperlink{group__tools_gad4a4ca83bbe60e2e30bcb135a16d4ae0}{id\_\-stc}
+\item 
+char \hyperlink{group__tools_gaee111dc44c3bce736f7f414e0641a022}{msg\_\-rec} \mbox{[}TAMMSG\mbox{]}
+\item 
+char \hyperlink{group__tools_gaf535bd429e84ab4b380e215d1fda88c9}{msg\_\-send} \mbox{[}TAMMSG\mbox{]}
+\item 
+char \hyperlink{group__tools_gadab5417956854dcc8d2283b3d89c39de}{buff} \mbox{[}TAMMSG\mbox{]}
+\item 
+int \hyperlink{group__tools_gacfb6b9e2b00e34da4313b463c341e597}{s1}
+\item 
+int \hyperlink{group__tools_gacb559820d9ca11295b4500f179ef6392}{i}
+\item 
+int \hyperlink{group__tools_ga80da5edc9ed66d0e87785ab0e5d3de73}{gif}
+\item 
+struct sockaddr\_\-in \hyperlink{group__tools_ga437cecc27162b023659813375ca67d62}{server}
+\item 
+struct hostent $\ast$ \hyperlink{group__tools_gaa0f575fa3882aa394cc287edba645a35}{hp}
+\item 
+int \hyperlink{group__tools_gad4a4ca83bbe60e2e30bcb135a16d4ae0}{id\_\-stc}
+\item 
+char \hyperlink{group__tools_gaee111dc44c3bce736f7f414e0641a022}{msg\_\-rec} \mbox{[}TAMMSG\mbox{]}
+\item 
+char \hyperlink{group__tools_gaf535bd429e84ab4b380e215d1fda88c9}{msg\_\-send} \mbox{[}TAMMSG\mbox{]}
+\item 
+char \hyperlink{group__tools_gadab5417956854dcc8d2283b3d89c39de}{buff} \mbox{[}TAMMSG\mbox{]}
+\item 
+struct \hyperlink{structsft__hdr}{sft\_\-hdr} $\ast$ \hyperlink{group__tools_ga4f4956a7fff1361d70eee8e88bb4f7f4}{sft}
+\item 
+struct sockaddr\_\-in \hyperlink{group__tools_ga437cecc27162b023659813375ca67d62}{server}
+\item 
+struct hostent $\ast$ \hyperlink{group__tools_gaa0f575fa3882aa394cc287edba645a35}{hp}
+\end{DoxyCompactItemize}
+
+
+\subsection{Define Documentation}
+\hypertarget{group__tools_gad5edc192bf3e9fd388921b3d378c24a0}{
+\index{tools@{tools}!SFT\_\-PORT@{SFT\_\-PORT}}
+\index{SFT\_\-PORT@{SFT\_\-PORT}!tools@{tools}}
+\subsubsection[{SFT\_\-PORT}]{\setlength{\rightskip}{0pt plus 5cm}\#define SFT\_\-PORT~45}}
+\label{group__tools_gad5edc192bf3e9fd388921b3d378c24a0}
+
+
+Definition at line 38 of file sft.c.
+
+\hypertarget{group__tools_gad5edc192bf3e9fd388921b3d378c24a0}{
+\index{tools@{tools}!SFT\_\-PORT@{SFT\_\-PORT}}
+\index{SFT\_\-PORT@{SFT\_\-PORT}!tools@{tools}}
+\subsubsection[{SFT\_\-PORT}]{\setlength{\rightskip}{0pt plus 5cm}\#define SFT\_\-PORT~45}}
+\label{group__tools_gad5edc192bf3e9fd388921b3d378c24a0}
+
+
+Definition at line 37 of file sft\_\-ok.c.
+
+\hypertarget{group__tools_ga7bbd4dd96f752e1a658cd868530e3fdd}{
+\index{tools@{tools}!SFTD\_\-BUFFER\_\-DATA@{SFTD\_\-BUFFER\_\-DATA}}
+\index{SFTD\_\-BUFFER\_\-DATA@{SFTD\_\-BUFFER\_\-DATA}!tools@{tools}}
+\subsubsection[{SFTD\_\-BUFFER\_\-DATA}]{\setlength{\rightskip}{0pt plus 5cm}\#define SFTD\_\-BUFFER\_\-DATA~1000}}
+\label{group__tools_ga7bbd4dd96f752e1a658cd868530e3fdd}
+
+
+Definition at line 39 of file sft.c.
+
+\hypertarget{group__tools_ga7bbd4dd96f752e1a658cd868530e3fdd}{
+\index{tools@{tools}!SFTD\_\-BUFFER\_\-DATA@{SFTD\_\-BUFFER\_\-DATA}}
+\index{SFTD\_\-BUFFER\_\-DATA@{SFTD\_\-BUFFER\_\-DATA}!tools@{tools}}
+\subsubsection[{SFTD\_\-BUFFER\_\-DATA}]{\setlength{\rightskip}{0pt plus 5cm}\#define SFTD\_\-BUFFER\_\-DATA~1000}}
+\label{group__tools_ga7bbd4dd96f752e1a658cd868530e3fdd}
+
+
+Definition at line 38 of file sft\_\-ok.c.
+
+\hypertarget{group__tools_gafeedb41f2b3a57bebfb2f7b06e740ff9}{
+\index{tools@{tools}!TAMMSG@{TAMMSG}}
+\index{TAMMSG@{TAMMSG}!tools@{tools}}
+\subsubsection[{TAMMSG}]{\setlength{\rightskip}{0pt plus 5cm}\#define TAMMSG~1100}}
+\label{group__tools_gafeedb41f2b3a57bebfb2f7b06e740ff9}
+
+
+Definition at line 37 of file sft.c.
+
+\hypertarget{group__tools_gafeedb41f2b3a57bebfb2f7b06e740ff9}{
+\index{tools@{tools}!TAMMSG@{TAMMSG}}
+\index{TAMMSG@{TAMMSG}!tools@{tools}}
+\subsubsection[{TAMMSG}]{\setlength{\rightskip}{0pt plus 5cm}\#define TAMMSG~1100}}
+\label{group__tools_gafeedb41f2b3a57bebfb2f7b06e740ff9}
+
+
+Definition at line 36 of file sft\_\-ok.c.
+
+\hypertarget{group__tools_gafeedb41f2b3a57bebfb2f7b06e740ff9}{
+\index{tools@{tools}!TAMMSG@{TAMMSG}}
+\index{TAMMSG@{TAMMSG}!tools@{tools}}
+\subsubsection[{TAMMSG}]{\setlength{\rightskip}{0pt plus 5cm}\#define TAMMSG~80}}
+\label{group__tools_gafeedb41f2b3a57bebfb2f7b06e740ff9}
+
+
+Definition at line 35 of file chat.c.
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4f}{
+\index{tools@{tools}!cmd\_\-sft@{cmd\_\-sft}}
+\index{cmd\_\-sft@{cmd\_\-sft}!tools@{tools}}
+\subsubsection[{cmd\_\-sft}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf cmd\_\-sft}}}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4f}
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{CMD\_\-RECV@{CMD\_\-RECV}!tools@{tools}}\index{tools@{tools}!CMD\_\-RECV@{CMD\_\-RECV}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa91dd4f615594c8882f25e5457596ac25}{
+CMD\_\-RECV}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa91dd4f615594c8882f25e5457596ac25}
+}]\index{CMD\_\-RECV\_\-ANS@{CMD\_\-RECV\_\-ANS}!tools@{tools}}\index{tools@{tools}!CMD\_\-RECV\_\-ANS@{CMD\_\-RECV\_\-ANS}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fabd786962c55320c4cb40358afaed468f}{
+CMD\_\-RECV\_\-ANS}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fabd786962c55320c4cb40358afaed468f}
+}]\index{CMD\_\-STOP@{CMD\_\-STOP}!tools@{tools}}\index{tools@{tools}!CMD\_\-STOP@{CMD\_\-STOP}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa1e0ceff2d6f13742786f42dac58149bc}{
+CMD\_\-STOP}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa1e0ceff2d6f13742786f42dac58149bc}
+}]\index{CMD\_\-RECV\_\-SEQ@{CMD\_\-RECV\_\-SEQ}!tools@{tools}}\index{tools@{tools}!CMD\_\-RECV\_\-SEQ@{CMD\_\-RECV\_\-SEQ}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa9d46894e135999a4db05e1670dcf2b69}{
+CMD\_\-RECV\_\-SEQ}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa9d46894e135999a4db05e1670dcf2b69}
+}]\index{CMD\_\-FINISHED@{CMD\_\-FINISHED}!tools@{tools}}\index{tools@{tools}!CMD\_\-FINISHED@{CMD\_\-FINISHED}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4fe06469b0604dc5a26a64882560c5da}{
+CMD\_\-FINISHED}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4fe06469b0604dc5a26a64882560c5da}
+}]\index{CMD\_\-RECV\_\-X@{CMD\_\-RECV\_\-X}!tools@{tools}}\index{tools@{tools}!CMD\_\-RECV\_\-X@{CMD\_\-RECV\_\-X}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa8b4a95e680f732e89f2737fba63ee7b7}{
+CMD\_\-RECV\_\-X}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa8b4a95e680f732e89f2737fba63ee7b7}
+}]\index{CMD\_\-RECVU@{CMD\_\-RECVU}!tools@{tools}}\index{tools@{tools}!CMD\_\-RECVU@{CMD\_\-RECVU}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4faf19ed9b5eb85a1f1f9931bd69f6cd748}{
+CMD\_\-RECVU}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4faf19ed9b5eb85a1f1f9931bd69f6cd748}
+}]\index{CMD\_\-ERROR@{CMD\_\-ERROR}!tools@{tools}}\index{tools@{tools}!CMD\_\-ERROR@{CMD\_\-ERROR}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa3e631e656523983cc0e572e93cae27c6}{
+CMD\_\-ERROR}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa3e631e656523983cc0e572e93cae27c6}
+}]\index{CMD\_\-MSG@{CMD\_\-MSG}!tools@{tools}}\index{tools@{tools}!CMD\_\-MSG@{CMD\_\-MSG}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa384b8b0439817da86b68b1dad85c9993}{
+CMD\_\-MSG}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa384b8b0439817da86b68b1dad85c9993}
+}]\index{CMD\_\-SEND@{CMD\_\-SEND}!tools@{tools}}\index{tools@{tools}!CMD\_\-SEND@{CMD\_\-SEND}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa00c26130ae6ce63965ca64eb0010508f}{
+CMD\_\-SEND}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa00c26130ae6ce63965ca64eb0010508f}
+}]\index{CMD\_\-SEND\_\-WAIT@{CMD\_\-SEND\_\-WAIT}!tools@{tools}}\index{tools@{tools}!CMD\_\-SEND\_\-WAIT@{CMD\_\-SEND\_\-WAIT}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa0528f4b967392245553f29c25b8a881a}{
+CMD\_\-SEND\_\-WAIT}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa0528f4b967392245553f29c25b8a881a}
+}]\index{CMD\_\-STOP@{CMD\_\-STOP}!tools@{tools}}\index{tools@{tools}!CMD\_\-STOP@{CMD\_\-STOP}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa1e0ceff2d6f13742786f42dac58149bc}{
+CMD\_\-STOP}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa1e0ceff2d6f13742786f42dac58149bc}
+}]\index{CMD\_\-SEND\_\-SEQ@{CMD\_\-SEND\_\-SEQ}!tools@{tools}}\index{tools@{tools}!CMD\_\-SEND\_\-SEQ@{CMD\_\-SEND\_\-SEQ}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4360eb301345df97962cb1464ee8473a}{
+CMD\_\-SEND\_\-SEQ}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4360eb301345df97962cb1464ee8473a}
+}]\index{CMD\_\-FINISHED@{CMD\_\-FINISHED}!tools@{tools}}\index{tools@{tools}!CMD\_\-FINISHED@{CMD\_\-FINISHED}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4fe06469b0604dc5a26a64882560c5da}{
+CMD\_\-FINISHED}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4fe06469b0604dc5a26a64882560c5da}
+}]\index{CMD\_\-SEND\_\-X@{CMD\_\-SEND\_\-X}!tools@{tools}}\index{tools@{tools}!CMD\_\-SEND\_\-X@{CMD\_\-SEND\_\-X}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa615aafaeecf11e971ebdddf41bde2e17}{
+CMD\_\-SEND\_\-X}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa615aafaeecf11e971ebdddf41bde2e17}
+}]\index{CMD\_\-SENDU@{CMD\_\-SENDU}!tools@{tools}}\index{tools@{tools}!CMD\_\-SENDU@{CMD\_\-SENDU}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4faa7a0078d43616f6ad11c7429303070fb}{
+CMD\_\-SENDU}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4faa7a0078d43616f6ad11c7429303070fb}
+}]\index{CMD\_\-ERROR@{CMD\_\-ERROR}!tools@{tools}}\index{tools@{tools}!CMD\_\-ERROR@{CMD\_\-ERROR}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa3e631e656523983cc0e572e93cae27c6}{
+CMD\_\-ERROR}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa3e631e656523983cc0e572e93cae27c6}
+}]\index{CMD\_\-SEND@{CMD\_\-SEND}!tools@{tools}}\index{tools@{tools}!CMD\_\-SEND@{CMD\_\-SEND}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa00c26130ae6ce63965ca64eb0010508f}{
+CMD\_\-SEND}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa00c26130ae6ce63965ca64eb0010508f}
+}]\index{CMD\_\-SEND\_\-WAIT@{CMD\_\-SEND\_\-WAIT}!tools@{tools}}\index{tools@{tools}!CMD\_\-SEND\_\-WAIT@{CMD\_\-SEND\_\-WAIT}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa0528f4b967392245553f29c25b8a881a}{
+CMD\_\-SEND\_\-WAIT}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa0528f4b967392245553f29c25b8a881a}
+}]\index{CMD\_\-STOP@{CMD\_\-STOP}!tools@{tools}}\index{tools@{tools}!CMD\_\-STOP@{CMD\_\-STOP}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa1e0ceff2d6f13742786f42dac58149bc}{
+CMD\_\-STOP}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa1e0ceff2d6f13742786f42dac58149bc}
+}]\index{CMD\_\-SEND\_\-SEQ@{CMD\_\-SEND\_\-SEQ}!tools@{tools}}\index{tools@{tools}!CMD\_\-SEND\_\-SEQ@{CMD\_\-SEND\_\-SEQ}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4360eb301345df97962cb1464ee8473a}{
+CMD\_\-SEND\_\-SEQ}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4360eb301345df97962cb1464ee8473a}
+}]\index{CMD\_\-FINISHED@{CMD\_\-FINISHED}!tools@{tools}}\index{tools@{tools}!CMD\_\-FINISHED@{CMD\_\-FINISHED}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4fe06469b0604dc5a26a64882560c5da}{
+CMD\_\-FINISHED}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4fe06469b0604dc5a26a64882560c5da}
+}]\index{CMD\_\-SEND\_\-X@{CMD\_\-SEND\_\-X}!tools@{tools}}\index{tools@{tools}!CMD\_\-SEND\_\-X@{CMD\_\-SEND\_\-X}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa615aafaeecf11e971ebdddf41bde2e17}{
+CMD\_\-SEND\_\-X}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa615aafaeecf11e971ebdddf41bde2e17}
+}]\index{CMD\_\-SENDU@{CMD\_\-SENDU}!tools@{tools}}\index{tools@{tools}!CMD\_\-SENDU@{CMD\_\-SENDU}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4faa7a0078d43616f6ad11c7429303070fb}{
+CMD\_\-SENDU}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4faa7a0078d43616f6ad11c7429303070fb}
+}]\index{CMD\_\-ERROR@{CMD\_\-ERROR}!tools@{tools}}\index{tools@{tools}!CMD\_\-ERROR@{CMD\_\-ERROR}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa3e631e656523983cc0e572e93cae27c6}{
+CMD\_\-ERROR}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa3e631e656523983cc0e572e93cae27c6}
+}]\index{CMD\_\-SEND@{CMD\_\-SEND}!tools@{tools}}\index{tools@{tools}!CMD\_\-SEND@{CMD\_\-SEND}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa00c26130ae6ce63965ca64eb0010508f}{
+CMD\_\-SEND}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa00c26130ae6ce63965ca64eb0010508f}
+}]\index{CMD\_\-SEND\_\-WAIT@{CMD\_\-SEND\_\-WAIT}!tools@{tools}}\index{tools@{tools}!CMD\_\-SEND\_\-WAIT@{CMD\_\-SEND\_\-WAIT}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa0528f4b967392245553f29c25b8a881a}{
+CMD\_\-SEND\_\-WAIT}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa0528f4b967392245553f29c25b8a881a}
+}]\index{CMD\_\-STOP@{CMD\_\-STOP}!tools@{tools}}\index{tools@{tools}!CMD\_\-STOP@{CMD\_\-STOP}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa1e0ceff2d6f13742786f42dac58149bc}{
+CMD\_\-STOP}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa1e0ceff2d6f13742786f42dac58149bc}
+}]\index{CMD\_\-SEND\_\-SEQ@{CMD\_\-SEND\_\-SEQ}!tools@{tools}}\index{tools@{tools}!CMD\_\-SEND\_\-SEQ@{CMD\_\-SEND\_\-SEQ}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4360eb301345df97962cb1464ee8473a}{
+CMD\_\-SEND\_\-SEQ}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4360eb301345df97962cb1464ee8473a}
+}]\index{CMD\_\-FINISHED@{CMD\_\-FINISHED}!tools@{tools}}\index{tools@{tools}!CMD\_\-FINISHED@{CMD\_\-FINISHED}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4fe06469b0604dc5a26a64882560c5da}{
+CMD\_\-FINISHED}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4fe06469b0604dc5a26a64882560c5da}
+}]\index{CMD\_\-SEND\_\-X@{CMD\_\-SEND\_\-X}!tools@{tools}}\index{tools@{tools}!CMD\_\-SEND\_\-X@{CMD\_\-SEND\_\-X}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa615aafaeecf11e971ebdddf41bde2e17}{
+CMD\_\-SEND\_\-X}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa615aafaeecf11e971ebdddf41bde2e17}
+}]\index{CMD\_\-SENDU@{CMD\_\-SENDU}!tools@{tools}}\index{tools@{tools}!CMD\_\-SENDU@{CMD\_\-SENDU}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4faa7a0078d43616f6ad11c7429303070fb}{
+CMD\_\-SENDU}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4faa7a0078d43616f6ad11c7429303070fb}
+}]\index{CMD\_\-ERROR@{CMD\_\-ERROR}!tools@{tools}}\index{tools@{tools}!CMD\_\-ERROR@{CMD\_\-ERROR}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa3e631e656523983cc0e572e93cae27c6}{
+CMD\_\-ERROR}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa3e631e656523983cc0e572e93cae27c6}
+}]\index{CMD\_\-MSG@{CMD\_\-MSG}!tools@{tools}}\index{tools@{tools}!CMD\_\-MSG@{CMD\_\-MSG}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa384b8b0439817da86b68b1dad85c9993}{
+CMD\_\-MSG}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa384b8b0439817da86b68b1dad85c9993}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 55 of file sft.c.
+
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4f}{
+\index{tools@{tools}!cmd\_\-sft@{cmd\_\-sft}}
+\index{cmd\_\-sft@{cmd\_\-sft}!tools@{tools}}
+\subsubsection[{cmd\_\-sft}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf cmd\_\-sft}}}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4f}
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{CMD\_\-RECV@{CMD\_\-RECV}!tools@{tools}}\index{tools@{tools}!CMD\_\-RECV@{CMD\_\-RECV}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa91dd4f615594c8882f25e5457596ac25}{
+CMD\_\-RECV}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa91dd4f615594c8882f25e5457596ac25}
+}]\index{CMD\_\-RECV\_\-ANS@{CMD\_\-RECV\_\-ANS}!tools@{tools}}\index{tools@{tools}!CMD\_\-RECV\_\-ANS@{CMD\_\-RECV\_\-ANS}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fabd786962c55320c4cb40358afaed468f}{
+CMD\_\-RECV\_\-ANS}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fabd786962c55320c4cb40358afaed468f}
+}]\index{CMD\_\-STOP@{CMD\_\-STOP}!tools@{tools}}\index{tools@{tools}!CMD\_\-STOP@{CMD\_\-STOP}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa1e0ceff2d6f13742786f42dac58149bc}{
+CMD\_\-STOP}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa1e0ceff2d6f13742786f42dac58149bc}
+}]\index{CMD\_\-RECV\_\-SEQ@{CMD\_\-RECV\_\-SEQ}!tools@{tools}}\index{tools@{tools}!CMD\_\-RECV\_\-SEQ@{CMD\_\-RECV\_\-SEQ}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa9d46894e135999a4db05e1670dcf2b69}{
+CMD\_\-RECV\_\-SEQ}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa9d46894e135999a4db05e1670dcf2b69}
+}]\index{CMD\_\-FINISHED@{CMD\_\-FINISHED}!tools@{tools}}\index{tools@{tools}!CMD\_\-FINISHED@{CMD\_\-FINISHED}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4fe06469b0604dc5a26a64882560c5da}{
+CMD\_\-FINISHED}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4fe06469b0604dc5a26a64882560c5da}
+}]\index{CMD\_\-RECV\_\-X@{CMD\_\-RECV\_\-X}!tools@{tools}}\index{tools@{tools}!CMD\_\-RECV\_\-X@{CMD\_\-RECV\_\-X}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa8b4a95e680f732e89f2737fba63ee7b7}{
+CMD\_\-RECV\_\-X}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa8b4a95e680f732e89f2737fba63ee7b7}
+}]\index{CMD\_\-RECVU@{CMD\_\-RECVU}!tools@{tools}}\index{tools@{tools}!CMD\_\-RECVU@{CMD\_\-RECVU}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4faf19ed9b5eb85a1f1f9931bd69f6cd748}{
+CMD\_\-RECVU}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4faf19ed9b5eb85a1f1f9931bd69f6cd748}
+}]\index{CMD\_\-ERROR@{CMD\_\-ERROR}!tools@{tools}}\index{tools@{tools}!CMD\_\-ERROR@{CMD\_\-ERROR}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa3e631e656523983cc0e572e93cae27c6}{
+CMD\_\-ERROR}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa3e631e656523983cc0e572e93cae27c6}
+}]\index{CMD\_\-MSG@{CMD\_\-MSG}!tools@{tools}}\index{tools@{tools}!CMD\_\-MSG@{CMD\_\-MSG}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa384b8b0439817da86b68b1dad85c9993}{
+CMD\_\-MSG}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa384b8b0439817da86b68b1dad85c9993}
+}]\index{CMD\_\-SEND@{CMD\_\-SEND}!tools@{tools}}\index{tools@{tools}!CMD\_\-SEND@{CMD\_\-SEND}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa00c26130ae6ce63965ca64eb0010508f}{
+CMD\_\-SEND}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa00c26130ae6ce63965ca64eb0010508f}
+}]\index{CMD\_\-SEND\_\-WAIT@{CMD\_\-SEND\_\-WAIT}!tools@{tools}}\index{tools@{tools}!CMD\_\-SEND\_\-WAIT@{CMD\_\-SEND\_\-WAIT}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa0528f4b967392245553f29c25b8a881a}{
+CMD\_\-SEND\_\-WAIT}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa0528f4b967392245553f29c25b8a881a}
+}]\index{CMD\_\-STOP@{CMD\_\-STOP}!tools@{tools}}\index{tools@{tools}!CMD\_\-STOP@{CMD\_\-STOP}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa1e0ceff2d6f13742786f42dac58149bc}{
+CMD\_\-STOP}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa1e0ceff2d6f13742786f42dac58149bc}
+}]\index{CMD\_\-SEND\_\-SEQ@{CMD\_\-SEND\_\-SEQ}!tools@{tools}}\index{tools@{tools}!CMD\_\-SEND\_\-SEQ@{CMD\_\-SEND\_\-SEQ}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4360eb301345df97962cb1464ee8473a}{
+CMD\_\-SEND\_\-SEQ}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4360eb301345df97962cb1464ee8473a}
+}]\index{CMD\_\-FINISHED@{CMD\_\-FINISHED}!tools@{tools}}\index{tools@{tools}!CMD\_\-FINISHED@{CMD\_\-FINISHED}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4fe06469b0604dc5a26a64882560c5da}{
+CMD\_\-FINISHED}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4fe06469b0604dc5a26a64882560c5da}
+}]\index{CMD\_\-SEND\_\-X@{CMD\_\-SEND\_\-X}!tools@{tools}}\index{tools@{tools}!CMD\_\-SEND\_\-X@{CMD\_\-SEND\_\-X}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa615aafaeecf11e971ebdddf41bde2e17}{
+CMD\_\-SEND\_\-X}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa615aafaeecf11e971ebdddf41bde2e17}
+}]\index{CMD\_\-SENDU@{CMD\_\-SENDU}!tools@{tools}}\index{tools@{tools}!CMD\_\-SENDU@{CMD\_\-SENDU}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4faa7a0078d43616f6ad11c7429303070fb}{
+CMD\_\-SENDU}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4faa7a0078d43616f6ad11c7429303070fb}
+}]\index{CMD\_\-ERROR@{CMD\_\-ERROR}!tools@{tools}}\index{tools@{tools}!CMD\_\-ERROR@{CMD\_\-ERROR}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa3e631e656523983cc0e572e93cae27c6}{
+CMD\_\-ERROR}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa3e631e656523983cc0e572e93cae27c6}
+}]\index{CMD\_\-SEND@{CMD\_\-SEND}!tools@{tools}}\index{tools@{tools}!CMD\_\-SEND@{CMD\_\-SEND}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa00c26130ae6ce63965ca64eb0010508f}{
+CMD\_\-SEND}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa00c26130ae6ce63965ca64eb0010508f}
+}]\index{CMD\_\-SEND\_\-WAIT@{CMD\_\-SEND\_\-WAIT}!tools@{tools}}\index{tools@{tools}!CMD\_\-SEND\_\-WAIT@{CMD\_\-SEND\_\-WAIT}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa0528f4b967392245553f29c25b8a881a}{
+CMD\_\-SEND\_\-WAIT}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa0528f4b967392245553f29c25b8a881a}
+}]\index{CMD\_\-STOP@{CMD\_\-STOP}!tools@{tools}}\index{tools@{tools}!CMD\_\-STOP@{CMD\_\-STOP}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa1e0ceff2d6f13742786f42dac58149bc}{
+CMD\_\-STOP}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa1e0ceff2d6f13742786f42dac58149bc}
+}]\index{CMD\_\-SEND\_\-SEQ@{CMD\_\-SEND\_\-SEQ}!tools@{tools}}\index{tools@{tools}!CMD\_\-SEND\_\-SEQ@{CMD\_\-SEND\_\-SEQ}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4360eb301345df97962cb1464ee8473a}{
+CMD\_\-SEND\_\-SEQ}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4360eb301345df97962cb1464ee8473a}
+}]\index{CMD\_\-FINISHED@{CMD\_\-FINISHED}!tools@{tools}}\index{tools@{tools}!CMD\_\-FINISHED@{CMD\_\-FINISHED}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4fe06469b0604dc5a26a64882560c5da}{
+CMD\_\-FINISHED}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4fe06469b0604dc5a26a64882560c5da}
+}]\index{CMD\_\-SEND\_\-X@{CMD\_\-SEND\_\-X}!tools@{tools}}\index{tools@{tools}!CMD\_\-SEND\_\-X@{CMD\_\-SEND\_\-X}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa615aafaeecf11e971ebdddf41bde2e17}{
+CMD\_\-SEND\_\-X}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa615aafaeecf11e971ebdddf41bde2e17}
+}]\index{CMD\_\-SENDU@{CMD\_\-SENDU}!tools@{tools}}\index{tools@{tools}!CMD\_\-SENDU@{CMD\_\-SENDU}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4faa7a0078d43616f6ad11c7429303070fb}{
+CMD\_\-SENDU}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4faa7a0078d43616f6ad11c7429303070fb}
+}]\index{CMD\_\-ERROR@{CMD\_\-ERROR}!tools@{tools}}\index{tools@{tools}!CMD\_\-ERROR@{CMD\_\-ERROR}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa3e631e656523983cc0e572e93cae27c6}{
+CMD\_\-ERROR}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa3e631e656523983cc0e572e93cae27c6}
+}]\index{CMD\_\-SEND@{CMD\_\-SEND}!tools@{tools}}\index{tools@{tools}!CMD\_\-SEND@{CMD\_\-SEND}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa00c26130ae6ce63965ca64eb0010508f}{
+CMD\_\-SEND}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa00c26130ae6ce63965ca64eb0010508f}
+}]\index{CMD\_\-SEND\_\-WAIT@{CMD\_\-SEND\_\-WAIT}!tools@{tools}}\index{tools@{tools}!CMD\_\-SEND\_\-WAIT@{CMD\_\-SEND\_\-WAIT}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa0528f4b967392245553f29c25b8a881a}{
+CMD\_\-SEND\_\-WAIT}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa0528f4b967392245553f29c25b8a881a}
+}]\index{CMD\_\-STOP@{CMD\_\-STOP}!tools@{tools}}\index{tools@{tools}!CMD\_\-STOP@{CMD\_\-STOP}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa1e0ceff2d6f13742786f42dac58149bc}{
+CMD\_\-STOP}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa1e0ceff2d6f13742786f42dac58149bc}
+}]\index{CMD\_\-SEND\_\-SEQ@{CMD\_\-SEND\_\-SEQ}!tools@{tools}}\index{tools@{tools}!CMD\_\-SEND\_\-SEQ@{CMD\_\-SEND\_\-SEQ}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4360eb301345df97962cb1464ee8473a}{
+CMD\_\-SEND\_\-SEQ}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4360eb301345df97962cb1464ee8473a}
+}]\index{CMD\_\-FINISHED@{CMD\_\-FINISHED}!tools@{tools}}\index{tools@{tools}!CMD\_\-FINISHED@{CMD\_\-FINISHED}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4fe06469b0604dc5a26a64882560c5da}{
+CMD\_\-FINISHED}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4fe06469b0604dc5a26a64882560c5da}
+}]\index{CMD\_\-SEND\_\-X@{CMD\_\-SEND\_\-X}!tools@{tools}}\index{tools@{tools}!CMD\_\-SEND\_\-X@{CMD\_\-SEND\_\-X}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa615aafaeecf11e971ebdddf41bde2e17}{
+CMD\_\-SEND\_\-X}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa615aafaeecf11e971ebdddf41bde2e17}
+}]\index{CMD\_\-SENDU@{CMD\_\-SENDU}!tools@{tools}}\index{tools@{tools}!CMD\_\-SENDU@{CMD\_\-SENDU}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4faa7a0078d43616f6ad11c7429303070fb}{
+CMD\_\-SENDU}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4faa7a0078d43616f6ad11c7429303070fb}
+}]\index{CMD\_\-ERROR@{CMD\_\-ERROR}!tools@{tools}}\index{tools@{tools}!CMD\_\-ERROR@{CMD\_\-ERROR}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa3e631e656523983cc0e572e93cae27c6}{
+CMD\_\-ERROR}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa3e631e656523983cc0e572e93cae27c6}
+}]\index{CMD\_\-MSG@{CMD\_\-MSG}!tools@{tools}}\index{tools@{tools}!CMD\_\-MSG@{CMD\_\-MSG}}\item[{\em 
+\hypertarget{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa384b8b0439817da86b68b1dad85c9993}{
+CMD\_\-MSG}
+\label{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa384b8b0439817da86b68b1dad85c9993}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 54 of file sft\_\-ok.c.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{group__tools_gad7ff056dc2e24806b50deab1a1dcc4d5}{
+\index{tools@{tools}!gethostbyname@{gethostbyname}}
+\index{gethostbyname@{gethostbyname}!tools@{tools}}
+\subsubsection[{gethostbyname}]{\setlength{\rightskip}{0pt plus 5cm}struct hostent $\ast$ gethostbyname (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{group__tools_gad7ff056dc2e24806b50deab1a1dcc4d5}
+\hypertarget{group__tools_ga0ddf1224851353fc92bfbff6f499fa97}{
+\index{tools@{tools}!main@{main}}
+\index{main@{main}!tools@{tools}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{ argc, }
+\item[{char $\ast$}]{ argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}
+\label{group__tools_ga0ddf1224851353fc92bfbff6f499fa97}
+Funcao principal do Programa.
+
+Programa abre uma conexao com socket TCP entre o host e o UIP.
+
+Deve ser passado por parametro o hostname e a porta de conexao
+
+Cria a socket que fara a comunicacao com o UIP. recebe o comando de entrada e envia para ser interpretado pelo protocolo SFT. 
+
+Definition at line 43 of file bmp2h.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=382pt]{group__tools_ga0ddf1224851353fc92bfbff6f499fa97_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{group__tools_ga21607e3d9ec877c9182082896d652e1a}{
+\index{tools@{tools}!send\_\-pkt@{send\_\-pkt}}
+\index{send\_\-pkt@{send\_\-pkt}!tools@{tools}}
+\subsubsection[{send\_\-pkt}]{\setlength{\rightskip}{0pt plus 5cm}int send\_\-pkt (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__tools_ga21607e3d9ec877c9182082896d652e1a}
+Divide os pacotes em 1000 bytes cada para enviar na rede e aguarda resposta do cliente. 
+
+Definition at line 90 of file sft\_\-ok.c.
+
+\hypertarget{group__tools_gaa659288168d650321cd44c9b2c58fab1}{
+\index{tools@{tools}!send\_\-stop@{send\_\-stop}}
+\index{send\_\-stop@{send\_\-stop}!tools@{tools}}
+\subsubsection[{send\_\-stop}]{\setlength{\rightskip}{0pt plus 5cm}int send\_\-stop (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__tools_gaa659288168d650321cd44c9b2c58fab1}
+Manda um send\_\-stop quando finaliza o envio de arquivos. 
+
+Definition at line 268 of file sft\_\-ok.c.
+
+\hypertarget{group__tools_ga646bc80af309b73ef8ec75af642823da}{
+\index{tools@{tools}!sft\_\-send@{sft\_\-send}}
+\index{sft\_\-send@{sft\_\-send}!tools@{tools}}
+\subsubsection[{sft\_\-send}]{\setlength{\rightskip}{0pt plus 5cm}int sft\_\-send (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{ data}
+\end{DoxyParamCaption}
+)}}
+\label{group__tools_ga646bc80af309b73ef8ec75af642823da}
+Abre arquivo com o conteudo, coloca no pacote e solicita envio.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em data}]Nome do arquivo a ser lido \end{DoxyParams}
+
+
+Definition at line 131 of file sft\_\-ok.c.
+
+\hypertarget{group__tools_ga169e8375031166aa98b2a4ce8f8f05e5}{
+\index{tools@{tools}!sft\_\-send\_\-loop@{sft\_\-send\_\-loop}}
+\index{sft\_\-send\_\-loop@{sft\_\-send\_\-loop}!tools@{tools}}
+\subsubsection[{sft\_\-send\_\-loop}]{\setlength{\rightskip}{0pt plus 5cm}int sft\_\-send\_\-loop (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{ data}
+\end{DoxyParamCaption}
+)}}
+\label{group__tools_ga169e8375031166aa98b2a4ce8f8f05e5}
+Chama a funcao sft\_\-send\_\-seq para envio das imagens da biblioteca. Verifica até que o arquivo chegue ao fim eenvia comando de stop, para poder para de enviar arquivos. 
+
+Definition at line 371 of file sft\_\-ok.c.
+
+\hypertarget{group__tools_gae277076e8df537a2e2a9be5eb986dfae}{
+\index{tools@{tools}!sft\_\-send\_\-seq@{sft\_\-send\_\-seq}}
+\index{sft\_\-send\_\-seq@{sft\_\-send\_\-seq}!tools@{tools}}
+\subsubsection[{sft\_\-send\_\-seq}]{\setlength{\rightskip}{0pt plus 5cm}int sft\_\-send\_\-seq (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{ data}
+\end{DoxyParamCaption}
+)}}
+\label{group__tools_gae277076e8df537a2e2a9be5eb986dfae}
+Biblioteca de arquivos deve conter imagens numeradas na sequencia 1, 2, 3 ... sem estenção.
+
+struct dirent \{ long d\_\-ino; //número de inodes off\_\-t d\_\-off; // offset para este dirent unsigned short d\_\-reclen; // tamanho de d\_\-name char d\_\-name\mbox{[}NAME\_\-MAX+1\mbox{]}; // nome do arquivo \}
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em data}]equivale a bibliotecas de imagens a ser enviada. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Retorna 0 se ok e -\/1 se erro. 
+\end{DoxyReturn}
+
+
+Definition at line 304 of file sft\_\-ok.c.
+
+\hypertarget{group__tools_ga3aa69e98b6e896f4620e18ce70203826}{
+\index{tools@{tools}!sft\_\-send\_\-x@{sft\_\-send\_\-x}}
+\index{sft\_\-send\_\-x@{sft\_\-send\_\-x}!tools@{tools}}
+\subsubsection[{sft\_\-send\_\-x}]{\setlength{\rightskip}{0pt plus 5cm}int sft\_\-send\_\-x (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{ data}
+\end{DoxyParamCaption}
+)}}
+\label{group__tools_ga3aa69e98b6e896f4620e18ce70203826}
+
+
+Definition at line 507 of file sft\_\-ok.c.
+
+\hypertarget{group__tools_gabba736c5a748cafb42da716e76cb3bc0}{
+\index{tools@{tools}!sft\_\-sendu@{sft\_\-sendu}}
+\index{sft\_\-sendu@{sft\_\-sendu}!tools@{tools}}
+\subsubsection[{sft\_\-sendu}]{\setlength{\rightskip}{0pt plus 5cm}int sft\_\-sendu (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{ data}
+\end{DoxyParamCaption}
+)}}
+\label{group__tools_gabba736c5a748cafb42da716e76cb3bc0}
+Abre arquivo com o conteudo, coloca no pacote e solicita envio. Esta funcao nao possui controle de envio nem seguranca na transmissao de arquivos.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em data}]Nome do arquivo a ser lido \end{DoxyParams}
+
+
+Definition at line 624 of file sft\_\-ok.c.
+
+\hypertarget{group__tools_ga87766379c1067492aa58573ab7103a55}{
+\index{tools@{tools}!trata\_\-sft@{trata\_\-sft}}
+\index{trata\_\-sft@{trata\_\-sft}!tools@{tools}}
+\subsubsection[{trata\_\-sft}]{\setlength{\rightskip}{0pt plus 5cm}int trata\_\-sft (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{group__tools_ga87766379c1067492aa58573ab7103a55}
+Trata o pedido de tarefa feita pelo agente externo.
+
+\begin{DoxyReturn}{Returns}
+Retorna -\/1 em erro e 0 se ok. 
+\end{DoxyReturn}
+
+
+Definition at line 397 of file sft\_\-ok.c.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{group__tools_gadab5417956854dcc8d2283b3d89c39de}{
+\index{tools@{tools}!buff@{buff}}
+\index{buff@{buff}!tools@{tools}}
+\subsubsection[{buff}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf buff}\mbox{[}TAMMSG\mbox{]}}}
+\label{group__tools_gadab5417956854dcc8d2283b3d89c39de}
+
+
+Definition at line 48 of file sft.c.
+
+\hypertarget{group__tools_gadab5417956854dcc8d2283b3d89c39de}{
+\index{tools@{tools}!buff@{buff}}
+\index{buff@{buff}!tools@{tools}}
+\subsubsection[{buff}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf buff}\mbox{[}TAMMSG\mbox{]}}}
+\label{group__tools_gadab5417956854dcc8d2283b3d89c39de}
+
+
+Definition at line 47 of file sft\_\-ok.c.
+
+\hypertarget{group__tools_ga80da5edc9ed66d0e87785ab0e5d3de73}{
+\index{tools@{tools}!gif@{gif}}
+\index{gif@{gif}!tools@{tools}}
+\subsubsection[{gif}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf gif}}}
+\label{group__tools_ga80da5edc9ed66d0e87785ab0e5d3de73}
+
+
+Definition at line 41 of file sft.c.
+
+\hypertarget{group__tools_ga80da5edc9ed66d0e87785ab0e5d3de73}{
+\index{tools@{tools}!gif@{gif}}
+\index{gif@{gif}!tools@{tools}}
+\subsubsection[{gif}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf gif}}}
+\label{group__tools_ga80da5edc9ed66d0e87785ab0e5d3de73}
+
+
+Definition at line 40 of file sft\_\-ok.c.
+
+\hypertarget{group__tools_gaa0f575fa3882aa394cc287edba645a35}{
+\index{tools@{tools}!hp@{hp}}
+\index{hp@{hp}!tools@{tools}}
+\subsubsection[{hp}]{\setlength{\rightskip}{0pt plus 5cm}struct hostent$\ast$ {\bf hp}}}
+\label{group__tools_gaa0f575fa3882aa394cc287edba645a35}
+
+
+Definition at line 43 of file sft.c.
+
+\hypertarget{group__tools_gaa0f575fa3882aa394cc287edba645a35}{
+\index{tools@{tools}!hp@{hp}}
+\index{hp@{hp}!tools@{tools}}
+\subsubsection[{hp}]{\setlength{\rightskip}{0pt plus 5cm}struct hostent$\ast$ {\bf hp}}}
+\label{group__tools_gaa0f575fa3882aa394cc287edba645a35}
+
+
+Definition at line 38 of file sft\_\-.c.
+
+\hypertarget{group__tools_gaa0f575fa3882aa394cc287edba645a35}{
+\index{tools@{tools}!hp@{hp}}
+\index{hp@{hp}!tools@{tools}}
+\subsubsection[{hp}]{\setlength{\rightskip}{0pt plus 5cm}struct hostent$\ast$ {\bf hp}}}
+\label{group__tools_gaa0f575fa3882aa394cc287edba645a35}
+
+
+Definition at line 42 of file sft\_\-ok.c.
+
+\hypertarget{group__tools_gacb559820d9ca11295b4500f179ef6392}{
+\index{tools@{tools}!i@{i}}
+\index{i@{i}!tools@{tools}}
+\subsubsection[{i}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf i}}}
+\label{group__tools_gacb559820d9ca11295b4500f179ef6392}
+
+
+Definition at line 41 of file sft.c.
+
+\hypertarget{group__tools_gacb559820d9ca11295b4500f179ef6392}{
+\index{tools@{tools}!i@{i}}
+\index{i@{i}!tools@{tools}}
+\subsubsection[{i}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf i}}}
+\label{group__tools_gacb559820d9ca11295b4500f179ef6392}
+
+
+Definition at line 40 of file sft\_\-ok.c.
+
+\hypertarget{group__tools_gad4a4ca83bbe60e2e30bcb135a16d4ae0}{
+\index{tools@{tools}!id\_\-stc@{id\_\-stc}}
+\index{id\_\-stc@{id\_\-stc}!tools@{tools}}
+\subsubsection[{id\_\-stc}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf id\_\-stc}}}
+\label{group__tools_gad4a4ca83bbe60e2e30bcb135a16d4ae0}
+
+
+Definition at line 43 of file sft\_\-ok.c.
+
+\hypertarget{group__tools_gad4a4ca83bbe60e2e30bcb135a16d4ae0}{
+\index{tools@{tools}!id\_\-stc@{id\_\-stc}}
+\index{id\_\-stc@{id\_\-stc}!tools@{tools}}
+\subsubsection[{id\_\-stc}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf id\_\-stc}}}
+\label{group__tools_gad4a4ca83bbe60e2e30bcb135a16d4ae0}
+
+
+Definition at line 44 of file sft.c.
+
+\hypertarget{group__tools_gaee111dc44c3bce736f7f414e0641a022}{
+\index{tools@{tools}!msg\_\-rec@{msg\_\-rec}}
+\index{msg\_\-rec@{msg\_\-rec}!tools@{tools}}
+\subsubsection[{msg\_\-rec}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf msg\_\-rec}\mbox{[}TAMMSG\mbox{]}}}
+\label{group__tools_gaee111dc44c3bce736f7f414e0641a022}
+
+
+Definition at line 45 of file sft\_\-ok.c.
+
+\hypertarget{group__tools_gaee111dc44c3bce736f7f414e0641a022}{
+\index{tools@{tools}!msg\_\-rec@{msg\_\-rec}}
+\index{msg\_\-rec@{msg\_\-rec}!tools@{tools}}
+\subsubsection[{msg\_\-rec}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf msg\_\-rec}\mbox{[}TAMMSG\mbox{]}}}
+\label{group__tools_gaee111dc44c3bce736f7f414e0641a022}
+
+
+Definition at line 46 of file sft.c.
+
+\hypertarget{group__tools_gaf535bd429e84ab4b380e215d1fda88c9}{
+\index{tools@{tools}!msg\_\-send@{msg\_\-send}}
+\index{msg\_\-send@{msg\_\-send}!tools@{tools}}
+\subsubsection[{msg\_\-send}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf msg\_\-send}\mbox{[}TAMMSG\mbox{]}}}
+\label{group__tools_gaf535bd429e84ab4b380e215d1fda88c9}
+
+
+Definition at line 46 of file sft\_\-ok.c.
+
+\hypertarget{group__tools_gaf535bd429e84ab4b380e215d1fda88c9}{
+\index{tools@{tools}!msg\_\-send@{msg\_\-send}}
+\index{msg\_\-send@{msg\_\-send}!tools@{tools}}
+\subsubsection[{msg\_\-send}]{\setlength{\rightskip}{0pt plus 5cm}char {\bf msg\_\-send}\mbox{[}TAMMSG\mbox{]}}}
+\label{group__tools_gaf535bd429e84ab4b380e215d1fda88c9}
+
+
+Definition at line 47 of file sft.c.
+
+\hypertarget{group__tools_gacfb6b9e2b00e34da4313b463c341e597}{
+\index{tools@{tools}!s1@{s1}}
+\index{s1@{s1}!tools@{tools}}
+\subsubsection[{s1}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf s1}}}
+\label{group__tools_gacfb6b9e2b00e34da4313b463c341e597}
+
+
+Definition at line 40 of file sft\_\-ok.c.
+
+\hypertarget{group__tools_gacfb6b9e2b00e34da4313b463c341e597}{
+\index{tools@{tools}!s1@{s1}}
+\index{s1@{s1}!tools@{tools}}
+\subsubsection[{s1}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf s1}}}
+\label{group__tools_gacfb6b9e2b00e34da4313b463c341e597}
+
+
+Definition at line 41 of file sft.c.
+
+\hypertarget{group__tools_ga437cecc27162b023659813375ca67d62}{
+\index{tools@{tools}!server@{server}}
+\index{server@{server}!tools@{tools}}
+\subsubsection[{server}]{\setlength{\rightskip}{0pt plus 5cm}struct sockaddr\_\-in {\bf server}}}
+\label{group__tools_ga437cecc27162b023659813375ca67d62}
+
+
+Definition at line 41 of file sft\_\-ok.c.
+
+\hypertarget{group__tools_ga437cecc27162b023659813375ca67d62}{
+\index{tools@{tools}!server@{server}}
+\index{server@{server}!tools@{tools}}
+\subsubsection[{server}]{\setlength{\rightskip}{0pt plus 5cm}struct sockaddr\_\-in {\bf server}}}
+\label{group__tools_ga437cecc27162b023659813375ca67d62}
+
+
+Definition at line 37 of file sft\_\-.c.
+
+\hypertarget{group__tools_ga437cecc27162b023659813375ca67d62}{
+\index{tools@{tools}!server@{server}}
+\index{server@{server}!tools@{tools}}
+\subsubsection[{server}]{\setlength{\rightskip}{0pt plus 5cm}struct sockaddr\_\-in {\bf server}}}
+\label{group__tools_ga437cecc27162b023659813375ca67d62}
+
+
+Definition at line 42 of file sft.c.
+
+\hypertarget{group__tools_ga4f4956a7fff1361d70eee8e88bb4f7f4}{
+\index{tools@{tools}!sft@{sft}}
+\index{sft@{sft}!tools@{tools}}
+\subsubsection[{sft}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf sft\_\-hdr}$\ast$ {\bf sft}}}
+\label{group__tools_ga4f4956a7fff1361d70eee8e88bb4f7f4}
+
+
+Definition at line 48 of file sft\_\-ok.c.
+
