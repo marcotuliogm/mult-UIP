@@ -1,9 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$msersock_8c.html#ae79c21dfb92ac7de84872cac47db1cfa" title="envia_pro_cliente" alt="" coords="184,5,317,35"/>
-<area shape="rect" id="node7" href="$mprintf_8c.html#a486df650a64b4719f771096d27ed4076" title="sprintf" alt="" coords="220,59,281,88"/>
-<area shape="rect" id="node5" href="$clisock_8c.html#a51619db9d83ab69e2189d5653c1991e6" title="erro_fatal" alt="" coords="365,5,448,35"/>
-<area shape="rect" id="node9" href="$mprintf_8c.html#a4258ec4e57ed55fef8f175226f66263d" title="sputchar" alt="" coords="368,59,445,88"/>
-<area shape="rect" id="node11" href="$mprintf_8c.html#afac470569c34e290d1b8b7c53cbeb6e1" title="va_printf" alt="" coords="368,112,445,141"/>
-<area shape="rect" id="node13" href="$mprintf_8c.html#a829eca90dc67b4fcf6dd1460e621d144" title="dprint" alt="" coords="496,85,555,115"/>
-<area shape="rect" id="node15" href="$mprintf_8c.html#ad44aca28598820cf82ac3cff0c30350a" title="u2str" alt="" coords="499,139,552,168"/>
-</map>

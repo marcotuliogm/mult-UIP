@@ -1,8 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$mprintf_8c.html#a8456d79947fb428e0927d19e7a1e9423" title="atoi" alt="" coords="119,5,164,35"/>
-<area shape="rect" id="node5" href="$mprintf_8c.html#a486df650a64b4719f771096d27ed4076" title="sprintf" alt="" coords="111,59,172,88"/>
-<area shape="rect" id="node7" href="$mprintf_8c.html#a4258ec4e57ed55fef8f175226f66263d" title="sputchar" alt="" coords="223,32,300,61"/>
-<area shape="rect" id="node9" href="$mprintf_8c.html#afac470569c34e290d1b8b7c53cbeb6e1" title="va_printf" alt="" coords="223,85,300,115"/>
-<area shape="rect" id="node11" href="$mprintf_8c.html#a829eca90dc67b4fcf6dd1460e621d144" title="dprint" alt="" coords="349,59,408,88"/>
-<area shape="rect" id="node13" href="$mprintf_8c.html#ad44aca28598820cf82ac3cff0c30350a" title="u2str" alt="" coords="352,112,405,141"/>
-</map>

@@ -1,5 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node2" href="$structdhcpc__state.html" title="{dhcpc_state\n|+ pt\l+ state\l+ conn\l+ timer\l+ ticks\l+ mac_addr\l+ mac_len\l+ serverid\l+ lease_time\l+ ipaddr\l+ netmask\l+ dnsaddr\l+ default_router\l|}" alt="" coords="80,227,205,520"/>
-<area shape="rect" id="node4" href="$structpt.html" title="{pt\n|+ lc\l|}" alt="" coords="164,40,209,125"/>
-<area shape="rect" id="node7" href="$structtimer.html" title="{timer\n|+ start\l+ interval\l|}" alt="" coords="233,31,316,134"/>
-</map>

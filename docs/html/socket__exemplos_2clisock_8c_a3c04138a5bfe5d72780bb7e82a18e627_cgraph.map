@@ -1,8 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$clisock_8c.html#a608dfd6f8108c572b6fd064296938c89" title="cria_soquete" alt="" coords="109,45,213,75"/>
-<area shape="rect" id="node5" href="$clisock_8c.html#a51619db9d83ab69e2189d5653c1991e6" title="erro_fatal" alt="" coords="281,137,364,167"/>
-<area shape="rect" id="node12" href="$clisock_8c.html#a6d5238b436cd720f086f1183ecc98ae0" title="escreve_soq" alt="" coords="111,149,212,179"/>
-<area shape="rect" id="node15" href="$clisock_8c.html#abe211844004b93821e381d24330336d2" title="espera" alt="" coords="128,203,195,232"/>
-<area shape="rect" id="node7" href="$group__tools.html#gad7ff056dc2e24806b50deab1a1dcc4d5" title="gethostbyname" alt="" coords="261,5,384,35"/>
-<area shape="rect" id="node9" href="$group__uip.html#gaa22b04cac8cf283ca12f028578bebc06" title="htons" alt="" coords="293,59,352,88"/>
-</map>

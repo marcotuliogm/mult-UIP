@@ -1,6 +1,0 @@
-<map id="structs" name="structs">
-<area shape="rect" id="node2" href="$group__SFTD.html" title="Protocolo SFT" alt="" coords="135,5,244,35"/>
-<area shape="rect" id="node3" href="$group__httpd.html" title="Web server" alt="" coords="144,59,235,88"/>
-<area shape="rect" id="node4" href="$group__CHAT.html" title="CHAT usando sockets" alt="" coords="109,112,269,141"/>
-<area shape="rect" id="node5" href="$group__telnetd.html" title="Telnet server" alt="" coords="139,165,240,195"/>
-</map>

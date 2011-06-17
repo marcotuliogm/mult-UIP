@@ -1,8 +1,0 @@
-Multiplas Aplicacoes com o UIP
-
-para compilar:
-	cd proj
-	make
-
-para gravar:
-	make isp
