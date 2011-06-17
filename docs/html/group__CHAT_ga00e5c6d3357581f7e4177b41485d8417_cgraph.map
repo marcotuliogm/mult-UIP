@@ -1,0 +1,10 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$group__CHAT.html#ga4441743abd914961e74e7c4eaae43ae7" title="Funcao para gerenciar os estados da conexao do chat." alt="" coords="159,59,313,88"/>
+<area shape="rect" id="node5" href="$mprintf_8c.html#a486df650a64b4719f771096d27ed4076" title="sprintf" alt="" coords="569,32,631,61"/>
+<area shape="rect" id="node15" href="$group__CLI.html#ga1429ebccb99aee0282eeff302630c26f" title="Pega mensagem da serial." alt="" coords="364,84,484,113"/>
+<area shape="rect" id="node7" href="$mprintf_8c.html#a4258ec4e57ed55fef8f175226f66263d" title="sputchar" alt="" coords="716,5,793,35"/>
+<area shape="rect" id="node9" href="$mprintf_8c.html#afac470569c34e290d1b8b7c53cbeb6e1" title="va_printf" alt="" coords="716,59,793,88"/>
+<area shape="rect" id="node11" href="$mprintf_8c.html#a829eca90dc67b4fcf6dd1460e621d144" title="dprint" alt="" coords="843,32,901,61"/>
+<area shape="rect" id="node13" href="$mprintf_8c.html#ad44aca28598820cf82ac3cff0c30350a" title="u2str" alt="" coords="845,85,899,115"/>
+<area shape="rect" id="node18" href="$uart_8c.html#ac5189a352f22d05e0dac3ff6ffeab994" title="UARTReceiveByte" alt="" coords="535,85,665,115"/>
+</map>

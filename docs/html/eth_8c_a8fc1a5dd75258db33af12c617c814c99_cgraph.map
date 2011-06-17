@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$group__CLI.html#gac548b8fa3585f3a56498153281b68db8" title="Configura com o Gateway inicial." alt="" coords="161,5,311,35"/>
+<area shape="rect" id="node7" href="$group__CLI.html#ga056bc670f671c73a63bb884f8164dbb3" title="Configura com o IP inicial." alt="" coords="183,59,289,88"/>
+<area shape="rect" id="node11" href="$group__CLI.html#ga595578a069e4bda66aa7f801f3d19899" title="Configura com a mascara inicial." alt="" coords="172,112,300,141"/>
+<area shape="rect" id="node5" href="$cli__func_8c.html#a71559270e0f357a3da53ea277273f02f" title="Funcao para alterar o GATEWAY do kit." alt="" coords="360,5,464,35"/>
+<area shape="rect" id="node9" href="$cli__func_8c.html#acd6bb1b137f7d98b5c65a0f769491274" title="Funcao para configuracao do IP." alt="" coords="383,59,441,88"/>
+<area shape="rect" id="node13" href="$cli__func_8c.html#a2fef225f25b9aa2c8ece7d7a3cd1d4b4" title="Permite alterar a mascara de rede." alt="" coords="371,112,453,141"/>
+</map>

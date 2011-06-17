@@ -1,0 +1,51 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$group__CLI.html#ga51e54cd2d0893765bc23ac6d5d09d764" title="Atende solicitacao da CLI." alt="" coords="144,85,235,115"/>
+<area shape="rect" id="node13" href="$proj_2timer_2timer_8c.html#a1074cdcb942e956a19764c56388e7d38" title="delayMs" alt="" coords="513,997,588,1027"/>
+<area shape="rect" id="node15" href="$api_8h.html#ab3800d93d5f9e035438e615ce900886e" title="Mensagem inicial da serial." alt="" coords="157,475,221,504"/>
+<area shape="rect" id="node21" href="$mprintf_8c.html#a486df650a64b4719f771096d27ed4076" title="sprintf" alt="" coords="665,585,727,615"/>
+<area shape="rect" id="node27" href="$lcd_8c.html#a33e140c8175d738415fb9c72e73a8cef" title="Limpa todos os dados do display." alt="" coords="520,376,581,405"/>
+<area shape="rect" id="node33" href="$lcd_8c.html#ad811dd0c9e670cbb853c0435f42b9ad8" title="Posiciona o cursorno display." alt="" coords="513,429,588,459"/>
+<area shape="rect" id="node36" href="$lcd_8c.html#a347388301b1cb3c59b86432e9fc9b957" title="Escreve uma string de dados passados por parametro." alt="" coords="509,269,592,299"/>
+<area shape="rect" id="node38" href="$lcd_8c.html#a3a0eee458ca59d20c1404197b264427c" title="Escreve um caracter no display." alt="" coords="659,243,733,272"/>
+<area shape="rect" id="node42" href="$eth_8c.html#a32eeb932c3e9b0e51d32c92236d69bc5" title="Inicializa protocolo Ethernet." alt="" coords="139,891,240,920"/>
+<area shape="rect" id="node46" href="$proj_2timer_2timer_8c.html#a21922fcfd328ddde697161b8ac305a26" title="T0Init" alt="" coords="523,659,579,688"/>
+<area shape="rect" id="node50" href="$proj_2timer_2timer_8c.html#a91c2747b88b977baf27d17ad42d04453" title="T0Start" alt="" coords="516,723,585,752"/>
+<area shape="rect" id="node68" href="$main_8c.html#a82d16a95aba432b8eb2464734a1c79a6" title="GPIOInit" alt="" coords="153,837,225,867"/>
+<area shape="rect" id="node70" href="$i2c_8c.html#abd41dacdcd839a842f018b945eb34a52" title="I2CInit" alt="" coords="159,1155,220,1184"/>
+<area shape="rect" id="node74" href="$lcd_8c.html#aafed2ade168a085630c2fe8d776432f2" title="Inicialia o display de lcd." alt="" coords="517,323,584,352"/>
+<area shape="rect" id="node80" href="$grlib_8c.html#ad2d43e4e6d7f7842340d9b143abdf026" title="lcd_nokia_init" alt="" coords="136,1475,243,1504"/>
+<area shape="rect" id="node88" href="$main_8c.html#a2a5fde836133d73652f77a3405b0a0d8" title="LCDbcd" alt="" coords="516,216,585,245"/>
+<area shape="rect" id="node91" href="$main_8c.html#afd97a5c7082aa9e61208673dc43111cf" title="PLLInit" alt="" coords="159,1101,220,1131"/>
+<area shape="rect" id="node93" href="$main_8c.html#a8b6f14f136ca6203c8c1c5ba84fe814d" title="read_temp" alt="" coords="144,1552,235,1581"/>
+<area shape="rect" id="node97" href="$rtc_8c.html#aa76a2752904719797763920ae2225b80" title="RTCClearTime" alt="" coords="136,1208,243,1237"/>
+<area shape="rect" id="node99" href="$rtc_8c.html#a0ace81a0e0d8d3b18c4054c63959fe11" title="RTCGetTime" alt="" coords="140,1261,239,1291"/>
+<area shape="rect" id="node101" href="$rtc_8c.html#ae39b64b3d054ebab4c5672ccac1b576e" title="RTCInit" alt="" coords="159,1315,220,1344"/>
+<area shape="rect" id="node103" href="$rtc_8c.html#a35a5a2256826045b4b16c8005296c5d9" title="RTCStart" alt="" coords="152,1368,227,1397"/>
+<area shape="rect" id="node108" href="$uart_8c.html#a1532f82fcc50bf881e82f1f92d53bd9b" title="UARTInit" alt="" coords="152,1421,227,1451"/>
+<area shape="rect" id="node110" href="$group__CLI.html#ga1429ebccb99aee0282eeff302630c26f" title="Pega mensagem da serial." alt="" coords="129,1048,249,1077"/>
+<area shape="rect" id="node115" href="$cli_8c.html#adb15247f5d19cf62403ec01586f3de36" title="Pega mensagem da serial assincrono." alt="" coords="111,995,268,1024"/>
+<area shape="rect" id="node5" href="$group__CLI.html#ga8baf10611274f6c9d0470f2bb87cfde5" title="Funcao gerencia a mensagem de resposta." alt="" coords="331,59,448,88"/>
+<area shape="rect" id="node9" href="$group__memb.html#gaceb952d27de8125d5146ac0bee325b8f" title="memb_free" alt="" coords="341,112,437,141"/>
+<area shape="rect" id="node11" href="$group__CLI.html#ga6fdb603107a7e72ff375cebbe2e98834" title="Monta a estrutura para acesso a tabela da CLI." alt="" coords="336,5,443,35"/>
+<area shape="rect" id="node7" href="$group__CLI.html#ga5e8645941f27ac06c8c1840431b89693" title="Funcao que executa solicitacao feita na CLI." alt="" coords="511,59,591,88"/>
+<area shape="rect" id="node17" href="$cli__func_8c.html#aa5423d3ad34d4d6c41212e0aca1c994b" title="Funcao para trocar mensagem inicial do LCD." alt="" coords="343,475,436,504"/>
+<area shape="rect" id="node19" href="$cli__func_8c.html#afe9b1fab4ded79f4682178dcdfcd33de" title="funcao que retorna o IP." alt="" coords="520,533,581,563"/>
+<area shape="rect" id="node23" href="$mprintf_8c.html#a4258ec4e57ed55fef8f175226f66263d" title="sputchar" alt="" coords="805,612,883,641"/>
+<area shape="rect" id="node25" href="$mprintf_8c.html#afac470569c34e290d1b8b7c53cbeb6e1" title="va_printf" alt="" coords="805,559,883,588"/>
+<area shape="rect" id="node29" href="$lcd_8c.html#a61861ecf300804956fed472f7d2e5386" title="Executa um comando passado por parametro." alt="" coords="640,376,752,405"/>
+<area shape="rect" id="node31" href="$proj_2timer_2timer_8c.html#afa233a63f0d95ecc016e3ddff339baa0" title="delay_1us" alt="" coords="801,323,887,352"/>
+<area shape="rect" id="node44" href="$group__clock.html#ga78ab77b57cf2e00089f0a3a22508524c" title="Inicializa o clock." alt="" coords="349,680,429,709"/>
+<area shape="rect" id="node48" href="$eth_8c.html#ad785f2de5119cfaa47b6ec89adaa5901" title="Coloco o clock em operação." alt="" coords="344,733,435,763"/>
+<area shape="rect" id="node53" href="$dhcpc_8h.html#a7a912c715a49bcda6859314af91a50a4" title="dhcpc_init" alt="" coords="347,891,432,920"/>
+<area shape="rect" id="node55" href="$eth_8c.html#ac6e653977469392a4c1eac45e93500ef" title="EMAC_ISR_Handler" alt="" coords="319,944,460,973"/>
+<area shape="rect" id="node57" href="$emac_8c.html#a950d069e1027387e55f8ae720132f0d6" title="configure port&#45;pins for use with LAN&#45;controller, reset it and send the configuration&#45;sequence" alt="" coords="347,997,432,1027"/>
+<area shape="rect" id="node60" href="$group__MULT.html#gae0c4b93de7dd11fed695e437a9afc53a" title="Inicializa os servicos disponiveis pela camada mult." alt="" coords="340,1051,439,1080"/>
+<area shape="rect" id="node62" href="$eth_8c.html#a8fc1a5dd75258db33af12c617c814c99" title="Configura enderecos iniciais da rede." alt="" coords="336,1104,443,1133"/>
+<area shape="rect" id="node64" href="$group__timer.html#ga6614d96fdfcd95c95ec6e6f63071ff51" title="timer_set" alt="" coords="348,1157,431,1187"/>
+<area shape="rect" id="node66" href="$group__uip.html#gac48ed5f0d27721ef62a3ed02a5ad8d2e" title="uip_init" alt="" coords="356,837,423,867"/>
+<area shape="rect" id="node72" href="$i2c__isr_8c.html#a42fe92ca14c2a512cfdad587743a4ac4" title="I2C0MasterHandler" alt="" coords="317,1416,461,1445"/>
+<area shape="rect" id="node82" href="$grlib_8c.html#acad535ceec341f060974ce634d9dc539" title="espera_ms" alt="" coords="343,1523,436,1552"/>
+<area shape="rect" id="node84" href="$grlib_8c.html#a2f4de9ef480eb84a8791023409e6d88e" title="spiconfig" alt="" coords="351,1469,428,1499"/>
+<area shape="rect" id="node95" href="$i2c_8c.html#a76f4ed1937be50f48f29b49ae7adaee1" title="I2CEngine" alt="" coords="347,1576,432,1605"/>
+<area shape="rect" id="node113" href="$uart_8c.html#ac5189a352f22d05e0dac3ff6ffeab994" title="UARTReceiveByte" alt="" coords="324,1312,455,1341"/>
+</map>

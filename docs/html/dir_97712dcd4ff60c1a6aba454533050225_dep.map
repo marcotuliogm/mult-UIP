@@ -1,0 +1,16 @@
+<map id="G" name="G">
+<area shape="rect" id="node1" href="dir_97712dcd4ff60c1a6aba454533050225.html" title="eth" alt="" coords="245,5,317,53"/>
+<area shape="rect" id="node2" href="dir_560810916ba01beff7ca569888e355f5.html" title="timer" alt="" coords="5,101,77,149"/>
+<area shape="rect" id="edge8" href="dir_000002_000019.html" title="1" alt="" coords="93,98,102,116"/>
+<area shape="rect" id="node3" href="dir_359f847c929ad503c1cd60ac5419abec.html" title="lcd" alt="" coords="101,101,173,149"/>
+<area shape="rect" id="edge10" href="dir_000002_000007.html" title="1" alt="" coords="189,89,198,107"/>
+<area shape="rect" id="node4" href="dir_e5bee271c9f875c5decb5f851a107e89.html" title="mac" alt="" coords="197,101,269,149"/>
+<area shape="rect" id="edge12" href="dir_000002_000008.html" title="1" alt="" coords="257,80,266,97"/>
+<area shape="rect" id="node5" href="dir_ca132e38f68715653050daf902518c1b.html" title="mult" alt="" coords="293,101,365,149"/>
+<area shape="rect" id="edge14" href="dir_000002_000011.html" title="1" alt="" coords="312,72,321,89"/>
+<area shape="rect" id="node6" href="dir_0b18c1ce52a841c44154e2b85cb3b147.html" title="uip" alt="" coords="336,197,408,245"/>
+<area shape="rect" id="edge16" href="dir_000002_000020.html" title="3" alt="" coords="377,171,386,189"/>
+<area shape="rect" id="edge2" href="dir_000019_000020.html" title="1" alt="" coords="315,194,324,212"/>
+<area shape="rect" id="edge4" href="dir_000011_000020.html" title="1" alt="" coords="357,168,366,185"/>
+<area shape="rect" id="edge6" href="dir_000020_000002.html" title="2" alt="" coords="325,48,335,65"/>
+</map>

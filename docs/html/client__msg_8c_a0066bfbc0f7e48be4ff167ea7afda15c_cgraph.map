@@ -1,0 +1,10 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$client__msg_8c.html#af51a981dcd2f3d8c7de54a14bce3656e" title="gera_menu" alt="" coords="137,5,231,35"/>
+<area shape="rect" id="node5" href="$client__msg_8c.html#a40c8d5ccc88429f23dd6209454305bee" title="gravar_mensagem" alt="" coords="113,59,255,88"/>
+<area shape="rect" id="node17" href="$client__msg_8c.html#a7c71fa0f6a1b4c448e6773b3636e7959" title="ler_mensagens" alt="" coords="124,112,244,141"/>
+<area shape="rect" id="node7" href="$mprintf_8c.html#a486df650a64b4719f771096d27ed4076" title="sprintf" alt="" coords="305,59,367,88"/>
+<area shape="rect" id="node9" href="$mprintf_8c.html#a4258ec4e57ed55fef8f175226f66263d" title="sputchar" alt="" coords="417,32,495,61"/>
+<area shape="rect" id="node11" href="$mprintf_8c.html#afac470569c34e290d1b8b7c53cbeb6e1" title="va_printf" alt="" coords="417,85,495,115"/>
+<area shape="rect" id="node13" href="$mprintf_8c.html#a829eca90dc67b4fcf6dd1460e621d144" title="dprint" alt="" coords="544,59,603,88"/>
+<area shape="rect" id="node15" href="$mprintf_8c.html#ad44aca28598820cf82ac3cff0c30350a" title="u2str" alt="" coords="547,112,600,141"/>
+</map>
