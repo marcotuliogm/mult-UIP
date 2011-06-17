@@ -1,0 +1,71 @@
+\hypertarget{httpd-fsdata_8c}{
+\section{httpd/httpd-\/fsdata.c File Reference}
+\label{httpd-fsdata_8c}\index{httpd/httpd-\/fsdata.c@{httpd/httpd-\/fsdata.c}}
+}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{httpd-fsdata_8c_ad3cba2495e43b8b94875657c9e32c5ec}{HTTPD\_\-FS\_\-ROOT}~\hyperlink{httpd-fsdata_8c_aff9178f8d1f6c4665e6bd22e22f4b78b}{file\_\-tcc\_\-shtml}
+\item 
+\#define \hyperlink{httpd-fsdata_8c_a9c9e7b40a5d87537604a358e14902fb7}{HTTPD\_\-FS\_\-NUMFILES}~3
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structhttpd__fsdata__file}{httpd\_\-fsdata\_\-file} \hyperlink{httpd-fsdata_8c_afaff04f8c298dff87119cd02af091093}{file\_\-index\_\-html} \mbox{[}$\,$\mbox{]} = \{\{NULL, data\_\-index\_\-html, data\_\-index\_\-html + 12, sizeof(data\_\-index\_\-html) -\/ 12\}\}
+\item 
+struct \hyperlink{structhttpd__fsdata__file}{httpd\_\-fsdata\_\-file} \hyperlink{httpd-fsdata_8c_a90d9c213dbaa0c0e2ed4a1c4d3d28c54}{file\_\-404\_\-html} \mbox{[}$\,$\mbox{]} = \{\{\hyperlink{httpd-fsdata_8c_afaff04f8c298dff87119cd02af091093}{file\_\-index\_\-html}, data\_\-404\_\-html, data\_\-404\_\-html + 10, sizeof(data\_\-404\_\-html) -\/ 10\}\}
+\item 
+struct \hyperlink{structhttpd__fsdata__file}{httpd\_\-fsdata\_\-file} \hyperlink{httpd-fsdata_8c_aff9178f8d1f6c4665e6bd22e22f4b78b}{file\_\-tcc\_\-shtml} \mbox{[}$\,$\mbox{]} = \{\{\hyperlink{httpd-fsdata_8c_a90d9c213dbaa0c0e2ed4a1c4d3d28c54}{file\_\-404\_\-html}, data\_\-tcc\_\-shtml, data\_\-tcc\_\-shtml + 11, sizeof(data\_\-tcc\_\-shtml) -\/ 11\}\}
+\end{DoxyCompactItemize}
+
+
+\subsection{Define Documentation}
+\hypertarget{httpd-fsdata_8c_a9c9e7b40a5d87537604a358e14902fb7}{
+\index{httpd-\/fsdata.c@{httpd-\/fsdata.c}!HTTPD\_\-FS\_\-NUMFILES@{HTTPD\_\-FS\_\-NUMFILES}}
+\index{HTTPD\_\-FS\_\-NUMFILES@{HTTPD\_\-FS\_\-NUMFILES}!httpd-fsdata.c@{httpd-\/fsdata.c}}
+\subsubsection[{HTTPD\_\-FS\_\-NUMFILES}]{\setlength{\rightskip}{0pt plus 5cm}\#define HTTPD\_\-FS\_\-NUMFILES~3}}
+\label{httpd-fsdata_8c_a9c9e7b40a5d87537604a358e14902fb7}
+
+
+Definition at line 288 of file httpd-\/fsdata.c.
+
+\hypertarget{httpd-fsdata_8c_ad3cba2495e43b8b94875657c9e32c5ec}{
+\index{httpd-\/fsdata.c@{httpd-\/fsdata.c}!HTTPD\_\-FS\_\-ROOT@{HTTPD\_\-FS\_\-ROOT}}
+\index{HTTPD\_\-FS\_\-ROOT@{HTTPD\_\-FS\_\-ROOT}!httpd-fsdata.c@{httpd-\/fsdata.c}}
+\subsubsection[{HTTPD\_\-FS\_\-ROOT}]{\setlength{\rightskip}{0pt plus 5cm}\#define HTTPD\_\-FS\_\-ROOT~{\bf file\_\-tcc\_\-shtml}}}
+\label{httpd-fsdata_8c_ad3cba2495e43b8b94875657c9e32c5ec}
+
+
+Definition at line 286 of file httpd-\/fsdata.c.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{httpd-fsdata_8c_a90d9c213dbaa0c0e2ed4a1c4d3d28c54}{
+\index{httpd-\/fsdata.c@{httpd-\/fsdata.c}!file\_\-404\_\-html@{file\_\-404\_\-html}}
+\index{file\_\-404\_\-html@{file\_\-404\_\-html}!httpd-fsdata.c@{httpd-\/fsdata.c}}
+\subsubsection[{file\_\-404\_\-html}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf httpd\_\-fsdata\_\-file} {\bf file\_\-404\_\-html}\mbox{[}$\,$\mbox{]} = \{\{{\bf file\_\-index\_\-html}, data\_\-404\_\-html, data\_\-404\_\-html + 10, sizeof(data\_\-404\_\-html) -\/ 10\}\}}}
+\label{httpd-fsdata_8c_a90d9c213dbaa0c0e2ed4a1c4d3d28c54}
+
+
+Definition at line 282 of file httpd-\/fsdata.c.
+
+\hypertarget{httpd-fsdata_8c_afaff04f8c298dff87119cd02af091093}{
+\index{httpd-\/fsdata.c@{httpd-\/fsdata.c}!file\_\-index\_\-html@{file\_\-index\_\-html}}
+\index{file\_\-index\_\-html@{file\_\-index\_\-html}!httpd-fsdata.c@{httpd-\/fsdata.c}}
+\subsubsection[{file\_\-index\_\-html}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf httpd\_\-fsdata\_\-file} {\bf file\_\-index\_\-html}\mbox{[}$\,$\mbox{]} = \{\{NULL, data\_\-index\_\-html, data\_\-index\_\-html + 12, sizeof(data\_\-index\_\-html) -\/ 12\}\}}}
+\label{httpd-fsdata_8c_afaff04f8c298dff87119cd02af091093}
+
+
+Definition at line 280 of file httpd-\/fsdata.c.
+
+\hypertarget{httpd-fsdata_8c_aff9178f8d1f6c4665e6bd22e22f4b78b}{
+\index{httpd-\/fsdata.c@{httpd-\/fsdata.c}!file\_\-tcc\_\-shtml@{file\_\-tcc\_\-shtml}}
+\index{file\_\-tcc\_\-shtml@{file\_\-tcc\_\-shtml}!httpd-fsdata.c@{httpd-\/fsdata.c}}
+\subsubsection[{file\_\-tcc\_\-shtml}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf httpd\_\-fsdata\_\-file} {\bf file\_\-tcc\_\-shtml}\mbox{[}$\,$\mbox{]} = \{\{{\bf file\_\-404\_\-html}, data\_\-tcc\_\-shtml, data\_\-tcc\_\-shtml + 11, sizeof(data\_\-tcc\_\-shtml) -\/ 11\}\}}}
+\label{httpd-fsdata_8c_aff9178f8d1f6c4665e6bd22e22f4b78b}
+
+
+Definition at line 284 of file httpd-\/fsdata.c.
+

@@ -1,0 +1,117 @@
+\hypertarget{uart_8c}{
+\section{uart/uart.c File Reference}
+\label{uart_8c}\index{uart/uart.c@{uart/uart.c}}
+}
+{\ttfamily \#include \char`\"{}uart.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{uart_8c_a1532f82fcc50bf881e82f1f92d53bd9b}{UARTInit} (unsigned int baud, char channel, char location)
+\item 
+char \hyperlink{uart_8c_ab3db4bb82bf3ca752b1c3c6d44a9be40}{UARTIsDataReady} (char channel)
+\item 
+char \hyperlink{uart_8c_a1679cb7390dc838da1230d8418f51bf7}{UARTWaitForByte} (char channel)
+\item 
+char \hyperlink{uart_8c_ac5189a352f22d05e0dac3ff6ffeab994}{UARTReceiveByte} (char channel)
+\item 
+void \hyperlink{uart_8c_a87e83c2170b29bd8ace750960a019d70}{UARTTransmitByte} (char ch, char channel)
+\item 
+void \hyperlink{uart_8c_a2cc4e3ce3fa3af5bbdfb0fb708767065}{UARTTransmitString} (char $\ast$str, char channel)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{uart_8c_a1532f82fcc50bf881e82f1f92d53bd9b}{
+\index{uart.c@{uart.c}!UARTInit@{UARTInit}}
+\index{UARTInit@{UARTInit}!uart.c@{uart.c}}
+\subsubsection[{UARTInit}]{\setlength{\rightskip}{0pt plus 5cm}void UARTInit (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{ baud, }
+\item[{char}]{ channel, }
+\item[{char}]{ location}
+\end{DoxyParamCaption}
+)}}
+\label{uart_8c_a1532f82fcc50bf881e82f1f92d53bd9b}
+
+
+Definition at line 17 of file uart.c.
+
+\hypertarget{uart_8c_ab3db4bb82bf3ca752b1c3c6d44a9be40}{
+\index{uart.c@{uart.c}!UARTIsDataReady@{UARTIsDataReady}}
+\index{UARTIsDataReady@{UARTIsDataReady}!uart.c@{uart.c}}
+\subsubsection[{UARTIsDataReady}]{\setlength{\rightskip}{0pt plus 5cm}char UARTIsDataReady (
+\begin{DoxyParamCaption}
+\item[{char}]{ channel}
+\end{DoxyParamCaption}
+)}}
+\label{uart_8c_ab3db4bb82bf3ca752b1c3c6d44a9be40}
+
+
+Definition at line 145 of file uart.c.
+
+\hypertarget{uart_8c_ac5189a352f22d05e0dac3ff6ffeab994}{
+\index{uart.c@{uart.c}!UARTReceiveByte@{UARTReceiveByte}}
+\index{UARTReceiveByte@{UARTReceiveByte}!uart.c@{uart.c}}
+\subsubsection[{UARTReceiveByte}]{\setlength{\rightskip}{0pt plus 5cm}char UARTReceiveByte (
+\begin{DoxyParamCaption}
+\item[{char}]{ channel}
+\end{DoxyParamCaption}
+)}}
+\label{uart_8c_ac5189a352f22d05e0dac3ff6ffeab994}
+
+
+Definition at line 195 of file uart.c.
+
+\hypertarget{uart_8c_a87e83c2170b29bd8ace750960a019d70}{
+\index{uart.c@{uart.c}!UARTTransmitByte@{UARTTransmitByte}}
+\index{UARTTransmitByte@{UARTTransmitByte}!uart.c@{uart.c}}
+\subsubsection[{UARTTransmitByte}]{\setlength{\rightskip}{0pt plus 5cm}void UARTTransmitByte (
+\begin{DoxyParamCaption}
+\item[{char}]{ ch, }
+\item[{char}]{ channel}
+\end{DoxyParamCaption}
+)}}
+\label{uart_8c_a87e83c2170b29bd8ace750960a019d70}
+
+
+Definition at line 217 of file uart.c.
+
+\hypertarget{uart_8c_a2cc4e3ce3fa3af5bbdfb0fb708767065}{
+\index{uart.c@{uart.c}!UARTTransmitString@{UARTTransmitString}}
+\index{UARTTransmitString@{UARTTransmitString}!uart.c@{uart.c}}
+\subsubsection[{UARTTransmitString}]{\setlength{\rightskip}{0pt plus 5cm}void UARTTransmitString (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{ str, }
+\item[{char}]{ channel}
+\end{DoxyParamCaption}
+)}}
+\label{uart_8c_a2cc4e3ce3fa3af5bbdfb0fb708767065}
+
+
+Definition at line 247 of file uart.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{uart_8c_a2cc4e3ce3fa3af5bbdfb0fb708767065_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{uart_8c_a1679cb7390dc838da1230d8418f51bf7}{
+\index{uart.c@{uart.c}!UARTWaitForByte@{UARTWaitForByte}}
+\index{UARTWaitForByte@{UARTWaitForByte}!uart.c@{uart.c}}
+\subsubsection[{UARTWaitForByte}]{\setlength{\rightskip}{0pt plus 5cm}char UARTWaitForByte (
+\begin{DoxyParamCaption}
+\item[{char}]{ channel}
+\end{DoxyParamCaption}
+)}}
+\label{uart_8c_a1679cb7390dc838da1230d8418f51bf7}
+
+
+Definition at line 170 of file uart.c.
+

@@ -1,0 +1,164 @@
+\hypertarget{rtc_8c}{
+\section{rtc/rtc.c File Reference}
+\label{rtc_8c}\index{rtc/rtc.c@{rtc/rtc.c}}
+}
+{\ttfamily \#include \char`\"{}../lpc\_\-config.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}rtc.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{rtc_8c_ae39b64b3d054ebab4c5672ccac1b576e}{RTCInit} (void)
+\item 
+void \hyperlink{rtc_8c_a35a5a2256826045b4b16c8005296c5d9}{RTCStart} (void)
+\item 
+void \hyperlink{rtc_8c_ad4420282a5e01ceb6dc86b2bf832c523}{RTCStop} (void)
+\item 
+void \hyperlink{rtc_8c_a01ea8a02ff716fb7fb79f4ab1d808315}{RTC\_\-CTCReset} (void)
+\item 
+void \hyperlink{rtc_8c_af2c698dc8acd3cd5e5af932d936f43ee}{RTCSetTime} (\hyperlink{structRTCTime}{RTCTime} Time)
+\item 
+void \hyperlink{rtc_8c_abece672a26b35764fbd9dec2f21b06f6}{RTCSetAlarm} (\hyperlink{structRTCTime}{RTCTime} Alarm)
+\item 
+void \hyperlink{rtc_8c_aa76a2752904719797763920ae2225b80}{RTCClearTime} ()
+\item 
+\hyperlink{structRTCTime}{RTCTime} \hyperlink{rtc_8c_a0ace81a0e0d8d3b18c4054c63959fe11}{RTCGetTime} (void)
+\item 
+void \hyperlink{rtc_8c_aeb74c10687db6f9d6c8206b5dd7e82b8}{RTCSetAlarmMask} (\hyperlink{rtc_8h_a95e001ec9ba8a0755d5a5b087a733d4e}{DWORD} AlarmMask)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+volatile \hyperlink{rtc_8h_a95e001ec9ba8a0755d5a5b087a733d4e}{DWORD} \hyperlink{rtc_8c_a759737dda2020c30d6fab367ddba9d6e}{alarm\_\-on} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{rtc_8c_a01ea8a02ff716fb7fb79f4ab1d808315}{
+\index{rtc.c@{rtc.c}!RTC\_\-CTCReset@{RTC\_\-CTCReset}}
+\index{RTC\_\-CTCReset@{RTC\_\-CTCReset}!rtc.c@{rtc.c}}
+\subsubsection[{RTC\_\-CTCReset}]{\setlength{\rightskip}{0pt plus 5cm}void RTC\_\-CTCReset (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{rtc_8c_a01ea8a02ff716fb7fb79f4ab1d808315}
+
+
+Definition at line 102 of file rtc.c.
+
+\hypertarget{rtc_8c_aa76a2752904719797763920ae2225b80}{
+\index{rtc.c@{rtc.c}!RTCClearTime@{RTCClearTime}}
+\index{RTCClearTime@{RTCClearTime}!rtc.c@{rtc.c}}
+\subsubsection[{RTCClearTime}]{\setlength{\rightskip}{0pt plus 5cm}void RTCClearTime (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{rtc_8c_aa76a2752904719797763920ae2225b80}
+
+
+Definition at line 163 of file rtc.c.
+
+\hypertarget{rtc_8c_a0ace81a0e0d8d3b18c4054c63959fe11}{
+\index{rtc.c@{rtc.c}!RTCGetTime@{RTCGetTime}}
+\index{RTCGetTime@{RTCGetTime}!rtc.c@{rtc.c}}
+\subsubsection[{RTCGetTime}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RTCTime} RTCGetTime (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{rtc_8c_a0ace81a0e0d8d3b18c4054c63959fe11}
+
+
+Definition at line 185 of file rtc.c.
+
+\hypertarget{rtc_8c_ae39b64b3d054ebab4c5672ccac1b576e}{
+\index{rtc.c@{rtc.c}!RTCInit@{RTCInit}}
+\index{RTCInit@{RTCInit}!rtc.c@{rtc.c}}
+\subsubsection[{RTCInit}]{\setlength{\rightskip}{0pt plus 5cm}void RTCInit (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{rtc_8c_ae39b64b3d054ebab4c5672ccac1b576e}
+
+
+Definition at line 46 of file rtc.c.
+
+\hypertarget{rtc_8c_abece672a26b35764fbd9dec2f21b06f6}{
+\index{rtc.c@{rtc.c}!RTCSetAlarm@{RTCSetAlarm}}
+\index{RTCSetAlarm@{RTCSetAlarm}!rtc.c@{rtc.c}}
+\subsubsection[{RTCSetAlarm}]{\setlength{\rightskip}{0pt plus 5cm}void RTCSetAlarm (
+\begin{DoxyParamCaption}
+\item[{{\bf RTCTime}}]{ Alarm}
+\end{DoxyParamCaption}
+)}}
+\label{rtc_8c_abece672a26b35764fbd9dec2f21b06f6}
+
+
+Definition at line 140 of file rtc.c.
+
+\hypertarget{rtc_8c_aeb74c10687db6f9d6c8206b5dd7e82b8}{
+\index{rtc.c@{rtc.c}!RTCSetAlarmMask@{RTCSetAlarmMask}}
+\index{RTCSetAlarmMask@{RTCSetAlarmMask}!rtc.c@{rtc.c}}
+\subsubsection[{RTCSetAlarmMask}]{\setlength{\rightskip}{0pt plus 5cm}void RTCSetAlarmMask (
+\begin{DoxyParamCaption}
+\item[{{\bf DWORD}}]{ AlarmMask}
+\end{DoxyParamCaption}
+)}}
+\label{rtc_8c_aeb74c10687db6f9d6c8206b5dd7e82b8}
+
+
+Definition at line 209 of file rtc.c.
+
+\hypertarget{rtc_8c_af2c698dc8acd3cd5e5af932d936f43ee}{
+\index{rtc.c@{rtc.c}!RTCSetTime@{RTCSetTime}}
+\index{RTCSetTime@{RTCSetTime}!rtc.c@{rtc.c}}
+\subsubsection[{RTCSetTime}]{\setlength{\rightskip}{0pt plus 5cm}void RTCSetTime (
+\begin{DoxyParamCaption}
+\item[{{\bf RTCTime}}]{ Time}
+\end{DoxyParamCaption}
+)}}
+\label{rtc_8c_af2c698dc8acd3cd5e5af932d936f43ee}
+
+
+Definition at line 118 of file rtc.c.
+
+\hypertarget{rtc_8c_a35a5a2256826045b4b16c8005296c5d9}{
+\index{rtc.c@{rtc.c}!RTCStart@{RTCStart}}
+\index{RTCStart@{RTCStart}!rtc.c@{rtc.c}}
+\subsubsection[{RTCStart}]{\setlength{\rightskip}{0pt plus 5cm}void RTCStart (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{rtc_8c_a35a5a2256826045b4b16c8005296c5d9}
+
+
+Definition at line 69 of file rtc.c.
+
+\hypertarget{rtc_8c_ad4420282a5e01ceb6dc86b2bf832c523}{
+\index{rtc.c@{rtc.c}!RTCStop@{RTCStop}}
+\index{RTCStop@{RTCStop}!rtc.c@{rtc.c}}
+\subsubsection[{RTCStop}]{\setlength{\rightskip}{0pt plus 5cm}void RTCStop (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{rtc_8c_ad4420282a5e01ceb6dc86b2bf832c523}
+
+
+Definition at line 86 of file rtc.c.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{rtc_8c_a759737dda2020c30d6fab367ddba9d6e}{
+\index{rtc.c@{rtc.c}!alarm\_\-on@{alarm\_\-on}}
+\index{alarm\_\-on@{alarm\_\-on}!rtc.c@{rtc.c}}
+\subsubsection[{alarm\_\-on}]{\setlength{\rightskip}{0pt plus 5cm}volatile {\bf DWORD} {\bf alarm\_\-on} = 0}}
+\label{rtc_8c_a759737dda2020c30d6fab367ddba9d6e}
+
+
+Definition at line 14 of file rtc.c.
+

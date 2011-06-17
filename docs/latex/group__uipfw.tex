@@ -1,0 +1,891 @@
+\hypertarget{group__uipfw}{
+\section{uIP packet forwarding}
+\label{group__uipfw}\index{uIP packet forwarding@{uIP packet forwarding}}
+}
+
+
+Collaboration diagram for uIP packet forwarding:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{group__uipfw}
+\end{center}
+\end{figure}
+
+
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structtcpip__hdr}{tcpip\_\-hdr}
+\item 
+struct \hyperlink{structicmpip__hdr}{icmpip\_\-hdr}
+\item 
+struct \hyperlink{structfwcache__entry}{fwcache\_\-entry}
+\item 
+struct \hyperlink{structuip__fw__netif}{uip\_\-fw\_\-netif}
+\end{DoxyCompactItemize}
+\subsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file \hyperlink{uip-fw_8c}{uip-\/fw.c}
+\item 
+file \hyperlink{uip-fw_8h}{uip-\/fw.h}
+\end{DoxyCompactItemize}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__uipfw_gad58231410d58e34b455328b888a9e73c}{ICMP\_\-ECHO}~8
+\item 
+\#define \hyperlink{group__uipfw_ga58e03a47804158d97a9c069cc2204797}{ICMP\_\-TE}~11
+\item 
+\#define \hyperlink{group__uipfw_ga24f52ac52d6e714cb04a5aa01be3bdd0}{BUF}~((struct \hyperlink{structtcpip__hdr}{tcpip\_\-hdr} $\ast$)\&\hyperlink{group__uipdevfunc_gab81e78f890dbbee50c533a9734b74fd9}{uip\_\-buf}\mbox{[}UIP\_\-LLH\_\-LEN\mbox{]})
+\item 
+\#define \hyperlink{group__uipfw_ga4309376690872fa4beb4f025f5cc199b}{ICMPBUF}~((struct \hyperlink{structicmpip__hdr}{icmpip\_\-hdr} $\ast$)\&\hyperlink{group__uipdevfunc_gab81e78f890dbbee50c533a9734b74fd9}{uip\_\-buf}\mbox{[}UIP\_\-LLH\_\-LEN\mbox{]})
+\item 
+\#define \hyperlink{group__uipfw_ga628391fb3eeb786fe6246dc4fc0c3554}{FWCACHE\_\-SIZE}~2
+\item 
+\#define \hyperlink{group__uipfw_ga37a94c7dd987d85126d49aba7ed5ffe7}{FW\_\-TIME}~20
+\item 
+\#define \hyperlink{group__uipfw_ga6bdb97e217db4401d4433eb330293eaf}{UIP\_\-FW\_\-NETIF}(ip1, ip2, ip3, ip4, nm1, nm2, nm3, nm4, outputfunc)
+\item 
+\#define \hyperlink{group__uipfw_ga7acf2b0aff9ebcfb2f94dc6471055ca2}{uip\_\-fw\_\-setipaddr}(netif, addr)
+\item 
+\#define \hyperlink{group__uipfw_gadb02b40bfdb470acb6268ac71e22fc04}{uip\_\-fw\_\-setnetmask}(netif, addr)
+\item 
+\#define \hyperlink{group__uipfw_ga6836699b9dc9e93034c65b748fc1a9d3}{UIP\_\-FW\_\-LOCAL}
+\item 
+\#define \hyperlink{group__uipfw_gab3604366e1ccf7ac576e2a72845e0b7f}{UIP\_\-FW\_\-OK}
+\item 
+\#define \hyperlink{group__uipfw_ga01295e0a76eba8c53265da4264eee50d}{UIP\_\-FW\_\-FORWARDED}
+\item 
+\#define \hyperlink{group__uipfw_ga29ad276632f8b0a2e41700833d40cb4c}{UIP\_\-FW\_\-ZEROLEN}
+\item 
+\#define \hyperlink{group__uipfw_gaa98780b025dbb97d09b87c40c92d9e4c}{UIP\_\-FW\_\-TOOLARGE}
+\item 
+\#define \hyperlink{group__uipfw_ga6d2241b2ed1042167043cf4c63ae52b2}{UIP\_\-FW\_\-NOROUTE}
+\item 
+\#define \hyperlink{group__uipfw_ga5f290389f83e6c58d9e1d037bf284626}{UIP\_\-FW\_\-DROPPED}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__uipfw_ga0c90f476e0557afaee479c61d4d3eaf3}{uip\_\-fw\_\-init} (void)
+\item 
+\hyperlink{group__uipfw_ga4caecabca98b43919dd11be1c0d4cd8e}{u8\_\-t} \hyperlink{group__uipfw_gabc6fe2d1544b0a16ee3f3fc1c1ccf93a}{uip\_\-fw\_\-output} (void)
+\item 
+\hyperlink{group__uipfw_ga4caecabca98b43919dd11be1c0d4cd8e}{u8\_\-t} \hyperlink{group__uipfw_ga208866aad58f1fb9d5f9e37713f9f4e5}{uip\_\-fw\_\-forward} (void)
+\item 
+void \hyperlink{group__uipfw_gaa2d5cfe32c9ec743e956c4e19dcee21a}{uip\_\-fw\_\-register} (struct \hyperlink{structuip__fw__netif}{uip\_\-fw\_\-netif} $\ast$netif)
+\item 
+void \hyperlink{group__uipfw_ga94dcf0fa8bff34949a37fbde77786f82}{uip\_\-fw\_\-default} (struct \hyperlink{structuip__fw__netif}{uip\_\-fw\_\-netif} $\ast$netif)
+\item 
+void \hyperlink{group__uipfw_ga35ab515cdae08d65c5d080771754f62a}{uip\_\-fw\_\-periodic} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} \hyperlink{group__uipfw_ga79d2ddae647ea9bfd665465b1c703f46}{tcpip\_\-hdr::len}
+\item 
+\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} \hyperlink{group__uipfw_ga64fde6733614e762febfa222d41997a5}{tcpip\_\-hdr::ipid}
+\item 
+\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} \hyperlink{group__uipfw_ga6d792a078604a9fdef0145b296233661}{tcpip\_\-hdr::ipoffset}
+\item 
+\hyperlink{group__uipfw_ga4caecabca98b43919dd11be1c0d4cd8e}{u8\_\-t} \hyperlink{group__uipfw_ga23148b00701b22ff693cad8f42e09efb}{tcpip\_\-hdr::ttl}
+\item 
+\hyperlink{group__uipfw_ga4caecabca98b43919dd11be1c0d4cd8e}{u8\_\-t} \hyperlink{group__uipfw_gabf0603fa00a2effd2f79d8b3f36e9fb1}{tcpip\_\-hdr::proto}
+\item 
+\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} \hyperlink{group__uipfw_gac9d7e009428b082b42289b22bc297085}{tcpip\_\-hdr::ipchksum}
+\item 
+\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} \hyperlink{group__uipfw_gae7234666e63801b5d3b76853d4f8c3da}{tcpip\_\-hdr::srcipaddr} \mbox{[}2\mbox{]}
+\item 
+\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} \hyperlink{group__uipfw_gaec3775d18acd7ecc7bb0fbe6f7987c43}{tcpip\_\-hdr::destipaddr} \mbox{[}2\mbox{]}
+\item 
+\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} \hyperlink{group__uipfw_ga410b213756b5374d6ce2024c2e43cbf8}{tcpip\_\-hdr::srcport}
+\item 
+\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} \hyperlink{group__uipfw_ga9824b382c2e5c3a39229c3c126700b42}{tcpip\_\-hdr::destport}
+\item 
+\hyperlink{group__uipfw_ga4caecabca98b43919dd11be1c0d4cd8e}{u8\_\-t} \hyperlink{group__uipfw_gadb7d3ca80f0f4415f7d5f680c600904c}{tcpip\_\-hdr::seqno} \mbox{[}4\mbox{]}
+\item 
+\hyperlink{group__uipfw_ga4caecabca98b43919dd11be1c0d4cd8e}{u8\_\-t} \hyperlink{group__uipfw_gad59c3ee7e63ca52c5bf927c22e89810f}{tcpip\_\-hdr::ackno} \mbox{[}4\mbox{]}
+\item 
+\hyperlink{group__uipfw_ga4caecabca98b43919dd11be1c0d4cd8e}{u8\_\-t} \hyperlink{group__uipfw_gaec07fa9add3c0a172516e0ec66810ac4}{tcpip\_\-hdr::tcpoffset}
+\item 
+\hyperlink{group__uipfw_ga4caecabca98b43919dd11be1c0d4cd8e}{u8\_\-t} \hyperlink{group__uipfw_ga5699a8989a6d01adf59c4984cae06a67}{tcpip\_\-hdr::flags}
+\item 
+\hyperlink{group__uipfw_ga4caecabca98b43919dd11be1c0d4cd8e}{u8\_\-t} \hyperlink{group__uipfw_ga8da4793ac511e68c37ad2dcfd37c639b}{tcpip\_\-hdr::wnd} \mbox{[}2\mbox{]}
+\item 
+\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} \hyperlink{group__uipfw_ga711271ced4443aa908b161ccde1a9de4}{tcpip\_\-hdr::tcpchksum}
+\item 
+\hyperlink{group__uipfw_ga4caecabca98b43919dd11be1c0d4cd8e}{u8\_\-t} \hyperlink{group__uipfw_gadee52ce29db507d7d12185a0e9388b51}{tcpip\_\-hdr::urgp} \mbox{[}2\mbox{]}
+\item 
+\hyperlink{group__uipfw_ga4caecabca98b43919dd11be1c0d4cd8e}{u8\_\-t} \hyperlink{group__uipfw_ga1db8d3a6459a09cd08315c3d131ac982}{tcpip\_\-hdr::optdata} \mbox{[}4\mbox{]}
+\item 
+struct \hyperlink{structtcpip__hdr}{tcpip\_\-hdr} \hyperlink{group__uipfw_gafe7e75cc45d2b325aaaf5d0042e8bfd8}{PACK\_\-STRUCT\_\-END}
+\item 
+\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} \hyperlink{group__uipfw_ga937e9a7c3241a3db558d51ade5d5336d}{icmpip\_\-hdr::ipchksum}
+\item 
+\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} \hyperlink{group__uipfw_ga50b8789dde802ca4ed0a4a81949d8397}{icmpip\_\-hdr::srcipaddr} \mbox{[}2\mbox{]}
+\item 
+\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} \hyperlink{group__uipfw_gaf0f2e793d08337d303a01ef9ce681a86}{icmpip\_\-hdr::destipaddr} \mbox{[}2\mbox{]}
+\item 
+\hyperlink{group__uipfw_ga4caecabca98b43919dd11be1c0d4cd8e}{u8\_\-t} \hyperlink{group__uipfw_gacd2da996a99d67c9bd3d19d619206087}{icmpip\_\-hdr::type}
+\item 
+\hyperlink{group__uipfw_ga4caecabca98b43919dd11be1c0d4cd8e}{u8\_\-t} \hyperlink{group__uipfw_gaf4ca6ef37e95662c8cb40bc373d52b50}{icmpip\_\-hdr::icode}
+\item 
+\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} \hyperlink{group__uipfw_ga25d4408e0b5b761b331e77a0a9b38808}{icmpip\_\-hdr::icmpchksum}
+\item 
+\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} \hyperlink{group__uipfw_ga933404ce6860a391e841f9829551df0e}{icmpip\_\-hdr::id}
+\item 
+\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} \hyperlink{group__uipfw_gafa0d3607dd6825e880db0802824fc61c}{icmpip\_\-hdr::seqno}
+\item 
+\hyperlink{group__uipfw_ga4caecabca98b43919dd11be1c0d4cd8e}{u8\_\-t} \hyperlink{group__uipfw_gaba8a72b0f9274932f6880c95165cb30d}{icmpip\_\-hdr::payload} \mbox{[}1\mbox{]}
+\item 
+\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} \hyperlink{group__uipfw_gaae48d38b90eb606c41fdd6cb5d56fb5c}{fwcache\_\-entry::srcipaddr} \mbox{[}2\mbox{]}
+\item 
+\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} \hyperlink{group__uipfw_ga94a2ece9168dc271a4524391b05c5b23}{fwcache\_\-entry::destipaddr} \mbox{[}2\mbox{]}
+\item 
+\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} \hyperlink{group__uipfw_ga870c863f3b770fb2ec8affdd01277326}{fwcache\_\-entry::ipid}
+\item 
+\hyperlink{group__uipfw_ga4caecabca98b43919dd11be1c0d4cd8e}{u8\_\-t} \hyperlink{group__uipfw_ga2be7b4f6413d75eefbe43529a9838fd6}{fwcache\_\-entry::proto}
+\item 
+\hyperlink{group__uipfw_ga4caecabca98b43919dd11be1c0d4cd8e}{u8\_\-t} \hyperlink{group__uipfw_ga4b6ce01bb79734997584ce27060dd544}{fwcache\_\-entry::unused}
+\end{DoxyCompactItemize}
+\subsection*{Project-\/specific configuration options}
+\label{_amgrpa633c8dacb583c46c2a4af56ab61e8ca}
+ uIP has a number of configuration options that can be overridden for each project. These are kept in a project-\/specific \hyperlink{uip-conf_8h}{uip-\/conf.h} file and all configuration names have the prefix UIP\_\-CONF. \begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__uipfw_gae92a74cc7ea3eba5d3d56b9caa77d2ad}{PACK\_\-STRUCT\_\-END}~\_\-\_\-attribute\_\-\_\-((packed))
+\item 
+\#define \hyperlink{group__uipfw_ga8dbc55e1183365cafdd75d7c18215bb2}{ALIGN\_\-STRUCT\_\-END}~\_\-\_\-attribute\_\-\_\-((aligned(4)))
+\item 
+\#define \hyperlink{group__uipfw_ga3f6f1f6f98431f2d33ed30a30d2ccc35}{UIP\_\-CONF\_\-MAX\_\-CONNECTIONS}
+\item 
+\#define \hyperlink{group__uipfw_ga974c9b4bbe6b07cc1d64ac4fad278030}{UIP\_\-CONF\_\-MAX\_\-LISTENPORTS}
+\item 
+\#define \hyperlink{group__uipfw_gacacc406c3bf7d0e00412e4c946252739}{UIP\_\-CONF\_\-BUFFER\_\-SIZE}
+\item 
+\#define \hyperlink{group__uipfw_gaca1240bba5dd57f8c7c27123c84a1f6d}{UIP\_\-CONF\_\-BYTE\_\-ORDER}
+\item 
+\#define \hyperlink{group__uipfw_ga3001114ddadc1f2ada5cc9a780e866fc}{UIP\_\-CONF\_\-LOGGING}
+\item 
+\#define \hyperlink{group__uipfw_ga763f12007aad8cc0e483bf50f8a8d9b4}{UIP\_\-CONF\_\-UDP}
+\item 
+\#define \hyperlink{group__uipfw_ga9dd44616d41cef74d3beb51d8be5ecec}{UIP\_\-CONF\_\-UDP\_\-CHECKSUMS}
+\item 
+\#define \hyperlink{group__uipfw_ga529648ad3b0b327a43689b0f1779ff55}{UIP\_\-CONF\_\-STATISTICS}
+\item 
+typedef uint8\_\-t \hyperlink{group__uipfw_ga4caecabca98b43919dd11be1c0d4cd8e}{u8\_\-t}
+\item 
+typedef uint16\_\-t \hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t}
+\item 
+typedef uint32\_\-t \hyperlink{group__uipfw_ga4c14294869aceba3ef9d4c0c302d0f33}{u32\_\-t}
+\item 
+typedef unsigned short \hyperlink{group__uipfw_ga727459e5c4f777543c81ffffa3df3f0c}{uip\_\-stats\_\-t}
+\end{DoxyCompactItemize}
+
+
+\subsection{Define Documentation}
+\hypertarget{group__uipfw_ga8dbc55e1183365cafdd75d7c18215bb2}{
+\index{uipfw@{uipfw}!ALIGN\_\-STRUCT\_\-END@{ALIGN\_\-STRUCT\_\-END}}
+\index{ALIGN\_\-STRUCT\_\-END@{ALIGN\_\-STRUCT\_\-END}!uipfw@{uipfw}}
+\subsubsection[{ALIGN\_\-STRUCT\_\-END}]{\setlength{\rightskip}{0pt plus 5cm}\#define {\bf ALIGN\_\-STRUCT\_\-END}~\_\-\_\-attribute\_\-\_\-((aligned(4)))}}
+\label{group__uipfw_ga8dbc55e1183365cafdd75d7c18215bb2}
+Representation of a 48-\/bit Ethernet address. 
+
+Definition at line 61 of file uip-\/conf.h.
+
+\hypertarget{group__uipfw_ga24f52ac52d6e714cb04a5aa01be3bdd0}{
+\index{uipfw@{uipfw}!BUF@{BUF}}
+\index{BUF@{BUF}!uipfw@{uipfw}}
+\subsubsection[{BUF}]{\setlength{\rightskip}{0pt plus 5cm}\#define BUF~((struct {\bf tcpip\_\-hdr} $\ast$)\&{\bf uip\_\-buf}\mbox{[}UIP\_\-LLH\_\-LEN\mbox{]})}}
+\label{group__uipfw_ga24f52ac52d6e714cb04a5aa01be3bdd0}
+
+
+Definition at line 126 of file uip-\/fw.c.
+
+\hypertarget{group__uipfw_ga37a94c7dd987d85126d49aba7ed5ffe7}{
+\index{uipfw@{uipfw}!FW\_\-TIME@{FW\_\-TIME}}
+\index{FW\_\-TIME@{FW\_\-TIME}!uipfw@{uipfw}}
+\subsubsection[{FW\_\-TIME}]{\setlength{\rightskip}{0pt plus 5cm}\#define FW\_\-TIME~20}}
+\label{group__uipfw_ga37a94c7dd987d85126d49aba7ed5ffe7}
+
+
+Definition at line 175 of file uip-\/fw.c.
+
+\hypertarget{group__uipfw_ga628391fb3eeb786fe6246dc4fc0c3554}{
+\index{uipfw@{uipfw}!FWCACHE\_\-SIZE@{FWCACHE\_\-SIZE}}
+\index{FWCACHE\_\-SIZE@{FWCACHE\_\-SIZE}!uipfw@{uipfw}}
+\subsubsection[{FWCACHE\_\-SIZE}]{\setlength{\rightskip}{0pt plus 5cm}\#define FWCACHE\_\-SIZE~2}}
+\label{group__uipfw_ga628391fb3eeb786fe6246dc4fc0c3554}
+
+
+Definition at line 161 of file uip-\/fw.c.
+
+\hypertarget{group__uipfw_gad58231410d58e34b455328b888a9e73c}{
+\index{uipfw@{uipfw}!ICMP\_\-ECHO@{ICMP\_\-ECHO}}
+\index{ICMP\_\-ECHO@{ICMP\_\-ECHO}!uipfw@{uipfw}}
+\subsubsection[{ICMP\_\-ECHO}]{\setlength{\rightskip}{0pt plus 5cm}\#define ICMP\_\-ECHO~8}}
+\label{group__uipfw_gad58231410d58e34b455328b888a9e73c}
+
+
+Definition at line 118 of file uip-\/fw.c.
+
+\hypertarget{group__uipfw_ga58e03a47804158d97a9c069cc2204797}{
+\index{uipfw@{uipfw}!ICMP\_\-TE@{ICMP\_\-TE}}
+\index{ICMP\_\-TE@{ICMP\_\-TE}!uipfw@{uipfw}}
+\subsubsection[{ICMP\_\-TE}]{\setlength{\rightskip}{0pt plus 5cm}\#define ICMP\_\-TE~11}}
+\label{group__uipfw_ga58e03a47804158d97a9c069cc2204797}
+
+
+Definition at line 121 of file uip-\/fw.c.
+
+\hypertarget{group__uipfw_ga4309376690872fa4beb4f025f5cc199b}{
+\index{uipfw@{uipfw}!ICMPBUF@{ICMPBUF}}
+\index{ICMPBUF@{ICMPBUF}!uipfw@{uipfw}}
+\subsubsection[{ICMPBUF}]{\setlength{\rightskip}{0pt plus 5cm}\#define ICMPBUF~((struct {\bf icmpip\_\-hdr} $\ast$)\&{\bf uip\_\-buf}\mbox{[}UIP\_\-LLH\_\-LEN\mbox{]})}}
+\label{group__uipfw_ga4309376690872fa4beb4f025f5cc199b}
+
+
+Definition at line 131 of file uip-\/fw.c.
+
+\hypertarget{group__uipfw_gae92a74cc7ea3eba5d3d56b9caa77d2ad}{
+\index{uipfw@{uipfw}!PACK\_\-STRUCT\_\-END@{PACK\_\-STRUCT\_\-END}}
+\index{PACK\_\-STRUCT\_\-END@{PACK\_\-STRUCT\_\-END}!uipfw@{uipfw}}
+\subsubsection[{PACK\_\-STRUCT\_\-END}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf ethip\_\-hdr} {\bf PACK\_\-STRUCT\_\-END}~\_\-\_\-attribute\_\-\_\-((packed))}}
+\label{group__uipfw_gae92a74cc7ea3eba5d3d56b9caa77d2ad}
+Representation of a 48-\/bit Ethernet address. 
+
+Definition at line 60 of file uip-\/conf.h.
+
+\hypertarget{group__uipfw_gacacc406c3bf7d0e00412e4c946252739}{
+\index{uipfw@{uipfw}!UIP\_\-CONF\_\-BUFFER\_\-SIZE@{UIP\_\-CONF\_\-BUFFER\_\-SIZE}}
+\index{UIP\_\-CONF\_\-BUFFER\_\-SIZE@{UIP\_\-CONF\_\-BUFFER\_\-SIZE}!uipfw@{uipfw}}
+\subsubsection[{UIP\_\-CONF\_\-BUFFER\_\-SIZE}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-CONF\_\-BUFFER\_\-SIZE}}
+\label{group__uipfw_gacacc406c3bf7d0e00412e4c946252739}
+uIP buffer size. 
+
+Definition at line 119 of file uip-\/conf.h.
+
+\hypertarget{group__uipfw_gaca1240bba5dd57f8c7c27123c84a1f6d}{
+\index{uipfw@{uipfw}!UIP\_\-CONF\_\-BYTE\_\-ORDER@{UIP\_\-CONF\_\-BYTE\_\-ORDER}}
+\index{UIP\_\-CONF\_\-BYTE\_\-ORDER@{UIP\_\-CONF\_\-BYTE\_\-ORDER}!uipfw@{uipfw}}
+\subsubsection[{UIP\_\-CONF\_\-BYTE\_\-ORDER}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-CONF\_\-BYTE\_\-ORDER}}
+\label{group__uipfw_gaca1240bba5dd57f8c7c27123c84a1f6d}
+CPU byte order. 
+
+Definition at line 126 of file uip-\/conf.h.
+
+\hypertarget{group__uipfw_ga3001114ddadc1f2ada5cc9a780e866fc}{
+\index{uipfw@{uipfw}!UIP\_\-CONF\_\-LOGGING@{UIP\_\-CONF\_\-LOGGING}}
+\index{UIP\_\-CONF\_\-LOGGING@{UIP\_\-CONF\_\-LOGGING}!uipfw@{uipfw}}
+\subsubsection[{UIP\_\-CONF\_\-LOGGING}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-CONF\_\-LOGGING}}
+\label{group__uipfw_ga3001114ddadc1f2ada5cc9a780e866fc}
+Logging on or off 
+
+Definition at line 133 of file uip-\/conf.h.
+
+\hypertarget{group__uipfw_ga3f6f1f6f98431f2d33ed30a30d2ccc35}{
+\index{uipfw@{uipfw}!UIP\_\-CONF\_\-MAX\_\-CONNECTIONS@{UIP\_\-CONF\_\-MAX\_\-CONNECTIONS}}
+\index{UIP\_\-CONF\_\-MAX\_\-CONNECTIONS@{UIP\_\-CONF\_\-MAX\_\-CONNECTIONS}!uipfw@{uipfw}}
+\subsubsection[{UIP\_\-CONF\_\-MAX\_\-CONNECTIONS}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-CONF\_\-MAX\_\-CONNECTIONS}}
+\label{group__uipfw_ga3f6f1f6f98431f2d33ed30a30d2ccc35}
+Maximum number of TCP connections. 
+
+Definition at line 105 of file uip-\/conf.h.
+
+\hypertarget{group__uipfw_ga974c9b4bbe6b07cc1d64ac4fad278030}{
+\index{uipfw@{uipfw}!UIP\_\-CONF\_\-MAX\_\-LISTENPORTS@{UIP\_\-CONF\_\-MAX\_\-LISTENPORTS}}
+\index{UIP\_\-CONF\_\-MAX\_\-LISTENPORTS@{UIP\_\-CONF\_\-MAX\_\-LISTENPORTS}!uipfw@{uipfw}}
+\subsubsection[{UIP\_\-CONF\_\-MAX\_\-LISTENPORTS}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-CONF\_\-MAX\_\-LISTENPORTS}}
+\label{group__uipfw_ga974c9b4bbe6b07cc1d64ac4fad278030}
+Maximum number of listening TCP ports. 
+
+Definition at line 112 of file uip-\/conf.h.
+
+\hypertarget{group__uipfw_ga529648ad3b0b327a43689b0f1779ff55}{
+\index{uipfw@{uipfw}!UIP\_\-CONF\_\-STATISTICS@{UIP\_\-CONF\_\-STATISTICS}}
+\index{UIP\_\-CONF\_\-STATISTICS@{UIP\_\-CONF\_\-STATISTICS}!uipfw@{uipfw}}
+\subsubsection[{UIP\_\-CONF\_\-STATISTICS}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-CONF\_\-STATISTICS}}
+\label{group__uipfw_ga529648ad3b0b327a43689b0f1779ff55}
+uIP statistics on or off 
+
+Definition at line 154 of file uip-\/conf.h.
+
+\hypertarget{group__uipfw_ga763f12007aad8cc0e483bf50f8a8d9b4}{
+\index{uipfw@{uipfw}!UIP\_\-CONF\_\-UDP@{UIP\_\-CONF\_\-UDP}}
+\index{UIP\_\-CONF\_\-UDP@{UIP\_\-CONF\_\-UDP}!uipfw@{uipfw}}
+\subsubsection[{UIP\_\-CONF\_\-UDP}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-CONF\_\-UDP}}
+\label{group__uipfw_ga763f12007aad8cc0e483bf50f8a8d9b4}
+UDP support on or off 
+
+Definition at line 140 of file uip-\/conf.h.
+
+\hypertarget{group__uipfw_ga9dd44616d41cef74d3beb51d8be5ecec}{
+\index{uipfw@{uipfw}!UIP\_\-CONF\_\-UDP\_\-CHECKSUMS@{UIP\_\-CONF\_\-UDP\_\-CHECKSUMS}}
+\index{UIP\_\-CONF\_\-UDP\_\-CHECKSUMS@{UIP\_\-CONF\_\-UDP\_\-CHECKSUMS}!uipfw@{uipfw}}
+\subsubsection[{UIP\_\-CONF\_\-UDP\_\-CHECKSUMS}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-CONF\_\-UDP\_\-CHECKSUMS}}
+\label{group__uipfw_ga9dd44616d41cef74d3beb51d8be5ecec}
+UDP checksums on or off 
+
+Definition at line 147 of file uip-\/conf.h.
+
+\hypertarget{group__uipfw_ga5f290389f83e6c58d9e1d037bf284626}{
+\index{uipfw@{uipfw}!UIP\_\-FW\_\-DROPPED@{UIP\_\-FW\_\-DROPPED}}
+\index{UIP\_\-FW\_\-DROPPED@{UIP\_\-FW\_\-DROPPED}!uipfw@{uipfw}}
+\subsubsection[{UIP\_\-FW\_\-DROPPED}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-FW\_\-DROPPED}}
+\label{group__uipfw_ga5f290389f83e6c58d9e1d037bf284626}
+An error message that indicates that a packet that should be forwarded or output was dropped. 
+
+Definition at line 171 of file uip-\/fw.h.
+
+\hypertarget{group__uipfw_ga01295e0a76eba8c53265da4264eee50d}{
+\index{uipfw@{uipfw}!UIP\_\-FW\_\-FORWARDED@{UIP\_\-FW\_\-FORWARDED}}
+\index{UIP\_\-FW\_\-FORWARDED@{UIP\_\-FW\_\-FORWARDED}!uipfw@{uipfw}}
+\subsubsection[{UIP\_\-FW\_\-FORWARDED}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-FW\_\-FORWARDED}}
+\label{group__uipfw_ga01295e0a76eba8c53265da4264eee50d}
+A non-\/error message that indicates that a packet was forwarded. 
+
+Definition at line 139 of file uip-\/fw.h.
+
+\hypertarget{group__uipfw_ga6836699b9dc9e93034c65b748fc1a9d3}{
+\index{uipfw@{uipfw}!UIP\_\-FW\_\-LOCAL@{UIP\_\-FW\_\-LOCAL}}
+\index{UIP\_\-FW\_\-LOCAL@{UIP\_\-FW\_\-LOCAL}!uipfw@{uipfw}}
+\subsubsection[{UIP\_\-FW\_\-LOCAL}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-FW\_\-LOCAL}}
+\label{group__uipfw_ga6836699b9dc9e93034c65b748fc1a9d3}
+A non-\/error message that indicates that a packet should be processed locally. 
+
+Definition at line 125 of file uip-\/fw.h.
+
+\hypertarget{group__uipfw_ga6bdb97e217db4401d4433eb330293eaf}{
+\index{uipfw@{uipfw}!UIP\_\-FW\_\-NETIF@{UIP\_\-FW\_\-NETIF}}
+\index{UIP\_\-FW\_\-NETIF@{UIP\_\-FW\_\-NETIF}!uipfw@{uipfw}}
+\subsubsection[{UIP\_\-FW\_\-NETIF}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-FW\_\-NETIF(
+\begin{DoxyParamCaption}
+\item[{}]{ip1, }
+\item[{}]{ip2, }
+\item[{}]{ip3, }
+\item[{}]{ip4, }
+\item[{}]{nm1, }
+\item[{}]{nm2, }
+\item[{}]{nm3, }
+\item[{}]{nm4, }
+\item[{}]{outputfunc}
+\end{DoxyParamCaption}
+)}}
+\label{group__uipfw_ga6bdb97e217db4401d4433eb330293eaf}
+Intantiating macro for a uIP network interface.
+
+Example: 
+\begin{DoxyCode}
+ struct uip_fw_netif slipnetif =
+   {UIP_FW_NETIF(192,168,76,1, 255,255,255,0, slip_output)};
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+\item[{\em ip1,ip2,ip3,ip4}]The IP address of the network interface.\item[{\em nm1,nm2,nm3,nm4}]The netmask of the network interface.\item[{\em outputfunc}]A pointer to the output function of the network interface. \end{DoxyParams}
+
+
+Definition at line 80 of file uip-\/fw.h.
+
+\hypertarget{group__uipfw_ga6d2241b2ed1042167043cf4c63ae52b2}{
+\index{uipfw@{uipfw}!UIP\_\-FW\_\-NOROUTE@{UIP\_\-FW\_\-NOROUTE}}
+\index{UIP\_\-FW\_\-NOROUTE@{UIP\_\-FW\_\-NOROUTE}!uipfw@{uipfw}}
+\subsubsection[{UIP\_\-FW\_\-NOROUTE}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-FW\_\-NOROUTE}}
+\label{group__uipfw_ga6d2241b2ed1042167043cf4c63ae52b2}
+An error message that indicates that no suitable interface could be found for an outbound packet. 
+
+Definition at line 163 of file uip-\/fw.h.
+
+\hypertarget{group__uipfw_gab3604366e1ccf7ac576e2a72845e0b7f}{
+\index{uipfw@{uipfw}!UIP\_\-FW\_\-OK@{UIP\_\-FW\_\-OK}}
+\index{UIP\_\-FW\_\-OK@{UIP\_\-FW\_\-OK}!uipfw@{uipfw}}
+\subsubsection[{UIP\_\-FW\_\-OK}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-FW\_\-OK}}
+\label{group__uipfw_gab3604366e1ccf7ac576e2a72845e0b7f}
+A non-\/error message that indicates that something went OK. 
+
+Definition at line 132 of file uip-\/fw.h.
+
+\hypertarget{group__uipfw_ga7acf2b0aff9ebcfb2f94dc6471055ca2}{
+\index{uipfw@{uipfw}!uip\_\-fw\_\-setipaddr@{uip\_\-fw\_\-setipaddr}}
+\index{uip\_\-fw\_\-setipaddr@{uip\_\-fw\_\-setipaddr}!uipfw@{uipfw}}
+\subsubsection[{uip\_\-fw\_\-setipaddr}]{\setlength{\rightskip}{0pt plus 5cm}\#define uip\_\-fw\_\-setipaddr(
+\begin{DoxyParamCaption}
+\item[{}]{netif, }
+\item[{}]{addr}
+\end{DoxyParamCaption}
+)}}
+\label{group__uipfw_ga7acf2b0aff9ebcfb2f94dc6471055ca2}
+Set the IP address of a network interface.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em netif}]A pointer to the \hyperlink{structuip__fw__netif}{uip\_\-fw\_\-netif} structure for the network interface.\item[{\em addr}]A pointer to an IP address. \end{DoxyParams}
+
+
+Definition at line 95 of file uip-\/fw.h.
+
+\hypertarget{group__uipfw_gadb02b40bfdb470acb6268ac71e22fc04}{
+\index{uipfw@{uipfw}!uip\_\-fw\_\-setnetmask@{uip\_\-fw\_\-setnetmask}}
+\index{uip\_\-fw\_\-setnetmask@{uip\_\-fw\_\-setnetmask}!uipfw@{uipfw}}
+\subsubsection[{uip\_\-fw\_\-setnetmask}]{\setlength{\rightskip}{0pt plus 5cm}\#define uip\_\-fw\_\-setnetmask(
+\begin{DoxyParamCaption}
+\item[{}]{netif, }
+\item[{}]{addr}
+\end{DoxyParamCaption}
+)}}
+\label{group__uipfw_gadb02b40bfdb470acb6268ac71e22fc04}
+Set the netmask of a network interface.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em netif}]A pointer to the \hyperlink{structuip__fw__netif}{uip\_\-fw\_\-netif} structure for the network interface.\item[{\em addr}]A pointer to an IP address representing the netmask. \end{DoxyParams}
+
+
+Definition at line 107 of file uip-\/fw.h.
+
+\hypertarget{group__uipfw_gaa98780b025dbb97d09b87c40c92d9e4c}{
+\index{uipfw@{uipfw}!UIP\_\-FW\_\-TOOLARGE@{UIP\_\-FW\_\-TOOLARGE}}
+\index{UIP\_\-FW\_\-TOOLARGE@{UIP\_\-FW\_\-TOOLARGE}!uipfw@{uipfw}}
+\subsubsection[{UIP\_\-FW\_\-TOOLARGE}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-FW\_\-TOOLARGE}}
+\label{group__uipfw_gaa98780b025dbb97d09b87c40c92d9e4c}
+An error message that indicates that a packet that was too large for the outbound network interface was detected. 
+
+Definition at line 155 of file uip-\/fw.h.
+
+\hypertarget{group__uipfw_ga29ad276632f8b0a2e41700833d40cb4c}{
+\index{uipfw@{uipfw}!UIP\_\-FW\_\-ZEROLEN@{UIP\_\-FW\_\-ZEROLEN}}
+\index{UIP\_\-FW\_\-ZEROLEN@{UIP\_\-FW\_\-ZEROLEN}!uipfw@{uipfw}}
+\subsubsection[{UIP\_\-FW\_\-ZEROLEN}]{\setlength{\rightskip}{0pt plus 5cm}\#define UIP\_\-FW\_\-ZEROLEN}}
+\label{group__uipfw_ga29ad276632f8b0a2e41700833d40cb4c}
+A non-\/error message that indicates that a zero-\/length packet transmission was attempted, and that no packet was sent. 
+
+Definition at line 147 of file uip-\/fw.h.
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{
+\index{uipfw@{uipfw}!u16\_\-t@{u16\_\-t}}
+\index{u16\_\-t@{u16\_\-t}!uipfw@{uipfw}}
+\subsubsection[{u16\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef uint16\_\-t {\bf u16\_\-t}}}
+\label{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}
+16 bit datatype
+
+This typedef defines the 16-\/bit type used throughout uIP. 
+
+Definition at line 79 of file uip-\/conf.h.
+
+\hypertarget{group__uipfw_ga4c14294869aceba3ef9d4c0c302d0f33}{
+\index{uipfw@{uipfw}!u32\_\-t@{u32\_\-t}}
+\index{u32\_\-t@{u32\_\-t}!uipfw@{uipfw}}
+\subsubsection[{u32\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef uint32\_\-t {\bf u32\_\-t}}}
+\label{group__uipfw_ga4c14294869aceba3ef9d4c0c302d0f33}
+32 bit datatype
+
+This typedef defines the 16-\/bit type used throughout uIP. 
+
+Definition at line 88 of file uip-\/conf.h.
+
+\hypertarget{group__uipfw_ga4caecabca98b43919dd11be1c0d4cd8e}{
+\index{uipfw@{uipfw}!u8\_\-t@{u8\_\-t}}
+\index{u8\_\-t@{u8\_\-t}!uipfw@{uipfw}}
+\subsubsection[{u8\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef uint8\_\-t {\bf u8\_\-t}}}
+\label{group__uipfw_ga4caecabca98b43919dd11be1c0d4cd8e}
+8 bit datatype
+
+This typedef defines the 8-\/bit type used throughout uIP. 
+
+Definition at line 70 of file uip-\/conf.h.
+
+\hypertarget{group__uipfw_ga727459e5c4f777543c81ffffa3df3f0c}{
+\index{uipfw@{uipfw}!uip\_\-stats\_\-t@{uip\_\-stats\_\-t}}
+\index{uip\_\-stats\_\-t@{uip\_\-stats\_\-t}!uipfw@{uipfw}}
+\subsubsection[{uip\_\-stats\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned short {\bf uip\_\-stats\_\-t}}}
+\label{group__uipfw_ga727459e5c4f777543c81ffffa3df3f0c}
+Statistics datatype
+
+This typedef defines the dataype used for keeping statistics in uIP. 
+
+Definition at line 98 of file uip-\/conf.h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{group__uipfw_ga94dcf0fa8bff34949a37fbde77786f82}{
+\index{uipfw@{uipfw}!uip\_\-fw\_\-default@{uip\_\-fw\_\-default}}
+\index{uip\_\-fw\_\-default@{uip\_\-fw\_\-default}!uipfw@{uipfw}}
+\subsubsection[{uip\_\-fw\_\-default}]{\setlength{\rightskip}{0pt plus 5cm}void uip\_\-fw\_\-default (
+\begin{DoxyParamCaption}
+\item[{struct {\bf uip\_\-fw\_\-netif} $\ast$}]{ netif}
+\end{DoxyParamCaption}
+)}}
+\label{group__uipfw_ga94dcf0fa8bff34949a37fbde77786f82}
+Register a default network interface.
+
+All packets that don't go out on any of the other interfaces will be routed to the default interface.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em netif}]A pointer to the network interface that is to be registered. \end{DoxyParams}
+\hypertarget{group__uipfw_ga208866aad58f1fb9d5f9e37713f9f4e5}{
+\index{uipfw@{uipfw}!uip\_\-fw\_\-forward@{uip\_\-fw\_\-forward}}
+\index{uip\_\-fw\_\-forward@{uip\_\-fw\_\-forward}!uipfw@{uipfw}}
+\subsubsection[{uip\_\-fw\_\-forward}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u8\_\-t} uip\_\-fw\_\-forward (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__uipfw_ga208866aad58f1fb9d5f9e37713f9f4e5}
+Forward an IP packet in the uip\_\-buf buffer.
+
+\begin{DoxyReturn}{Returns}
+UIP\_\-FW\_\-FORWARDED if the packet was forwarded, UIP\_\-FW\_\-LOCAL if the packet should be processed locally. 
+\end{DoxyReturn}
+\hypertarget{group__uipfw_ga0c90f476e0557afaee479c61d4d3eaf3}{
+\index{uipfw@{uipfw}!uip\_\-fw\_\-init@{uip\_\-fw\_\-init}}
+\index{uip\_\-fw\_\-init@{uip\_\-fw\_\-init}!uipfw@{uipfw}}
+\subsubsection[{uip\_\-fw\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void uip\_\-fw\_\-init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__uipfw_ga0c90f476e0557afaee479c61d4d3eaf3}
+Initialize the uIP packet forwarding module. \hypertarget{group__uipfw_gabc6fe2d1544b0a16ee3f3fc1c1ccf93a}{
+\index{uipfw@{uipfw}!uip\_\-fw\_\-output@{uip\_\-fw\_\-output}}
+\index{uip\_\-fw\_\-output@{uip\_\-fw\_\-output}!uipfw@{uipfw}}
+\subsubsection[{uip\_\-fw\_\-output}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u8\_\-t} uip\_\-fw\_\-output (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__uipfw_gabc6fe2d1544b0a16ee3f3fc1c1ccf93a}
+Output an IP packet on the correct network interface.
+
+The IP packet should be present in the uip\_\-buf buffer and its length in the global uip\_\-len variable.
+
+
+\begin{DoxyRetVals}{Return values}
+\item[{\em UIP\_\-FW\_\-ZEROLEN}]Indicates that a zero-\/length packet transmission was attempted and that no packet was sent.\item[{\em UIP\_\-FW\_\-NOROUTE}]No suitable network interface could be found for the outbound packet, and the packet was not sent.\end{DoxyRetVals}
+\begin{DoxyReturn}{Returns}
+The return value from the actual network interface output function is passed unmodified as a return value. 
+\end{DoxyReturn}
+\hypertarget{group__uipfw_ga35ab515cdae08d65c5d080771754f62a}{
+\index{uipfw@{uipfw}!uip\_\-fw\_\-periodic@{uip\_\-fw\_\-periodic}}
+\index{uip\_\-fw\_\-periodic@{uip\_\-fw\_\-periodic}!uipfw@{uipfw}}
+\subsubsection[{uip\_\-fw\_\-periodic}]{\setlength{\rightskip}{0pt plus 5cm}void uip\_\-fw\_\-periodic (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__uipfw_ga35ab515cdae08d65c5d080771754f62a}
+Perform periodic processing. \hypertarget{group__uipfw_gaa2d5cfe32c9ec743e956c4e19dcee21a}{
+\index{uipfw@{uipfw}!uip\_\-fw\_\-register@{uip\_\-fw\_\-register}}
+\index{uip\_\-fw\_\-register@{uip\_\-fw\_\-register}!uipfw@{uipfw}}
+\subsubsection[{uip\_\-fw\_\-register}]{\setlength{\rightskip}{0pt plus 5cm}void uip\_\-fw\_\-register (
+\begin{DoxyParamCaption}
+\item[{struct {\bf uip\_\-fw\_\-netif} $\ast$}]{ netif}
+\end{DoxyParamCaption}
+)}}
+\label{group__uipfw_gaa2d5cfe32c9ec743e956c4e19dcee21a}
+Register a network interface with the forwarding module.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em netif}]A pointer to the network interface that is to be registered. \end{DoxyParams}
+
+
+\subsection{Variable Documentation}
+\hypertarget{group__uipfw_gad59c3ee7e63ca52c5bf927c22e89810f}{
+\index{uipfw@{uipfw}!ackno@{ackno}}
+\index{ackno@{ackno}!uipfw@{uipfw}}
+\subsubsection[{ackno}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u8\_\-t} {\bf tcpip\_\-hdr::ackno}\mbox{[}4\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{group__uipfw_gad59c3ee7e63ca52c5bf927c22e89810f}
+
+
+Definition at line 88 of file uip-\/fw.c.
+
+\hypertarget{group__uipfw_gaec3775d18acd7ecc7bb0fbe6f7987c43}{
+\index{uipfw@{uipfw}!destipaddr@{destipaddr}}
+\index{destipaddr@{destipaddr}!uipfw@{uipfw}}
+\subsubsection[{destipaddr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u16\_\-t} {\bf tcpip\_\-hdr::destipaddr}\mbox{[}2\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{group__uipfw_gaec3775d18acd7ecc7bb0fbe6f7987c43}
+
+
+Definition at line 82 of file uip-\/fw.c.
+
+\hypertarget{group__uipfw_ga94a2ece9168dc271a4524391b05c5b23}{
+\index{uipfw@{uipfw}!destipaddr@{destipaddr}}
+\index{destipaddr@{destipaddr}!uipfw@{uipfw}}
+\subsubsection[{destipaddr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u16\_\-t} {\bf fwcache\_\-entry::destipaddr}\mbox{[}2\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{group__uipfw_ga94a2ece9168dc271a4524391b05c5b23}
+
+
+Definition at line 141 of file uip-\/fw.c.
+
+\hypertarget{group__uipfw_gaf0f2e793d08337d303a01ef9ce681a86}{
+\index{uipfw@{uipfw}!destipaddr@{destipaddr}}
+\index{destipaddr@{destipaddr}!uipfw@{uipfw}}
+\subsubsection[{destipaddr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u16\_\-t} {\bf icmpip\_\-hdr::destipaddr}\mbox{[}2\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{group__uipfw_gaf0f2e793d08337d303a01ef9ce681a86}
+
+
+Definition at line 108 of file uip-\/fw.c.
+
+\hypertarget{group__uipfw_ga9824b382c2e5c3a39229c3c126700b42}{
+\index{uipfw@{uipfw}!destport@{destport}}
+\index{destport@{destport}!uipfw@{uipfw}}
+\subsubsection[{destport}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u16\_\-t} {\bf tcpip\_\-hdr::destport}\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{group__uipfw_ga9824b382c2e5c3a39229c3c126700b42}
+
+
+Definition at line 86 of file uip-\/fw.c.
+
+\hypertarget{group__uipfw_ga5699a8989a6d01adf59c4984cae06a67}{
+\index{uipfw@{uipfw}!flags@{flags}}
+\index{flags@{flags}!uipfw@{uipfw}}
+\subsubsection[{flags}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u8\_\-t} {\bf tcpip\_\-hdr::flags}\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{group__uipfw_ga5699a8989a6d01adf59c4984cae06a67}
+
+
+Definition at line 88 of file uip-\/fw.c.
+
+\hypertarget{group__uipfw_ga25d4408e0b5b761b331e77a0a9b38808}{
+\index{uipfw@{uipfw}!icmpchksum@{icmpchksum}}
+\index{icmpchksum@{icmpchksum}!uipfw@{uipfw}}
+\subsubsection[{icmpchksum}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u16\_\-t} {\bf icmpip\_\-hdr::icmpchksum}\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{group__uipfw_ga25d4408e0b5b761b331e77a0a9b38808}
+
+
+Definition at line 112 of file uip-\/fw.c.
+
+\hypertarget{group__uipfw_gaf4ca6ef37e95662c8cb40bc373d52b50}{
+\index{uipfw@{uipfw}!icode@{icode}}
+\index{icode@{icode}!uipfw@{uipfw}}
+\subsubsection[{icode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u8\_\-t} {\bf icmpip\_\-hdr::icode}\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{group__uipfw_gaf4ca6ef37e95662c8cb40bc373d52b50}
+
+
+Definition at line 111 of file uip-\/fw.c.
+
+\hypertarget{group__uipfw_ga933404ce6860a391e841f9829551df0e}{
+\index{uipfw@{uipfw}!id@{id}}
+\index{id@{id}!uipfw@{uipfw}}
+\subsubsection[{id}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u16\_\-t} {\bf icmpip\_\-hdr::id}\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{group__uipfw_ga933404ce6860a391e841f9829551df0e}
+
+
+Definition at line 113 of file uip-\/fw.c.
+
+\hypertarget{group__uipfw_gac9d7e009428b082b42289b22bc297085}{
+\index{uipfw@{uipfw}!ipchksum@{ipchksum}}
+\index{ipchksum@{ipchksum}!uipfw@{uipfw}}
+\subsubsection[{ipchksum}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u16\_\-t} {\bf tcpip\_\-hdr::ipchksum}\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{group__uipfw_gac9d7e009428b082b42289b22bc297085}
+
+
+Definition at line 81 of file uip-\/fw.c.
+
+\hypertarget{group__uipfw_ga937e9a7c3241a3db558d51ade5d5336d}{
+\index{uipfw@{uipfw}!ipchksum@{ipchksum}}
+\index{ipchksum@{ipchksum}!uipfw@{uipfw}}
+\subsubsection[{ipchksum}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u16\_\-t} {\bf icmpip\_\-hdr::ipchksum}\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{group__uipfw_ga937e9a7c3241a3db558d51ade5d5336d}
+
+
+Definition at line 107 of file uip-\/fw.c.
+
+\hypertarget{group__uipfw_ga64fde6733614e762febfa222d41997a5}{
+\index{uipfw@{uipfw}!ipid@{ipid}}
+\index{ipid@{ipid}!uipfw@{uipfw}}
+\subsubsection[{ipid}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u16\_\-t} {\bf tcpip\_\-hdr::ipid}\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{group__uipfw_ga64fde6733614e762febfa222d41997a5}
+
+
+Definition at line 76 of file uip-\/fw.c.
+
+\hypertarget{group__uipfw_ga870c863f3b770fb2ec8affdd01277326}{
+\index{uipfw@{uipfw}!ipid@{ipid}}
+\index{ipid@{ipid}!uipfw@{uipfw}}
+\subsubsection[{ipid}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u16\_\-t} {\bf fwcache\_\-entry::ipid}\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{group__uipfw_ga870c863f3b770fb2ec8affdd01277326}
+
+
+Definition at line 142 of file uip-\/fw.c.
+
+\hypertarget{group__uipfw_ga6d792a078604a9fdef0145b296233661}{
+\index{uipfw@{uipfw}!ipoffset@{ipoffset}}
+\index{ipoffset@{ipoffset}!uipfw@{uipfw}}
+\subsubsection[{ipoffset}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u16\_\-t} {\bf tcpip\_\-hdr::ipoffset}\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{group__uipfw_ga6d792a078604a9fdef0145b296233661}
+
+
+Definition at line 76 of file uip-\/fw.c.
+
+\hypertarget{group__uipfw_ga79d2ddae647ea9bfd665465b1c703f46}{
+\index{uipfw@{uipfw}!len@{len}}
+\index{len@{len}!uipfw@{uipfw}}
+\subsubsection[{len}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u16\_\-t} {\bf tcpip\_\-hdr::len}\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{group__uipfw_ga79d2ddae647ea9bfd665465b1c703f46}
+
+
+Definition at line 76 of file uip-\/fw.c.
+
+\hypertarget{group__uipfw_ga1db8d3a6459a09cd08315c3d131ac982}{
+\index{uipfw@{uipfw}!optdata@{optdata}}
+\index{optdata@{optdata}!uipfw@{uipfw}}
+\subsubsection[{optdata}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u8\_\-t} {\bf tcpip\_\-hdr::optdata}\mbox{[}4\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{group__uipfw_ga1db8d3a6459a09cd08315c3d131ac982}
+
+
+Definition at line 95 of file uip-\/fw.c.
+
+\hypertarget{group__uipfw_gafe7e75cc45d2b325aaaf5d0042e8bfd8}{
+\index{uipfw@{uipfw}!PACK\_\-STRUCT\_\-END@{PACK\_\-STRUCT\_\-END}}
+\index{PACK\_\-STRUCT\_\-END@{PACK\_\-STRUCT\_\-END}!uipfw@{uipfw}}
+\subsubsection[{PACK\_\-STRUCT\_\-END}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf icmpip\_\-hdr}  {\bf PACK\_\-STRUCT\_\-END}}}
+\label{group__uipfw_gafe7e75cc45d2b325aaaf5d0042e8bfd8}
+\hypertarget{group__uipfw_gaba8a72b0f9274932f6880c95165cb30d}{
+\index{uipfw@{uipfw}!payload@{payload}}
+\index{payload@{payload}!uipfw@{uipfw}}
+\subsubsection[{payload}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u8\_\-t} {\bf icmpip\_\-hdr::payload}\mbox{[}1\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{group__uipfw_gaba8a72b0f9274932f6880c95165cb30d}
+
+
+Definition at line 114 of file uip-\/fw.c.
+
+\hypertarget{group__uipfw_ga2be7b4f6413d75eefbe43529a9838fd6}{
+\index{uipfw@{uipfw}!proto@{proto}}
+\index{proto@{proto}!uipfw@{uipfw}}
+\subsubsection[{proto}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u8\_\-t} {\bf fwcache\_\-entry::proto}\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{group__uipfw_ga2be7b4f6413d75eefbe43529a9838fd6}
+
+
+Definition at line 143 of file uip-\/fw.c.
+
+\hypertarget{group__uipfw_gabf0603fa00a2effd2f79d8b3f36e9fb1}{
+\index{uipfw@{uipfw}!proto@{proto}}
+\index{proto@{proto}!uipfw@{uipfw}}
+\subsubsection[{proto}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u8\_\-t} {\bf tcpip\_\-hdr::proto}\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{group__uipfw_gabf0603fa00a2effd2f79d8b3f36e9fb1}
+
+
+Definition at line 79 of file uip-\/fw.c.
+
+\hypertarget{group__uipfw_gafa0d3607dd6825e880db0802824fc61c}{
+\index{uipfw@{uipfw}!seqno@{seqno}}
+\index{seqno@{seqno}!uipfw@{uipfw}}
+\subsubsection[{seqno}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u16\_\-t} {\bf icmpip\_\-hdr::seqno}\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{group__uipfw_gafa0d3607dd6825e880db0802824fc61c}
+
+
+Definition at line 113 of file uip-\/fw.c.
+
+\hypertarget{group__uipfw_gadb7d3ca80f0f4415f7d5f680c600904c}{
+\index{uipfw@{uipfw}!seqno@{seqno}}
+\index{seqno@{seqno}!uipfw@{uipfw}}
+\subsubsection[{seqno}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u8\_\-t} {\bf tcpip\_\-hdr::seqno}\mbox{[}4\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{group__uipfw_gadb7d3ca80f0f4415f7d5f680c600904c}
+
+
+Definition at line 88 of file uip-\/fw.c.
+
+\hypertarget{group__uipfw_gaae48d38b90eb606c41fdd6cb5d56fb5c}{
+\index{uipfw@{uipfw}!srcipaddr@{srcipaddr}}
+\index{srcipaddr@{srcipaddr}!uipfw@{uipfw}}
+\subsubsection[{srcipaddr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u16\_\-t} {\bf fwcache\_\-entry::srcipaddr}\mbox{[}2\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{group__uipfw_gaae48d38b90eb606c41fdd6cb5d56fb5c}
+
+
+Definition at line 140 of file uip-\/fw.c.
+
+\hypertarget{group__uipfw_gae7234666e63801b5d3b76853d4f8c3da}{
+\index{uipfw@{uipfw}!srcipaddr@{srcipaddr}}
+\index{srcipaddr@{srcipaddr}!uipfw@{uipfw}}
+\subsubsection[{srcipaddr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u16\_\-t} {\bf tcpip\_\-hdr::srcipaddr}\mbox{[}2\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{group__uipfw_gae7234666e63801b5d3b76853d4f8c3da}
+
+
+Definition at line 82 of file uip-\/fw.c.
+
+\hypertarget{group__uipfw_ga50b8789dde802ca4ed0a4a81949d8397}{
+\index{uipfw@{uipfw}!srcipaddr@{srcipaddr}}
+\index{srcipaddr@{srcipaddr}!uipfw@{uipfw}}
+\subsubsection[{srcipaddr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u16\_\-t} {\bf icmpip\_\-hdr::srcipaddr}\mbox{[}2\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{group__uipfw_ga50b8789dde802ca4ed0a4a81949d8397}
+
+
+Definition at line 108 of file uip-\/fw.c.
+
+\hypertarget{group__uipfw_ga410b213756b5374d6ce2024c2e43cbf8}{
+\index{uipfw@{uipfw}!srcport@{srcport}}
+\index{srcport@{srcport}!uipfw@{uipfw}}
+\subsubsection[{srcport}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u16\_\-t} {\bf tcpip\_\-hdr::srcport}\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{group__uipfw_ga410b213756b5374d6ce2024c2e43cbf8}
+
+
+Definition at line 86 of file uip-\/fw.c.
+
+\hypertarget{group__uipfw_ga711271ced4443aa908b161ccde1a9de4}{
+\index{uipfw@{uipfw}!tcpchksum@{tcpchksum}}
+\index{tcpchksum@{tcpchksum}!uipfw@{uipfw}}
+\subsubsection[{tcpchksum}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u16\_\-t} {\bf tcpip\_\-hdr::tcpchksum}\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{group__uipfw_ga711271ced4443aa908b161ccde1a9de4}
+
+
+Definition at line 93 of file uip-\/fw.c.
+
+\hypertarget{group__uipfw_gaec07fa9add3c0a172516e0ec66810ac4}{
+\index{uipfw@{uipfw}!tcpoffset@{tcpoffset}}
+\index{tcpoffset@{tcpoffset}!uipfw@{uipfw}}
+\subsubsection[{tcpoffset}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u8\_\-t} {\bf tcpip\_\-hdr::tcpoffset}\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{group__uipfw_gaec07fa9add3c0a172516e0ec66810ac4}
+
+
+Definition at line 88 of file uip-\/fw.c.
+
+\hypertarget{group__uipfw_ga23148b00701b22ff693cad8f42e09efb}{
+\index{uipfw@{uipfw}!ttl@{ttl}}
+\index{ttl@{ttl}!uipfw@{uipfw}}
+\subsubsection[{ttl}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u8\_\-t} {\bf tcpip\_\-hdr::ttl}\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{group__uipfw_ga23148b00701b22ff693cad8f42e09efb}
+
+
+Definition at line 79 of file uip-\/fw.c.
+
+\hypertarget{group__uipfw_gacd2da996a99d67c9bd3d19d619206087}{
+\index{uipfw@{uipfw}!type@{type}}
+\index{type@{type}!uipfw@{uipfw}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u8\_\-t} {\bf icmpip\_\-hdr::type}\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{group__uipfw_gacd2da996a99d67c9bd3d19d619206087}
+
+
+Definition at line 111 of file uip-\/fw.c.
+
+\hypertarget{group__uipfw_ga4b6ce01bb79734997584ce27060dd544}{
+\index{uipfw@{uipfw}!unused@{unused}}
+\index{unused@{unused}!uipfw@{uipfw}}
+\subsubsection[{unused}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u8\_\-t} {\bf fwcache\_\-entry::unused}\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{group__uipfw_ga4b6ce01bb79734997584ce27060dd544}
+
+
+Definition at line 144 of file uip-\/fw.c.
+
+\hypertarget{group__uipfw_gadee52ce29db507d7d12185a0e9388b51}{
+\index{uipfw@{uipfw}!urgp@{urgp}}
+\index{urgp@{urgp}!uipfw@{uipfw}}
+\subsubsection[{urgp}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u8\_\-t} {\bf tcpip\_\-hdr::urgp}\mbox{[}2\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{group__uipfw_gadee52ce29db507d7d12185a0e9388b51}
+
+
+Definition at line 94 of file uip-\/fw.c.
+
+\hypertarget{group__uipfw_ga8da4793ac511e68c37ad2dcfd37c639b}{
+\index{uipfw@{uipfw}!wnd@{wnd}}
+\index{wnd@{wnd}!uipfw@{uipfw}}
+\subsubsection[{wnd}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u8\_\-t} {\bf tcpip\_\-hdr::wnd}\mbox{[}2\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}inherited\mbox{]}}}}
+\label{group__uipfw_ga8da4793ac511e68c37ad2dcfd37c639b}
+
+
+Definition at line 88 of file uip-\/fw.c.
+

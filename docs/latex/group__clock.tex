@@ -1,0 +1,102 @@
+\hypertarget{group__clock}{
+\section{Clock interface}
+\label{group__clock}\index{Clock interface@{Clock interface}}
+}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__clock_gae3ced0551b26c9b99cb45a86f34d100a}{CLOCK\_\-SECOND}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__clock_ga78ab77b57cf2e00089f0a3a22508524c}{clock\_\-init} (void)
+\begin{DoxyCompactList}\small\item\em Inicializa o clock. \item\end{DoxyCompactList}\item 
+\hyperlink{clock-arch_8h_a42fc7b708ad04499c436158fd5f37ed4}{clock\_\-time\_\-t} \hyperlink{group__clock_gae5b7160f2e653725ba5e2024c3cb7bff}{clock\_\-time} (void)
+\begin{DoxyCompactList}\small\item\em Retorna o tempo de T0. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The clock interface is the interface between the \hyperlink{group__timer}{timer library} and the platform specific clock functionality. The clock interface must be implemented for each platform that uses the \hyperlink{group__timer}{timer library}.
+
+The clock interface does only one this: it measures time. The clock interface provides a macro, CLOCK\_\-SECOND, which corresponds to one second of system time.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{group__timer}{Timer library} 
+\end{DoxySeeAlso}
+
+
+\subsection{Define Documentation}
+\hypertarget{group__clock_gae3ced0551b26c9b99cb45a86f34d100a}{
+\index{clock@{clock}!CLOCK\_\-SECOND@{CLOCK\_\-SECOND}}
+\index{CLOCK\_\-SECOND@{CLOCK\_\-SECOND}!clock@{clock}}
+\subsubsection[{CLOCK\_\-SECOND}]{\setlength{\rightskip}{0pt plus 5cm}\#define CLOCK\_\-SECOND}}
+\label{group__clock_gae3ced0551b26c9b99cb45a86f34d100a}
+A second, measured in system clock time. 
+
+Definition at line 81 of file clock.h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{group__clock_ga78ab77b57cf2e00089f0a3a22508524c}{
+\index{clock@{clock}!clock\_\-init@{clock\_\-init}}
+\index{clock\_\-init@{clock\_\-init}!clock@{clock}}
+\subsubsection[{clock\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void clock\_\-init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__clock_ga78ab77b57cf2e00089f0a3a22508524c}
+Initialize the clock library.
+
+This function initializes the clock library and should be called from the \hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main()} function of the system.
+
+Funcao para inicializar o clock T0 
+
+Definition at line 35 of file eth.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{group__clock_ga78ab77b57cf2e00089f0a3a22508524c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{group__clock_gae5b7160f2e653725ba5e2024c3cb7bff}{
+\index{clock@{clock}!clock\_\-time@{clock\_\-time}}
+\index{clock\_\-time@{clock\_\-time}!clock@{clock}}
+\subsubsection[{clock\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clock\_\-time\_\-t} clock\_\-time (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__clock_gae5b7160f2e653725ba5e2024c3cb7bff}
+Get the current clock time.
+
+This function returns the current system clock time.
+
+\begin{DoxyReturn}{Returns}
+The current clock time, measured in system ticks. 
+\end{DoxyReturn}
+
+
+Definition at line 61 of file eth.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{group__clock_gae5b7160f2e653725ba5e2024c3cb7bff_cgraph}
+\end{center}
+\end{figure}
+
+

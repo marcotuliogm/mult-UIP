@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$emac_8c.html#a1a7dca81ea5d770353e4206fefe042c5" title="CopyFromFrame_EMAC" alt="" coords="192,5,363,35"/>
+<area shape="rect" id="node7" href="$emac_8c.html#a72f4541b2abeb49e7d0ee6ca0f372852" title="EndReadFrame" alt="" coords="219,59,336,88"/>
+<area shape="rect" id="node9" href="$emac_8c.html#a2fc342534e2db89a6531315cc3b99a1c" title="StartReadFrame" alt="" coords="215,112,340,141"/>
+<area shape="rect" id="node5" href="$emac_8c.html#ab153369e2da740f171b699566409561e" title="ReadFrame_EMAC" alt="" coords="412,5,548,35"/>
+</map>

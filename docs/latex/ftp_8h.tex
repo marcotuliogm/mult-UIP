@@ -1,0 +1,181 @@
+\hypertarget{ftp_8h}{
+\section{ftp/ftp.h File Reference}
+\label{ftp_8h}\index{ftp/ftp.h@{ftp/ftp.h}}
+}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structftp__state}{ftp\_\-state}
+\end{DoxyCompactItemize}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__ftp_ga055af4196bea1958758ca64e79eb7f34}{arnTRUE}~((\hyperlink{group__ftp_ga748121386e994966f8a87f4160f055b4}{arn\_\-uCHAR}) 1)
+\item 
+\#define \hyperlink{group__ftp_ga794b8af31b90186c33457a23fda0e759}{arnFALSE}~((\hyperlink{group__ftp_ga748121386e994966f8a87f4160f055b4}{arn\_\-uCHAR}) 0)
+\item 
+\#define \hyperlink{group__ftp_gacc9794f655f61a3246ba3fd5c9c67e14}{MAX\_\-FILENAME\_\-LEN}~128
+\item 
+\#define \hyperlink{group__ftp_ga39836d3275006cfefb6440e2a0183422}{FTP\_\-FLAG\_\-CMDREQUEST}~0x01
+\item 
+\#define \hyperlink{group__ftp_ga087d93636e55977f833c29ade04e6228}{FTP\_\-FLAG\_\-DATAPENDING}~0x02
+\item 
+\#define \hyperlink{group__ftp_ga8f00393bff55298d298b977325ef817a}{FTP\_\-FLAG\_\-LASTDATAACK}~0x04
+\item 
+\#define \hyperlink{group__ftp_ga6b402e3086d470f0345f690cda06e37e}{FTP\_\-FLAG\_\-CTRL}~0x80
+\item 
+\#define \hyperlink{group__ftp_ga929304ba787388ea46cbbd21666ab2b6}{FTP\_\-FLAG\_\-DATA}~0x40
+\item 
+\#define \hyperlink{group__ftp_ga30b7e26a0e7ce7ac0d823c31b22de694}{STS\_\-NONE}~0
+\item 
+\#define \hyperlink{group__ftp_gadf48c1088e7b27fa287d1d2e6c941bc3}{STS\_\-ERROR}~(STS\_\-NONE + 1)
+\item 
+\#define \hyperlink{group__ftp_gae144fc3376441fba0f34150f365d2ea5}{STS\_\-WAITFORCONN}~(STS\_\-ERROR + 1)
+\item 
+\#define \hyperlink{group__ftp_gae13a7a1a411918b955f9fc4f565e69f1}{STS\_\-CONNECTED}~(STS\_\-WAITFORCONN + 1)
+\item 
+\#define \hyperlink{group__ftp_ga36c56c6a5468beffe87cf4356794003a}{STS\_\-SENDINGFILE}~(STS\_\-CONNECTED + 1)
+\item 
+\#define \hyperlink{group__ftp_ga24c39c192e52b089875c082a055176d2}{STS\_\-UPOLOADOK}~(STS\_\-SENDINGFILE + 1)
+\item 
+\#define \hyperlink{group__ftp_ga4ffd18340d269b7f62cdf58d0de8eda8}{STS\_\-LOGGINGIN}~(STS\_\-UPOLOADOK + 1)
+\item 
+\#define \hyperlink{group__ftp_gaf68741feccc4b63d819090a11c1d6786}{STS\_\-LOGGEDIN}~(STS\_\-LOGGINGIN + 1)
+\item 
+\#define \hyperlink{group__ftp_ga722775804a5d9b7284483035d2bd7f60}{STS\_\-SYST\_\-INPROG}~(STS\_\-LOGGEDIN + 1)
+\item 
+\#define \hyperlink{group__ftp_ga8ad7d921fb5f219e862fea273dd44200}{STS\_\-SYST\_\-OK}~(STS\_\-SYST\_\-INPROG + 1)
+\item 
+\#define \hyperlink{group__ftp_gac5bed1b6ca25781b6a9f2c0c2a658fe1}{STS\_\-PORT\_\-INPROG}~(STS\_\-SYST\_\-OK + 1)
+\item 
+\#define \hyperlink{group__ftp_gaface357a7eb03399c1fcdef69e5e3b21}{STS\_\-PORT\_\-OK}~(STS\_\-PORT\_\-INPROG + 1)
+\item 
+\#define \hyperlink{group__ftp_gaa08b829702c3b69780e270df8aca352c}{STS\_\-DATACONN\_\-INPROG}~(STS\_\-PORT\_\-OK + 1)
+\item 
+\#define \hyperlink{group__ftp_gab7488a1a393b4e92eb386754bad49fc4}{STS\_\-DATACONN\_\-OK}~(STS\_\-DATACONN\_\-INPROG + 1)
+\item 
+\#define \hyperlink{group__ftp_ga66de4fa6c61ea9f3b365df7caf0e0dd5}{STS\_\-STOR\_\-INPROG}~(STS\_\-DATACONN\_\-OK + 1)
+\item 
+\#define \hyperlink{group__ftp_ga731fe84d2369ca6d827155e2ea9ccd37}{STS\_\-START\_\-DATASTORE}~(STS\_\-STOR\_\-INPROG + 1)
+\item 
+\#define \hyperlink{group__ftp_ga7b458125d1689f371be4a21634a64d44}{STS\_\-SENDDATA\_\-INPROG}~(STS\_\-START\_\-DATASTORE + 1)
+\item 
+\#define \hyperlink{group__ftp_ga4ab0222f5cbb2d0a6d1c7eae704ecb6e}{STS\_\-SENDDATA\_\-ENDING}~(STS\_\-SENDDATA\_\-INPROG + 1)
+\item 
+\#define \hyperlink{group__ftp_ga0b465a6954f60bdf103c9d38a7583f5e}{STS\_\-SENDDATA\_\-OK}~(STS\_\-SENDDATA\_\-ENDING + 1)
+\item 
+\#define \hyperlink{group__ftp_ga3f47db8c6627d293105434023a806837}{STS\_\-DATACONN\_\-CLOSED\_\-OK}~(STS\_\-SENDDATA\_\-OK + 1)
+\item 
+\#define \hyperlink{group__ftp_ga9d554fecc84e40fc5afcc97ce4130443}{STS\_\-QUIT\_\-INPROG}~(STS\_\-DATACONN\_\-CLOSED\_\-OK + 1)
+\item 
+\#define \hyperlink{group__ftp_ga53b4f88911b5cf48a56f24d5ebefdb7a}{STS\_\-QUIT\_\-OK}~(STS\_\-QUIT\_\-INPROG + 1)
+\item 
+\#define \hyperlink{group__ftp_ga6be5ad15a4a71e84d34d984b75f9904a}{STS\_\-IDLE}~(STS\_\-QUIT\_\-OK + 1)
+\item 
+\#define \hyperlink{group__ftp_gacc19481d3bff7e3c8e3b8804d2d2afcf}{ERRC\_\-NONE}~0
+\item 
+\#define \hyperlink{group__ftp_ga1c8411c28dee6c0b2d222a447e2995f8}{ERRC\_\-HOSTNAMENOTIP}~(ERRC\_\-NONE + 1)
+\item 
+\#define \hyperlink{group__ftp_gad095bd01c68b22025a316e548cc955b5}{ERRC\_\-CONN}~(ERRC\_\-HOSTNAMENOTIP + 1)
+\item 
+\#define \hyperlink{group__ftp_ga4f93f63c6a0a40d34ecb3b0ef0f3d56b}{ERRC\_\-FNAMETOLOONG}~(ERRC\_\-CONN + 1)
+\item 
+\#define \hyperlink{group__ftp_ga2b8131ed927cfb34404a8b123ad33e1a}{ERRC\_\-SRV\_\-WM}~(ERRC\_\-FNAMETOLOONG + 1)
+\item 
+\#define \hyperlink{group__ftp_ga21fc8afdf5c1b2ccef85b7d1dab9e291}{ERRC\_\-LOGIN}~(ERRC\_\-SRV\_\-WM + 1)
+\item 
+\#define \hyperlink{group__ftp_ga2cee1778ee6192399bd5196d8abb81dd}{ERRC\_\-SYST}~(ERRC\_\-LOGIN + 1)
+\item 
+\#define \hyperlink{group__ftp_gaf92586684d1c458f7675ece8677fe28f}{ERRC\_\-PORT}~(ERRC\_\-SYST + 1)
+\item 
+\#define \hyperlink{group__ftp_gafdeae57f1aa8e5279b2faf3e3619cfe3}{ERRC\_\-CONN\_\-DATA}~(ERRC\_\-PORT + 1)
+\item 
+\#define \hyperlink{group__ftp_gae63f2981f55f40322da00aa03fce1472}{ERRC\_\-STOR}~(ERRC\_\-CONN\_\-DATA + 1)
+\item 
+\#define \hyperlink{group__ftp_gacd22c3d419804a0d9ab9621aa5eb9a0d}{ERRC\_\-QUIT}~(ERRC\_\-STOR + 1)
+\item 
+\#define \hyperlink{group__ftp_gae2f7eeda61eb20dbd08413b4729bb5b5}{ERRC\_\-PASS}~(ERRC\_\-QUIT + 1)
+\item 
+\#define \hyperlink{group__ftp_ga0eae627d0514fa41cbc8fda0740f5794}{UIP\_\-APPSTATE\_\-SIZE}~(sizeof(struct \hyperlink{structftp__state}{ftp\_\-state}))
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned char \hyperlink{group__ftp_ga748121386e994966f8a87f4160f055b4}{arn\_\-uCHAR}
+\item 
+typedef unsigned short \hyperlink{group__ftp_gaa290e3b930f0eff7f256b787fdbe02dc}{arn\_\-uSHORT}
+\item 
+typedef unsigned long \hyperlink{group__ftp_ga8b49fa3351457a2ef5c6f2b84c227953}{arn\_\-uLONG}
+\item 
+typedef \hyperlink{group__ftp_ga8b49fa3351457a2ef5c6f2b84c227953}{arn\_\-uLONG} \hyperlink{group__ftp_gaa8482f09ead6db56dc88c28e93b6c403}{arn\_\-uINT}
+\item 
+typedef signed char \hyperlink{group__ftp_gac337f9d5cafc356fbdbf5cf13e65ba6d}{arn\_\-sCHAR}
+\item 
+typedef signed short \hyperlink{group__ftp_gaf99068ab37d922a9909e69f2f438ba2a}{arn\_\-sSHORT}
+\item 
+typedef signed long \hyperlink{group__ftp_ga513c5078ef61e98f886e30e0160f9aed}{arn\_\-sLONG}
+\item 
+typedef \hyperlink{group__ftp_ga513c5078ef61e98f886e30e0160f9aed}{arn\_\-sLONG} \hyperlink{group__ftp_ga5c55a910c7442d4a6c3d12e9b9456a6d}{arn\_\-sINT}
+\item 
+typedef char \hyperlink{group__ftp_gab7c92ee10c15b851350edb8a4a3bb708}{arn\_\-CHAR}
+\item 
+typedef short \hyperlink{group__ftp_ga4141624391b35e060d6167502404c3a0}{arn\_\-SHORT}
+\item 
+typedef long \hyperlink{group__ftp_ga6094b3f192571d7477f6ee0feb3f6258}{arn\_\-LONG}
+\item 
+typedef int \hyperlink{group__ftp_gadfc1beb2750f692d8fc0b488fd53312b}{arn\_\-INT}
+\item 
+typedef \hyperlink{group__ftp_ga748121386e994966f8a87f4160f055b4}{arn\_\-uCHAR} \hyperlink{group__ftp_gaa90ab1d85ab7976982506605e340be8b}{arn\_\-BOOL}
+\item 
+typedef enum \hyperlink{group__ftp_ga6ba091973f82254c93d262d863c0de06}{ftp\_\-cmd\_\-status} \hyperlink{group__ftp_gabd3273961dc774ec260204513c2cea90}{ftp\_\-cmd\_\-status\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{group__ftp_ga6ba091973f82254c93d262d863c0de06}{ftp\_\-cmd\_\-status} \{ \par
+\hyperlink{group__ftp_gga6ba091973f82254c93d262d863c0de06a844915b7f33a80407deec70c6951923e}{ftpcs\_\-NONE} =  0, 
+\hyperlink{group__ftp_gga6ba091973f82254c93d262d863c0de06abed3f90d1064f0c656d245cd235c17f1}{ftpcs\_\-INPROGRESS}, 
+\hyperlink{group__ftp_gga6ba091973f82254c93d262d863c0de06a8bf1e38a8bd301fe7888baa53a0459f5}{ftpcs\_\-SUCCESS}, 
+\hyperlink{group__ftp_gga6ba091973f82254c93d262d863c0de06a584f14178b706fe90959de96fa88f28f}{ftpcs\_\-FAILED}, 
+\par
+\hyperlink{group__ftp_gga6ba091973f82254c93d262d863c0de06a10c55b5e6b693b50804ff9bd24be8716}{ftpcs\_\-USERNAME\_\-REQ}, 
+\hyperlink{group__ftp_gga6ba091973f82254c93d262d863c0de06a46e451d4bde835dca2b25126b4a35b3e}{ftpcs\_\-PASSWORD\_\-REQ}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__ftp_ga0ce807a5743a650f336bee2585ef3f82}{ftp\_\-init} (void)
+\item 
+void \hyperlink{group__ftp_gabc4870541ea92032bf42618ee5316daa}{ftp\_\-appcall} (void)
+\item 
+\hyperlink{group__ftp_gabd3273961dc774ec260204513c2cea90}{ftp\_\-cmd\_\-status\_\-t} \hyperlink{group__ftp_gad3c366206b639b09543515a6ab6e228e}{ftp\_\-connect} (\hyperlink{group__ftp_gab7c92ee10c15b851350edb8a4a3bb708}{arn\_\-CHAR} $\ast$host, \hyperlink{group__ftp_gaa290e3b930f0eff7f256b787fdbe02dc}{arn\_\-uSHORT} rport, struct \hyperlink{structuip__conn}{uip\_\-conn} $\ast$$\ast$sconn)
+\item 
+\hyperlink{group__ftp_gabd3273961dc774ec260204513c2cea90}{ftp\_\-cmd\_\-status\_\-t} \hyperlink{group__ftp_ga86522c2e5a4dba5a9213f20c1cb9f31e}{ftp\_\-login} (const struct \hyperlink{structuip__conn}{uip\_\-conn} $\ast$sconn, \hyperlink{group__ftp_gab7c92ee10c15b851350edb8a4a3bb708}{arn\_\-CHAR} $\ast$username)
+\item 
+\hyperlink{group__ftp_gabd3273961dc774ec260204513c2cea90}{ftp\_\-cmd\_\-status\_\-t} \hyperlink{group__ftp_ga2a15e319137f942818399a1633c536a8}{ftp\_\-password} (const struct \hyperlink{structuip__conn}{uip\_\-conn} $\ast$sconn, \hyperlink{group__ftp_gab7c92ee10c15b851350edb8a4a3bb708}{arn\_\-CHAR} $\ast$password)
+\item 
+\hyperlink{group__ftp_gabd3273961dc774ec260204513c2cea90}{ftp\_\-cmd\_\-status\_\-t} \hyperlink{group__ftp_gacf99b25830511655f16139c5c4ab73df}{ftp\_\-syst} (const struct \hyperlink{structuip__conn}{uip\_\-conn} $\ast$sconn, \hyperlink{group__ftp_gab7c92ee10c15b851350edb8a4a3bb708}{arn\_\-CHAR} $\ast$res)
+\item 
+\hyperlink{group__ftp_gabd3273961dc774ec260204513c2cea90}{ftp\_\-cmd\_\-status\_\-t} \hyperlink{group__ftp_ga3dcde404cc2a132e5d4b7307a2dabecc}{ftp\_\-port} (const struct \hyperlink{structuip__conn}{uip\_\-conn} $\ast$sconn, \hyperlink{group__ftp_gaa290e3b930f0eff7f256b787fdbe02dc}{arn\_\-uSHORT} ldataport)
+\item 
+\hyperlink{group__ftp_gabd3273961dc774ec260204513c2cea90}{ftp\_\-cmd\_\-status\_\-t} \hyperlink{group__ftp_gaeea6048ae27001ac1fd4890e73b0edc4}{ftp\_\-pasv} (const struct \hyperlink{structuip__conn}{uip\_\-conn} $\ast$sconn)
+\item 
+\hyperlink{group__ftp_gabd3273961dc774ec260204513c2cea90}{ftp\_\-cmd\_\-status\_\-t} \hyperlink{group__ftp_ga1e7b132e2be7304b13ef544fd8a9ce2f}{ftp\_\-send} (const struct \hyperlink{structuip__conn}{uip\_\-conn} $\ast$sconn, \hyperlink{group__ftp_gab7c92ee10c15b851350edb8a4a3bb708}{arn\_\-CHAR} $\ast$filename, \hyperlink{group__ftp_ga748121386e994966f8a87f4160f055b4}{arn\_\-uCHAR} $\ast$sadd, \hyperlink{group__ftp_ga8b49fa3351457a2ef5c6f2b84c227953}{arn\_\-uLONG} size)
+\item 
+\hyperlink{group__ftp_gabd3273961dc774ec260204513c2cea90}{ftp\_\-cmd\_\-status\_\-t} \hyperlink{group__ftp_ga950e54e72b9e0a0f980298c62feb4bb1}{ftp\_\-quit} (const struct \hyperlink{structuip__conn}{uip\_\-conn} $\ast$sconn)
+\item 
+\hyperlink{group__ftp_ga748121386e994966f8a87f4160f055b4}{arn\_\-uCHAR} \hyperlink{group__ftp_ga5bea8b2f02d8fbcbe83be53c72f38112}{ftp\_\-getStatus} (const struct \hyperlink{structuip__conn}{uip\_\-conn} $\ast$sconn)
+\item 
+\hyperlink{group__ftp_ga748121386e994966f8a87f4160f055b4}{arn\_\-uCHAR} \hyperlink{group__ftp_ga8a27b62d78e709cada17a059d80dbd8c}{ftp\_\-getErrorCode} (const struct \hyperlink{structuip__conn}{uip\_\-conn} $\ast$sconn)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Header file for the ftp client. \begin{DoxyAuthor}{Author}
+Fabio Giovagnini $<$\href{mailto:fabio.giovagnini@aurion-tech.com}{\tt fabio.giovagnini@aurion-\/tech.com}$>$ 
+\end{DoxyAuthor}
+
+
+Definition in file \hyperlink{ftp_8h_source}{ftp.h}.
+

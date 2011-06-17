@@ -1,0 +1,56 @@
+\hypertarget{sftd__2_8c}{
+\section{sft/sft-\/old/sftd\_\-2.c File Reference}
+\label{sftd__2_8c}\index{sft/sft-\/old/sftd\_\-2.c@{sft/sft-\/old/sftd\_\-2.c}}
+}
+{\ttfamily \#include \char`\"{}sftd.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}uip.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}grlib/grlib.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}../uart/uart.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}../cli/debug.h\char`\"{}}\par
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__SFTD_gaa5186a00142139694fa51998303b63a0}{TAM\_\-BUFF\_\-TEMP}~3
+\begin{DoxyCompactList}\small\item\em Tamanho do buffer temporario usado pelo RLE. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{group__SFTD_ga3607c9823abc40aef55f22aa45a16438}{TOTAL\_\-PIXEL}~26136
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__SFTD_gab05d3fde000321e5a849ec084474caf2}{sftd\_\-init} (void)
+\begin{DoxyCompactList}\small\item\em Inicializa servico do protocolo SFT. \item\end{DoxyCompactList}\item 
+void \hyperlink{group__SFTD_ga95d5c450883e216dccebd10b4adbca3c}{sftd\_\-appcall} (void)
+\begin{DoxyCompactList}\small\item\em Funcao tratados de pacotes do tipo SFT. \item\end{DoxyCompactList}\item 
+void \hyperlink{group__SFTD_ga77244ac0ad98e8d5ff310132595c4612}{sft\_\-closed} (struct \hyperlink{structsftd__state}{sftd\_\-state} $\ast$s)
+\begin{DoxyCompactList}\small\item\em Coloca protocolo em estado de fechado. \item\end{DoxyCompactList}\item 
+void \hyperlink{group__SFTD_ga0dd45f928eb9fd92057c3030a3718397}{sft\_\-senddata} (struct \hyperlink{structsftd__state}{sftd\_\-state} $\ast$s)
+\begin{DoxyCompactList}\small\item\em Envia pacotes do tipo SFT. \item\end{DoxyCompactList}\item 
+int \hyperlink{group__SFTD_ga3ba5af4fe8714e70fca97e743011e163}{sft\_\-trata} (struct \hyperlink{structsftd__state}{sftd\_\-state} $\ast$s)
+\begin{DoxyCompactList}\small\item\em Trata pacotes do tipo SFT. \item\end{DoxyCompactList}\item 
+void \hyperlink{group__SFTD_ga4a53cb826fb28e5b8968d169e929c244}{info\_\-host\_\-wait} (struct \hyperlink{structsftd__state}{sftd\_\-state} $\ast$s)
+\begin{DoxyCompactList}\small\item\em Monta protocolo SFT informando para destino aguardar. \item\end{DoxyCompactList}\item 
+void \hyperlink{group__SFTD_ga65321a4c9870ef49a16b3c2dd444276e}{info\_\-host\_\-stop} (struct \hyperlink{structsftd__state}{sftd\_\-state} $\ast$s)
+\begin{DoxyCompactList}\small\item\em Monta e envia protocolo SFT pedindo STOP no envio de dados. \item\end{DoxyCompactList}\item 
+void \hyperlink{group__SFTD_gaffb793b26caefd07873afa01ace4ee61}{carrega\_\-img\_\-old} (struct \hyperlink{structsftd__state}{sftd\_\-state} $\ast$s)
+\begin{DoxyCompactList}\small\item\em Antiga funcao usada para tratar imagens do tipo geral. \item\end{DoxyCompactList}\item 
+void \hyperlink{group__SFTD_gab0520adf98ea71f71de3d1f42c778fac}{carrega\_\-img} (struct \hyperlink{structsftd__state}{sftd\_\-state} $\ast$s)
+\begin{DoxyCompactList}\small\item\em Carrega Imagem vinda do protocolo para o display. \item\end{DoxyCompactList}\item 
+void \hyperlink{group__SFTD_ga7a80643708e17a7a7b3b7980ea3f901b}{carrega\_\-imgu} (struct \hyperlink{structsftd__state}{sftd\_\-state} $\ast$s)
+\begin{DoxyCompactList}\small\item\em Carrega Imagem vinda do protocolo para o display sem seguranca. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{group__SFTD_ga46b780fcc31527f9e6b9b94b27c5fdc9}{contImg}
+\item 
+int \hyperlink{group__SFTD_gaeed3ab3cfaa81fc518da034ffff8576c}{n\_\-buff}
+\item 
+int \hyperlink{group__SFTD_gab01f6df89a2c590dbf207e6e2ce01bf2}{flag\_\-buff\_\-temp}
+\item 
+int \hyperlink{group__SFTD_gaf04e37b7953920f8142c8ebf2b9f7d13}{buff\_\-temp} \mbox{[}TAM\_\-BUFF\_\-TEMP\mbox{]}
+\item 
+int \hyperlink{group__SFTD_gadd34d8f0c83196f8b20622a06ddead79}{break\_\-geral}
+\item 
+int \hyperlink{group__SFTD_ga64595c5b8b55f94d3eb7503f07bc61a9}{old\_\-id}
+\item 
+int \hyperlink{group__SFTD_ga2154b2a39f2c03e7fd41ea4c626dfefc}{flag\_\-sendu}
+\begin{DoxyCompactList}\small\item\em FLAG usada para poder verificar quando for envio de dados sem seguranca do buffer. \item\end{DoxyCompactList}\end{DoxyCompactItemize}

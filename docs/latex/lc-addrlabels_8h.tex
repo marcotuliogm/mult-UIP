@@ -1,0 +1,35 @@
+\hypertarget{lc-addrlabels_8h}{
+\section{/home/mtgm/tcc/mult-\/UIP/uip/lc-\/addrlabels.h File Reference}
+\label{lc-addrlabels_8h}\index{/home/mtgm/tcc/mult-\/UIP/uip/lc-\/addrlabels.h@{/home/mtgm/tcc/mult-\/UIP/uip/lc-\/addrlabels.h}}
+}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__lc_ga2c1bb4fa6d7a6ff951a41c73fc721109}{LC\_\-INIT}(s)~s = NULL
+\item 
+\#define \hyperlink{group__lc_ga1ec8b8f4710dce1fa7fb87d3a31541ae}{LC\_\-RESUME}(s)
+\item 
+\#define \hyperlink{group__lc_gad8eec328a4868d767f0c00c8d1c6cfc1}{LC\_\-SET}(s)~do \{ (\{ \_\-\_\-label\_\-\_\- resume; resume: (s) = \&\&resume; \}); \}while(0)
+\item 
+\#define \hyperlink{group__lc_gaca51ceb2f5d855dfde55bcedf8d3b92d}{LC\_\-END}(s)
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void $\ast$ \hyperlink{group__lc_ga2bdc4b7b4038454a79f1b2a94a6d2a98}{lc\_\-t}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementation of local continuations based on the \char`\"{}Labels as
+ values\char`\"{} feature of gcc \begin{DoxyAuthor}{Author}
+Adam Dunkels $<$\href{mailto:adam@sics.se}{\tt adam@sics.se}$>$
+\end{DoxyAuthor}
+This implementation of local continuations is based on a special feature of the GCC C compiler called \char`\"{}labels as values\char`\"{}. This feature allows assigning pointers with the address of the code corresponding to a particular C label.
+
+For more information, see the GCC documentation: \href{http://gcc.gnu.org/onlinedocs/gcc/Labels-as-Values.html}{\tt http://gcc.gnu.org/onlinedocs/gcc/Labels-\/as-\/Values.html}
+
+Thanks to dividuum for finding the nice local scope label implementation. 
+
+Definition in file \hyperlink{lc-addrlabels_8h_source}{lc-\/addrlabels.h}.
+

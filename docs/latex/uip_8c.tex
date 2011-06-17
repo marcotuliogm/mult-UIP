@@ -1,0 +1,159 @@
+\hypertarget{uip_8c}{
+\section{/home/mtgm/tcc/mult-\/UIP/uip/uip.c File Reference}
+\label{uip_8c}\index{/home/mtgm/tcc/mult-\/UIP/uip/uip.c@{/home/mtgm/tcc/mult-\/UIP/uip/uip.c}}
+}
+{\ttfamily \#include \char`\"{}uip.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}uipopt.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}uip\_\-arch.h\char`\"{}}\par
+{\ttfamily \#include $<$string.h$>$}\par
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{uip_8c_a5c8ef3c24dad2c469a42784a9a39403b}{DEBUG\_\-PRINTF}(...)
+\item 
+\#define \hyperlink{group__uip_ga88e60aa2cf23e1c65d630701db08c743}{TCP\_\-FIN}~0x01
+\item 
+\#define \hyperlink{group__uip_ga6020613f5062417d9811cfa837215c83}{TCP\_\-SYN}~0x02
+\item 
+\#define \hyperlink{group__uip_ga5ca559def464ef20d8b1f7d32f2f160d}{TCP\_\-RST}~0x04
+\item 
+\#define \hyperlink{group__uip_ga1320fd0006a2f70138bc2d0018dda829}{TCP\_\-PSH}~0x08
+\item 
+\#define \hyperlink{group__uip_ga44b3b1ab31a403ba28ec135adfcbefef}{TCP\_\-ACK}~0x10
+\item 
+\#define \hyperlink{group__uip_gac84f499cba8a02fc0e306c10b2acabf0}{TCP\_\-URG}~0x20
+\item 
+\#define \hyperlink{group__uip_ga1425d4a0c2760adb653a04c0fb137a8d}{TCP\_\-CTL}~0x3f
+\item 
+\#define \hyperlink{group__uip_ga1215163245304bad20d6c5608ad75ab7}{TCP\_\-OPT\_\-END}~0
+\item 
+\#define \hyperlink{group__uip_ga9f1822e1d231235edacad691f3cb7bbb}{TCP\_\-OPT\_\-NOOP}~1
+\item 
+\#define \hyperlink{group__uip_ga691688604655ea8943d15f14c60027d8}{TCP\_\-OPT\_\-MSS}~2
+\item 
+\#define \hyperlink{group__uip_ga12f3bf821224b8e7b48a57ed3cea15cf}{TCP\_\-OPT\_\-MSS\_\-LEN}~4
+\item 
+\#define \hyperlink{group__uip_ga5c5b1834e497f53ad0ef947bbe9777fa}{ICMP\_\-ECHO\_\-REPLY}~0
+\item 
+\#define \hyperlink{group__uip_gad58231410d58e34b455328b888a9e73c}{ICMP\_\-ECHO}~8
+\item 
+\#define \hyperlink{group__uip_ga207d17b633cd095120a74bc1f2257b17}{ICMP6\_\-ECHO\_\-REPLY}~129
+\item 
+\#define \hyperlink{group__uip_ga4cc3e223b63f27b546d62e9a258dba5a}{ICMP6\_\-ECHO}~128
+\item 
+\#define \hyperlink{group__uip_ga1cea57e3ea526f210b1068e6dcf7b4f4}{ICMP6\_\-NEIGHBOR\_\-SOLICITATION}~135
+\item 
+\#define \hyperlink{group__uip_ga62c03e0a308cc23929a80fe8d8f9dc1e}{ICMP6\_\-NEIGHBOR\_\-ADVERTISEMENT}~136
+\item 
+\#define \hyperlink{group__uip_ga1d3211dbbdfb22d6a47b60dddcf945e8}{ICMP6\_\-FLAG\_\-S}~(1 $<$$<$ 6)
+\item 
+\#define \hyperlink{group__uip_ga42288d5c3cf4b10becefec657f441e54}{ICMP6\_\-OPTION\_\-SOURCE\_\-LINK\_\-ADDRESS}~1
+\item 
+\#define \hyperlink{group__uip_ga8387881de3a8bfd3c0d57b9d04ac9b7e}{ICMP6\_\-OPTION\_\-TARGET\_\-LINK\_\-ADDRESS}~2
+\item 
+\#define \hyperlink{group__uip_ga24f52ac52d6e714cb04a5aa01be3bdd0}{BUF}~((struct \hyperlink{structuip__tcpip__hdr}{uip\_\-tcpip\_\-hdr} $\ast$)\&\hyperlink{group__uipdevfunc_gab81e78f890dbbee50c533a9734b74fd9}{uip\_\-buf}\mbox{[}UIP\_\-LLH\_\-LEN\mbox{]})
+\item 
+\#define \hyperlink{group__uip_ga96544dedc1cdc71ad2ad54bf1d5e5433}{FBUF}~((struct \hyperlink{structuip__tcpip__hdr}{uip\_\-tcpip\_\-hdr} $\ast$)\&uip\_\-reassbuf\mbox{[}0\mbox{]})
+\item 
+\#define \hyperlink{group__uip_ga4309376690872fa4beb4f025f5cc199b}{ICMPBUF}~((struct \hyperlink{structuip__icmpip__hdr}{uip\_\-icmpip\_\-hdr} $\ast$)\&\hyperlink{group__uipdevfunc_gab81e78f890dbbee50c533a9734b74fd9}{uip\_\-buf}\mbox{[}UIP\_\-LLH\_\-LEN\mbox{]})
+\item 
+\#define \hyperlink{group__uip_gab9435261753469accec0c9bf8a5a2686}{UDPBUF}~((struct \hyperlink{structuip__udpip__hdr}{uip\_\-udpip\_\-hdr} $\ast$)\&\hyperlink{group__uipdevfunc_gab81e78f890dbbee50c533a9734b74fd9}{uip\_\-buf}\mbox{[}UIP\_\-LLH\_\-LEN\mbox{]})
+\item 
+\#define \hyperlink{group__uip_ga9c0814ed491fa452ec97910c0728d410}{UIP\_\-STAT}(s)~s
+\item 
+\#define \hyperlink{group__uip_ga013c3a06a8b58589a77f4a3442f89c2a}{UIP\_\-LOG}(m)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__uip_ga22f140b02c354dfebcc7ad481c3bcd68}{uip\_\-setipid} (\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} id)
+\item 
+void \hyperlink{group__uip_ga6832e4d2d046536b6472f7ac92340f68}{uip\_\-add32} (\hyperlink{group__uipfw_ga4caecabca98b43919dd11be1c0d4cd8e}{u8\_\-t} $\ast$op32, \hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} op16)
+\item 
+\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} \hyperlink{group__uip_ga6affe021225ed773018fb00814bbce06}{uip\_\-chksum} (\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} $\ast$data, \hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} len)
+\item 
+\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} \hyperlink{group__uip_ga2addf34c7d457c1a7899a7e2171ef1e9}{uip\_\-ipchksum} (void)
+\item 
+\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} \hyperlink{group__uip_ga85b65e38aa74eba18979156f97a94a87}{uip\_\-tcpchksum} (void)
+\item 
+\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} \hyperlink{group__uip_ga7023a34ba9e9d03b5fbedbcb32924453}{uip\_\-udpchksum} (void)
+\item 
+void \hyperlink{group__uip_gac48ed5f0d27721ef62a3ed02a5ad8d2e}{uip\_\-init} (void)
+\item 
+struct \hyperlink{structuip__conn}{uip\_\-conn} $\ast$ \hyperlink{group__uip_ga9c24fba2cd8f7f62accb0a0d5bbe4dad}{uip\_\-connect} (\hyperlink{group__uip_ga1ef35301f43a5bbb9f89f07b5a36b9a0}{uip\_\-ipaddr\_\-t} $\ast$ripaddr, \hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} rport)
+\item 
+struct \hyperlink{structuip__udp__conn}{uip\_\-udp\_\-conn} $\ast$ \hyperlink{group__uip_ga79c4110211247df3fb30b8cf1c4c02af}{uip\_\-udp\_\-new} (\hyperlink{group__uip_ga1ef35301f43a5bbb9f89f07b5a36b9a0}{uip\_\-ipaddr\_\-t} $\ast$ripaddr, \hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} rport)
+\item 
+void \hyperlink{group__uip_gaaa585784b0914cac1d37f07f85457008}{uip\_\-unlisten} (\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} port)
+\item 
+void \hyperlink{group__uip_gadd1ab3704ecd4900eec61a6897d32dc8}{uip\_\-listen} (\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} port)
+\item 
+void \hyperlink{group__uip_ga266263ac78a1361a2b1d15741d3b0675}{uip\_\-process} (\hyperlink{group__uipfw_ga4caecabca98b43919dd11be1c0d4cd8e}{u8\_\-t} \hyperlink{client__msg_8c_adf916204820072417ed73a32de1cefcf}{flag})
+\item 
+\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} \hyperlink{group__uip_gaa22b04cac8cf283ca12f028578bebc06}{htons} (\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} val)
+\item 
+void \hyperlink{group__uip_ga04b053a623aac7cd4195157d470661b3}{uip\_\-send} (const void $\ast$data, int len)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group__uip_ga1ef35301f43a5bbb9f89f07b5a36b9a0}{uip\_\-ipaddr\_\-t} \hyperlink{group__uip_ga7d3673f52f5846b6961d23b150decd54}{uip\_\-hostaddr}
+\item 
+\hyperlink{group__uip_ga1ef35301f43a5bbb9f89f07b5a36b9a0}{uip\_\-ipaddr\_\-t} \hyperlink{group__uip_ga20df5c82f2a15a508c19e505b5d9de2b}{uip\_\-draddr}
+\item 
+\hyperlink{group__uip_ga1ef35301f43a5bbb9f89f07b5a36b9a0}{uip\_\-ipaddr\_\-t} \hyperlink{group__uip_ga3237be0d9ec457de0177689ee23c0d5c}{uip\_\-netmask}
+\item 
+struct \hyperlink{structuip__eth__addr}{uip\_\-eth\_\-addr} \hyperlink{group__uip_ga499bb98a0b4ae9a98553ede81317606d}{uip\_\-ethaddr} = \{\{0,0,0,0,0,0\}\}
+\item 
+\hyperlink{group__uipfw_ga4caecabca98b43919dd11be1c0d4cd8e}{u8\_\-t} \hyperlink{group__uipdevfunc_gab81e78f890dbbee50c533a9734b74fd9}{uip\_\-buf}\mbox{[}UIP\_\-BUFSIZE+2\mbox{]} \hyperlink{group__uip_gaae09fef3a4ae13ad85a537d46c55f201}{ALIGN\_\-STRUCT\_\-END}
+\item 
+void $\ast$ \hyperlink{group__uip_ga561b8eda32e059d4e7397f776268cc63}{uip\_\-appdata}
+\item 
+void $\ast$ \hyperlink{group__uip_gaa05a3dde2048480fa3ab2a5961898d18}{uip\_\-sappdata}
+\item 
+\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} \hyperlink{group__uip_ga12a33f0c09711167bdf3dd7d7cf8c5a1}{uip\_\-len}
+\item 
+\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} \hyperlink{group__uip_ga5b5615dc240daed20949c0fded2b4679}{uip\_\-slen}
+\item 
+\hyperlink{group__uipfw_ga4caecabca98b43919dd11be1c0d4cd8e}{u8\_\-t} \hyperlink{group__uip_gab4ef6b00924990e7a293f66715b6d1d1}{uip\_\-flags}
+\item 
+struct \hyperlink{structuip__conn}{uip\_\-conn} $\ast$ \hyperlink{group__uip_ga788ffac72342f6172343d7f8099cbe1a}{uip\_\-conn}
+\item 
+struct \hyperlink{structuip__conn}{uip\_\-conn} \hyperlink{group__uip_gaf703683056d2bfa5c81fa157dcb20fe2}{uip\_\-conns} \mbox{[}UIP\_\-CONNS\mbox{]}
+\item 
+\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} \hyperlink{group__uip_ga236d5c7872f59c8fe7b701c7252b976e}{uip\_\-listenports} \mbox{[}UIP\_\-LISTENPORTS\mbox{]}
+\item 
+struct \hyperlink{structuip__udp__conn}{uip\_\-udp\_\-conn} $\ast$ \hyperlink{group__uip_ga210f227119fc972e6222c9cb452e15a9}{uip\_\-udp\_\-conn}
+\item 
+struct \hyperlink{structuip__udp__conn}{uip\_\-udp\_\-conn} \hyperlink{group__uip_gaeb533744817cf6695d75293369c2248b}{uip\_\-udp\_\-conns} \mbox{[}UIP\_\-UDP\_\-CONNS\mbox{]}
+\item 
+\hyperlink{group__uipfw_ga4caecabca98b43919dd11be1c0d4cd8e}{u8\_\-t} \hyperlink{group__uip_ga2a0cf5d86c58fab216414ce59bf1fea1}{uip\_\-acc32} \mbox{[}4\mbox{]}
+\item 
+struct \hyperlink{structuip__stats}{uip\_\-stats} \hyperlink{group__uip_ga9ee50a40597e67fce96541ab56c3b712}{uip\_\-stat}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The uIP TCP/IP stack code. \begin{DoxyAuthor}{Author}
+Adam Dunkels $<$\href{mailto:adam@dunkels.com}{\tt adam@dunkels.com}$>$ 
+\end{DoxyAuthor}
+
+
+Definition in file \hyperlink{uip_8c_source}{uip.c}.
+
+
+
+\subsection{Define Documentation}
+\hypertarget{uip_8c_a5c8ef3c24dad2c469a42784a9a39403b}{
+\index{uip.c@{uip.c}!DEBUG\_\-PRINTF@{DEBUG\_\-PRINTF}}
+\index{DEBUG\_\-PRINTF@{DEBUG\_\-PRINTF}!uip.c@{uip.c}}
+\subsubsection[{DEBUG\_\-PRINTF}]{\setlength{\rightskip}{0pt plus 5cm}\#define DEBUG\_\-PRINTF(
+\begin{DoxyParamCaption}
+\item[{}]{ ...}
+\end{DoxyParamCaption}
+)}}
+\label{uip_8c_a5c8ef3c24dad2c469a42784a9a39403b}
+
+
+Definition at line 1 of file uip.c.
+

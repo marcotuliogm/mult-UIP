@@ -1,0 +1,62 @@
+\hypertarget{uip-fw_8c}{
+\section{/home/mtgm/tcc/mult-\/UIP/uip/uip-\/fw.c File Reference}
+\label{uip-fw_8c}\index{/home/mtgm/tcc/mult-\/UIP/uip/uip-\/fw.c@{/home/mtgm/tcc/mult-\/UIP/uip/uip-\/fw.c}}
+}
+{\ttfamily \#include \char`\"{}uip.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}uip\_\-arch.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}uip-\/fw.h\char`\"{}}\par
+{\ttfamily \#include $<$string.h$>$}\par
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structtcpip__hdr}{tcpip\_\-hdr}
+\item 
+struct \hyperlink{structicmpip__hdr}{icmpip\_\-hdr}
+\item 
+struct \hyperlink{structfwcache__entry}{fwcache\_\-entry}
+\end{DoxyCompactItemize}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__uipfw_gad58231410d58e34b455328b888a9e73c}{ICMP\_\-ECHO}~8
+\item 
+\#define \hyperlink{group__uipfw_ga58e03a47804158d97a9c069cc2204797}{ICMP\_\-TE}~11
+\item 
+\#define \hyperlink{group__uipfw_ga24f52ac52d6e714cb04a5aa01be3bdd0}{BUF}~((struct \hyperlink{structtcpip__hdr}{tcpip\_\-hdr} $\ast$)\&\hyperlink{group__uipdevfunc_gab81e78f890dbbee50c533a9734b74fd9}{uip\_\-buf}\mbox{[}UIP\_\-LLH\_\-LEN\mbox{]})
+\item 
+\#define \hyperlink{group__uipfw_ga4309376690872fa4beb4f025f5cc199b}{ICMPBUF}~((struct \hyperlink{structicmpip__hdr}{icmpip\_\-hdr} $\ast$)\&\hyperlink{group__uipdevfunc_gab81e78f890dbbee50c533a9734b74fd9}{uip\_\-buf}\mbox{[}UIP\_\-LLH\_\-LEN\mbox{]})
+\item 
+\#define \hyperlink{group__uipfw_ga628391fb3eeb786fe6246dc4fc0c3554}{FWCACHE\_\-SIZE}~2
+\item 
+\#define \hyperlink{group__uipfw_ga37a94c7dd987d85126d49aba7ed5ffe7}{FW\_\-TIME}~20
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__uipfw_ga0c90f476e0557afaee479c61d4d3eaf3}{uip\_\-fw\_\-init} (void)
+\item 
+\hyperlink{group__uipfw_ga4caecabca98b43919dd11be1c0d4cd8e}{u8\_\-t} \hyperlink{group__uipfw_gabc6fe2d1544b0a16ee3f3fc1c1ccf93a}{uip\_\-fw\_\-output} (void)
+\item 
+\hyperlink{group__uipfw_ga4caecabca98b43919dd11be1c0d4cd8e}{u8\_\-t} \hyperlink{group__uipfw_ga208866aad58f1fb9d5f9e37713f9f4e5}{uip\_\-fw\_\-forward} (void)
+\item 
+void \hyperlink{group__uipfw_gaa2d5cfe32c9ec743e956c4e19dcee21a}{uip\_\-fw\_\-register} (struct \hyperlink{structuip__fw__netif}{uip\_\-fw\_\-netif} $\ast$netif)
+\item 
+void \hyperlink{group__uipfw_ga94dcf0fa8bff34949a37fbde77786f82}{uip\_\-fw\_\-default} (struct \hyperlink{structuip__fw__netif}{uip\_\-fw\_\-netif} $\ast$netif)
+\item 
+void \hyperlink{group__uipfw_ga35ab515cdae08d65c5d080771754f62a}{uip\_\-fw\_\-periodic} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structtcpip__hdr}{tcpip\_\-hdr} \hyperlink{group__uipfw_gafe7e75cc45d2b325aaaf5d0042e8bfd8}{PACK\_\-STRUCT\_\-END}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+uIP packet forwarding. \begin{DoxyAuthor}{Author}
+Adam Dunkels $<$\href{mailto:adam@sics.se}{\tt adam@sics.se}$>$
+\end{DoxyAuthor}
+This file implements a number of simple functions which do packet forwarding over multiple network interfaces with uIP. 
+
+Definition in file \hyperlink{uip-fw_8c_source}{uip-\/fw.c}.
+
