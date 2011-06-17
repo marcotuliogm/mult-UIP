@@ -1,0 +1,329 @@
+\hypertarget{dhcpc_8c}{
+\section{dhcp/dhcpc.c File Reference}
+\label{dhcpc_8c}\index{dhcp/dhcpc.c@{dhcp/dhcpc.c}}
+}
+{\ttfamily \#include $<$stdio.h$>$}\par
+{\ttfamily \#include $<$string.h$>$}\par
+{\ttfamily \#include \char`\"{}uip.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}dhcpc.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}timer.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}pt.h\char`\"{}}\par
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structdhcp__msg}{dhcp\_\-msg}
+\end{DoxyCompactItemize}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{dhcpc_8c_a233f4f4664c8109e0ccfb6995d46f2dd}{STATE\_\-INITIAL}~0
+\item 
+\#define \hyperlink{dhcpc_8c_afa9439c5a4745e3113c0101c805eedfd}{STATE\_\-SENDING}~1
+\item 
+\#define \hyperlink{dhcpc_8c_a6e8131776600f968de683ef7685b547a}{STATE\_\-OFFER\_\-RECEIVED}~2
+\item 
+\#define \hyperlink{dhcpc_8c_aa52c4733bf019fffd421e8f840f6a90b}{STATE\_\-CONFIG\_\-RECEIVED}~3
+\item 
+\#define \hyperlink{dhcpc_8c_ab7c25a2b90985cb33de422bc61212a8a}{BOOTP\_\-BROADCAST}~0x8000
+\item 
+\#define \hyperlink{dhcpc_8c_a98a346c53c91848070fd980a98fa77d1}{DHCP\_\-REQUEST}~1
+\item 
+\#define \hyperlink{dhcpc_8c_a66c89903a0de2bb311f349b63c3cb917}{DHCP\_\-REPLY}~2
+\item 
+\#define \hyperlink{dhcpc_8c_a8b13acae04af0b903f8f08ad2c9d6cd2}{DHCP\_\-HTYPE\_\-ETHERNET}~1
+\item 
+\#define \hyperlink{dhcpc_8c_abfab5287ace8d9cd0b4b81c91d89b621}{DHCP\_\-HLEN\_\-ETHERNET}~6
+\item 
+\#define \hyperlink{dhcpc_8c_a418d69a76814cebcbe22d0211c686a53}{DHCP\_\-MSG\_\-LEN}~236
+\item 
+\#define \hyperlink{dhcpc_8c_a3291138937753c26246de1866dd4640c}{DHCPC\_\-SERVER\_\-PORT}~67
+\item 
+\#define \hyperlink{dhcpc_8c_a408e5aaaa6d02c9688914b5001b748ed}{DHCPC\_\-CLIENT\_\-PORT}~68
+\item 
+\#define \hyperlink{dhcpc_8c_aa490e80da21dfc13b91c034095efdcd4}{DHCPDISCOVER}~1
+\item 
+\#define \hyperlink{dhcpc_8c_ab82126d739f61a60d84116e1e0d3ad2e}{DHCPOFFER}~2
+\item 
+\#define \hyperlink{dhcpc_8c_a0cd47b14d8040e76932488eadbc0091e}{DHCPREQUEST}~3
+\item 
+\#define \hyperlink{dhcpc_8c_af03ae973e2eb857947af829f3611eed3}{DHCPDECLINE}~4
+\item 
+\#define \hyperlink{dhcpc_8c_a4f4105ef611737b700a6da965306dcfe}{DHCPACK}~5
+\item 
+\#define \hyperlink{dhcpc_8c_a4162aa47e0c49f981f31b4bd0363476b}{DHCPNAK}~6
+\item 
+\#define \hyperlink{dhcpc_8c_a28d24149d2c3838966cc9f5cf2fdf2cb}{DHCPRELEASE}~7
+\item 
+\#define \hyperlink{dhcpc_8c_acff5b8c45e6d63afd973aa8a0e72a901}{DHCP\_\-OPTION\_\-SUBNET\_\-MASK}~1
+\item 
+\#define \hyperlink{dhcpc_8c_a72cfc4e231017d1d116bb1d69d18ae8c}{DHCP\_\-OPTION\_\-ROUTER}~3
+\item 
+\#define \hyperlink{dhcpc_8c_a8f05c5c6084fbac0be7b24101189232b}{DHCP\_\-OPTION\_\-DNS\_\-SERVER}~6
+\item 
+\#define \hyperlink{dhcpc_8c_a56122408c567b3014b116c4f3826d158}{DHCP\_\-OPTION\_\-REQ\_\-IPADDR}~50
+\item 
+\#define \hyperlink{dhcpc_8c_a458994de9415a8a622d1a560bfd9ace4}{DHCP\_\-OPTION\_\-LEASE\_\-TIME}~51
+\item 
+\#define \hyperlink{dhcpc_8c_a8a2ead1d7513261ca14fbdc4247e0226}{DHCP\_\-OPTION\_\-MSG\_\-TYPE}~53
+\item 
+\#define \hyperlink{dhcpc_8c_a3bdf84c273501fb73ad217dcab87bb4a}{DHCP\_\-OPTION\_\-SERVER\_\-ID}~54
+\item 
+\#define \hyperlink{dhcpc_8c_aef24eb3d1956ee4553be53446c08d402}{DHCP\_\-OPTION\_\-REQ\_\-LIST}~55
+\item 
+\#define \hyperlink{dhcpc_8c_aea2eb67064efec2c65fff4497f659e7d}{DHCP\_\-OPTION\_\-END}~255
+\end{DoxyCompactItemize}
+
+
+\subsection{Define Documentation}
+\hypertarget{dhcpc_8c_ab7c25a2b90985cb33de422bc61212a8a}{
+\index{dhcpc.c@{dhcpc.c}!BOOTP\_\-BROADCAST@{BOOTP\_\-BROADCAST}}
+\index{BOOTP\_\-BROADCAST@{BOOTP\_\-BROADCAST}!dhcpc.c@{dhcpc.c}}
+\subsubsection[{BOOTP\_\-BROADCAST}]{\setlength{\rightskip}{0pt plus 5cm}\#define BOOTP\_\-BROADCAST~0x8000}}
+\label{dhcpc_8c_ab7c25a2b90985cb33de422bc61212a8a}
+
+
+Definition at line 65 of file dhcpc.c.
+
+\hypertarget{dhcpc_8c_abfab5287ace8d9cd0b4b81c91d89b621}{
+\index{dhcpc.c@{dhcpc.c}!DHCP\_\-HLEN\_\-ETHERNET@{DHCP\_\-HLEN\_\-ETHERNET}}
+\index{DHCP\_\-HLEN\_\-ETHERNET@{DHCP\_\-HLEN\_\-ETHERNET}!dhcpc.c@{dhcpc.c}}
+\subsubsection[{DHCP\_\-HLEN\_\-ETHERNET}]{\setlength{\rightskip}{0pt plus 5cm}\#define DHCP\_\-HLEN\_\-ETHERNET~6}}
+\label{dhcpc_8c_abfab5287ace8d9cd0b4b81c91d89b621}
+
+
+Definition at line 70 of file dhcpc.c.
+
+\hypertarget{dhcpc_8c_a8b13acae04af0b903f8f08ad2c9d6cd2}{
+\index{dhcpc.c@{dhcpc.c}!DHCP\_\-HTYPE\_\-ETHERNET@{DHCP\_\-HTYPE\_\-ETHERNET}}
+\index{DHCP\_\-HTYPE\_\-ETHERNET@{DHCP\_\-HTYPE\_\-ETHERNET}!dhcpc.c@{dhcpc.c}}
+\subsubsection[{DHCP\_\-HTYPE\_\-ETHERNET}]{\setlength{\rightskip}{0pt plus 5cm}\#define DHCP\_\-HTYPE\_\-ETHERNET~1}}
+\label{dhcpc_8c_a8b13acae04af0b903f8f08ad2c9d6cd2}
+
+
+Definition at line 69 of file dhcpc.c.
+
+\hypertarget{dhcpc_8c_a418d69a76814cebcbe22d0211c686a53}{
+\index{dhcpc.c@{dhcpc.c}!DHCP\_\-MSG\_\-LEN@{DHCP\_\-MSG\_\-LEN}}
+\index{DHCP\_\-MSG\_\-LEN@{DHCP\_\-MSG\_\-LEN}!dhcpc.c@{dhcpc.c}}
+\subsubsection[{DHCP\_\-MSG\_\-LEN}]{\setlength{\rightskip}{0pt plus 5cm}\#define DHCP\_\-MSG\_\-LEN~236}}
+\label{dhcpc_8c_a418d69a76814cebcbe22d0211c686a53}
+
+
+Definition at line 71 of file dhcpc.c.
+
+\hypertarget{dhcpc_8c_a8f05c5c6084fbac0be7b24101189232b}{
+\index{dhcpc.c@{dhcpc.c}!DHCP\_\-OPTION\_\-DNS\_\-SERVER@{DHCP\_\-OPTION\_\-DNS\_\-SERVER}}
+\index{DHCP\_\-OPTION\_\-DNS\_\-SERVER@{DHCP\_\-OPTION\_\-DNS\_\-SERVER}!dhcpc.c@{dhcpc.c}}
+\subsubsection[{DHCP\_\-OPTION\_\-DNS\_\-SERVER}]{\setlength{\rightskip}{0pt plus 5cm}\#define DHCP\_\-OPTION\_\-DNS\_\-SERVER~6}}
+\label{dhcpc_8c_a8f05c5c6084fbac0be7b24101189232b}
+
+
+Definition at line 86 of file dhcpc.c.
+
+\hypertarget{dhcpc_8c_aea2eb67064efec2c65fff4497f659e7d}{
+\index{dhcpc.c@{dhcpc.c}!DHCP\_\-OPTION\_\-END@{DHCP\_\-OPTION\_\-END}}
+\index{DHCP\_\-OPTION\_\-END@{DHCP\_\-OPTION\_\-END}!dhcpc.c@{dhcpc.c}}
+\subsubsection[{DHCP\_\-OPTION\_\-END}]{\setlength{\rightskip}{0pt plus 5cm}\#define DHCP\_\-OPTION\_\-END~255}}
+\label{dhcpc_8c_aea2eb67064efec2c65fff4497f659e7d}
+
+
+Definition at line 92 of file dhcpc.c.
+
+\hypertarget{dhcpc_8c_a458994de9415a8a622d1a560bfd9ace4}{
+\index{dhcpc.c@{dhcpc.c}!DHCP\_\-OPTION\_\-LEASE\_\-TIME@{DHCP\_\-OPTION\_\-LEASE\_\-TIME}}
+\index{DHCP\_\-OPTION\_\-LEASE\_\-TIME@{DHCP\_\-OPTION\_\-LEASE\_\-TIME}!dhcpc.c@{dhcpc.c}}
+\subsubsection[{DHCP\_\-OPTION\_\-LEASE\_\-TIME}]{\setlength{\rightskip}{0pt plus 5cm}\#define DHCP\_\-OPTION\_\-LEASE\_\-TIME~51}}
+\label{dhcpc_8c_a458994de9415a8a622d1a560bfd9ace4}
+
+
+Definition at line 88 of file dhcpc.c.
+
+\hypertarget{dhcpc_8c_a8a2ead1d7513261ca14fbdc4247e0226}{
+\index{dhcpc.c@{dhcpc.c}!DHCP\_\-OPTION\_\-MSG\_\-TYPE@{DHCP\_\-OPTION\_\-MSG\_\-TYPE}}
+\index{DHCP\_\-OPTION\_\-MSG\_\-TYPE@{DHCP\_\-OPTION\_\-MSG\_\-TYPE}!dhcpc.c@{dhcpc.c}}
+\subsubsection[{DHCP\_\-OPTION\_\-MSG\_\-TYPE}]{\setlength{\rightskip}{0pt plus 5cm}\#define DHCP\_\-OPTION\_\-MSG\_\-TYPE~53}}
+\label{dhcpc_8c_a8a2ead1d7513261ca14fbdc4247e0226}
+
+
+Definition at line 89 of file dhcpc.c.
+
+\hypertarget{dhcpc_8c_a56122408c567b3014b116c4f3826d158}{
+\index{dhcpc.c@{dhcpc.c}!DHCP\_\-OPTION\_\-REQ\_\-IPADDR@{DHCP\_\-OPTION\_\-REQ\_\-IPADDR}}
+\index{DHCP\_\-OPTION\_\-REQ\_\-IPADDR@{DHCP\_\-OPTION\_\-REQ\_\-IPADDR}!dhcpc.c@{dhcpc.c}}
+\subsubsection[{DHCP\_\-OPTION\_\-REQ\_\-IPADDR}]{\setlength{\rightskip}{0pt plus 5cm}\#define DHCP\_\-OPTION\_\-REQ\_\-IPADDR~50}}
+\label{dhcpc_8c_a56122408c567b3014b116c4f3826d158}
+
+
+Definition at line 87 of file dhcpc.c.
+
+\hypertarget{dhcpc_8c_aef24eb3d1956ee4553be53446c08d402}{
+\index{dhcpc.c@{dhcpc.c}!DHCP\_\-OPTION\_\-REQ\_\-LIST@{DHCP\_\-OPTION\_\-REQ\_\-LIST}}
+\index{DHCP\_\-OPTION\_\-REQ\_\-LIST@{DHCP\_\-OPTION\_\-REQ\_\-LIST}!dhcpc.c@{dhcpc.c}}
+\subsubsection[{DHCP\_\-OPTION\_\-REQ\_\-LIST}]{\setlength{\rightskip}{0pt plus 5cm}\#define DHCP\_\-OPTION\_\-REQ\_\-LIST~55}}
+\label{dhcpc_8c_aef24eb3d1956ee4553be53446c08d402}
+
+
+Definition at line 91 of file dhcpc.c.
+
+\hypertarget{dhcpc_8c_a72cfc4e231017d1d116bb1d69d18ae8c}{
+\index{dhcpc.c@{dhcpc.c}!DHCP\_\-OPTION\_\-ROUTER@{DHCP\_\-OPTION\_\-ROUTER}}
+\index{DHCP\_\-OPTION\_\-ROUTER@{DHCP\_\-OPTION\_\-ROUTER}!dhcpc.c@{dhcpc.c}}
+\subsubsection[{DHCP\_\-OPTION\_\-ROUTER}]{\setlength{\rightskip}{0pt plus 5cm}\#define DHCP\_\-OPTION\_\-ROUTER~3}}
+\label{dhcpc_8c_a72cfc4e231017d1d116bb1d69d18ae8c}
+
+
+Definition at line 85 of file dhcpc.c.
+
+\hypertarget{dhcpc_8c_a3bdf84c273501fb73ad217dcab87bb4a}{
+\index{dhcpc.c@{dhcpc.c}!DHCP\_\-OPTION\_\-SERVER\_\-ID@{DHCP\_\-OPTION\_\-SERVER\_\-ID}}
+\index{DHCP\_\-OPTION\_\-SERVER\_\-ID@{DHCP\_\-OPTION\_\-SERVER\_\-ID}!dhcpc.c@{dhcpc.c}}
+\subsubsection[{DHCP\_\-OPTION\_\-SERVER\_\-ID}]{\setlength{\rightskip}{0pt plus 5cm}\#define DHCP\_\-OPTION\_\-SERVER\_\-ID~54}}
+\label{dhcpc_8c_a3bdf84c273501fb73ad217dcab87bb4a}
+
+
+Definition at line 90 of file dhcpc.c.
+
+\hypertarget{dhcpc_8c_acff5b8c45e6d63afd973aa8a0e72a901}{
+\index{dhcpc.c@{dhcpc.c}!DHCP\_\-OPTION\_\-SUBNET\_\-MASK@{DHCP\_\-OPTION\_\-SUBNET\_\-MASK}}
+\index{DHCP\_\-OPTION\_\-SUBNET\_\-MASK@{DHCP\_\-OPTION\_\-SUBNET\_\-MASK}!dhcpc.c@{dhcpc.c}}
+\subsubsection[{DHCP\_\-OPTION\_\-SUBNET\_\-MASK}]{\setlength{\rightskip}{0pt plus 5cm}\#define DHCP\_\-OPTION\_\-SUBNET\_\-MASK~1}}
+\label{dhcpc_8c_acff5b8c45e6d63afd973aa8a0e72a901}
+
+
+Definition at line 84 of file dhcpc.c.
+
+\hypertarget{dhcpc_8c_a66c89903a0de2bb311f349b63c3cb917}{
+\index{dhcpc.c@{dhcpc.c}!DHCP\_\-REPLY@{DHCP\_\-REPLY}}
+\index{DHCP\_\-REPLY@{DHCP\_\-REPLY}!dhcpc.c@{dhcpc.c}}
+\subsubsection[{DHCP\_\-REPLY}]{\setlength{\rightskip}{0pt plus 5cm}\#define DHCP\_\-REPLY~2}}
+\label{dhcpc_8c_a66c89903a0de2bb311f349b63c3cb917}
+
+
+Definition at line 68 of file dhcpc.c.
+
+\hypertarget{dhcpc_8c_a98a346c53c91848070fd980a98fa77d1}{
+\index{dhcpc.c@{dhcpc.c}!DHCP\_\-REQUEST@{DHCP\_\-REQUEST}}
+\index{DHCP\_\-REQUEST@{DHCP\_\-REQUEST}!dhcpc.c@{dhcpc.c}}
+\subsubsection[{DHCP\_\-REQUEST}]{\setlength{\rightskip}{0pt plus 5cm}\#define DHCP\_\-REQUEST~1}}
+\label{dhcpc_8c_a98a346c53c91848070fd980a98fa77d1}
+
+
+Definition at line 67 of file dhcpc.c.
+
+\hypertarget{dhcpc_8c_a4f4105ef611737b700a6da965306dcfe}{
+\index{dhcpc.c@{dhcpc.c}!DHCPACK@{DHCPACK}}
+\index{DHCPACK@{DHCPACK}!dhcpc.c@{dhcpc.c}}
+\subsubsection[{DHCPACK}]{\setlength{\rightskip}{0pt plus 5cm}\#define DHCPACK~5}}
+\label{dhcpc_8c_a4f4105ef611737b700a6da965306dcfe}
+
+
+Definition at line 80 of file dhcpc.c.
+
+\hypertarget{dhcpc_8c_a408e5aaaa6d02c9688914b5001b748ed}{
+\index{dhcpc.c@{dhcpc.c}!DHCPC\_\-CLIENT\_\-PORT@{DHCPC\_\-CLIENT\_\-PORT}}
+\index{DHCPC\_\-CLIENT\_\-PORT@{DHCPC\_\-CLIENT\_\-PORT}!dhcpc.c@{dhcpc.c}}
+\subsubsection[{DHCPC\_\-CLIENT\_\-PORT}]{\setlength{\rightskip}{0pt plus 5cm}\#define DHCPC\_\-CLIENT\_\-PORT~68}}
+\label{dhcpc_8c_a408e5aaaa6d02c9688914b5001b748ed}
+
+
+Definition at line 74 of file dhcpc.c.
+
+\hypertarget{dhcpc_8c_a3291138937753c26246de1866dd4640c}{
+\index{dhcpc.c@{dhcpc.c}!DHCPC\_\-SERVER\_\-PORT@{DHCPC\_\-SERVER\_\-PORT}}
+\index{DHCPC\_\-SERVER\_\-PORT@{DHCPC\_\-SERVER\_\-PORT}!dhcpc.c@{dhcpc.c}}
+\subsubsection[{DHCPC\_\-SERVER\_\-PORT}]{\setlength{\rightskip}{0pt plus 5cm}\#define DHCPC\_\-SERVER\_\-PORT~67}}
+\label{dhcpc_8c_a3291138937753c26246de1866dd4640c}
+
+
+Definition at line 73 of file dhcpc.c.
+
+\hypertarget{dhcpc_8c_af03ae973e2eb857947af829f3611eed3}{
+\index{dhcpc.c@{dhcpc.c}!DHCPDECLINE@{DHCPDECLINE}}
+\index{DHCPDECLINE@{DHCPDECLINE}!dhcpc.c@{dhcpc.c}}
+\subsubsection[{DHCPDECLINE}]{\setlength{\rightskip}{0pt plus 5cm}\#define DHCPDECLINE~4}}
+\label{dhcpc_8c_af03ae973e2eb857947af829f3611eed3}
+
+
+Definition at line 79 of file dhcpc.c.
+
+\hypertarget{dhcpc_8c_aa490e80da21dfc13b91c034095efdcd4}{
+\index{dhcpc.c@{dhcpc.c}!DHCPDISCOVER@{DHCPDISCOVER}}
+\index{DHCPDISCOVER@{DHCPDISCOVER}!dhcpc.c@{dhcpc.c}}
+\subsubsection[{DHCPDISCOVER}]{\setlength{\rightskip}{0pt plus 5cm}\#define DHCPDISCOVER~1}}
+\label{dhcpc_8c_aa490e80da21dfc13b91c034095efdcd4}
+
+
+Definition at line 76 of file dhcpc.c.
+
+\hypertarget{dhcpc_8c_a4162aa47e0c49f981f31b4bd0363476b}{
+\index{dhcpc.c@{dhcpc.c}!DHCPNAK@{DHCPNAK}}
+\index{DHCPNAK@{DHCPNAK}!dhcpc.c@{dhcpc.c}}
+\subsubsection[{DHCPNAK}]{\setlength{\rightskip}{0pt plus 5cm}\#define DHCPNAK~6}}
+\label{dhcpc_8c_a4162aa47e0c49f981f31b4bd0363476b}
+
+
+Definition at line 81 of file dhcpc.c.
+
+\hypertarget{dhcpc_8c_ab82126d739f61a60d84116e1e0d3ad2e}{
+\index{dhcpc.c@{dhcpc.c}!DHCPOFFER@{DHCPOFFER}}
+\index{DHCPOFFER@{DHCPOFFER}!dhcpc.c@{dhcpc.c}}
+\subsubsection[{DHCPOFFER}]{\setlength{\rightskip}{0pt plus 5cm}\#define DHCPOFFER~2}}
+\label{dhcpc_8c_ab82126d739f61a60d84116e1e0d3ad2e}
+
+
+Definition at line 77 of file dhcpc.c.
+
+\hypertarget{dhcpc_8c_a28d24149d2c3838966cc9f5cf2fdf2cb}{
+\index{dhcpc.c@{dhcpc.c}!DHCPRELEASE@{DHCPRELEASE}}
+\index{DHCPRELEASE@{DHCPRELEASE}!dhcpc.c@{dhcpc.c}}
+\subsubsection[{DHCPRELEASE}]{\setlength{\rightskip}{0pt plus 5cm}\#define DHCPRELEASE~7}}
+\label{dhcpc_8c_a28d24149d2c3838966cc9f5cf2fdf2cb}
+
+
+Definition at line 82 of file dhcpc.c.
+
+\hypertarget{dhcpc_8c_a0cd47b14d8040e76932488eadbc0091e}{
+\index{dhcpc.c@{dhcpc.c}!DHCPREQUEST@{DHCPREQUEST}}
+\index{DHCPREQUEST@{DHCPREQUEST}!dhcpc.c@{dhcpc.c}}
+\subsubsection[{DHCPREQUEST}]{\setlength{\rightskip}{0pt plus 5cm}\#define DHCPREQUEST~3}}
+\label{dhcpc_8c_a0cd47b14d8040e76932488eadbc0091e}
+
+
+Definition at line 78 of file dhcpc.c.
+
+\hypertarget{dhcpc_8c_aa52c4733bf019fffd421e8f840f6a90b}{
+\index{dhcpc.c@{dhcpc.c}!STATE\_\-CONFIG\_\-RECEIVED@{STATE\_\-CONFIG\_\-RECEIVED}}
+\index{STATE\_\-CONFIG\_\-RECEIVED@{STATE\_\-CONFIG\_\-RECEIVED}!dhcpc.c@{dhcpc.c}}
+\subsubsection[{STATE\_\-CONFIG\_\-RECEIVED}]{\setlength{\rightskip}{0pt plus 5cm}\#define STATE\_\-CONFIG\_\-RECEIVED~3}}
+\label{dhcpc_8c_aa52c4733bf019fffd421e8f840f6a90b}
+
+
+Definition at line 45 of file dhcpc.c.
+
+\hypertarget{dhcpc_8c_a233f4f4664c8109e0ccfb6995d46f2dd}{
+\index{dhcpc.c@{dhcpc.c}!STATE\_\-INITIAL@{STATE\_\-INITIAL}}
+\index{STATE\_\-INITIAL@{STATE\_\-INITIAL}!dhcpc.c@{dhcpc.c}}
+\subsubsection[{STATE\_\-INITIAL}]{\setlength{\rightskip}{0pt plus 5cm}\#define STATE\_\-INITIAL~0}}
+\label{dhcpc_8c_a233f4f4664c8109e0ccfb6995d46f2dd}
+
+
+Definition at line 42 of file dhcpc.c.
+
+\hypertarget{dhcpc_8c_a6e8131776600f968de683ef7685b547a}{
+\index{dhcpc.c@{dhcpc.c}!STATE\_\-OFFER\_\-RECEIVED@{STATE\_\-OFFER\_\-RECEIVED}}
+\index{STATE\_\-OFFER\_\-RECEIVED@{STATE\_\-OFFER\_\-RECEIVED}!dhcpc.c@{dhcpc.c}}
+\subsubsection[{STATE\_\-OFFER\_\-RECEIVED}]{\setlength{\rightskip}{0pt plus 5cm}\#define STATE\_\-OFFER\_\-RECEIVED~2}}
+\label{dhcpc_8c_a6e8131776600f968de683ef7685b547a}
+
+
+Definition at line 44 of file dhcpc.c.
+
+\hypertarget{dhcpc_8c_afa9439c5a4745e3113c0101c805eedfd}{
+\index{dhcpc.c@{dhcpc.c}!STATE\_\-SENDING@{STATE\_\-SENDING}}
+\index{STATE\_\-SENDING@{STATE\_\-SENDING}!dhcpc.c@{dhcpc.c}}
+\subsubsection[{STATE\_\-SENDING}]{\setlength{\rightskip}{0pt plus 5cm}\#define STATE\_\-SENDING~1}}
+\label{dhcpc_8c_afa9439c5a4745e3113c0101c805eedfd}
+
+
+Definition at line 43 of file dhcpc.c.
+

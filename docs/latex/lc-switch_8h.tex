@@ -1,0 +1,34 @@
+\hypertarget{lc-switch_8h}{
+\section{/home/mtgm/tcc/mult-\/UIP/uip/lc-\/switch.h File Reference}
+\label{lc-switch_8h}\index{/home/mtgm/tcc/mult-\/UIP/uip/lc-\/switch.h@{/home/mtgm/tcc/mult-\/UIP/uip/lc-\/switch.h}}
+}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__lc_ga44311ecc30759ca38b4069182247bdae}{\_\-\_\-LC\_\-SWTICH\_\-H\_\-\_\-}
+\item 
+\#define \hyperlink{group__lc_ga2c1bb4fa6d7a6ff951a41c73fc721109}{LC\_\-INIT}(s)~s = 0;
+\item 
+\#define \hyperlink{group__lc_ga1ec8b8f4710dce1fa7fb87d3a31541ae}{LC\_\-RESUME}(s)~switch(s) \{ case 0:
+\item 
+\#define \hyperlink{group__lc_gad8eec328a4868d767f0c00c8d1c6cfc1}{LC\_\-SET}(s)~s = \_\-\_\-LINE\_\-\_\-; case \_\-\_\-LINE\_\-\_\-:
+\item 
+\#define \hyperlink{group__lc_gaca51ceb2f5d855dfde55bcedf8d3b92d}{LC\_\-END}(s)~\}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned short \hyperlink{group__lc_ga3983e0c026396d5c4506779d770007ba}{lc\_\-t}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementation of local continuations based on switch() statment \begin{DoxyAuthor}{Author}
+Adam Dunkels $<$\href{mailto:adam@sics.se}{\tt adam@sics.se}$>$
+\end{DoxyAuthor}
+This implementation of local continuations uses the C switch() statement to resume execution of a function somewhere inside the function's body. The implementation is based on the fact that switch() statements are able to jump directly into the bodies of control structures such as if() or while() statmenets.
+
+This implementation borrows heavily from Simon Tatham's coroutines implementation in C: \href{http://www.chiark.greenend.org.uk/~sgtatham/coroutines.html}{\tt http://www.chiark.greenend.org.uk/$\sim$sgtatham/coroutines.html} 
+
+Definition in file \hyperlink{lc-switch_8h_source}{lc-\/switch.h}.
+

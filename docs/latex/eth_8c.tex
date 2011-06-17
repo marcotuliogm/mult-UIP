@@ -1,0 +1,208 @@
+\hypertarget{eth_8c}{
+\section{eth/eth.c File Reference}
+\label{eth_8c}\index{eth/eth.c@{eth/eth.c}}
+}
+{\ttfamily \#include $<$string.h$>$}\par
+{\ttfamily \#include \char`\"{}eth.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}../timer/timer.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}../lpc\_\-config.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}../uart/uart.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}../mac/emac.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}../lcd/lcd.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}../cli/cli.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}../cli/debug.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}uip-\/conf.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}../mult/mult\_\-uip.h\char`\"{}}\par
+{\ttfamily \#include $<$uip.h$>$}\par
+{\ttfamily \#include $<$uip\_\-arp.h$>$}\par
+{\ttfamily \#include $<$timer.h$>$}\par
+{\ttfamily \#include \char`\"{}clock-\/arch.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__clock_ga78ab77b57cf2e00089f0a3a22508524c}{clock\_\-init} (void)
+\begin{DoxyCompactList}\small\item\em Inicializa o clock. \item\end{DoxyCompactList}\item 
+\hyperlink{clock-arch_8h_a42fc7b708ad04499c436158fd5f37ed4}{clock\_\-time\_\-t} \hyperlink{group__clock_gae5b7160f2e653725ba5e2024c3cb7bff}{clock\_\-time} (void)
+\begin{DoxyCompactList}\small\item\em Retorna o tempo de T0. \item\end{DoxyCompactList}\item 
+void \hyperlink{eth_8c_ad785f2de5119cfaa47b6ec89adaa5901}{clock\_\-start} (void)
+\begin{DoxyCompactList}\small\item\em Coloco o clock em operação. \item\end{DoxyCompactList}\item 
+void \hyperlink{eth_8c_aac930815cd6a96cbc8a12cefcc892f63}{clock\_\-reset} (void)
+\begin{DoxyCompactList}\small\item\em reinicializa o clock. \item\end{DoxyCompactList}\item 
+void() \hyperlink{eth_8c_ac6e653977469392a4c1eac45e93500ef}{EMAC\_\-ISR\_\-Handler} (void)
+\item 
+void \hyperlink{eth_8c_a32eeb932c3e9b0e51d32c92236d69bc5}{ethernet\_\-init} ()
+\begin{DoxyCompactList}\small\item\em Inicializa protocolo Ethernet. \item\end{DoxyCompactList}\item 
+void \hyperlink{eth_8c_abac8959915b759aa6429243ab9599ee3}{ethernet\_\-task} ()
+\begin{DoxyCompactList}\small\item\em Funcao que recebe dados da PHY. \item\end{DoxyCompactList}\item 
+void \hyperlink{eth_8c_a8fc1a5dd75258db33af12c617c814c99}{set\_\-eth\_\-addr} (void)
+\begin{DoxyCompactList}\small\item\em Configura enderecos iniciais da rede. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structtimer}{timer} periodic\_\-timer \hyperlink{eth_8c_a436cb466bfa6504d534f135966b7672c}{arp\_\-timer}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{eth_8c_aac930815cd6a96cbc8a12cefcc892f63}{
+\index{eth.c@{eth.c}!clock\_\-reset@{clock\_\-reset}}
+\index{clock\_\-reset@{clock\_\-reset}!eth.c@{eth.c}}
+\subsubsection[{clock\_\-reset}]{\setlength{\rightskip}{0pt plus 5cm}void clock\_\-reset (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{eth_8c_aac930815cd6a96cbc8a12cefcc892f63}
+
+
+Definition at line 52 of file eth.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{eth_8c_aac930815cd6a96cbc8a12cefcc892f63_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{eth_8c_ad785f2de5119cfaa47b6ec89adaa5901}{
+\index{eth.c@{eth.c}!clock\_\-start@{clock\_\-start}}
+\index{clock\_\-start@{clock\_\-start}!eth.c@{eth.c}}
+\subsubsection[{clock\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}void clock\_\-start (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{eth_8c_ad785f2de5119cfaa47b6ec89adaa5901}
+
+
+Definition at line 44 of file eth.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{eth_8c_ad785f2de5119cfaa47b6ec89adaa5901_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{eth_8c_ac6e653977469392a4c1eac45e93500ef}{
+\index{eth.c@{eth.c}!EMAC\_\-ISR\_\-Handler@{EMAC\_\-ISR\_\-Handler}}
+\index{EMAC\_\-ISR\_\-Handler@{EMAC\_\-ISR\_\-Handler}!eth.c@{eth.c}}
+\subsubsection[{EMAC\_\-ISR\_\-Handler}]{\setlength{\rightskip}{0pt plus 5cm}void() EMAC\_\-ISR\_\-Handler (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{eth_8c_ac6e653977469392a4c1eac45e93500ef}
+
+
+Definition at line 4 of file emac\_\-isr.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{eth_8c_ac6e653977469392a4c1eac45e93500ef_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{eth_8c_a32eeb932c3e9b0e51d32c92236d69bc5}{
+\index{eth.c@{eth.c}!ethernet\_\-init@{ethernet\_\-init}}
+\index{ethernet\_\-init@{ethernet\_\-init}!eth.c@{eth.c}}
+\subsubsection[{ethernet\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void ethernet\_\-init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{eth_8c_a32eeb932c3e9b0e51d32c92236d69bc5}
+Configura endereco de MAC Inicializa os clocks. Inicializa a pilha do UIP (tempo, portas, conexoes e buffer) Configura enderecos de IP, Gateway e Mascara FIXOS Inicializa camada mult. Inicializa MAC 
+
+Definition at line 82 of file eth.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{eth_8c_a32eeb932c3e9b0e51d32c92236d69bc5_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{eth_8c_abac8959915b759aa6429243ab9599ee3}{
+\index{eth.c@{eth.c}!ethernet\_\-task@{ethernet\_\-task}}
+\index{ethernet\_\-task@{ethernet\_\-task}!eth.c@{eth.c}}
+\subsubsection[{ethernet\_\-task}]{\setlength{\rightskip}{0pt plus 5cm}void ethernet\_\-task (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{eth_8c_abac8959915b759aa6429243ab9599ee3}
+Funcao e chamada por interrupcao Quando um dado e recebido para ser processado vindo da rede. Verifica se é uma mensagem com protocolo IP ou uma solicitacao de ARP Verificacao do tempo das conexoes periodicas para o protocolo TCP verificando timeout. 
+
+Definition at line 130 of file eth.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{eth_8c_abac8959915b759aa6429243ab9599ee3_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{eth_8c_a8fc1a5dd75258db33af12c617c814c99}{
+\index{eth.c@{eth.c}!set\_\-eth\_\-addr@{set\_\-eth\_\-addr}}
+\index{set\_\-eth\_\-addr@{set\_\-eth\_\-addr}!eth.c@{eth.c}}
+\subsubsection[{set\_\-eth\_\-addr}]{\setlength{\rightskip}{0pt plus 5cm}void set\_\-eth\_\-addr (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{eth_8c_a8fc1a5dd75258db33af12c617c814c99}
+
+
+Definition at line 239 of file eth.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{eth_8c_a8fc1a5dd75258db33af12c617c814c99_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{eth_8c_a436cb466bfa6504d534f135966b7672c}{
+\index{eth.c@{eth.c}!arp\_\-timer@{arp\_\-timer}}
+\index{arp\_\-timer@{arp\_\-timer}!eth.c@{eth.c}}
+\subsubsection[{arp\_\-timer}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf timer} periodic\_\-timer {\bf arp\_\-timer}}}
+\label{eth_8c_a436cb466bfa6504d534f135966b7672c}
+
+
+Definition at line 69 of file eth.c.
+

@@ -1,0 +1,418 @@
+\hypertarget{group__uipconvfunc}{
+\section{uIP conversion functions}
+\label{group__uipconvfunc}\index{uIP conversion functions@{uIP conversion functions}}
+}
+
+
+Collaboration diagram for uIP conversion functions:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=360pt]{group__uipconvfunc}
+\end{center}
+\end{figure}
+
+
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__uipconvfunc_ga87f0b54ade0d159fba495089128a4932}{uip\_\-ipaddr}(addr, addr0, addr1, addr2, addr3)
+\item 
+\#define \hyperlink{group__uipconvfunc_ga53fbda0e8c31d4882294c8dc3cb5f487}{uip\_\-ip6addr}(addr, addr0, addr1, addr2, addr3, addr4, addr5, addr6, addr7)
+\item 
+\#define \hyperlink{group__uipconvfunc_ga769512993b7b27271909d6daa4748b60}{uip\_\-ipaddr\_\-copy}(dest, src)
+\item 
+\#define \hyperlink{group__uipconvfunc_ga210e629f7252e4bc8458cbdf260b3318}{uip\_\-ipaddr\_\-cmp}(addr1, addr2)
+\item 
+\#define \hyperlink{group__uipconvfunc_ga6b16e0bac41821c1fbe0c267071642f0}{uip\_\-ipaddr\_\-maskcmp}(addr1, addr2, mask)
+\item 
+\#define \hyperlink{group__uipconvfunc_ga969d7fff37a979737da045e0d538a9bd}{uip\_\-ipaddr\_\-mask}(dest, src, mask)
+\item 
+\#define \hyperlink{group__uipconvfunc_ga22fa0681cd463191d7a01fe85d86996f}{uip\_\-ipaddr1}(addr)
+\item 
+\#define \hyperlink{group__uipconvfunc_gaffcd2fbe181e2aaefbf970551c302af5}{uip\_\-ipaddr2}(addr)
+\item 
+\#define \hyperlink{group__uipconvfunc_gae23534479ead15af8ff08ace26a47fb5}{uip\_\-ipaddr3}(addr)
+\item 
+\#define \hyperlink{group__uipconvfunc_ga165b603ec150e26efec7be199c9c2901}{uip\_\-ipaddr4}(addr)
+\item 
+\#define \hyperlink{group__uipconvfunc_ga69a7a4951ff21b302267532c21ee78fc}{HTONS}(n)
+\item 
+\#define \hyperlink{group__uipconvfunc_ga118e9d76568ab81ad97f138d4ea1ddd2}{ntohs}~htons
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} \hyperlink{group__uipconvfunc_gaa22b04cac8cf283ca12f028578bebc06}{htons} (\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} val)
+\item 
+unsigned char \hyperlink{group__uipconvfunc_gad9fc85bda6366e39c93fd6269cf6078a}{uiplib\_\-ipaddrconv} (char $\ast$addrstr, unsigned char $\ast$addr)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+These functions can be used for converting between different data formats used by uIP. 
+
+\subsection{Define Documentation}
+\hypertarget{group__uipconvfunc_ga69a7a4951ff21b302267532c21ee78fc}{
+\index{uipconvfunc@{uipconvfunc}!HTONS@{HTONS}}
+\index{HTONS@{HTONS}!uipconvfunc@{uipconvfunc}}
+\subsubsection[{HTONS}]{\setlength{\rightskip}{0pt plus 5cm}\#define HTONS(
+\begin{DoxyParamCaption}
+\item[{}]{n}
+\end{DoxyParamCaption}
+)}}
+\label{group__uipconvfunc_ga69a7a4951ff21b302267532c21ee78fc}
+Convert 16-\/bit quantity from host byte order to network byte order.
+
+This macro is primarily used for converting constants from host byte order to network byte order. For converting variables to network byte order, use the \hyperlink{group__uip_gaa22b04cac8cf283ca12f028578bebc06}{htons()} function instead. 
+
+Definition at line 1077 of file uip.h.
+
+\hypertarget{group__uipconvfunc_ga118e9d76568ab81ad97f138d4ea1ddd2}{
+\index{uipconvfunc@{uipconvfunc}!ntohs@{ntohs}}
+\index{ntohs@{ntohs}!uipconvfunc@{uipconvfunc}}
+\subsubsection[{ntohs}]{\setlength{\rightskip}{0pt plus 5cm}\#define ntohs~htons}}
+\label{group__uipconvfunc_ga118e9d76568ab81ad97f138d4ea1ddd2}
+
+
+Definition at line 1094 of file uip.h.
+
+\hypertarget{group__uipconvfunc_ga53fbda0e8c31d4882294c8dc3cb5f487}{
+\index{uipconvfunc@{uipconvfunc}!uip\_\-ip6addr@{uip\_\-ip6addr}}
+\index{uip\_\-ip6addr@{uip\_\-ip6addr}!uipconvfunc@{uipconvfunc}}
+\subsubsection[{uip\_\-ip6addr}]{\setlength{\rightskip}{0pt plus 5cm}\#define uip\_\-ip6addr(
+\begin{DoxyParamCaption}
+\item[{}]{addr, }
+\item[{}]{addr0, }
+\item[{}]{addr1, }
+\item[{}]{addr2, }
+\item[{}]{addr3, }
+\item[{}]{addr4, }
+\item[{}]{addr5, }
+\item[{}]{addr6, }
+\item[{}]{addr7}
+\end{DoxyParamCaption}
+)}}
+\label{group__uipconvfunc_ga53fbda0e8c31d4882294c8dc3cb5f487}
+Construct an IPv6 address from eight 16-\/bit words.
+
+This function constructs an IPv6 address. 
+
+Definition at line 859 of file uip.h.
+
+\hypertarget{group__uipconvfunc_ga87f0b54ade0d159fba495089128a4932}{
+\index{uipconvfunc@{uipconvfunc}!uip\_\-ipaddr@{uip\_\-ipaddr}}
+\index{uip\_\-ipaddr@{uip\_\-ipaddr}!uipconvfunc@{uipconvfunc}}
+\subsubsection[{uip\_\-ipaddr}]{\setlength{\rightskip}{0pt plus 5cm}\#define uip\_\-ipaddr(
+\begin{DoxyParamCaption}
+\item[{}]{addr, }
+\item[{}]{addr0, }
+\item[{}]{addr1, }
+\item[{}]{addr2, }
+\item[{}]{addr3}
+\end{DoxyParamCaption}
+)}}
+\label{group__uipconvfunc_ga87f0b54ade0d159fba495089128a4932}
+Construct an IP address from four bytes.
+
+This function constructs an IP address of the type that uIP handles internally from four bytes. The function is handy for specifying IP addresses to use with e.g. the \hyperlink{group__uip_ga9c24fba2cd8f7f62accb0a0d5bbe4dad}{uip\_\-connect()} function.
+
+Example: 
+\begin{DoxyCode}
+ uip_ipaddr_t ipaddr;
+ struct uip_conn *c;
+
+ uip_ipaddr(&ipaddr, 192,168,1,2);
+ c = uip_connect(&ipaddr, HTONS(80));
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em addr}]A pointer to a uip\_\-ipaddr\_\-t variable that will be filled in with the IP address.\item[{\em addr0}]The first octet of the IP address. \item[{\em addr1}]The second octet of the IP address. \item[{\em addr2}]The third octet of the IP address. \item[{\em addr3}]The forth octet of the IP address. \end{DoxyParams}
+
+
+Definition at line 847 of file uip.h.
+
+\hypertarget{group__uipconvfunc_ga22fa0681cd463191d7a01fe85d86996f}{
+\index{uipconvfunc@{uipconvfunc}!uip\_\-ipaddr1@{uip\_\-ipaddr1}}
+\index{uip\_\-ipaddr1@{uip\_\-ipaddr1}!uipconvfunc@{uipconvfunc}}
+\subsubsection[{uip\_\-ipaddr1}]{\setlength{\rightskip}{0pt plus 5cm}\#define uip\_\-ipaddr1(
+\begin{DoxyParamCaption}
+\item[{}]{addr}
+\end{DoxyParamCaption}
+)}}
+\label{group__uipconvfunc_ga22fa0681cd463191d7a01fe85d86996f}
+Pick the first octet of an IP address.
+
+Picks out the first octet of an IP address.
+
+Example: 
+\begin{DoxyCode}
+ uip_ipaddr_t ipaddr;
+ u8_t octet;
+
+ uip_ipaddr(&ipaddr, 1,2,3,4);
+ octet = uip_ipaddr1(&ipaddr);
+\end{DoxyCode}
+
+
+In the example above, the variable \char`\"{}octet\char`\"{} will contain the value 1. 
+
+Definition at line 1002 of file uip.h.
+
+\hypertarget{group__uipconvfunc_gaffcd2fbe181e2aaefbf970551c302af5}{
+\index{uipconvfunc@{uipconvfunc}!uip\_\-ipaddr2@{uip\_\-ipaddr2}}
+\index{uip\_\-ipaddr2@{uip\_\-ipaddr2}!uipconvfunc@{uipconvfunc}}
+\subsubsection[{uip\_\-ipaddr2}]{\setlength{\rightskip}{0pt plus 5cm}\#define uip\_\-ipaddr2(
+\begin{DoxyParamCaption}
+\item[{}]{addr}
+\end{DoxyParamCaption}
+)}}
+\label{group__uipconvfunc_gaffcd2fbe181e2aaefbf970551c302af5}
+Pick the second octet of an IP address.
+
+Picks out the second octet of an IP address.
+
+Example: 
+\begin{DoxyCode}
+ uip_ipaddr_t ipaddr;
+ u8_t octet;
+
+ uip_ipaddr(&ipaddr, 1,2,3,4);
+ octet = uip_ipaddr2(&ipaddr);
+\end{DoxyCode}
+
+
+In the example above, the variable \char`\"{}octet\char`\"{} will contain the value 2. 
+
+Definition at line 1022 of file uip.h.
+
+\hypertarget{group__uipconvfunc_gae23534479ead15af8ff08ace26a47fb5}{
+\index{uipconvfunc@{uipconvfunc}!uip\_\-ipaddr3@{uip\_\-ipaddr3}}
+\index{uip\_\-ipaddr3@{uip\_\-ipaddr3}!uipconvfunc@{uipconvfunc}}
+\subsubsection[{uip\_\-ipaddr3}]{\setlength{\rightskip}{0pt plus 5cm}\#define uip\_\-ipaddr3(
+\begin{DoxyParamCaption}
+\item[{}]{addr}
+\end{DoxyParamCaption}
+)}}
+\label{group__uipconvfunc_gae23534479ead15af8ff08ace26a47fb5}
+Pick the third octet of an IP address.
+
+Picks out the third octet of an IP address.
+
+Example: 
+\begin{DoxyCode}
+ uip_ipaddr_t ipaddr;
+ u8_t octet;
+
+ uip_ipaddr(&ipaddr, 1,2,3,4);
+ octet = uip_ipaddr3(&ipaddr);
+\end{DoxyCode}
+
+
+In the example above, the variable \char`\"{}octet\char`\"{} will contain the value 3. 
+
+Definition at line 1042 of file uip.h.
+
+\hypertarget{group__uipconvfunc_ga165b603ec150e26efec7be199c9c2901}{
+\index{uipconvfunc@{uipconvfunc}!uip\_\-ipaddr4@{uip\_\-ipaddr4}}
+\index{uip\_\-ipaddr4@{uip\_\-ipaddr4}!uipconvfunc@{uipconvfunc}}
+\subsubsection[{uip\_\-ipaddr4}]{\setlength{\rightskip}{0pt plus 5cm}\#define uip\_\-ipaddr4(
+\begin{DoxyParamCaption}
+\item[{}]{addr}
+\end{DoxyParamCaption}
+)}}
+\label{group__uipconvfunc_ga165b603ec150e26efec7be199c9c2901}
+Pick the fourth octet of an IP address.
+
+Picks out the fourth octet of an IP address.
+
+Example: 
+\begin{DoxyCode}
+ uip_ipaddr_t ipaddr;
+ u8_t octet;
+
+ uip_ipaddr(&ipaddr, 1,2,3,4);
+ octet = uip_ipaddr4(&ipaddr);
+\end{DoxyCode}
+
+
+In the example above, the variable \char`\"{}octet\char`\"{} will contain the value 4. 
+
+Definition at line 1062 of file uip.h.
+
+\hypertarget{group__uipconvfunc_ga210e629f7252e4bc8458cbdf260b3318}{
+\index{uipconvfunc@{uipconvfunc}!uip\_\-ipaddr\_\-cmp@{uip\_\-ipaddr\_\-cmp}}
+\index{uip\_\-ipaddr\_\-cmp@{uip\_\-ipaddr\_\-cmp}!uipconvfunc@{uipconvfunc}}
+\subsubsection[{uip\_\-ipaddr\_\-cmp}]{\setlength{\rightskip}{0pt plus 5cm}\#define uip\_\-ipaddr\_\-cmp(
+\begin{DoxyParamCaption}
+\item[{}]{addr1, }
+\item[{}]{addr2}
+\end{DoxyParamCaption}
+)}}
+\label{group__uipconvfunc_ga210e629f7252e4bc8458cbdf260b3318}
+Compare two IP addresses
+
+Compares two IP addresses.
+
+Example: 
+\begin{DoxyCode}
+ uip_ipaddr_t ipaddr1, ipaddr2;
+
+ uip_ipaddr(&ipaddr1, 192,16,1,2);
+ if(uip_ipaddr_cmp(&ipaddr2, &ipaddr1)) {
+    printf("They are the same");
+ }
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em addr1}]The first IP address. \item[{\em addr2}]The second IP address. \end{DoxyParams}
+
+
+Definition at line 918 of file uip.h.
+
+\hypertarget{group__uipconvfunc_ga769512993b7b27271909d6daa4748b60}{
+\index{uipconvfunc@{uipconvfunc}!uip\_\-ipaddr\_\-copy@{uip\_\-ipaddr\_\-copy}}
+\index{uip\_\-ipaddr\_\-copy@{uip\_\-ipaddr\_\-copy}!uipconvfunc@{uipconvfunc}}
+\subsubsection[{uip\_\-ipaddr\_\-copy}]{\setlength{\rightskip}{0pt plus 5cm}\#define uip\_\-ipaddr\_\-copy(
+\begin{DoxyParamCaption}
+\item[{}]{dest, }
+\item[{}]{src}
+\end{DoxyParamCaption}
+)}}
+\label{group__uipconvfunc_ga769512993b7b27271909d6daa4748b60}
+Copy an IP address to another IP address.
+
+Copies an IP address from one place to another.
+
+Example: 
+\begin{DoxyCode}
+ uip_ipaddr_t ipaddr1, ipaddr2;
+
+ uip_ipaddr(&ipaddr1, 192,16,1,2);
+ uip_ipaddr_copy(&ipaddr2, &ipaddr1);
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em dest}]The destination for the copy. \item[{\em src}]The source from where to copy. \end{DoxyParams}
+
+
+Definition at line 889 of file uip.h.
+
+\hypertarget{group__uipconvfunc_ga969d7fff37a979737da045e0d538a9bd}{
+\index{uipconvfunc@{uipconvfunc}!uip\_\-ipaddr\_\-mask@{uip\_\-ipaddr\_\-mask}}
+\index{uip\_\-ipaddr\_\-mask@{uip\_\-ipaddr\_\-mask}!uipconvfunc@{uipconvfunc}}
+\subsubsection[{uip\_\-ipaddr\_\-mask}]{\setlength{\rightskip}{0pt plus 5cm}\#define uip\_\-ipaddr\_\-mask(
+\begin{DoxyParamCaption}
+\item[{}]{dest, }
+\item[{}]{src, }
+\item[{}]{mask}
+\end{DoxyParamCaption}
+)}}
+\label{group__uipconvfunc_ga969d7fff37a979737da045e0d538a9bd}
+Mask out the network part of an IP address.
+
+Masks out the network part of an IP address, given the address and the netmask.
+
+Example: 
+\begin{DoxyCode}
+ uip_ipaddr_t ipaddr1, ipaddr2, netmask;
+
+ uip_ipaddr(&ipaddr1, 192,16,1,2);
+ uip_ipaddr(&netmask, 255,255,255,0);
+ uip_ipaddr_mask(&ipaddr2, &ipaddr1, &netmask);
+\end{DoxyCode}
+
+
+In the example above, the variable \char`\"{}ipaddr2\char`\"{} will contain the IP address 192.168.1.0.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em dest}]Where the result is to be placed. \item[{\em src}]The IP address. \item[{\em mask}]The netmask. \end{DoxyParams}
+
+
+Definition at line 979 of file uip.h.
+
+\hypertarget{group__uipconvfunc_ga6b16e0bac41821c1fbe0c267071642f0}{
+\index{uipconvfunc@{uipconvfunc}!uip\_\-ipaddr\_\-maskcmp@{uip\_\-ipaddr\_\-maskcmp}}
+\index{uip\_\-ipaddr\_\-maskcmp@{uip\_\-ipaddr\_\-maskcmp}!uipconvfunc@{uipconvfunc}}
+\subsubsection[{uip\_\-ipaddr\_\-maskcmp}]{\setlength{\rightskip}{0pt plus 5cm}\#define uip\_\-ipaddr\_\-maskcmp(
+\begin{DoxyParamCaption}
+\item[{}]{addr1, }
+\item[{}]{addr2, }
+\item[{}]{mask}
+\end{DoxyParamCaption}
+)}}
+\label{group__uipconvfunc_ga6b16e0bac41821c1fbe0c267071642f0}
+Compare two IP addresses with netmasks
+
+Compares two IP addresses with netmasks. The masks are used to mask out the bits that are to be compared.
+
+Example: 
+\begin{DoxyCode}
+ uip_ipaddr_t ipaddr1, ipaddr2, mask;
+
+ uip_ipaddr(&mask, 255,255,255,0);
+ uip_ipaddr(&ipaddr1, 192,16,1,2);
+ uip_ipaddr(&ipaddr2, 192,16,1,3);
+ if(uip_ipaddr_maskcmp(&ipaddr1, &ipaddr2, &mask)) {
+    printf("They are the same");
+ }
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em addr1}]The first IP address. \item[{\em addr2}]The second IP address. \item[{\em mask}]The netmask. \end{DoxyParams}
+
+
+Definition at line 948 of file uip.h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{group__uipconvfunc_gaa22b04cac8cf283ca12f028578bebc06}{
+\index{uipconvfunc@{uipconvfunc}!htons@{htons}}
+\index{htons@{htons}!uipconvfunc@{uipconvfunc}}
+\subsubsection[{htons}]{\setlength{\rightskip}{0pt plus 5cm}{\bf u16\_\-t} htons (
+\begin{DoxyParamCaption}
+\item[{{\bf u16\_\-t}}]{ val}
+\end{DoxyParamCaption}
+)}}
+\label{group__uipconvfunc_gaa22b04cac8cf283ca12f028578bebc06}
+Convert 16-\/bit quantity from host byte order to network byte order.
+
+This function is primarily used for converting variables from host byte order to network byte order. For converting constants to network byte order, use the \hyperlink{group__uipconvfunc_ga69a7a4951ff21b302267532c21ee78fc}{HTONS()} macro instead. 
+
+Definition at line 1901 of file uip.c.
+
+\hypertarget{group__uipconvfunc_gad9fc85bda6366e39c93fd6269cf6078a}{
+\index{uipconvfunc@{uipconvfunc}!uiplib\_\-ipaddrconv@{uiplib\_\-ipaddrconv}}
+\index{uiplib\_\-ipaddrconv@{uiplib\_\-ipaddrconv}!uipconvfunc@{uipconvfunc}}
+\subsubsection[{uiplib\_\-ipaddrconv}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char uiplib\_\-ipaddrconv (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{ addrstr, }
+\item[{unsigned char $\ast$}]{ addr}
+\end{DoxyParamCaption}
+)}}
+\label{group__uipconvfunc_gad9fc85bda6366e39c93fd6269cf6078a}
+Convert a textual representation of an IP address to a numerical representation.
+
+This function takes a textual representation of an IP address in the form a.b.c.d and converts it into a 4-\/byte array that can be used by other uIP functions.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em addrstr}]A pointer to a string containing the IP address in textual form.\item[{\em addr}]A pointer to a 4-\/byte array that will be filled in with the numerical representation of the address.\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+\item[{\em 0}]If the IP address could not be parsed. \item[{\em Non-\/zero}]If the IP address was parsed. \end{DoxyRetVals}
+
+
+Definition at line 43 of file uiplib.c.
+

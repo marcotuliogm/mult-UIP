@@ -1,0 +1,20 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$group__SFTD.html#ga77244ac0ad98e8d5ff310132595c4612" title="Coloca protocolo em estado de fechado." alt="" coords="163,5,248,35"/>
+<area shape="rect" id="node7" href="$group__SFTD.html#ga0dd45f928eb9fd92057c3030a3718397" title="Envia pacotes do tipo SFT." alt="" coords="153,59,257,88"/>
+<area shape="rect" id="node11" href="$group__SFTD.html#ga3ba5af4fe8714e70fca97e743011e163" title="Trata pacotes do tipo SFT." alt="" coords="168,213,243,243"/>
+<area shape="rect" id="node5" href="$group__memb.html#gaceb952d27de8125d5146ac0bee325b8f" title="memb_free" alt="" coords="323,5,419,35"/>
+<area shape="rect" id="node9" href="$group__uip.html#ga04b053a623aac7cd4195157d470661b3" title="uip_send" alt="" coords="488,71,565,100"/>
+<area shape="rect" id="node13" href="$mprintf_8c.html#a8456d79947fb428e0927d19e7a1e9423" title="atoi" alt="" coords="348,213,393,243"/>
+<area shape="rect" id="node15" href="$group__SFTD.html#gab0520adf98ea71f71de3d1f42c778fac" title="Carrega Imagem vinda do protocolo para o display." alt="" coords="320,267,421,296"/>
+<area shape="rect" id="node17" href="$group__SFTD.html#gaffb793b26caefd07873afa01ace4ee61" title="Antiga funcao usada para tratar imagens do tipo geral." alt="" coords="307,320,435,349"/>
+<area shape="rect" id="node19" href="$group__SFTD.html#gabe069b166e0011721dbd75c84b64660e" title="Carrega Mensagem vinda do protocolo para o display." alt="" coords="325,373,416,403"/>
+<area shape="rect" id="node27" href="$group__SFTD.html#gabb1d77f4fcd81b5a3bd4022b62d7f7e0" title="Monta e envia protocolo SFT pedindo STOP no envio de dados." alt="" coords="316,109,425,139"/>
+<area shape="rect" id="node29" href="$mprintf_8c.html#a486df650a64b4719f771096d27ed4076" title="sprintf" alt="" coords="496,149,557,179"/>
+<area shape="rect" id="node21" href="$grlib_8c.html#a2150e91bacebd287e42791b9b8f6e488" title="lcdgr_puts" alt="" coords="483,400,571,429"/>
+<area shape="rect" id="node25" href="$grlib_8c.html#a40e0fee6fab130db1a7915e2f222f3ea" title="Funções para configuração das mensagens para aparecer no display." alt="" coords="491,347,563,376"/>
+<area shape="rect" id="node23" href="$grlib_8c.html#a0bb821220f76671d192a96ef9f584622" title="lcdgr_putchar" alt="" coords="619,400,728,429"/>
+<area shape="rect" id="node31" href="$mprintf_8c.html#a4258ec4e57ed55fef8f175226f66263d" title="sputchar" alt="" coords="635,176,712,205"/>
+<area shape="rect" id="node33" href="$mprintf_8c.html#afac470569c34e290d1b8b7c53cbeb6e1" title="va_printf" alt="" coords="635,123,712,152"/>
+<area shape="rect" id="node35" href="$mprintf_8c.html#a829eca90dc67b4fcf6dd1460e621d144" title="dprint" alt="" coords="776,96,835,125"/>
+<area shape="rect" id="node37" href="$mprintf_8c.html#ad44aca28598820cf82ac3cff0c30350a" title="u2str" alt="" coords="779,149,832,179"/>
+</map>

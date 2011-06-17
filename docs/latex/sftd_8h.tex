@@ -1,0 +1,343 @@
+\hypertarget{sftd_8h}{
+\section{sft/sftd.h File Reference}
+\label{sftd_8h}\index{sft/sftd.h@{sft/sftd.h}}
+}
+
+
+Declaracao e definicoes usadas pelo protocolo SFT.  
+
+
+{\ttfamily \#include \char`\"{}uipopt.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}uip-\/conf.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}../mult/api\_\-services.h\char`\"{}}\par
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structsftd__state}{sftd\_\-state}
+\begin{DoxyCompactList}\small\item\em Estrutura protocolo SFT. \item\end{DoxyCompactList}\item 
+struct \hyperlink{structsft__hdr__uip}{sft\_\-hdr\_\-uip}
+\begin{DoxyCompactList}\small\item\em Estrutura de um pacote SFT Acrescentado de 1 caracter == ''. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{sftd_8h_a7bbd4dd96f752e1a658cd868530e3fdd}{SFTD\_\-BUFFER\_\-DATA}~1500
+\begin{DoxyCompactList}\small\item\em Tamanho do buffer de cada pacote. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{sftd_8h_a0d1bbcd6042d3b55934498867962022f}{sft\_\-st} \{ \par
+\hyperlink{sftd_8h_a0d1bbcd6042d3b55934498867962022fad7fd527e9b09b1822fbee87683a69937}{ST\_\-INIT} = 0, 
+\hyperlink{sftd_8h_a0d1bbcd6042d3b55934498867962022fae5b1b669db253d6e5fc39e11f8b5c80e}{ST\_\-RECV}, 
+\hyperlink{sftd_8h_a0d1bbcd6042d3b55934498867962022fac4f1efae58c66b8a0ed76e495684b155}{ST\_\-WAIT\_\-RECV}, 
+\hyperlink{sftd_8h_a0d1bbcd6042d3b55934498867962022fac915f56542bf118b5b6181e54445efad}{ST\_\-FINISHED\_\-RECV}, 
+\par
+\hyperlink{sftd_8h_a0d1bbcd6042d3b55934498867962022fa0b28ee57d123c52ba7f693317cbfd575}{ST\_\-SEND}, 
+\hyperlink{sftd_8h_a0d1bbcd6042d3b55934498867962022faa9df1436845923918c3e2ffb63bec31d}{ST\_\-WAIT\_\-SEND}, 
+\hyperlink{sftd_8h_a0d1bbcd6042d3b55934498867962022fad5aebe45299de8e39d7ee1cf54525e24}{ST\_\-FINISHED\_\-SEND}, 
+\hyperlink{sftd_8h_a0d1bbcd6042d3b55934498867962022fa04b939c166d4baa471909eb224d5fed3}{ST\_\-STOP}, 
+\par
+\hyperlink{sftd_8h_a0d1bbcd6042d3b55934498867962022fa1fc9ef256f480d5bbd296aaa92c07b3e}{ST\_\-RECVU}, 
+\hyperlink{sftd_8h_a0d1bbcd6042d3b55934498867962022fa44e526f8b789a93cf9bffc45a5aeaa07}{ST\_\-CLOSE}
+ \}
+\begin{DoxyCompactList}\small\item\em sft\_\-st Estrutura com os estados do protocolo. \item\end{DoxyCompactList}\item 
+enum \hyperlink{sftd_8h_a698dfd82c5a5a0fa6dee46c157bc2e4f}{cmd\_\-sft} \{ \par
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa91dd4f615594c8882f25e5457596ac25}{CMD\_\-RECV} = 0, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fabd786962c55320c4cb40358afaed468f}{CMD\_\-RECV\_\-ANS}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa1e0ceff2d6f13742786f42dac58149bc}{CMD\_\-STOP}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa9d46894e135999a4db05e1670dcf2b69}{CMD\_\-RECV\_\-SEQ}, 
+\par
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4fe06469b0604dc5a26a64882560c5da}{CMD\_\-FINISHED}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa8b4a95e680f732e89f2737fba63ee7b7}{CMD\_\-RECV\_\-X}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4faf19ed9b5eb85a1f1f9931bd69f6cd748}{CMD\_\-RECVU}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa3e631e656523983cc0e572e93cae27c6}{CMD\_\-ERROR}, 
+\par
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa384b8b0439817da86b68b1dad85c9993}{CMD\_\-MSG}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa00c26130ae6ce63965ca64eb0010508f}{CMD\_\-SEND} = 0, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa0528f4b967392245553f29c25b8a881a}{CMD\_\-SEND\_\-WAIT}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa1e0ceff2d6f13742786f42dac58149bc}{CMD\_\-STOP}, 
+\par
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4360eb301345df97962cb1464ee8473a}{CMD\_\-SEND\_\-SEQ}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4fe06469b0604dc5a26a64882560c5da}{CMD\_\-FINISHED}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa615aafaeecf11e971ebdddf41bde2e17}{CMD\_\-SEND\_\-X}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4faa7a0078d43616f6ad11c7429303070fb}{CMD\_\-SENDU}, 
+\par
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa3e631e656523983cc0e572e93cae27c6}{CMD\_\-ERROR}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa00c26130ae6ce63965ca64eb0010508f}{CMD\_\-SEND} = 0, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa0528f4b967392245553f29c25b8a881a}{CMD\_\-SEND\_\-WAIT}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa1e0ceff2d6f13742786f42dac58149bc}{CMD\_\-STOP}, 
+\par
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4360eb301345df97962cb1464ee8473a}{CMD\_\-SEND\_\-SEQ}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4fe06469b0604dc5a26a64882560c5da}{CMD\_\-FINISHED}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa615aafaeecf11e971ebdddf41bde2e17}{CMD\_\-SEND\_\-X}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4faa7a0078d43616f6ad11c7429303070fb}{CMD\_\-SENDU}, 
+\par
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa3e631e656523983cc0e572e93cae27c6}{CMD\_\-ERROR}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa00c26130ae6ce63965ca64eb0010508f}{CMD\_\-SEND} = 0, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa0528f4b967392245553f29c25b8a881a}{CMD\_\-SEND\_\-WAIT}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa1e0ceff2d6f13742786f42dac58149bc}{CMD\_\-STOP}, 
+\par
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4360eb301345df97962cb1464ee8473a}{CMD\_\-SEND\_\-SEQ}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4fe06469b0604dc5a26a64882560c5da}{CMD\_\-FINISHED}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa615aafaeecf11e971ebdddf41bde2e17}{CMD\_\-SEND\_\-X}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4faa7a0078d43616f6ad11c7429303070fb}{CMD\_\-SENDU}, 
+\par
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa3e631e656523983cc0e572e93cae27c6}{CMD\_\-ERROR}, 
+\hyperlink{group__tools_ga698dfd82c5a5a0fa6dee46c157bc2e4fa384b8b0439817da86b68b1dad85c9993}{CMD\_\-MSG}
+ \}
+\begin{DoxyCompactList}\small\item\em Servicos disponiveis pelo protocolo SFT. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__SFTD_gab05d3fde000321e5a849ec084474caf2}{sftd\_\-init} (void)
+\begin{DoxyCompactList}\small\item\em Inicializa servico do protocolo SFT. \item\end{DoxyCompactList}\item 
+void \hyperlink{group__SFTD_ga95d5c450883e216dccebd10b4adbca3c}{sftd\_\-appcall} (void)
+\begin{DoxyCompactList}\small\item\em Funcao tratados de pacotes do tipo SFT. \item\end{DoxyCompactList}\item 
+void \hyperlink{group__SFTD_ga0dd45f928eb9fd92057c3030a3718397}{sft\_\-senddata} (struct \hyperlink{structsftd__state}{sftd\_\-state} $\ast$s)
+\begin{DoxyCompactList}\small\item\em Envia pacotes do tipo SFT. \item\end{DoxyCompactList}\item 
+int \hyperlink{group__SFTD_ga3ba5af4fe8714e70fca97e743011e163}{sft\_\-trata} (struct \hyperlink{structsftd__state}{sftd\_\-state} $\ast$s)
+\begin{DoxyCompactList}\small\item\em Trata pacotes do tipo SFT. \item\end{DoxyCompactList}\item 
+void \hyperlink{group__SFTD_ga77244ac0ad98e8d5ff310132595c4612}{sft\_\-closed} (struct \hyperlink{structsftd__state}{sftd\_\-state} $\ast$s)
+\begin{DoxyCompactList}\small\item\em Coloca protocolo em estado de fechado. \item\end{DoxyCompactList}\item 
+void \hyperlink{group__SFTD_gab0520adf98ea71f71de3d1f42c778fac}{carrega\_\-img} (struct \hyperlink{structsftd__state}{sftd\_\-state} $\ast$s)
+\begin{DoxyCompactList}\small\item\em Carrega Imagem vinda do protocolo para o display. \item\end{DoxyCompactList}\item 
+void \hyperlink{group__SFTD_ga7a80643708e17a7a7b3b7980ea3f901b}{carrega\_\-imgu} (struct \hyperlink{structsftd__state}{sftd\_\-state} $\ast$s)
+\begin{DoxyCompactList}\small\item\em Carrega Imagem vinda do protocolo para o display sem seguranca. \item\end{DoxyCompactList}\item 
+void \hyperlink{group__SFTD_gaffb793b26caefd07873afa01ace4ee61}{carrega\_\-img\_\-old} (struct \hyperlink{structsftd__state}{sftd\_\-state} $\ast$s)
+\begin{DoxyCompactList}\small\item\em Antiga funcao usada para tratar imagens do tipo geral. \item\end{DoxyCompactList}\item 
+void \hyperlink{group__SFTD_gabb1d77f4fcd81b5a3bd4022b62d7f7e0}{info\_\-host\_\-ans} (struct \hyperlink{structsftd__state}{sftd\_\-state} $\ast$s, int cmd)
+\begin{DoxyCompactList}\small\item\em Monta e envia protocolo SFT pedindo STOP no envio de dados. \item\end{DoxyCompactList}\item 
+void \hyperlink{group__SFTD_gabe069b166e0011721dbd75c84b64660e}{envia\_\-msg} (struct \hyperlink{structsftd__state}{sftd\_\-state} $\ast$s)
+\begin{DoxyCompactList}\small\item\em Carrega Mensagem vinda do protocolo para o display. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Protocolo Desenvolvido para poder fazer transferencia de arquivos entre um servidor local e o UIP.
+
+\begin{DoxyAuthor}{Author}
+Marco Tulio Martins 
+\end{DoxyAuthor}
+
+
+Definition in file \hyperlink{sftd_8h_source}{sftd.h}.
+
+
+
+\subsection{Define Documentation}
+\hypertarget{sftd_8h_a7bbd4dd96f752e1a658cd868530e3fdd}{
+\index{sftd.h@{sftd.h}!SFTD\_\-BUFFER\_\-DATA@{SFTD\_\-BUFFER\_\-DATA}}
+\index{SFTD\_\-BUFFER\_\-DATA@{SFTD\_\-BUFFER\_\-DATA}!sftd.h@{sftd.h}}
+\subsubsection[{SFTD\_\-BUFFER\_\-DATA}]{\setlength{\rightskip}{0pt plus 5cm}\#define SFTD\_\-BUFFER\_\-DATA~1500}}
+\label{sftd_8h_a7bbd4dd96f752e1a658cd868530e3fdd}
+
+
+Definition at line 23 of file sftd.h.
+
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{sftd_8h_a698dfd82c5a5a0fa6dee46c157bc2e4f}{
+\index{sftd.h@{sftd.h}!cmd\_\-sft@{cmd\_\-sft}}
+\index{cmd\_\-sft@{cmd\_\-sft}!sftd.h@{sftd.h}}
+\subsubsection[{cmd\_\-sft}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf cmd\_\-sft}}}
+\label{sftd_8h_a698dfd82c5a5a0fa6dee46c157bc2e4f}
+Comandos aceitos e que são interpretados pelo protocolo. \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{CMD\_\-RECV@{CMD\_\-RECV}!sftd.h@{sftd.h}}\index{sftd.h@{sftd.h}!CMD\_\-RECV@{CMD\_\-RECV}}\item[{\em 
+\hypertarget{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa91dd4f615594c8882f25e5457596ac25}{
+CMD\_\-RECV}
+\label{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa91dd4f615594c8882f25e5457596ac25}
+}]\index{CMD\_\-RECV\_\-ANS@{CMD\_\-RECV\_\-ANS}!sftd.h@{sftd.h}}\index{sftd.h@{sftd.h}!CMD\_\-RECV\_\-ANS@{CMD\_\-RECV\_\-ANS}}\item[{\em 
+\hypertarget{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fabd786962c55320c4cb40358afaed468f}{
+CMD\_\-RECV\_\-ANS}
+\label{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fabd786962c55320c4cb40358afaed468f}
+}]\index{CMD\_\-STOP@{CMD\_\-STOP}!sftd.h@{sftd.h}}\index{sftd.h@{sftd.h}!CMD\_\-STOP@{CMD\_\-STOP}}\item[{\em 
+\hypertarget{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa1e0ceff2d6f13742786f42dac58149bc}{
+CMD\_\-STOP}
+\label{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa1e0ceff2d6f13742786f42dac58149bc}
+}]\index{CMD\_\-RECV\_\-SEQ@{CMD\_\-RECV\_\-SEQ}!sftd.h@{sftd.h}}\index{sftd.h@{sftd.h}!CMD\_\-RECV\_\-SEQ@{CMD\_\-RECV\_\-SEQ}}\item[{\em 
+\hypertarget{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa9d46894e135999a4db05e1670dcf2b69}{
+CMD\_\-RECV\_\-SEQ}
+\label{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa9d46894e135999a4db05e1670dcf2b69}
+}]\index{CMD\_\-FINISHED@{CMD\_\-FINISHED}!sftd.h@{sftd.h}}\index{sftd.h@{sftd.h}!CMD\_\-FINISHED@{CMD\_\-FINISHED}}\item[{\em 
+\hypertarget{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4fe06469b0604dc5a26a64882560c5da}{
+CMD\_\-FINISHED}
+\label{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4fe06469b0604dc5a26a64882560c5da}
+}]\index{CMD\_\-RECV\_\-X@{CMD\_\-RECV\_\-X}!sftd.h@{sftd.h}}\index{sftd.h@{sftd.h}!CMD\_\-RECV\_\-X@{CMD\_\-RECV\_\-X}}\item[{\em 
+\hypertarget{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa8b4a95e680f732e89f2737fba63ee7b7}{
+CMD\_\-RECV\_\-X}
+\label{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa8b4a95e680f732e89f2737fba63ee7b7}
+}]\index{CMD\_\-RECVU@{CMD\_\-RECVU}!sftd.h@{sftd.h}}\index{sftd.h@{sftd.h}!CMD\_\-RECVU@{CMD\_\-RECVU}}\item[{\em 
+\hypertarget{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4faf19ed9b5eb85a1f1f9931bd69f6cd748}{
+CMD\_\-RECVU}
+\label{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4faf19ed9b5eb85a1f1f9931bd69f6cd748}
+}]\index{CMD\_\-ERROR@{CMD\_\-ERROR}!sftd.h@{sftd.h}}\index{sftd.h@{sftd.h}!CMD\_\-ERROR@{CMD\_\-ERROR}}\item[{\em 
+\hypertarget{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa3e631e656523983cc0e572e93cae27c6}{
+CMD\_\-ERROR}
+\label{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa3e631e656523983cc0e572e93cae27c6}
+}]\index{CMD\_\-MSG@{CMD\_\-MSG}!sftd.h@{sftd.h}}\index{sftd.h@{sftd.h}!CMD\_\-MSG@{CMD\_\-MSG}}\item[{\em 
+\hypertarget{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa384b8b0439817da86b68b1dad85c9993}{
+CMD\_\-MSG}
+\label{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa384b8b0439817da86b68b1dad85c9993}
+}]\index{CMD\_\-SEND@{CMD\_\-SEND}!sftd.h@{sftd.h}}\index{sftd.h@{sftd.h}!CMD\_\-SEND@{CMD\_\-SEND}}\item[{\em 
+\hypertarget{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa00c26130ae6ce63965ca64eb0010508f}{
+CMD\_\-SEND}
+\label{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa00c26130ae6ce63965ca64eb0010508f}
+}]\index{CMD\_\-SEND\_\-WAIT@{CMD\_\-SEND\_\-WAIT}!sftd.h@{sftd.h}}\index{sftd.h@{sftd.h}!CMD\_\-SEND\_\-WAIT@{CMD\_\-SEND\_\-WAIT}}\item[{\em 
+\hypertarget{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa0528f4b967392245553f29c25b8a881a}{
+CMD\_\-SEND\_\-WAIT}
+\label{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa0528f4b967392245553f29c25b8a881a}
+}]\index{CMD\_\-STOP@{CMD\_\-STOP}!sftd.h@{sftd.h}}\index{sftd.h@{sftd.h}!CMD\_\-STOP@{CMD\_\-STOP}}\item[{\em 
+\hypertarget{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa1e0ceff2d6f13742786f42dac58149bc}{
+CMD\_\-STOP}
+\label{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa1e0ceff2d6f13742786f42dac58149bc}
+}]\index{CMD\_\-SEND\_\-SEQ@{CMD\_\-SEND\_\-SEQ}!sftd.h@{sftd.h}}\index{sftd.h@{sftd.h}!CMD\_\-SEND\_\-SEQ@{CMD\_\-SEND\_\-SEQ}}\item[{\em 
+\hypertarget{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4360eb301345df97962cb1464ee8473a}{
+CMD\_\-SEND\_\-SEQ}
+\label{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4360eb301345df97962cb1464ee8473a}
+}]\index{CMD\_\-FINISHED@{CMD\_\-FINISHED}!sftd.h@{sftd.h}}\index{sftd.h@{sftd.h}!CMD\_\-FINISHED@{CMD\_\-FINISHED}}\item[{\em 
+\hypertarget{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4fe06469b0604dc5a26a64882560c5da}{
+CMD\_\-FINISHED}
+\label{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4fe06469b0604dc5a26a64882560c5da}
+}]\index{CMD\_\-SEND\_\-X@{CMD\_\-SEND\_\-X}!sftd.h@{sftd.h}}\index{sftd.h@{sftd.h}!CMD\_\-SEND\_\-X@{CMD\_\-SEND\_\-X}}\item[{\em 
+\hypertarget{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa615aafaeecf11e971ebdddf41bde2e17}{
+CMD\_\-SEND\_\-X}
+\label{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa615aafaeecf11e971ebdddf41bde2e17}
+}]\index{CMD\_\-SENDU@{CMD\_\-SENDU}!sftd.h@{sftd.h}}\index{sftd.h@{sftd.h}!CMD\_\-SENDU@{CMD\_\-SENDU}}\item[{\em 
+\hypertarget{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4faa7a0078d43616f6ad11c7429303070fb}{
+CMD\_\-SENDU}
+\label{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4faa7a0078d43616f6ad11c7429303070fb}
+}]\index{CMD\_\-ERROR@{CMD\_\-ERROR}!sftd.h@{sftd.h}}\index{sftd.h@{sftd.h}!CMD\_\-ERROR@{CMD\_\-ERROR}}\item[{\em 
+\hypertarget{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa3e631e656523983cc0e572e93cae27c6}{
+CMD\_\-ERROR}
+\label{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa3e631e656523983cc0e572e93cae27c6}
+}]\index{CMD\_\-SEND@{CMD\_\-SEND}!sftd.h@{sftd.h}}\index{sftd.h@{sftd.h}!CMD\_\-SEND@{CMD\_\-SEND}}\item[{\em 
+\hypertarget{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa00c26130ae6ce63965ca64eb0010508f}{
+CMD\_\-SEND}
+\label{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa00c26130ae6ce63965ca64eb0010508f}
+}]\index{CMD\_\-SEND\_\-WAIT@{CMD\_\-SEND\_\-WAIT}!sftd.h@{sftd.h}}\index{sftd.h@{sftd.h}!CMD\_\-SEND\_\-WAIT@{CMD\_\-SEND\_\-WAIT}}\item[{\em 
+\hypertarget{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa0528f4b967392245553f29c25b8a881a}{
+CMD\_\-SEND\_\-WAIT}
+\label{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa0528f4b967392245553f29c25b8a881a}
+}]\index{CMD\_\-STOP@{CMD\_\-STOP}!sftd.h@{sftd.h}}\index{sftd.h@{sftd.h}!CMD\_\-STOP@{CMD\_\-STOP}}\item[{\em 
+\hypertarget{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa1e0ceff2d6f13742786f42dac58149bc}{
+CMD\_\-STOP}
+\label{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa1e0ceff2d6f13742786f42dac58149bc}
+}]\index{CMD\_\-SEND\_\-SEQ@{CMD\_\-SEND\_\-SEQ}!sftd.h@{sftd.h}}\index{sftd.h@{sftd.h}!CMD\_\-SEND\_\-SEQ@{CMD\_\-SEND\_\-SEQ}}\item[{\em 
+\hypertarget{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4360eb301345df97962cb1464ee8473a}{
+CMD\_\-SEND\_\-SEQ}
+\label{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4360eb301345df97962cb1464ee8473a}
+}]\index{CMD\_\-FINISHED@{CMD\_\-FINISHED}!sftd.h@{sftd.h}}\index{sftd.h@{sftd.h}!CMD\_\-FINISHED@{CMD\_\-FINISHED}}\item[{\em 
+\hypertarget{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4fe06469b0604dc5a26a64882560c5da}{
+CMD\_\-FINISHED}
+\label{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4fe06469b0604dc5a26a64882560c5da}
+}]\index{CMD\_\-SEND\_\-X@{CMD\_\-SEND\_\-X}!sftd.h@{sftd.h}}\index{sftd.h@{sftd.h}!CMD\_\-SEND\_\-X@{CMD\_\-SEND\_\-X}}\item[{\em 
+\hypertarget{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa615aafaeecf11e971ebdddf41bde2e17}{
+CMD\_\-SEND\_\-X}
+\label{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa615aafaeecf11e971ebdddf41bde2e17}
+}]\index{CMD\_\-SENDU@{CMD\_\-SENDU}!sftd.h@{sftd.h}}\index{sftd.h@{sftd.h}!CMD\_\-SENDU@{CMD\_\-SENDU}}\item[{\em 
+\hypertarget{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4faa7a0078d43616f6ad11c7429303070fb}{
+CMD\_\-SENDU}
+\label{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4faa7a0078d43616f6ad11c7429303070fb}
+}]\index{CMD\_\-ERROR@{CMD\_\-ERROR}!sftd.h@{sftd.h}}\index{sftd.h@{sftd.h}!CMD\_\-ERROR@{CMD\_\-ERROR}}\item[{\em 
+\hypertarget{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa3e631e656523983cc0e572e93cae27c6}{
+CMD\_\-ERROR}
+\label{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa3e631e656523983cc0e572e93cae27c6}
+}]\index{CMD\_\-SEND@{CMD\_\-SEND}!sftd.h@{sftd.h}}\index{sftd.h@{sftd.h}!CMD\_\-SEND@{CMD\_\-SEND}}\item[{\em 
+\hypertarget{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa00c26130ae6ce63965ca64eb0010508f}{
+CMD\_\-SEND}
+\label{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa00c26130ae6ce63965ca64eb0010508f}
+}]\index{CMD\_\-SEND\_\-WAIT@{CMD\_\-SEND\_\-WAIT}!sftd.h@{sftd.h}}\index{sftd.h@{sftd.h}!CMD\_\-SEND\_\-WAIT@{CMD\_\-SEND\_\-WAIT}}\item[{\em 
+\hypertarget{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa0528f4b967392245553f29c25b8a881a}{
+CMD\_\-SEND\_\-WAIT}
+\label{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa0528f4b967392245553f29c25b8a881a}
+}]\index{CMD\_\-STOP@{CMD\_\-STOP}!sftd.h@{sftd.h}}\index{sftd.h@{sftd.h}!CMD\_\-STOP@{CMD\_\-STOP}}\item[{\em 
+\hypertarget{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa1e0ceff2d6f13742786f42dac58149bc}{
+CMD\_\-STOP}
+\label{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa1e0ceff2d6f13742786f42dac58149bc}
+}]\index{CMD\_\-SEND\_\-SEQ@{CMD\_\-SEND\_\-SEQ}!sftd.h@{sftd.h}}\index{sftd.h@{sftd.h}!CMD\_\-SEND\_\-SEQ@{CMD\_\-SEND\_\-SEQ}}\item[{\em 
+\hypertarget{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4360eb301345df97962cb1464ee8473a}{
+CMD\_\-SEND\_\-SEQ}
+\label{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4360eb301345df97962cb1464ee8473a}
+}]\index{CMD\_\-FINISHED@{CMD\_\-FINISHED}!sftd.h@{sftd.h}}\index{sftd.h@{sftd.h}!CMD\_\-FINISHED@{CMD\_\-FINISHED}}\item[{\em 
+\hypertarget{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4fe06469b0604dc5a26a64882560c5da}{
+CMD\_\-FINISHED}
+\label{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa4fe06469b0604dc5a26a64882560c5da}
+}]\index{CMD\_\-SEND\_\-X@{CMD\_\-SEND\_\-X}!sftd.h@{sftd.h}}\index{sftd.h@{sftd.h}!CMD\_\-SEND\_\-X@{CMD\_\-SEND\_\-X}}\item[{\em 
+\hypertarget{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa615aafaeecf11e971ebdddf41bde2e17}{
+CMD\_\-SEND\_\-X}
+\label{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa615aafaeecf11e971ebdddf41bde2e17}
+}]\index{CMD\_\-SENDU@{CMD\_\-SENDU}!sftd.h@{sftd.h}}\index{sftd.h@{sftd.h}!CMD\_\-SENDU@{CMD\_\-SENDU}}\item[{\em 
+\hypertarget{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4faa7a0078d43616f6ad11c7429303070fb}{
+CMD\_\-SENDU}
+\label{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4faa7a0078d43616f6ad11c7429303070fb}
+}]\index{CMD\_\-ERROR@{CMD\_\-ERROR}!sftd.h@{sftd.h}}\index{sftd.h@{sftd.h}!CMD\_\-ERROR@{CMD\_\-ERROR}}\item[{\em 
+\hypertarget{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa3e631e656523983cc0e572e93cae27c6}{
+CMD\_\-ERROR}
+\label{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa3e631e656523983cc0e572e93cae27c6}
+}]\index{CMD\_\-MSG@{CMD\_\-MSG}!sftd.h@{sftd.h}}\index{sftd.h@{sftd.h}!CMD\_\-MSG@{CMD\_\-MSG}}\item[{\em 
+\hypertarget{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa384b8b0439817da86b68b1dad85c9993}{
+CMD\_\-MSG}
+\label{sftd_8h_ga698dfd82c5a5a0fa6dee46c157bc2e4fa384b8b0439817da86b68b1dad85c9993}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 48 of file sftd.h.
+
+\hypertarget{sftd_8h_a0d1bbcd6042d3b55934498867962022f}{
+\index{sftd.h@{sftd.h}!sft\_\-st@{sft\_\-st}}
+\index{sft\_\-st@{sft\_\-st}!sftd.h@{sftd.h}}
+\subsubsection[{sft\_\-st}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf sft\_\-st}}}
+\label{sftd_8h_a0d1bbcd6042d3b55934498867962022f}
+Lista de tipos de estados que pode estar o protocolo. \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{ST\_\-INIT@{ST\_\-INIT}!sftd.h@{sftd.h}}\index{sftd.h@{sftd.h}!ST\_\-INIT@{ST\_\-INIT}}\item[{\em 
+\hypertarget{sftd_8h_a0d1bbcd6042d3b55934498867962022fad7fd527e9b09b1822fbee87683a69937}{
+ST\_\-INIT}
+\label{sftd_8h_a0d1bbcd6042d3b55934498867962022fad7fd527e9b09b1822fbee87683a69937}
+}]\index{ST\_\-RECV@{ST\_\-RECV}!sftd.h@{sftd.h}}\index{sftd.h@{sftd.h}!ST\_\-RECV@{ST\_\-RECV}}\item[{\em 
+\hypertarget{sftd_8h_a0d1bbcd6042d3b55934498867962022fae5b1b669db253d6e5fc39e11f8b5c80e}{
+ST\_\-RECV}
+\label{sftd_8h_a0d1bbcd6042d3b55934498867962022fae5b1b669db253d6e5fc39e11f8b5c80e}
+}]\index{ST\_\-WAIT\_\-RECV@{ST\_\-WAIT\_\-RECV}!sftd.h@{sftd.h}}\index{sftd.h@{sftd.h}!ST\_\-WAIT\_\-RECV@{ST\_\-WAIT\_\-RECV}}\item[{\em 
+\hypertarget{sftd_8h_a0d1bbcd6042d3b55934498867962022fac4f1efae58c66b8a0ed76e495684b155}{
+ST\_\-WAIT\_\-RECV}
+\label{sftd_8h_a0d1bbcd6042d3b55934498867962022fac4f1efae58c66b8a0ed76e495684b155}
+}]\index{ST\_\-FINISHED\_\-RECV@{ST\_\-FINISHED\_\-RECV}!sftd.h@{sftd.h}}\index{sftd.h@{sftd.h}!ST\_\-FINISHED\_\-RECV@{ST\_\-FINISHED\_\-RECV}}\item[{\em 
+\hypertarget{sftd_8h_a0d1bbcd6042d3b55934498867962022fac915f56542bf118b5b6181e54445efad}{
+ST\_\-FINISHED\_\-RECV}
+\label{sftd_8h_a0d1bbcd6042d3b55934498867962022fac915f56542bf118b5b6181e54445efad}
+}]\index{ST\_\-SEND@{ST\_\-SEND}!sftd.h@{sftd.h}}\index{sftd.h@{sftd.h}!ST\_\-SEND@{ST\_\-SEND}}\item[{\em 
+\hypertarget{sftd_8h_a0d1bbcd6042d3b55934498867962022fa0b28ee57d123c52ba7f693317cbfd575}{
+ST\_\-SEND}
+\label{sftd_8h_a0d1bbcd6042d3b55934498867962022fa0b28ee57d123c52ba7f693317cbfd575}
+}]\index{ST\_\-WAIT\_\-SEND@{ST\_\-WAIT\_\-SEND}!sftd.h@{sftd.h}}\index{sftd.h@{sftd.h}!ST\_\-WAIT\_\-SEND@{ST\_\-WAIT\_\-SEND}}\item[{\em 
+\hypertarget{sftd_8h_a0d1bbcd6042d3b55934498867962022faa9df1436845923918c3e2ffb63bec31d}{
+ST\_\-WAIT\_\-SEND}
+\label{sftd_8h_a0d1bbcd6042d3b55934498867962022faa9df1436845923918c3e2ffb63bec31d}
+}]\index{ST\_\-FINISHED\_\-SEND@{ST\_\-FINISHED\_\-SEND}!sftd.h@{sftd.h}}\index{sftd.h@{sftd.h}!ST\_\-FINISHED\_\-SEND@{ST\_\-FINISHED\_\-SEND}}\item[{\em 
+\hypertarget{sftd_8h_a0d1bbcd6042d3b55934498867962022fad5aebe45299de8e39d7ee1cf54525e24}{
+ST\_\-FINISHED\_\-SEND}
+\label{sftd_8h_a0d1bbcd6042d3b55934498867962022fad5aebe45299de8e39d7ee1cf54525e24}
+}]\index{ST\_\-STOP@{ST\_\-STOP}!sftd.h@{sftd.h}}\index{sftd.h@{sftd.h}!ST\_\-STOP@{ST\_\-STOP}}\item[{\em 
+\hypertarget{sftd_8h_a0d1bbcd6042d3b55934498867962022fa04b939c166d4baa471909eb224d5fed3}{
+ST\_\-STOP}
+\label{sftd_8h_a0d1bbcd6042d3b55934498867962022fa04b939c166d4baa471909eb224d5fed3}
+}]\index{ST\_\-RECVU@{ST\_\-RECVU}!sftd.h@{sftd.h}}\index{sftd.h@{sftd.h}!ST\_\-RECVU@{ST\_\-RECVU}}\item[{\em 
+\hypertarget{sftd_8h_a0d1bbcd6042d3b55934498867962022fa1fc9ef256f480d5bbd296aaa92c07b3e}{
+ST\_\-RECVU}
+\label{sftd_8h_a0d1bbcd6042d3b55934498867962022fa1fc9ef256f480d5bbd296aaa92c07b3e}
+}]\index{ST\_\-CLOSE@{ST\_\-CLOSE}!sftd.h@{sftd.h}}\index{sftd.h@{sftd.h}!ST\_\-CLOSE@{ST\_\-CLOSE}}\item[{\em 
+\hypertarget{sftd_8h_a0d1bbcd6042d3b55934498867962022fa44e526f8b789a93cf9bffc45a5aeaa07}{
+ST\_\-CLOSE}
+\label{sftd_8h_a0d1bbcd6042d3b55934498867962022fa44e526f8b789a93cf9bffc45a5aeaa07}
+}]\end{description}
+\end{Desc}
+
+
+
+Definition at line 30 of file sftd.h.
+

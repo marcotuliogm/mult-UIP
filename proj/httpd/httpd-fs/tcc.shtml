@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+	<title>TCC - Marco Tulio - Eng. de Compuacao</title>
+	
+	<!--<style>
+	.form field {width:330px; height: 30px}
+	.form_field .left{width:16px; background: url(field_l.png) top left no-repeat;height: 48px; float:left;}
+	.form_field .middle{width:75px; background: url(field_m.png) top left repeat-x ; border: none; height: 48px;float:left;}
+	.form_field .right{width:16px; background: url(field_r.png) top left no-repeat;height: 48px;float:left;}
+	</style>-->
+
+  </head>
+  <BODY bgcolor="#222" text="#FFF">
+<font face="tahoma">
+<center><h1>MULTIPLOS SERVICOS DE INTERNET COM O uIP</h1>
+<h2>DESENVOLVIMENTO DE UMA APLICCAO EMBARCADA PARA REDES TCP/IP</h2>
+<br>
+</center>
+
+<table width="90%" cellspacing="0" border="0" cellpadding="00" align="center">  <tbody>
+
+    <tr>
+      <td align="left" width="50%">
+	Temperatura Atual: &nbsp;&nbsp;<font color=blue size=5><b>%! tag-temp
+ &deg;C</b></font>
+	<br>
+	
+	<form name="aForm" action="/tcc.shtml" method="get">
+	Trocar Mensagem do LCD:<br> 	
+	<input type="text" name="slcd" maxlength="16" style="font-color: blue" />
+	<br>
+	
+	Configurar Relogio:<br>
+	<input type="text" size="3px" name="shr" maxlength="2" style="font-color: blue" /> :
+	<input type="text" size="3px" name="smin" maxlength="2" style="font-color: blue" /> :
+	<input type="text" size="3px" name="ssec" maxlength="2" style="font-color: blue" /><br>
+	<font size=1>Configuracao do RTC</font>
+	<br>
+	
+	<br><input type="submit" value="Submeter">
+	</form>
+      </td>
+      <td align="center" width="50%">
+      	<!--<IMG src="sisclogo.png" width="254" height="335" align="center" border="0"><br><br>Apoio: <a href="http://selivre.wordpress.com">selivre.wordpress.com</a>--></td>
+    </tr>
+  </tbody>
+</table>
+
+<br><br><br><br>
+<h4 align="right">Marco Tulio Goncalves Martins<br>
+	Orientador: Marcos Augusto Stemmer<br>
+	Porto Alegre 2011/01
+</h4>
+
+</font>
+</body>
+</html>
+

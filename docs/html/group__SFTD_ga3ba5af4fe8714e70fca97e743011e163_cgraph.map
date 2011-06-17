@@ -1,0 +1,16 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$mprintf_8c.html#a8456d79947fb428e0927d19e7a1e9423" title="atoi" alt="" coords="172,5,217,35"/>
+<area shape="rect" id="node5" href="$group__SFTD.html#gab0520adf98ea71f71de3d1f42c778fac" title="Carrega Imagem vinda do protocolo para o display." alt="" coords="144,59,245,88"/>
+<area shape="rect" id="node7" href="$group__SFTD.html#gaffb793b26caefd07873afa01ace4ee61" title="Antiga funcao usada para tratar imagens do tipo geral." alt="" coords="131,112,259,141"/>
+<area shape="rect" id="node9" href="$group__SFTD.html#gabe069b166e0011721dbd75c84b64660e" title="Carrega Mensagem vinda do protocolo para o display." alt="" coords="149,165,240,195"/>
+<area shape="rect" id="node17" href="$group__SFTD.html#gabb1d77f4fcd81b5a3bd4022b62d7f7e0" title="Monta e envia protocolo SFT pedindo STOP no envio de dados." alt="" coords="140,269,249,299"/>
+<area shape="rect" id="node19" href="$mprintf_8c.html#a486df650a64b4719f771096d27ed4076" title="sprintf" alt="" coords="320,219,381,248"/>
+<area shape="rect" id="node11" href="$grlib_8c.html#a2150e91bacebd287e42791b9b8f6e488" title="lcdgr_puts" alt="" coords="307,112,395,141"/>
+<area shape="rect" id="node15" href="$grlib_8c.html#a40e0fee6fab130db1a7915e2f222f3ea" title="Funções para configuração das mensagens para aparecer no display." alt="" coords="315,165,387,195"/>
+<area shape="rect" id="node13" href="$grlib_8c.html#a0bb821220f76671d192a96ef9f584622" title="lcdgr_putchar" alt="" coords="443,112,552,141"/>
+<area shape="rect" id="node29" href="$group__uip.html#ga04b053a623aac7cd4195157d470661b3" title="uip_send" alt="" coords="312,272,389,301"/>
+<area shape="rect" id="node21" href="$mprintf_8c.html#a4258ec4e57ed55fef8f175226f66263d" title="sputchar" alt="" coords="459,192,536,221"/>
+<area shape="rect" id="node23" href="$mprintf_8c.html#afac470569c34e290d1b8b7c53cbeb6e1" title="va_printf" alt="" coords="459,245,536,275"/>
+<area shape="rect" id="node25" href="$mprintf_8c.html#a829eca90dc67b4fcf6dd1460e621d144" title="dprint" alt="" coords="600,219,659,248"/>
+<area shape="rect" id="node27" href="$mprintf_8c.html#ad44aca28598820cf82ac3cff0c30350a" title="u2str" alt="" coords="603,272,656,301"/>
+</map>

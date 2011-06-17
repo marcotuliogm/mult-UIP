@@ -1,0 +1,603 @@
+\hypertarget{group__uipappfunc}{
+\section{uIP application functions}
+\label{group__uipappfunc}\index{uIP application functions@{uIP application functions}}
+}
+
+
+Collaboration diagram for uIP application functions:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=360pt]{group__uipappfunc}
+\end{center}
+\end{figure}
+
+
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__uipappfunc_gaef14e83c046e19ab9fe9d1bbcca276c2}{uip\_\-outstanding}(conn)~((conn)-\/$>$len)
+\item 
+\#define \hyperlink{group__uipappfunc_ga1a1bc437c09ddef238abab41d77c3177}{uip\_\-datalen}()
+\item 
+\#define \hyperlink{group__uipappfunc_ga8411c95a4d89367ad2d9d6bde1a3d537}{uip\_\-urgdatalen}()
+\item 
+\#define \hyperlink{group__uipappfunc_ga61db1dcb7c760e4dd5d60bf4e5576dca}{uip\_\-close}()
+\item 
+\#define \hyperlink{group__uipappfunc_ga88d2ccf7cd821f89d9a8df7e3948b56c}{uip\_\-abort}()
+\item 
+\#define \hyperlink{group__uipappfunc_ga0a8bb9d6d0f1f56852ccfccbbad6c5d8}{uip\_\-stop}()
+\item 
+\#define \hyperlink{group__uipappfunc_ga64a238a5c02640a7a4aef004163aeb47}{uip\_\-stopped}(conn)
+\item 
+\#define \hyperlink{group__uipappfunc_ga81ac47cee1c18f6aa479044069db7ca3}{uip\_\-restart}()
+\item 
+\#define \hyperlink{group__uipappfunc_gaa9de254b8aa308eb4aab17efdde622d2}{uip\_\-udpconnection}()
+\item 
+\#define \hyperlink{group__uipappfunc_ga26a14b8dae3f861830af9e7cf1e03725}{uip\_\-newdata}()
+\item 
+\#define \hyperlink{group__uipappfunc_gade6634974418e3240c212b9b16864368}{uip\_\-acked}()
+\item 
+\#define \hyperlink{group__uipappfunc_gadb971fb1525d0c5002f52125b05f3218}{uip\_\-connected}()
+\item 
+\#define \hyperlink{group__uipappfunc_gaef6c4140c632b6a406779342cf3b6eb6}{uip\_\-closed}()
+\item 
+\#define \hyperlink{group__uipappfunc_gafbd5fc486dfdf6bf6fc9db52b1f418c4}{uip\_\-aborted}()
+\item 
+\#define \hyperlink{group__uipappfunc_ga7b2ac4b18bd2ac3912fe67b3b17158c3}{uip\_\-timedout}()
+\item 
+\#define \hyperlink{group__uipappfunc_gaa8933ad15a2e2947dae4a5cff50e6007}{uip\_\-rexmit}()
+\item 
+\#define \hyperlink{group__uipappfunc_ga58bb90796c1cdad3aac2ecf44d87b20e}{uip\_\-poll}()
+\item 
+\#define \hyperlink{group__uipappfunc_gaa87feebc7cffd4d8300e776cf64e4fec}{uip\_\-initialmss}()
+\item 
+\#define \hyperlink{group__uipappfunc_gab5fecbc62edd128012cea0f47b57ab9f}{uip\_\-mss}()
+\item 
+\#define \hyperlink{group__uipappfunc_gaf2dbaceb10c67783a115075b5b6d66df}{uip\_\-udp\_\-remove}(conn)
+\item 
+\#define \hyperlink{group__uipappfunc_gaa20812098a4663c8a9fc4ce8e95391b6}{uip\_\-udp\_\-bind}(conn, port)
+\item 
+\#define \hyperlink{group__uipappfunc_gae5ab69d40013e6cf86ef1763c95d920e}{uip\_\-udp\_\-send}(len)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__uipappfunc_gadd1ab3704ecd4900eec61a6897d32dc8}{uip\_\-listen} (\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} port)
+\item 
+void \hyperlink{group__uipappfunc_gaaa585784b0914cac1d37f07f85457008}{uip\_\-unlisten} (\hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} port)
+\item 
+struct \hyperlink{structuip__conn}{uip\_\-conn} $\ast$ \hyperlink{group__uipappfunc_ga8096b0c4b543dc408f4dd031ddae7240}{uip\_\-connect} (\hyperlink{group__uip_ga1ef35301f43a5bbb9f89f07b5a36b9a0}{uip\_\-ipaddr\_\-t} $\ast$ripaddr, \hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} port)
+\item 
+void \hyperlink{group__uipappfunc_ga04b053a623aac7cd4195157d470661b3}{uip\_\-send} (const void $\ast$data, int len)
+\item 
+struct \hyperlink{structuip__udp__conn}{uip\_\-udp\_\-conn} $\ast$ \hyperlink{group__uipappfunc_ga79c4110211247df3fb30b8cf1c4c02af}{uip\_\-udp\_\-new} (\hyperlink{group__uip_ga1ef35301f43a5bbb9f89f07b5a36b9a0}{uip\_\-ipaddr\_\-t} $\ast$ripaddr, \hyperlink{group__uipfw_ga77570ac4fcab86864fa1916e55676da2}{u16\_\-t} rport)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Functions used by an application running of top of uIP. 
+
+\subsection{Define Documentation}
+\hypertarget{group__uipappfunc_ga88d2ccf7cd821f89d9a8df7e3948b56c}{
+\index{uipappfunc@{uipappfunc}!uip\_\-abort@{uip\_\-abort}}
+\index{uip\_\-abort@{uip\_\-abort}!uipappfunc@{uipappfunc}}
+\subsubsection[{uip\_\-abort}]{\setlength{\rightskip}{0pt plus 5cm}\#define uip\_\-abort(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{group__uipappfunc_ga88d2ccf7cd821f89d9a8df7e3948b56c}
+Abort the current connection.
+
+This function will abort (reset) the current connection, and is usually used when an error has occured that prevents using the \hyperlink{group__uipappfunc_ga61db1dcb7c760e4dd5d60bf4e5576dca}{uip\_\-close()} function. 
+
+Definition at line 588 of file uip.h.
+
+\hypertarget{group__uipappfunc_gafbd5fc486dfdf6bf6fc9db52b1f418c4}{
+\index{uipappfunc@{uipappfunc}!uip\_\-aborted@{uip\_\-aborted}}
+\index{uip\_\-aborted@{uip\_\-aborted}!uipappfunc@{uipappfunc}}
+\subsubsection[{uip\_\-aborted}]{\setlength{\rightskip}{0pt plus 5cm}\#define uip\_\-aborted(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{group__uipappfunc_gafbd5fc486dfdf6bf6fc9db52b1f418c4}
+Has the connection been aborted by the other end?
+
+Non-\/zero if the current connection has been aborted (reset) by the remote host. 
+
+Definition at line 687 of file uip.h.
+
+\hypertarget{group__uipappfunc_gade6634974418e3240c212b9b16864368}{
+\index{uipappfunc@{uipappfunc}!uip\_\-acked@{uip\_\-acked}}
+\index{uip\_\-acked@{uip\_\-acked}!uipappfunc@{uipappfunc}}
+\subsubsection[{uip\_\-acked}]{\setlength{\rightskip}{0pt plus 5cm}\#define uip\_\-acked(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{group__uipappfunc_gade6634974418e3240c212b9b16864368}
+Has previously sent data been acknowledged?
+
+Will reduce to non-\/zero if the previously sent data has been acknowledged by the remote host. This means that the application can send new data. 
+
+Definition at line 655 of file uip.h.
+
+\hypertarget{group__uipappfunc_ga61db1dcb7c760e4dd5d60bf4e5576dca}{
+\index{uipappfunc@{uipappfunc}!uip\_\-close@{uip\_\-close}}
+\index{uip\_\-close@{uip\_\-close}!uipappfunc@{uipappfunc}}
+\subsubsection[{uip\_\-close}]{\setlength{\rightskip}{0pt plus 5cm}\#define uip\_\-close(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{group__uipappfunc_ga61db1dcb7c760e4dd5d60bf4e5576dca}
+Close the current connection.
+
+This function will close the current connection in a nice way. 
+
+Definition at line 577 of file uip.h.
+
+\hypertarget{group__uipappfunc_gaef6c4140c632b6a406779342cf3b6eb6}{
+\index{uipappfunc@{uipappfunc}!uip\_\-closed@{uip\_\-closed}}
+\index{uip\_\-closed@{uip\_\-closed}!uipappfunc@{uipappfunc}}
+\subsubsection[{uip\_\-closed}]{\setlength{\rightskip}{0pt plus 5cm}\#define uip\_\-closed(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{group__uipappfunc_gaef6c4140c632b6a406779342cf3b6eb6}
+Has the connection been closed by the other end?
+
+Is non-\/zero if the connection has been closed by the remote host. The application may then do the necessary clean-\/ups. 
+
+Definition at line 677 of file uip.h.
+
+\hypertarget{group__uipappfunc_gadb971fb1525d0c5002f52125b05f3218}{
+\index{uipappfunc@{uipappfunc}!uip\_\-connected@{uip\_\-connected}}
+\index{uip\_\-connected@{uip\_\-connected}!uipappfunc@{uipappfunc}}
+\subsubsection[{uip\_\-connected}]{\setlength{\rightskip}{0pt plus 5cm}\#define uip\_\-connected(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{group__uipappfunc_gadb971fb1525d0c5002f52125b05f3218}
+Has the connection just been connected?
+
+Reduces to non-\/zero if the current connection has been connected to a remote host. This will happen both if the connection has been actively opened (with \hyperlink{group__uip_ga9c24fba2cd8f7f62accb0a0d5bbe4dad}{uip\_\-connect()}) or passively opened (with \hyperlink{group__uip_gadd1ab3704ecd4900eec61a6897d32dc8}{uip\_\-listen()}). 
+
+Definition at line 667 of file uip.h.
+
+\hypertarget{group__uipappfunc_ga1a1bc437c09ddef238abab41d77c3177}{
+\index{uipappfunc@{uipappfunc}!uip\_\-datalen@{uip\_\-datalen}}
+\index{uip\_\-datalen@{uip\_\-datalen}!uipappfunc@{uipappfunc}}
+\subsubsection[{uip\_\-datalen}]{\setlength{\rightskip}{0pt plus 5cm}\#define uip\_\-datalen(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{group__uipappfunc_ga1a1bc437c09ddef238abab41d77c3177}
+The length of any incoming data that is currently avaliable (if avaliable) in the uip\_\-appdata buffer.
+
+The test function uip\_\-data() must first be used to check if there is any data available at all. 
+
+Definition at line 557 of file uip.h.
+
+\hypertarget{group__uipappfunc_gaa87feebc7cffd4d8300e776cf64e4fec}{
+\index{uipappfunc@{uipappfunc}!uip\_\-initialmss@{uip\_\-initialmss}}
+\index{uip\_\-initialmss@{uip\_\-initialmss}!uipappfunc@{uipappfunc}}
+\subsubsection[{uip\_\-initialmss}]{\setlength{\rightskip}{0pt plus 5cm}\#define uip\_\-initialmss(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{group__uipappfunc_gaa87feebc7cffd4d8300e776cf64e4fec}
+Get the initial maxium segment size (MSS) of the current connection. 
+
+Definition at line 731 of file uip.h.
+
+\hypertarget{group__uipappfunc_gab5fecbc62edd128012cea0f47b57ab9f}{
+\index{uipappfunc@{uipappfunc}!uip\_\-mss@{uip\_\-mss}}
+\index{uip\_\-mss@{uip\_\-mss}!uipappfunc@{uipappfunc}}
+\subsubsection[{uip\_\-mss}]{\setlength{\rightskip}{0pt plus 5cm}\#define uip\_\-mss(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{group__uipappfunc_gab5fecbc62edd128012cea0f47b57ab9f}
+Get the current maxium segment size that can be sent on the current connection.
+
+The current maxiumum segment size that can be sent on the connection is computed from the receiver's window and the MSS of the connection (which also is available by calling \hyperlink{group__uipappfunc_gaa87feebc7cffd4d8300e776cf64e4fec}{uip\_\-initialmss()}). 
+
+Definition at line 744 of file uip.h.
+
+\hypertarget{group__uipappfunc_ga26a14b8dae3f861830af9e7cf1e03725}{
+\index{uipappfunc@{uipappfunc}!uip\_\-newdata@{uip\_\-newdata}}
+\index{uip\_\-newdata@{uip\_\-newdata}!uipappfunc@{uipappfunc}}
+\subsubsection[{uip\_\-newdata}]{\setlength{\rightskip}{0pt plus 5cm}\#define uip\_\-newdata(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{group__uipappfunc_ga26a14b8dae3f861830af9e7cf1e03725}
+Is new incoming data available?
+
+Will reduce to non-\/zero if there is new data for the application present at the uip\_\-appdata pointer. The size of the data is avaliable through the uip\_\-len variable. 
+
+Definition at line 644 of file uip.h.
+
+\hypertarget{group__uipappfunc_gaef14e83c046e19ab9fe9d1bbcca276c2}{
+\index{uipappfunc@{uipappfunc}!uip\_\-outstanding@{uip\_\-outstanding}}
+\index{uip\_\-outstanding@{uip\_\-outstanding}!uipappfunc@{uipappfunc}}
+\subsubsection[{uip\_\-outstanding}]{\setlength{\rightskip}{0pt plus 5cm}\#define uip\_\-outstanding(
+\begin{DoxyParamCaption}
+\item[{}]{conn}
+\end{DoxyParamCaption}
+)~((conn)-\/$>$len)}}
+\label{group__uipappfunc_gaef14e83c046e19ab9fe9d1bbcca276c2}
+
+
+Definition at line 518 of file uip.h.
+
+\hypertarget{group__uipappfunc_ga58bb90796c1cdad3aac2ecf44d87b20e}{
+\index{uipappfunc@{uipappfunc}!uip\_\-poll@{uip\_\-poll}}
+\index{uip\_\-poll@{uip\_\-poll}!uipappfunc@{uipappfunc}}
+\subsubsection[{uip\_\-poll}]{\setlength{\rightskip}{0pt plus 5cm}\#define uip\_\-poll(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{group__uipappfunc_ga58bb90796c1cdad3aac2ecf44d87b20e}
+Is the connection being polled by uIP?
+
+Is non-\/zero if the reason the application is invoked is that the current connection has been idle for a while and should be polled.
+
+The polling event can be used for sending data without having to wait for the remote host to send data. 
+
+Definition at line 723 of file uip.h.
+
+\hypertarget{group__uipappfunc_ga81ac47cee1c18f6aa479044069db7ca3}{
+\index{uipappfunc@{uipappfunc}!uip\_\-restart@{uip\_\-restart}}
+\index{uip\_\-restart@{uip\_\-restart}!uipappfunc@{uipappfunc}}
+\subsubsection[{uip\_\-restart}]{\setlength{\rightskip}{0pt plus 5cm}\#define uip\_\-restart(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{group__uipappfunc_ga81ac47cee1c18f6aa479044069db7ca3}
+Restart the current connection, if is has previously been stopped with \hyperlink{group__uipappfunc_ga0a8bb9d6d0f1f56852ccfccbbad6c5d8}{uip\_\-stop()}.
+
+This function will open the receiver's window again so that we start receiving data for the current connection. 
+
+Definition at line 617 of file uip.h.
+
+\hypertarget{group__uipappfunc_gaa8933ad15a2e2947dae4a5cff50e6007}{
+\index{uipappfunc@{uipappfunc}!uip\_\-rexmit@{uip\_\-rexmit}}
+\index{uip\_\-rexmit@{uip\_\-rexmit}!uipappfunc@{uipappfunc}}
+\subsubsection[{uip\_\-rexmit}]{\setlength{\rightskip}{0pt plus 5cm}\#define uip\_\-rexmit(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{group__uipappfunc_gaa8933ad15a2e2947dae4a5cff50e6007}
+Do we need to retransmit previously data?
+
+Reduces to non-\/zero if the previously sent data has been lost in the network, and the application should retransmit it. The application should send the exact same data as it did the last time, using the \hyperlink{group__uip_ga04b053a623aac7cd4195157d470661b3}{uip\_\-send()} function. 
+
+Definition at line 709 of file uip.h.
+
+\hypertarget{group__uipappfunc_ga0a8bb9d6d0f1f56852ccfccbbad6c5d8}{
+\index{uipappfunc@{uipappfunc}!uip\_\-stop@{uip\_\-stop}}
+\index{uip\_\-stop@{uip\_\-stop}!uipappfunc@{uipappfunc}}
+\subsubsection[{uip\_\-stop}]{\setlength{\rightskip}{0pt plus 5cm}\#define uip\_\-stop(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{group__uipappfunc_ga0a8bb9d6d0f1f56852ccfccbbad6c5d8}
+Tell the sending host to stop sending data.
+
+This function will close our receiver's window so that we stop receiving data for the current connection. 
+
+Definition at line 598 of file uip.h.
+
+\hypertarget{group__uipappfunc_ga64a238a5c02640a7a4aef004163aeb47}{
+\index{uipappfunc@{uipappfunc}!uip\_\-stopped@{uip\_\-stopped}}
+\index{uip\_\-stopped@{uip\_\-stopped}!uipappfunc@{uipappfunc}}
+\subsubsection[{uip\_\-stopped}]{\setlength{\rightskip}{0pt plus 5cm}\#define uip\_\-stopped(
+\begin{DoxyParamCaption}
+\item[{}]{conn}
+\end{DoxyParamCaption}
+)}}
+\label{group__uipappfunc_ga64a238a5c02640a7a4aef004163aeb47}
+Find out if the current connection has been previously stopped with \hyperlink{group__uipappfunc_ga0a8bb9d6d0f1f56852ccfccbbad6c5d8}{uip\_\-stop()}. 
+
+Definition at line 606 of file uip.h.
+
+\hypertarget{group__uipappfunc_ga7b2ac4b18bd2ac3912fe67b3b17158c3}{
+\index{uipappfunc@{uipappfunc}!uip\_\-timedout@{uip\_\-timedout}}
+\index{uip\_\-timedout@{uip\_\-timedout}!uipappfunc@{uipappfunc}}
+\subsubsection[{uip\_\-timedout}]{\setlength{\rightskip}{0pt plus 5cm}\#define uip\_\-timedout(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{group__uipappfunc_ga7b2ac4b18bd2ac3912fe67b3b17158c3}
+Has the connection timed out?
+
+Non-\/zero if the current connection has been aborted due to too many retransmissions. 
+
+Definition at line 697 of file uip.h.
+
+\hypertarget{group__uipappfunc_gaa20812098a4663c8a9fc4ce8e95391b6}{
+\index{uipappfunc@{uipappfunc}!uip\_\-udp\_\-bind@{uip\_\-udp\_\-bind}}
+\index{uip\_\-udp\_\-bind@{uip\_\-udp\_\-bind}!uipappfunc@{uipappfunc}}
+\subsubsection[{uip\_\-udp\_\-bind}]{\setlength{\rightskip}{0pt plus 5cm}\#define uip\_\-udp\_\-bind(
+\begin{DoxyParamCaption}
+\item[{}]{conn, }
+\item[{}]{port}
+\end{DoxyParamCaption}
+)}}
+\label{group__uipappfunc_gaa20812098a4663c8a9fc4ce8e95391b6}
+Bind a UDP connection to a local port.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em conn}]A pointer to the \hyperlink{structuip__udp__conn}{uip\_\-udp\_\-conn} structure for the connection.\item[{\em port}]The local port number, in network byte order. \end{DoxyParams}
+
+
+Definition at line 794 of file uip.h.
+
+\hypertarget{group__uipappfunc_gaf2dbaceb10c67783a115075b5b6d66df}{
+\index{uipappfunc@{uipappfunc}!uip\_\-udp\_\-remove@{uip\_\-udp\_\-remove}}
+\index{uip\_\-udp\_\-remove@{uip\_\-udp\_\-remove}!uipappfunc@{uipappfunc}}
+\subsubsection[{uip\_\-udp\_\-remove}]{\setlength{\rightskip}{0pt plus 5cm}\#define uip\_\-udp\_\-remove(
+\begin{DoxyParamCaption}
+\item[{}]{conn}
+\end{DoxyParamCaption}
+)}}
+\label{group__uipappfunc_gaf2dbaceb10c67783a115075b5b6d66df}
+Removed a UDP connection.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em conn}]A pointer to the \hyperlink{structuip__udp__conn}{uip\_\-udp\_\-conn} structure for the connection. \end{DoxyParams}
+
+
+Definition at line 782 of file uip.h.
+
+\hypertarget{group__uipappfunc_gae5ab69d40013e6cf86ef1763c95d920e}{
+\index{uipappfunc@{uipappfunc}!uip\_\-udp\_\-send@{uip\_\-udp\_\-send}}
+\index{uip\_\-udp\_\-send@{uip\_\-udp\_\-send}!uipappfunc@{uipappfunc}}
+\subsubsection[{uip\_\-udp\_\-send}]{\setlength{\rightskip}{0pt plus 5cm}\#define uip\_\-udp\_\-send(
+\begin{DoxyParamCaption}
+\item[{}]{len}
+\end{DoxyParamCaption}
+)}}
+\label{group__uipappfunc_gae5ab69d40013e6cf86ef1763c95d920e}
+Send a UDP datagram of length len on the current connection.
+
+This function can only be called in response to a UDP event (poll or newdata). The data must be present in the uip\_\-buf buffer, at the place pointed to by the uip\_\-appdata pointer.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em len}]The length of the data in the uip\_\-buf buffer. \end{DoxyParams}
+
+
+Definition at line 807 of file uip.h.
+
+\hypertarget{group__uipappfunc_gaa9de254b8aa308eb4aab17efdde622d2}{
+\index{uipappfunc@{uipappfunc}!uip\_\-udpconnection@{uip\_\-udpconnection}}
+\index{uip\_\-udpconnection@{uip\_\-udpconnection}!uipappfunc@{uipappfunc}}
+\subsubsection[{uip\_\-udpconnection}]{\setlength{\rightskip}{0pt plus 5cm}\#define uip\_\-udpconnection(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{group__uipappfunc_gaa9de254b8aa308eb4aab17efdde622d2}
+Is the current connection a UDP connection?
+
+This function checks whether the current connection is a UDP connection. 
+
+Definition at line 633 of file uip.h.
+
+\hypertarget{group__uipappfunc_ga8411c95a4d89367ad2d9d6bde1a3d537}{
+\index{uipappfunc@{uipappfunc}!uip\_\-urgdatalen@{uip\_\-urgdatalen}}
+\index{uip\_\-urgdatalen@{uip\_\-urgdatalen}!uipappfunc@{uipappfunc}}
+\subsubsection[{uip\_\-urgdatalen}]{\setlength{\rightskip}{0pt plus 5cm}\#define uip\_\-urgdatalen(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{group__uipappfunc_ga8411c95a4d89367ad2d9d6bde1a3d537}
+The length of any out-\/of-\/band data (urgent data) that has arrived on the connection.
+
+\begin{DoxyNote}{Note}
+The configuration parameter UIP\_\-URGDATA must be set for this function to be enabled. 
+\end{DoxyNote}
+
+
+Definition at line 568 of file uip.h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{group__uipappfunc_ga8096b0c4b543dc408f4dd031ddae7240}{
+\index{uipappfunc@{uipappfunc}!uip\_\-connect@{uip\_\-connect}}
+\index{uip\_\-connect@{uip\_\-connect}!uipappfunc@{uipappfunc}}
+\subsubsection[{uip\_\-connect}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf uip\_\-conn}$\ast$ uip\_\-connect (
+\begin{DoxyParamCaption}
+\item[{{\bf uip\_\-ipaddr\_\-t} $\ast$}]{ ripaddr, }
+\item[{{\bf u16\_\-t}}]{ port}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}
+\label{group__uipappfunc_ga8096b0c4b543dc408f4dd031ddae7240}
+Connect to a remote host using TCP.
+
+This function is used to start a new connection to the specified port on the specied host. It allocates a new connection identifier, sets the connection to the SYN\_\-SENT state and sets the retransmission timer to 0. This will cause a TCP SYN segment to be sent out the next time this connection is periodically processed, which usually is done within 0.5 seconds after the call to \hyperlink{group__uip_ga9c24fba2cd8f7f62accb0a0d5bbe4dad}{uip\_\-connect()}.
+
+\begin{DoxyNote}{Note}
+This function is avaliable only if support for active open has been configured by defining UIP\_\-ACTIVE\_\-OPEN to 1 in \hyperlink{uipopt_8h}{uipopt.h}.
+
+Since this function requires the port number to be in network byte order, a conversion using \hyperlink{group__uipconvfunc_ga69a7a4951ff21b302267532c21ee78fc}{HTONS()} or \hyperlink{group__uip_gaa22b04cac8cf283ca12f028578bebc06}{htons()} is necessary.
+\end{DoxyNote}
+
+\begin{DoxyCode}
+ uip_ipaddr_t ipaddr;
+
+ uip_ipaddr(&ipaddr, 192,168,1,2);
+ uip_connect(&ipaddr, HTONS(80));
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em ripaddr}]The IP address of the remote hot.\item[{\em port}]A 16-\/bit port number in network byte order.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the uIP connection identifier for the new connection, or NULL if no connection could be allocated. 
+\end{DoxyReturn}
+
+
+Definition at line 412 of file uip.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{group__uipappfunc_ga8096b0c4b543dc408f4dd031ddae7240_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{group__uipappfunc_gadd1ab3704ecd4900eec61a6897d32dc8}{
+\index{uipappfunc@{uipappfunc}!uip\_\-listen@{uip\_\-listen}}
+\index{uip\_\-listen@{uip\_\-listen}!uipappfunc@{uipappfunc}}
+\subsubsection[{uip\_\-listen}]{\setlength{\rightskip}{0pt plus 5cm}void uip\_\-listen (
+\begin{DoxyParamCaption}
+\item[{{\bf u16\_\-t}}]{ port}
+\end{DoxyParamCaption}
+)}}
+\label{group__uipappfunc_gadd1ab3704ecd4900eec61a6897d32dc8}
+Start listening to the specified port.
+
+\begin{DoxyNote}{Note}
+Since this function expects the port number in network byte order, a conversion using \hyperlink{group__uipconvfunc_ga69a7a4951ff21b302267532c21ee78fc}{HTONS()} or \hyperlink{group__uip_gaa22b04cac8cf283ca12f028578bebc06}{htons()} is necessary.
+\end{DoxyNote}
+
+\begin{DoxyCode}
+ uip_listen(HTONS(80));
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em port}]A 16-\/bit port number in network byte order. \end{DoxyParams}
+
+
+Definition at line 534 of file uip.c.
+
+\hypertarget{group__uipappfunc_ga04b053a623aac7cd4195157d470661b3}{
+\index{uipappfunc@{uipappfunc}!uip\_\-send@{uip\_\-send}}
+\index{uip\_\-send@{uip\_\-send}!uipappfunc@{uipappfunc}}
+\subsubsection[{uip\_\-send}]{\setlength{\rightskip}{0pt plus 5cm}void uip\_\-send (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{ data, }
+\item[{int}]{ len}
+\end{DoxyParamCaption}
+)}}
+\label{group__uipappfunc_ga04b053a623aac7cd4195157d470661b3}
+Send data on the current connection.
+
+This function is used to send out a single segment of TCP data. Only applications that have been invoked by uIP for event processing can send data.
+
+The amount of data that actually is sent out after a call to this funcion is determined by the maximum amount of data TCP allows. uIP will automatically crop the data so that only the appropriate amount of data is sent. The function \hyperlink{group__uipappfunc_gab5fecbc62edd128012cea0f47b57ab9f}{uip\_\-mss()} can be used to query uIP for the amount of data that actually will be sent.
+
+\begin{DoxyNote}{Note}
+This function does not guarantee that the sent data will arrive at the destination. If the data is lost in the network, the application will be invoked with the \hyperlink{group__uipappfunc_gaa8933ad15a2e2947dae4a5cff50e6007}{uip\_\-rexmit()} event being set. The application will then have to resend the data using this function.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em data}]A pointer to the data which is to be sent.\item[{\em len}]The maximum amount of data bytes to be sent. \end{DoxyParams}
+
+
+Definition at line 1907 of file uip.c.
+
+\hypertarget{group__uipappfunc_ga79c4110211247df3fb30b8cf1c4c02af}{
+\index{uipappfunc@{uipappfunc}!uip\_\-udp\_\-new@{uip\_\-udp\_\-new}}
+\index{uip\_\-udp\_\-new@{uip\_\-udp\_\-new}!uipappfunc@{uipappfunc}}
+\subsubsection[{uip\_\-udp\_\-new}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf uip\_\-udp\_\-conn}$\ast$ uip\_\-udp\_\-new (
+\begin{DoxyParamCaption}
+\item[{{\bf uip\_\-ipaddr\_\-t} $\ast$}]{ ripaddr, }
+\item[{{\bf u16\_\-t}}]{ rport}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}read\mbox{]}}}}
+\label{group__uipappfunc_ga79c4110211247df3fb30b8cf1c4c02af}
+Set up a new UDP connection.
+
+This function sets up a new UDP connection. The function will automatically allocate an unused local port for the new connection. However, another port can be chosen by using the \hyperlink{group__uipappfunc_gaa20812098a4663c8a9fc4ce8e95391b6}{uip\_\-udp\_\-bind()} call, after the \hyperlink{group__uip_ga79c4110211247df3fb30b8cf1c4c02af}{uip\_\-udp\_\-new()} function has been called.
+
+Example: 
+\begin{DoxyCode}
+ uip_ipaddr_t addr;
+ struct uip_udp_conn *c;
+
+ uip_ipaddr(&addr, 192,168,2,1);
+ c = uip_udp_new(&addr, HTONS(12345));
+ if(c != NULL) {
+   uip_udp_bind(c, HTONS(12344));
+ }
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+\item[{\em ripaddr}]The IP address of the remote host.\item[{\em rport}]The remote port number in network byte order.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \hyperlink{structuip__udp__conn}{uip\_\-udp\_\-conn} structure for the new connection or NULL if no connection could be allocated. 
+\end{DoxyReturn}
+
+
+Definition at line 478 of file uip.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{group__uipappfunc_ga79c4110211247df3fb30b8cf1c4c02af_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{group__uipappfunc_gaaa585784b0914cac1d37f07f85457008}{
+\index{uipappfunc@{uipappfunc}!uip\_\-unlisten@{uip\_\-unlisten}}
+\index{uip\_\-unlisten@{uip\_\-unlisten}!uipappfunc@{uipappfunc}}
+\subsubsection[{uip\_\-unlisten}]{\setlength{\rightskip}{0pt plus 5cm}void uip\_\-unlisten (
+\begin{DoxyParamCaption}
+\item[{{\bf u16\_\-t}}]{ port}
+\end{DoxyParamCaption}
+)}}
+\label{group__uipappfunc_gaaa585784b0914cac1d37f07f85457008}
+Stop listening to the specified port.
+
+\begin{DoxyNote}{Note}
+Since this function expects the port number in network byte order, a conversion using \hyperlink{group__uipconvfunc_ga69a7a4951ff21b302267532c21ee78fc}{HTONS()} or \hyperlink{group__uip_gaa22b04cac8cf283ca12f028578bebc06}{htons()} is necessary.
+\end{DoxyNote}
+
+\begin{DoxyCode}
+ uip_unlisten(HTONS(80));
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em port}]A 16-\/bit port number in network byte order. \end{DoxyParams}
+
+
+Definition at line 523 of file uip.c.
+

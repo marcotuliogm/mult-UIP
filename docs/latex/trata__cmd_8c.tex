@@ -1,0 +1,35 @@
+\hypertarget{trata__cmd_8c}{
+\section{tools/sft\_\-tools/sft\_\-prog/trata\_\-cmd.c File Reference}
+\label{trata__cmd_8c}\index{tools/sft\_\-tools/sft\_\-prog/trata\_\-cmd.c@{tools/sft\_\-tools/sft\_\-prog/trata\_\-cmd.c}}
+}
+{\ttfamily \#include $<$sys/types.h$>$}\par
+{\ttfamily \#include $<$sys/socket.h$>$}\par
+{\ttfamily \#include $<$sys/stat.h$>$}\par
+{\ttfamily \#include $<$dirent.h$>$}\par
+{\ttfamily \#include $<$unistd.h$>$}\par
+{\ttfamily \#include $<$netinet/in.h$>$}\par
+{\ttfamily \#include $<$netdb.h$>$}\par
+{\ttfamily \#include $<$stdio.h$>$}\par
+{\ttfamily \#include $<$string.h$>$}\par
+{\ttfamily \#include $<$stdlib.h$>$}\par
+{\ttfamily \#include $<$ctype.h$>$}\par
+{\ttfamily \#include \char`\"{}sft.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{group__tools_ga21607e3d9ec877c9182082896d652e1a}{send\_\-pkt} (void)
+\begin{DoxyCompactList}\small\item\em Envia um pacote com seguranca. \item\end{DoxyCompactList}\item 
+int \hyperlink{group__tools_ga646bc80af309b73ef8ec75af642823da}{sft\_\-send} (char $\ast$data)
+\begin{DoxyCompactList}\small\item\em Monta pacotes para ser enviado pelo protocolo SFT. \item\end{DoxyCompactList}\item 
+int \hyperlink{group__tools_gaa659288168d650321cd44c9b2c58fab1}{send\_\-stop} (void)
+\begin{DoxyCompactList}\small\item\em Finaliza arquivo enviado. \item\end{DoxyCompactList}\item 
+int \hyperlink{group__tools_gae277076e8df537a2e2a9be5eb986dfae}{sft\_\-send\_\-seq} (char $\ast$data)
+\begin{DoxyCompactList}\small\item\em Envia uma sequencia de imagens. \item\end{DoxyCompactList}\item 
+int \hyperlink{group__tools_ga169e8375031166aa98b2a4ce8f8f05e5}{sft\_\-send\_\-loop} (char $\ast$data)
+\begin{DoxyCompactList}\small\item\em Chama o envio de imagens sequenciais. \item\end{DoxyCompactList}\item 
+int \hyperlink{group__tools_ga87766379c1067492aa58573ab7103a55}{trata\_\-sft} ()
+\begin{DoxyCompactList}\small\item\em Verifica o que foi digitado pedindo. \item\end{DoxyCompactList}\item 
+int \hyperlink{group__tools_ga3aa69e98b6e896f4620e18ce70203826}{sft\_\-send\_\-x} (char $\ast$data)
+\item 
+int \hyperlink{group__tools_gabba736c5a748cafb42da716e76cb3bc0}{sft\_\-sendu} (char $\ast$data)
+\begin{DoxyCompactList}\small\item\em Monta pacotes para ser enviado pelo protocolo SFT. \item\end{DoxyCompactList}\end{DoxyCompactItemize}

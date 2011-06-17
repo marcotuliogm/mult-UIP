@@ -1,0 +1,61 @@
+/home/mtgm/tcc/webos2011/webserver/proj/ftp/ftp.c:745: warning: end of file while inside a group
+
+/home/mtgm/tcc/webos2011/webserver/proj/ftp/ftp.h:199: warning: end of file while inside a group
+
+/home/mtgm/tcc/webos2011/webserver/proj/httpd/httpd-cgi.c:171: warning: end of file while inside a group
+
+/home/mtgm/tcc/webos2011/webserver/proj/httpd/httpd.c:347: warning: end of file while inside a group
+
+/home/mtgm/tcc/webos2011/webserver/proj/httpd/old_page/httpd-cgi.c:214: warning: end of file while inside a group
+
+/home/mtgm/tcc/webos2011/webserver/proj/sockets/hello-world.c:104: warning: end of file while inside a group
+
+/home/mtgm/tcc/webos2011/webserver/proj/sockets/socket_exemplos/hello-world.c:104: warning: end of file while inside a group
+
+/home/mtgm/tcc/webos2011/webserver/proj/telnetd/telnetd.h:90: warning: end of file while inside a group
+
+/home/mtgm/tcc/webos2011/webserver/uip/uip-fw.c:534: warning: end of file while inside a group
+
+/home/mtgm/tcc/webos2011/webserver/proj/sockets/cli_webSock.h:2: warning: the name `cli_websock.h' supplied as the second argument in the \file statement is not an input file
+/home/mtgm/tcc/webos2011/webserver/proj/cli/api.h:94: warning: member with no name found.
+/home/mtgm/tcc/webos2011/webserver/proj/cli/api.h:95: warning: member with no name found.
+/home/mtgm/tcc/webos2011/webserver/proj/cli/api.h:96: warning: member with no name found.
+/home/mtgm/tcc/webos2011/webserver/proj/cli/api.h:97: warning: member with no name found.
+/home/mtgm/tcc/webos2011/webserver/proj/cli/api.h:106: warning: member with no name found.
+/home/mtgm/tcc/webos2011/webserver/proj/cli/api.h:107: warning: member with no name found.
+/home/mtgm/tcc/webos2011/webserver/proj/cli/api.h:108: warning: member with no name found.
+/home/mtgm/tcc/webos2011/webserver/proj/httpd/old_page/httpd-cgi.c:97: warning: no matching file member found for 
+static PT_THREAD(cgitemperature(struct httpd_state *s, char *ptr))Possible candidates:
+  #define PT_THREAD(name_args)
+  static PT_THREAD(cgitemperature(struct httpd_state *s, char *ptr))
+  typedef PT_THREAD((*httpd_cgifunction)(struct httpd_state *, char *))
+  static PT_THREAD(cgisetpoint(struct httpd_state *s, char *ptr))
+  static PT_THREAD(cgiestado(struct httpd_state *s, char *ptr))
+  PT_THREAD(psock_send(register struct psock *s, const char *buf, unsigned int len))
+  PT_THREAD(psock_generator_send(register struct psock *s, unsigned short(*generate)(void *), void *arg))
+  PT_THREAD(psock_send(struct psock *psock, const char *buf, unsigned int len))
+  PT_THREAD(psock_generator_send(struct psock *psock, unsigned short(*f)(void *), void *arg))
+  PT_THREAD(psock_readbuf(struct psock *psock))
+  PT_THREAD(psock_readto(struct psock *psock, unsigned char c))
+
+/home/mtgm/tcc/webos2011/webserver/proj/sft/sftd.h:81: warning: Found unknown command `\0'
+/home/mtgm/tcc/webos2011/webserver/proj/tools/sft_tools/sft.c:68: warning: Found unknown command `\0'
+/home/mtgm/tcc/webos2011/webserver/proj/sft/sftd.h:81: warning: Found unknown command `\0'
+/home/mtgm/tcc/webos2011/webserver/proj/tools/chat/chat.c:19: warning: Unsupported xml/html tag <porta> found
+/home/mtgm/tcc/webos2011/webserver/proj/tools/chat/chat.c:23: warning: Unsupported xml/html tag <endereco> found
+/home/mtgm/tcc/webos2011/webserver/proj/tools/chat/chat.c:23: warning: Unsupported xml/html tag <port> found
+/home/mtgm/tcc/webos2011/webserver/proj/tools/sft_tools/sft.c:68: warning: Found unknown command `\0'
+/home/mtgm/tcc/webos2011/webserver/proj/tools/sft_tools/sft.c:68: warning: Found unknown command `\0'
+/home/mtgm/tcc/webos2011/webserver/proj/cli/cli.c:168: warning: argument 'tp' of command @param is not found in the argument list of cmdExec(int(*ApiFunc)(str_t *tp))
+/home/mtgm/tcc/webos2011/webserver/proj/cli/cli.c:168: warning: The following parameters of cmdExec(int(*ApiFunc)(str_t *tp)) are not documented:
+  parameter 'ApiFunc'
+/home/mtgm/tcc/webos2011/webserver/proj/memb/memb.h:77: warning: argument 'size' of command @param is not found in the argument list of MEMB(name, structure, num)
+/home/mtgm/tcc/webos2011/webserver/proj/memb/memb.h:77: warning: The following parameters of MEMB(name, structure, num) are not documented:
+  parameter 'structure'
+/home/mtgm/tcc/webos2011/webserver/proj/sft/sftd.c:241: warning: The following parameters of info_host_ans(struct sftd_state *s, int cmd) are not documented:
+  parameter 'cmd'
+/home/mtgm/tcc/webos2011/webserver/proj/tools/sft_tools/sft.c:68: warning: Found unknown command `\0'
+/home/mtgm/tcc/webos2011/webserver/proj/tools/sft_tools/sft.c:68: warning: Found unknown command `\0'
+/home/mtgm/tcc/webos2011/webserver/proj/sft/sftd.h:81: warning: Found unknown command `\0'
+/home/mtgm/tcc/webos2011/webserver/proj/tools/sft_tools/sft.c:68: warning: Found unknown command `\0'
+/home/mtgm/tcc/webos2011/webserver/proj/sft/sftd.h:81: warning: Found unknown command `\0'

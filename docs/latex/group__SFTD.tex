@@ -1,0 +1,668 @@
+\hypertarget{group__SFTD}{
+\section{Protocolo SFT}
+\label{group__SFTD}\index{Protocolo SFT@{Protocolo SFT}}
+}
+
+
+Collaboration diagram for Protocolo SFT:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{group__SFTD}
+\end{center}
+\end{figure}
+
+
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__SFTD_gaa5186a00142139694fa51998303b63a0}{TAM\_\-BUFF\_\-TEMP}~3
+\begin{DoxyCompactList}\small\item\em Tamanho do buffer temporario usado pelo RLE. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{group__SFTD_ga3607c9823abc40aef55f22aa45a16438}{TOTAL\_\-PIXEL}~26136
+\item 
+\#define \hyperlink{group__SFTD_gaa5186a00142139694fa51998303b63a0}{TAM\_\-BUFF\_\-TEMP}~3
+\begin{DoxyCompactList}\small\item\em Tamanho do buffer temporario usado pelo RLE. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{group__SFTD_ga3607c9823abc40aef55f22aa45a16438}{TOTAL\_\-PIXEL}~26136
+\item 
+\#define \hyperlink{group__SFTD_gaa5186a00142139694fa51998303b63a0}{TAM\_\-BUFF\_\-TEMP}~3
+\begin{DoxyCompactList}\small\item\em Tamanho do buffer temporario usado pelo RLE. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{group__SFTD_ga3607c9823abc40aef55f22aa45a16438}{TOTAL\_\-PIXEL}~26136
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__SFTD_gab05d3fde000321e5a849ec084474caf2}{sftd\_\-init} (void)
+\begin{DoxyCompactList}\small\item\em Inicializa servico do protocolo SFT. \item\end{DoxyCompactList}\item 
+void \hyperlink{group__SFTD_ga95d5c450883e216dccebd10b4adbca3c}{sftd\_\-appcall} (void)
+\begin{DoxyCompactList}\small\item\em Funcao tratados de pacotes do tipo SFT. \item\end{DoxyCompactList}\item 
+void \hyperlink{group__SFTD_ga77244ac0ad98e8d5ff310132595c4612}{sft\_\-closed} (struct \hyperlink{structsftd__state}{sftd\_\-state} $\ast$s)
+\begin{DoxyCompactList}\small\item\em Coloca protocolo em estado de fechado. \item\end{DoxyCompactList}\item 
+void \hyperlink{group__SFTD_ga0dd45f928eb9fd92057c3030a3718397}{sft\_\-senddata} (struct \hyperlink{structsftd__state}{sftd\_\-state} $\ast$s)
+\begin{DoxyCompactList}\small\item\em Envia pacotes do tipo SFT. \item\end{DoxyCompactList}\item 
+int \hyperlink{group__SFTD_ga3ba5af4fe8714e70fca97e743011e163}{sft\_\-trata} (struct \hyperlink{structsftd__state}{sftd\_\-state} $\ast$s)
+\begin{DoxyCompactList}\small\item\em Trata pacotes do tipo SFT. \item\end{DoxyCompactList}\item 
+void \hyperlink{group__SFTD_ga4a53cb826fb28e5b8968d169e929c244}{info\_\-host\_\-wait} (struct \hyperlink{structsftd__state}{sftd\_\-state} $\ast$s)
+\begin{DoxyCompactList}\small\item\em Monta protocolo SFT informando para destino aguardar. \item\end{DoxyCompactList}\item 
+void \hyperlink{group__SFTD_ga65321a4c9870ef49a16b3c2dd444276e}{info\_\-host\_\-stop} (struct \hyperlink{structsftd__state}{sftd\_\-state} $\ast$s)
+\begin{DoxyCompactList}\small\item\em Monta e envia protocolo SFT pedindo STOP no envio de dados. \item\end{DoxyCompactList}\item 
+void \hyperlink{group__SFTD_gaffb793b26caefd07873afa01ace4ee61}{carrega\_\-img\_\-old} (struct \hyperlink{structsftd__state}{sftd\_\-state} $\ast$s)
+\begin{DoxyCompactList}\small\item\em Antiga funcao usada para tratar imagens do tipo geral. \item\end{DoxyCompactList}\item 
+void \hyperlink{group__SFTD_gab0520adf98ea71f71de3d1f42c778fac}{carrega\_\-img} (struct \hyperlink{structsftd__state}{sftd\_\-state} $\ast$s)
+\begin{DoxyCompactList}\small\item\em Carrega Imagem vinda do protocolo para o display. \item\end{DoxyCompactList}\item 
+void \hyperlink{group__SFTD_ga7a80643708e17a7a7b3b7980ea3f901b}{carrega\_\-imgu} (struct \hyperlink{structsftd__state}{sftd\_\-state} $\ast$s)
+\begin{DoxyCompactList}\small\item\em Carrega Imagem vinda do protocolo para o display sem seguranca. \item\end{DoxyCompactList}\item 
+void \hyperlink{group__SFTD_gab65ca45c5d292fbf9a8be579f465697b}{info\_\-host\_\-error} (struct \hyperlink{structsftd__state}{sftd\_\-state} $\ast$s)
+\begin{DoxyCompactList}\small\item\em Monta protocolo SFT informando para destino que ele não suporta este tipo de servico. \item\end{DoxyCompactList}\item 
+void \hyperlink{group__SFTD_gabb1d77f4fcd81b5a3bd4022b62d7f7e0}{info\_\-host\_\-ans} (struct \hyperlink{structsftd__state}{sftd\_\-state} $\ast$s, int cmd)
+\begin{DoxyCompactList}\small\item\em Monta e envia protocolo SFT pedindo STOP no envio de dados. \item\end{DoxyCompactList}\item 
+void \hyperlink{group__SFTD_gabe069b166e0011721dbd75c84b64660e}{envia\_\-msg} (struct \hyperlink{structsftd__state}{sftd\_\-state} $\ast$s)
+\begin{DoxyCompactList}\small\item\em Carrega Mensagem vinda do protocolo para o display. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{group__SFTD_ga46b780fcc31527f9e6b9b94b27c5fdc9}{contImg}
+\item 
+int \hyperlink{group__SFTD_gaeed3ab3cfaa81fc518da034ffff8576c}{n\_\-buff}
+\item 
+int \hyperlink{group__SFTD_gab01f6df89a2c590dbf207e6e2ce01bf2}{flag\_\-buff\_\-temp}
+\item 
+int \hyperlink{group__SFTD_gaf04e37b7953920f8142c8ebf2b9f7d13}{buff\_\-temp} \mbox{[}TAM\_\-BUFF\_\-TEMP\mbox{]}
+\item 
+int \hyperlink{group__SFTD_gadd34d8f0c83196f8b20622a06ddead79}{break\_\-geral}
+\item 
+int \hyperlink{group__SFTD_ga64595c5b8b55f94d3eb7503f07bc61a9}{old\_\-id}
+\item 
+int \hyperlink{group__SFTD_ga2154b2a39f2c03e7fd41ea4c626dfefc}{flag\_\-sendu}
+\begin{DoxyCompactList}\small\item\em FLAG usada para poder verificar quando for envio de dados sem seguranca do buffer. \item\end{DoxyCompactList}\item 
+int \hyperlink{group__SFTD_ga46b780fcc31527f9e6b9b94b27c5fdc9}{contImg}
+\item 
+int \hyperlink{group__SFTD_gaeed3ab3cfaa81fc518da034ffff8576c}{n\_\-buff}
+\item 
+int \hyperlink{group__SFTD_gab01f6df89a2c590dbf207e6e2ce01bf2}{flag\_\-buff\_\-temp}
+\item 
+int \hyperlink{group__SFTD_gaf04e37b7953920f8142c8ebf2b9f7d13}{buff\_\-temp} \mbox{[}TAM\_\-BUFF\_\-TEMP\mbox{]}
+\item 
+int \hyperlink{group__SFTD_gadd34d8f0c83196f8b20622a06ddead79}{break\_\-geral}
+\item 
+int \hyperlink{group__SFTD_ga2154b2a39f2c03e7fd41ea4c626dfefc}{flag\_\-sendu}
+\begin{DoxyCompactList}\small\item\em FLAG usada para poder verificar quando for envio de dados sem seguranca do buffer. \item\end{DoxyCompactList}\item 
+int \hyperlink{group__SFTD_ga46b780fcc31527f9e6b9b94b27c5fdc9}{contImg}
+\item 
+int \hyperlink{group__SFTD_gaeed3ab3cfaa81fc518da034ffff8576c}{n\_\-buff}
+\item 
+int \hyperlink{group__SFTD_gab01f6df89a2c590dbf207e6e2ce01bf2}{flag\_\-buff\_\-temp}
+\item 
+int \hyperlink{group__SFTD_gaf04e37b7953920f8142c8ebf2b9f7d13}{buff\_\-temp} \mbox{[}TAM\_\-BUFF\_\-TEMP\mbox{]}
+\item 
+int \hyperlink{group__SFTD_gadd34d8f0c83196f8b20622a06ddead79}{break\_\-geral}
+\item 
+int \hyperlink{group__SFTD_ga2154b2a39f2c03e7fd41ea4c626dfefc}{flag\_\-sendu}
+\begin{DoxyCompactList}\small\item\em FLAG usada para poder verificar quando for envio de dados sem seguranca do buffer. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Define Documentation}
+\hypertarget{group__SFTD_gaa5186a00142139694fa51998303b63a0}{
+\index{SFTD@{SFTD}!TAM\_\-BUFF\_\-TEMP@{TAM\_\-BUFF\_\-TEMP}}
+\index{TAM\_\-BUFF\_\-TEMP@{TAM\_\-BUFF\_\-TEMP}!SFTD@{SFTD}}
+\subsubsection[{TAM\_\-BUFF\_\-TEMP}]{\setlength{\rightskip}{0pt plus 5cm}\#define TAM\_\-BUFF\_\-TEMP~3}}
+\label{group__SFTD_gaa5186a00142139694fa51998303b63a0}
+
+
+Definition at line 30 of file sftd\_\-2.c.
+
+\hypertarget{group__SFTD_gaa5186a00142139694fa51998303b63a0}{
+\index{SFTD@{SFTD}!TAM\_\-BUFF\_\-TEMP@{TAM\_\-BUFF\_\-TEMP}}
+\index{TAM\_\-BUFF\_\-TEMP@{TAM\_\-BUFF\_\-TEMP}!SFTD@{SFTD}}
+\subsubsection[{TAM\_\-BUFF\_\-TEMP}]{\setlength{\rightskip}{0pt plus 5cm}\#define TAM\_\-BUFF\_\-TEMP~3}}
+\label{group__SFTD_gaa5186a00142139694fa51998303b63a0}
+
+
+Definition at line 26 of file sftd.c.
+
+\hypertarget{group__SFTD_gaa5186a00142139694fa51998303b63a0}{
+\index{SFTD@{SFTD}!TAM\_\-BUFF\_\-TEMP@{TAM\_\-BUFF\_\-TEMP}}
+\index{TAM\_\-BUFF\_\-TEMP@{TAM\_\-BUFF\_\-TEMP}!SFTD@{SFTD}}
+\subsubsection[{TAM\_\-BUFF\_\-TEMP}]{\setlength{\rightskip}{0pt plus 5cm}\#define TAM\_\-BUFF\_\-TEMP~3}}
+\label{group__SFTD_gaa5186a00142139694fa51998303b63a0}
+
+
+Definition at line 26 of file sftd\_\-ok.c.
+
+\hypertarget{group__SFTD_ga3607c9823abc40aef55f22aa45a16438}{
+\index{SFTD@{SFTD}!TOTAL\_\-PIXEL@{TOTAL\_\-PIXEL}}
+\index{TOTAL\_\-PIXEL@{TOTAL\_\-PIXEL}!SFTD@{SFTD}}
+\subsubsection[{TOTAL\_\-PIXEL}]{\setlength{\rightskip}{0pt plus 5cm}\#define TOTAL\_\-PIXEL~26136}}
+\label{group__SFTD_ga3607c9823abc40aef55f22aa45a16438}
+
+
+Definition at line 27 of file sftd\_\-ok.c.
+
+\hypertarget{group__SFTD_ga3607c9823abc40aef55f22aa45a16438}{
+\index{SFTD@{SFTD}!TOTAL\_\-PIXEL@{TOTAL\_\-PIXEL}}
+\index{TOTAL\_\-PIXEL@{TOTAL\_\-PIXEL}!SFTD@{SFTD}}
+\subsubsection[{TOTAL\_\-PIXEL}]{\setlength{\rightskip}{0pt plus 5cm}\#define TOTAL\_\-PIXEL~26136}}
+\label{group__SFTD_ga3607c9823abc40aef55f22aa45a16438}
+
+
+Definition at line 31 of file sftd\_\-2.c.
+
+\hypertarget{group__SFTD_ga3607c9823abc40aef55f22aa45a16438}{
+\index{SFTD@{SFTD}!TOTAL\_\-PIXEL@{TOTAL\_\-PIXEL}}
+\index{TOTAL\_\-PIXEL@{TOTAL\_\-PIXEL}!SFTD@{SFTD}}
+\subsubsection[{TOTAL\_\-PIXEL}]{\setlength{\rightskip}{0pt plus 5cm}\#define TOTAL\_\-PIXEL~26136}}
+\label{group__SFTD_ga3607c9823abc40aef55f22aa45a16438}
+
+
+Definition at line 27 of file sftd.c.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{group__SFTD_gab0520adf98ea71f71de3d1f42c778fac}{
+\index{SFTD@{SFTD}!carrega\_\-img@{carrega\_\-img}}
+\index{carrega\_\-img@{carrega\_\-img}!SFTD@{SFTD}}
+\subsubsection[{carrega\_\-img}]{\setlength{\rightskip}{0pt plus 5cm}void carrega\_\-img (
+\begin{DoxyParamCaption}
+\item[{struct {\bf sftd\_\-state} $\ast$}]{ s}
+\end{DoxyParamCaption}
+)}}
+\label{group__SFTD_gab0520adf98ea71f71de3d1f42c778fac}
+Pega pixels vindos por parametros e envia eles para o display de LCD da Nokia presente no kit de desenvolvimento. A imagem (ou arquivo) nao e armazenado devido ao pouco espaco de memoria existente no microprocessador.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em s}]Estrutura do protocolo SFT \end{DoxyParams}
+
+
+Definition at line 322 of file sftd.c.
+
+\hypertarget{group__SFTD_gaffb793b26caefd07873afa01ace4ee61}{
+\index{SFTD@{SFTD}!carrega\_\-img\_\-old@{carrega\_\-img\_\-old}}
+\index{carrega\_\-img\_\-old@{carrega\_\-img\_\-old}!SFTD@{SFTD}}
+\subsubsection[{carrega\_\-img\_\-old}]{\setlength{\rightskip}{0pt plus 5cm}void carrega\_\-img\_\-old (
+\begin{DoxyParamCaption}
+\item[{struct {\bf sftd\_\-state} $\ast$}]{ s}
+\end{DoxyParamCaption}
+)}}
+\label{group__SFTD_gaffb793b26caefd07873afa01ace4ee61}
+Antigafuncao usada para tratar imagens do tipo geral.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em s}]Estrutura do protocolo SFT \end{DoxyParams}
+
+
+Definition at line 285 of file sftd.c.
+
+\hypertarget{group__SFTD_ga7a80643708e17a7a7b3b7980ea3f901b}{
+\index{SFTD@{SFTD}!carrega\_\-imgu@{carrega\_\-imgu}}
+\index{carrega\_\-imgu@{carrega\_\-imgu}!SFTD@{SFTD}}
+\subsubsection[{carrega\_\-imgu}]{\setlength{\rightskip}{0pt plus 5cm}void carrega\_\-imgu (
+\begin{DoxyParamCaption}
+\item[{struct {\bf sftd\_\-state} $\ast$}]{ s}
+\end{DoxyParamCaption}
+)}}
+\label{group__SFTD_ga7a80643708e17a7a7b3b7980ea3f901b}
+Carrega Imagem vinda do protocolo para o display.
+
+Pega pixels vindos por parametros e envia eles para o display de LCD da Nokia presente no kit de desenvolvimento. A imagem (ou arquivo) nao e armazenado devido ao pouco espaco de memoria existente no microprocessador.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em s}]Estrutura do protocolo SFT \end{DoxyParams}
+
+
+Definition at line 459 of file sftd\_\-ok.c.
+
+\hypertarget{group__SFTD_gabe069b166e0011721dbd75c84b64660e}{
+\index{SFTD@{SFTD}!envia\_\-msg@{envia\_\-msg}}
+\index{envia\_\-msg@{envia\_\-msg}!SFTD@{SFTD}}
+\subsubsection[{envia\_\-msg}]{\setlength{\rightskip}{0pt plus 5cm}void envia\_\-msg (
+\begin{DoxyParamCaption}
+\item[{struct {\bf sftd\_\-state} $\ast$}]{ s}
+\end{DoxyParamCaption}
+)}}
+\label{group__SFTD_gabe069b166e0011721dbd75c84b64660e}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em s}]Estrutura do protocolo SFT \end{DoxyParams}
+
+
+Definition at line 409 of file sftd.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=368pt]{group__SFTD_gabe069b166e0011721dbd75c84b64660e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{group__SFTD_gabb1d77f4fcd81b5a3bd4022b62d7f7e0}{
+\index{SFTD@{SFTD}!info\_\-host\_\-ans@{info\_\-host\_\-ans}}
+\index{info\_\-host\_\-ans@{info\_\-host\_\-ans}!SFTD@{SFTD}}
+\subsubsection[{info\_\-host\_\-ans}]{\setlength{\rightskip}{0pt plus 5cm}void info\_\-host\_\-ans (
+\begin{DoxyParamCaption}
+\item[{struct {\bf sftd\_\-state} $\ast$}]{ s, }
+\item[{int}]{ cmd}
+\end{DoxyParamCaption}
+)}}
+\label{group__SFTD_gabb1d77f4fcd81b5a3bd4022b62d7f7e0}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em s}]Estrutura do protocolo SFT \end{DoxyParams}
+
+
+Definition at line 250 of file sftd.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{group__SFTD_gabb1d77f4fcd81b5a3bd4022b62d7f7e0_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{group__SFTD_gab65ca45c5d292fbf9a8be579f465697b}{
+\index{SFTD@{SFTD}!info\_\-host\_\-error@{info\_\-host\_\-error}}
+\index{info\_\-host\_\-error@{info\_\-host\_\-error}!SFTD@{SFTD}}
+\subsubsection[{info\_\-host\_\-error}]{\setlength{\rightskip}{0pt plus 5cm}void info\_\-host\_\-error (
+\begin{DoxyParamCaption}
+\item[{struct {\bf sftd\_\-state} $\ast$}]{ s}
+\end{DoxyParamCaption}
+)}}
+\label{group__SFTD_gab65ca45c5d292fbf9a8be579f465697b}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em s}]Estrutura do protocolo SFT \end{DoxyParams}
+
+
+Definition at line 264 of file sftd\_\-ok.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{group__SFTD_gab65ca45c5d292fbf9a8be579f465697b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{group__SFTD_ga65321a4c9870ef49a16b3c2dd444276e}{
+\index{SFTD@{SFTD}!info\_\-host\_\-stop@{info\_\-host\_\-stop}}
+\index{info\_\-host\_\-stop@{info\_\-host\_\-stop}!SFTD@{SFTD}}
+\subsubsection[{info\_\-host\_\-stop}]{\setlength{\rightskip}{0pt plus 5cm}void info\_\-host\_\-stop (
+\begin{DoxyParamCaption}
+\item[{struct {\bf sftd\_\-state} $\ast$}]{ s}
+\end{DoxyParamCaption}
+)}}
+\label{group__SFTD_ga65321a4c9870ef49a16b3c2dd444276e}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em s}]Estrutura do protocolo SFT \end{DoxyParams}
+
+
+Definition at line 299 of file sftd\_\-ok.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{group__SFTD_ga65321a4c9870ef49a16b3c2dd444276e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{group__SFTD_ga4a53cb826fb28e5b8968d169e929c244}{
+\index{SFTD@{SFTD}!info\_\-host\_\-wait@{info\_\-host\_\-wait}}
+\index{info\_\-host\_\-wait@{info\_\-host\_\-wait}!SFTD@{SFTD}}
+\subsubsection[{info\_\-host\_\-wait}]{\setlength{\rightskip}{0pt plus 5cm}void info\_\-host\_\-wait (
+\begin{DoxyParamCaption}
+\item[{struct {\bf sftd\_\-state} $\ast$}]{ s}
+\end{DoxyParamCaption}
+)}}
+\label{group__SFTD_ga4a53cb826fb28e5b8968d169e929c244}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em s}]Estrutura do protocolo SFT \end{DoxyParams}
+
+
+Definition at line 232 of file sftd\_\-ok.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{group__SFTD_ga4a53cb826fb28e5b8968d169e929c244_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{group__SFTD_ga77244ac0ad98e8d5ff310132595c4612}{
+\index{SFTD@{SFTD}!sft\_\-closed@{sft\_\-closed}}
+\index{sft\_\-closed@{sft\_\-closed}!SFTD@{SFTD}}
+\subsubsection[{sft\_\-closed}]{\setlength{\rightskip}{0pt plus 5cm}void sft\_\-closed (
+\begin{DoxyParamCaption}
+\item[{struct {\bf sftd\_\-state} $\ast$}]{ s}
+\end{DoxyParamCaption}
+)}}
+\label{group__SFTD_ga77244ac0ad98e8d5ff310132595c4612}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em s}]Estrutura do protocolo SFT \end{DoxyParams}
+
+
+Definition at line 88 of file sftd.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{group__SFTD_ga77244ac0ad98e8d5ff310132595c4612_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{group__SFTD_ga0dd45f928eb9fd92057c3030a3718397}{
+\index{SFTD@{SFTD}!sft\_\-senddata@{sft\_\-senddata}}
+\index{sft\_\-senddata@{sft\_\-senddata}!SFTD@{SFTD}}
+\subsubsection[{sft\_\-senddata}]{\setlength{\rightskip}{0pt plus 5cm}void sft\_\-senddata (
+\begin{DoxyParamCaption}
+\item[{struct {\bf sftd\_\-state} $\ast$}]{ s}
+\end{DoxyParamCaption}
+)}}
+\label{group__SFTD_ga0dd45f928eb9fd92057c3030a3718397}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em s}]Estrutura do protocolo SFT \end{DoxyParams}
+
+
+Definition at line 98 of file sftd.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{group__SFTD_ga0dd45f928eb9fd92057c3030a3718397_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{group__SFTD_ga3ba5af4fe8714e70fca97e743011e163}{
+\index{SFTD@{SFTD}!sft\_\-trata@{sft\_\-trata}}
+\index{sft\_\-trata@{sft\_\-trata}!SFTD@{SFTD}}
+\subsubsection[{sft\_\-trata}]{\setlength{\rightskip}{0pt plus 5cm}int sft\_\-trata (
+\begin{DoxyParamCaption}
+\item[{struct {\bf sftd\_\-state} $\ast$}]{ s}
+\end{DoxyParamCaption}
+)}}
+\label{group__SFTD_ga3ba5af4fe8714e70fca97e743011e163}
+Verifica os campos do protocolo SFT e realiza o devido tratamento do pacote vindo da rede.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em s}]Estrutura do protocolo SFT\end{DoxyParams}
+return Retorna 0 se tudo ocorreu ok, ou -\/1. 
+
+Definition at line 112 of file sftd.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{group__SFTD_ga3ba5af4fe8714e70fca97e743011e163_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{group__SFTD_ga95d5c450883e216dccebd10b4adbca3c}{
+\index{SFTD@{SFTD}!sftd\_\-appcall@{sftd\_\-appcall}}
+\index{sftd\_\-appcall@{sftd\_\-appcall}!SFTD@{SFTD}}
+\subsubsection[{sftd\_\-appcall}]{\setlength{\rightskip}{0pt plus 5cm}void sftd\_\-appcall (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__SFTD_ga95d5c450883e216dccebd10b4adbca3c}
+Funcao gerencia controle de pacotes do tipo SFT. 
+
+Definition at line 48 of file sftd.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{group__SFTD_ga95d5c450883e216dccebd10b4adbca3c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{group__SFTD_gab05d3fde000321e5a849ec084474caf2}{
+\index{SFTD@{SFTD}!sftd\_\-init@{sftd\_\-init}}
+\index{sftd\_\-init@{sftd\_\-init}!SFTD@{SFTD}}
+\subsubsection[{sftd\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void sftd\_\-init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__SFTD_gab05d3fde000321e5a849ec084474caf2}
+
+
+Definition at line 38 of file sftd.c.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{group__SFTD_gab05d3fde000321e5a849ec084474caf2_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{group__SFTD_gadd34d8f0c83196f8b20622a06ddead79}{
+\index{SFTD@{SFTD}!break\_\-geral@{break\_\-geral}}
+\index{break\_\-geral@{break\_\-geral}!SFTD@{SFTD}}
+\subsubsection[{break\_\-geral}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf break\_\-geral}}}
+\label{group__SFTD_gadd34d8f0c83196f8b20622a06ddead79}
+
+
+Definition at line 34 of file sftd\_\-2.c.
+
+\hypertarget{group__SFTD_gadd34d8f0c83196f8b20622a06ddead79}{
+\index{SFTD@{SFTD}!break\_\-geral@{break\_\-geral}}
+\index{break\_\-geral@{break\_\-geral}!SFTD@{SFTD}}
+\subsubsection[{break\_\-geral}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf break\_\-geral}}}
+\label{group__SFTD_gadd34d8f0c83196f8b20622a06ddead79}
+
+
+Definition at line 30 of file sftd.c.
+
+\hypertarget{group__SFTD_gadd34d8f0c83196f8b20622a06ddead79}{
+\index{SFTD@{SFTD}!break\_\-geral@{break\_\-geral}}
+\index{break\_\-geral@{break\_\-geral}!SFTD@{SFTD}}
+\subsubsection[{break\_\-geral}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf break\_\-geral}}}
+\label{group__SFTD_gadd34d8f0c83196f8b20622a06ddead79}
+
+
+Definition at line 30 of file sftd\_\-ok.c.
+
+\hypertarget{group__SFTD_gaf04e37b7953920f8142c8ebf2b9f7d13}{
+\index{SFTD@{SFTD}!buff\_\-temp@{buff\_\-temp}}
+\index{buff\_\-temp@{buff\_\-temp}!SFTD@{SFTD}}
+\subsubsection[{buff\_\-temp}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf buff\_\-temp}\mbox{[}TAM\_\-BUFF\_\-TEMP\mbox{]}}}
+\label{group__SFTD_gaf04e37b7953920f8142c8ebf2b9f7d13}
+
+
+Definition at line 33 of file sftd\_\-2.c.
+
+\hypertarget{group__SFTD_gaf04e37b7953920f8142c8ebf2b9f7d13}{
+\index{SFTD@{SFTD}!buff\_\-temp@{buff\_\-temp}}
+\index{buff\_\-temp@{buff\_\-temp}!SFTD@{SFTD}}
+\subsubsection[{buff\_\-temp}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf buff\_\-temp}\mbox{[}TAM\_\-BUFF\_\-TEMP\mbox{]}}}
+\label{group__SFTD_gaf04e37b7953920f8142c8ebf2b9f7d13}
+
+
+Definition at line 29 of file sftd.c.
+
+\hypertarget{group__SFTD_gaf04e37b7953920f8142c8ebf2b9f7d13}{
+\index{SFTD@{SFTD}!buff\_\-temp@{buff\_\-temp}}
+\index{buff\_\-temp@{buff\_\-temp}!SFTD@{SFTD}}
+\subsubsection[{buff\_\-temp}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf buff\_\-temp}\mbox{[}TAM\_\-BUFF\_\-TEMP\mbox{]}}}
+\label{group__SFTD_gaf04e37b7953920f8142c8ebf2b9f7d13}
+
+
+Definition at line 29 of file sftd\_\-ok.c.
+
+\hypertarget{group__SFTD_ga46b780fcc31527f9e6b9b94b27c5fdc9}{
+\index{SFTD@{SFTD}!contImg@{contImg}}
+\index{contImg@{contImg}!SFTD@{SFTD}}
+\subsubsection[{contImg}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf contImg}}}
+\label{group__SFTD_ga46b780fcc31527f9e6b9b94b27c5fdc9}
+
+
+Definition at line 28 of file sftd\_\-ok.c.
+
+\hypertarget{group__SFTD_ga46b780fcc31527f9e6b9b94b27c5fdc9}{
+\index{SFTD@{SFTD}!contImg@{contImg}}
+\index{contImg@{contImg}!SFTD@{SFTD}}
+\subsubsection[{contImg}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf contImg}}}
+\label{group__SFTD_ga46b780fcc31527f9e6b9b94b27c5fdc9}
+
+
+Definition at line 32 of file sftd\_\-2.c.
+
+\hypertarget{group__SFTD_ga46b780fcc31527f9e6b9b94b27c5fdc9}{
+\index{SFTD@{SFTD}!contImg@{contImg}}
+\index{contImg@{contImg}!SFTD@{SFTD}}
+\subsubsection[{contImg}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf contImg}}}
+\label{group__SFTD_ga46b780fcc31527f9e6b9b94b27c5fdc9}
+
+
+Definition at line 28 of file sftd.c.
+
+\hypertarget{group__SFTD_gab01f6df89a2c590dbf207e6e2ce01bf2}{
+\index{SFTD@{SFTD}!flag\_\-buff\_\-temp@{flag\_\-buff\_\-temp}}
+\index{flag\_\-buff\_\-temp@{flag\_\-buff\_\-temp}!SFTD@{SFTD}}
+\subsubsection[{flag\_\-buff\_\-temp}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf flag\_\-buff\_\-temp}}}
+\label{group__SFTD_gab01f6df89a2c590dbf207e6e2ce01bf2}
+
+
+Definition at line 28 of file sftd.c.
+
+\hypertarget{group__SFTD_gab01f6df89a2c590dbf207e6e2ce01bf2}{
+\index{SFTD@{SFTD}!flag\_\-buff\_\-temp@{flag\_\-buff\_\-temp}}
+\index{flag\_\-buff\_\-temp@{flag\_\-buff\_\-temp}!SFTD@{SFTD}}
+\subsubsection[{flag\_\-buff\_\-temp}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf flag\_\-buff\_\-temp}}}
+\label{group__SFTD_gab01f6df89a2c590dbf207e6e2ce01bf2}
+
+
+Definition at line 28 of file sftd\_\-ok.c.
+
+\hypertarget{group__SFTD_gab01f6df89a2c590dbf207e6e2ce01bf2}{
+\index{SFTD@{SFTD}!flag\_\-buff\_\-temp@{flag\_\-buff\_\-temp}}
+\index{flag\_\-buff\_\-temp@{flag\_\-buff\_\-temp}!SFTD@{SFTD}}
+\subsubsection[{flag\_\-buff\_\-temp}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf flag\_\-buff\_\-temp}}}
+\label{group__SFTD_gab01f6df89a2c590dbf207e6e2ce01bf2}
+
+
+Definition at line 32 of file sftd\_\-2.c.
+
+\hypertarget{group__SFTD_ga2154b2a39f2c03e7fd41ea4c626dfefc}{
+\index{SFTD@{SFTD}!flag\_\-sendu@{flag\_\-sendu}}
+\index{flag\_\-sendu@{flag\_\-sendu}!SFTD@{SFTD}}
+\subsubsection[{flag\_\-sendu}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf flag\_\-sendu}}}
+\label{group__SFTD_ga2154b2a39f2c03e7fd41ea4c626dfefc}
+
+
+Definition at line 33 of file sftd\_\-ok.c.
+
+\hypertarget{group__SFTD_ga2154b2a39f2c03e7fd41ea4c626dfefc}{
+\index{SFTD@{SFTD}!flag\_\-sendu@{flag\_\-sendu}}
+\index{flag\_\-sendu@{flag\_\-sendu}!SFTD@{SFTD}}
+\subsubsection[{flag\_\-sendu}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf flag\_\-sendu}}}
+\label{group__SFTD_ga2154b2a39f2c03e7fd41ea4c626dfefc}
+
+
+Definition at line 33 of file sftd.c.
+
+\hypertarget{group__SFTD_ga2154b2a39f2c03e7fd41ea4c626dfefc}{
+\index{SFTD@{SFTD}!flag\_\-sendu@{flag\_\-sendu}}
+\index{flag\_\-sendu@{flag\_\-sendu}!SFTD@{SFTD}}
+\subsubsection[{flag\_\-sendu}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf flag\_\-sendu}}}
+\label{group__SFTD_ga2154b2a39f2c03e7fd41ea4c626dfefc}
+
+
+Definition at line 38 of file sftd\_\-2.c.
+
+\hypertarget{group__SFTD_gaeed3ab3cfaa81fc518da034ffff8576c}{
+\index{SFTD@{SFTD}!n\_\-buff@{n\_\-buff}}
+\index{n\_\-buff@{n\_\-buff}!SFTD@{SFTD}}
+\subsubsection[{n\_\-buff}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf n\_\-buff}}}
+\label{group__SFTD_gaeed3ab3cfaa81fc518da034ffff8576c}
+
+
+Definition at line 32 of file sftd\_\-2.c.
+
+\hypertarget{group__SFTD_gaeed3ab3cfaa81fc518da034ffff8576c}{
+\index{SFTD@{SFTD}!n\_\-buff@{n\_\-buff}}
+\index{n\_\-buff@{n\_\-buff}!SFTD@{SFTD}}
+\subsubsection[{n\_\-buff}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf n\_\-buff}}}
+\label{group__SFTD_gaeed3ab3cfaa81fc518da034ffff8576c}
+
+
+Definition at line 28 of file sftd.c.
+
+\hypertarget{group__SFTD_gaeed3ab3cfaa81fc518da034ffff8576c}{
+\index{SFTD@{SFTD}!n\_\-buff@{n\_\-buff}}
+\index{n\_\-buff@{n\_\-buff}!SFTD@{SFTD}}
+\subsubsection[{n\_\-buff}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf n\_\-buff}}}
+\label{group__SFTD_gaeed3ab3cfaa81fc518da034ffff8576c}
+
+
+Definition at line 28 of file sftd\_\-ok.c.
+
+\hypertarget{group__SFTD_ga64595c5b8b55f94d3eb7503f07bc61a9}{
+\index{SFTD@{SFTD}!old\_\-id@{old\_\-id}}
+\index{old\_\-id@{old\_\-id}!SFTD@{SFTD}}
+\subsubsection[{old\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf old\_\-id}}}
+\label{group__SFTD_ga64595c5b8b55f94d3eb7503f07bc61a9}
+
+
+Definition at line 35 of file sftd\_\-2.c.
+

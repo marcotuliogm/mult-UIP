@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+	<title>SiSC - Temperatura do laboratório</title>
+	
+	<style>
+	.form field {width:330px; height: 30px}
+	.form_field .left{width:16px; background: url(field_l.png) top left no-repeat;height: 48px; float:left;}
+	.form_field .middle{width:75px; background: url(field_m.png) top left repeat-x ; border: none; height: 48px;float:left;}
+	.form_field .right{width:16px; background: url(field_r.png) top left no-repeat;height: 48px;float:left;}
+	</style>
+
+  </head>
+  <BODY bgcolor="#ffffff">
+<font face="tahoma">
+
+<table width="80%" cellspacing="0" border="0" cellpadding="00" align="center">  <tbody>
+    <tr>
+      <td align="center" width="50%">
+      	<IMG src="sisclogo.png" width="254" height="335" align="center" border="0"><br><br>Apoio: <a href="http://selivre.wordpress.com">selivre.wordpress.com</a></td>
+      <td align="left" width="50%">
+	Temperatura Atual:<br><font color=green size=11><b>%! tag-temp
+ &deg;C</b></font>
+	<p>
+	<form name="aForm" action="/index.shtml" method="get">
+	Setpoint: 	
+	<div class="form_field">
+	<div class="form_field left"></div>
+	<input type="text" name="stpt" value="%! tag-setpoint
+" maxlength="3" class="form_field middle" style="font-size: 36px;"> <font size="7">&deg;C</font>
+	<div class="form_field right"></div>
+	</div>
+	<br>
+	Ar Condicionado: <SELECT name="estd">
+                         %! tag-estado <option selected>ON</option> <option>AUTO</option> <option>OFF</option> 
+                         </SELECT>
+	<br>
+	<br>
+	Password: <INPUT type="password" name="psswd" value="pass" size="11" maxlength="8"><br><input type="submit" value="Submeter">
+	</form>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<br><p>
+
+</font>
+</body>
+</html>
+

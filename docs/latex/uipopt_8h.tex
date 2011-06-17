@@ -1,0 +1,114 @@
+\hypertarget{uipopt_8h}{
+\section{/home/mtgm/tcc/mult-\/UIP/uip/uipopt.h File Reference}
+\label{uipopt_8h}\index{/home/mtgm/tcc/mult-\/UIP/uip/uipopt.h@{/home/mtgm/tcc/mult-\/UIP/uip/uipopt.h}}
+}
+{\ttfamily \#include \char`\"{}uip-\/conf.h\char`\"{}}\par
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__uipopt_gab6e04358481bd2057524fb874cfa472b}{UIP\_\-LITTLE\_\-ENDIAN}~3412
+\item 
+\#define \hyperlink{group__uipopt_ga6836f92f3692f3a4429eb599db40cbae}{UIP\_\-BIG\_\-ENDIAN}~1234
+\end{DoxyCompactItemize}
+\begin{Indent}{\bf Static configuration options}\par
+{\em \label{_amgrp8ef70bf271b77f0d95af49484e8e0317}
+ These configuration options can be used for setting the IP address settings statically, but only if UIP\_\-FIXEDADDR is set to 1. The configuration options for a specific node includes IP address, netmask and default router as well as the Ethernet address. The netmask, default router and Ethernet address are appliciable only if uIP should be run over Ethernet.
+
+All of these should be changed to suit your project. }\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__uipopt_ga51195ea7cd5aa387a87f9d3b23905b62}{UIP\_\-FIXEDADDR}
+\item 
+\#define \hyperlink{group__uipopt_ga9069474ea570fd78c481aa164317dbaf}{UIP\_\-PINGADDRCONF}
+\item 
+\#define \hyperlink{group__uipopt_gae0f8cbeca9731af2171ffd37e79de893}{UIP\_\-FIXEDETHADDR}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf IP configuration options}\par
+{\em \label{_amgrp72aedc455a3ab41b5ab6a73fe8775b4e}
+ }\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__uipopt_gab61381673de27f31848c5396bf0b338e}{UIP\_\-TTL}~64
+\item 
+\#define \hyperlink{group__uipopt_gaf963fdea2b75d27ef31e92d1d01359ee}{UIP\_\-REASSEMBLY}
+\item 
+\#define \hyperlink{group__uipopt_gac3882366feda1cb759ccbfe98327a7db}{UIP\_\-REASS\_\-MAXAGE}~40
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf UDP configuration options}\par
+{\em \label{_amgrp426a17bfcee307b47aecb388765b96af}
+ }\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__uipopt_gadcf372ff9748996f7c05e9822a615384}{UIP\_\-UDP}
+\item 
+\#define \hyperlink{group__uipopt_ga92f3344ec8ca46893163399c89fafed5}{UIP\_\-UDP\_\-CHECKSUMS}
+\item 
+\#define \hyperlink{group__uipopt_ga196379ceb1219a99f4495e41ccc9bbfb}{UIP\_\-UDP\_\-CONNS}
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf TCP configuration options}\par
+{\em \label{_amgrp5358ecbda23d45a956b93b22ab223454}
+ The name of the function that should be called when UDP datagrams arrive. }\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__uipopt_gaac0de06236b02659460445de30776e00}{UIP\_\-ACTIVE\_\-OPEN}
+\item 
+\#define \hyperlink{group__uipopt_gaf5fe83be78b78b9e7d9e7f1e34ab1cc5}{UIP\_\-CONNS}
+\item 
+\#define \hyperlink{group__uipopt_ga8f4ebd8ef6c0ea665ed351d87fec09fd}{UIP\_\-LISTENPORTS}
+\item 
+\#define \hyperlink{group__uipopt_ga51c1cd531ff0afb81620151f2248cd21}{UIP\_\-URGDATA}
+\item 
+\#define \hyperlink{group__uipopt_ga15de27b044603284f68db05a378235a7}{UIP\_\-RTO}~3
+\item 
+\#define \hyperlink{group__uipopt_ga67cf1e0d2324c93f332c1f020c0fe8b3}{UIP\_\-MAXRTX}~8
+\item 
+\#define \hyperlink{group__uipopt_ga24aa5bc36939cc9a0833e1df01478a7e}{UIP\_\-MAXSYNRTX}~5
+\item 
+\#define \hyperlink{group__uipopt_ga4910467b83a639f06739c82cd362037e}{UIP\_\-TCP\_\-MSS}~(UIP\_\-BUFSIZE -\/ UIP\_\-LLH\_\-LEN -\/ UIP\_\-TCPIP\_\-HLEN)
+\item 
+\#define \hyperlink{group__uipopt_ga5b9dba2123705bce1ce95c3deca0bdad}{UIP\_\-RECEIVE\_\-WINDOW}
+\item 
+\#define \hyperlink{group__uipopt_ga2bc3b489923793759526a3181eb667fa}{UIP\_\-TIME\_\-WAIT\_\-TIMEOUT}~120
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf ARP configuration options}\par
+{\em \label{_amgrp106be5433d93df201e2c5e1dd884f385}
+ }\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__uipopt_gab1455b27c06532a399cf06d2c1d6d08d}{UIP\_\-ARPTAB\_\-SIZE}
+\item 
+\#define \hyperlink{group__uipopt_ga3090117ef3ff5775b77cb1960e442d07}{UIP\_\-ARP\_\-MAXAGE}~120
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf CPU architecture configuration}\par
+{\em \label{_amgrp92204cfdd87c8ee2a9b5b4b68df72ffc}
+ The CPU architecture configuration is where the endianess of the CPU on which uIP is to be run is specified. Most CPUs today are little endian, and the most notable exception are the Motorolas which are big endian. The BYTE\_\-ORDER macro should be changed to reflect the CPU architecture on which uIP is to be run. }\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__uipopt_ga285a80366aed9428f64282b8d13c918b}{UIP\_\-BYTE\_\-ORDER}
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{General configuration options}
+\label{_amgrpb8c9c9095ad43c7a9416ca5403936eb8}
+ \begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__uipopt_ga3589822ecb9d9c4145209756396b8a6b}{UIP\_\-BUFSIZE}
+\item 
+\#define \hyperlink{group__uipopt_ga5726142fec34f35fb9ea19e5a45975c6}{UIP\_\-STATISTICS}
+\item 
+\#define \hyperlink{group__uipopt_ga21664b7441cfa37d280228d23316d609}{UIP\_\-LOGGING}
+\item 
+\#define \hyperlink{group__uipopt_ga156dd2891a57035e4afdc4c2bc0b0ebf}{UIP\_\-BROADCAST}
+\item 
+\#define \hyperlink{group__uipopt_gae6f4a2453dbd8bc60e6a82774552366a}{UIP\_\-LLH\_\-LEN}
+\item 
+void \hyperlink{group__uipopt_gab58e1ceb7cb73ca2bcd73146b6c1b4e7}{uip\_\-log} (char $\ast$\hyperlink{client__msg_8c_a2d9fc9fb256865977515b723173ffa09}{msg})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Configuration options for uIP. \begin{DoxyAuthor}{Author}
+Adam Dunkels $<$\href{mailto:adam@dunkels.com}{\tt adam@dunkels.com}$>$
+\end{DoxyAuthor}
+This file is used for tweaking various configuration options for uIP. You should make a copy of this file into one of your project's directories instead of editing this example \char`\"{}uipopt.h\char`\"{} file that comes with the uIP distribution. 
+
+Definition in file \hyperlink{uipopt_8h_source}{uipopt.h}.
+
