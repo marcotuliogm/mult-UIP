@@ -1,6 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node2" href="$structpt.html" title="{pt\n|+ lc\l|}" alt="" coords="5,15,51,100"/>
-<area shape="rect" id="node6" href="$structpsock.html" title="{psock\n|+ psockpt\l+ sendptr\l+ readptr\l+ bufptr\l+ sendlen\l+ readlen\l+ buf\l+ bufsize\l+ state\l|}" alt="" coords="83,176,168,400"/>
-<area shape="rect" id="node4" href="$structhttpd__fs__file.html" title="{httpd_fs_file\n|+ data\l+ len\l|}" alt="" coords="192,237,291,339"/>
-<area shape="rect" id="node9" href="$structpsock__buf.html" title="{psock_buf\n|+ ptr\l+ left\l|}" alt="" coords="92,6,177,109"/>
-</map>
