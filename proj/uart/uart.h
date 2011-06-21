@@ -11,7 +11,10 @@
 #include "../lpc_config.h"
 
 #define uart_puts(__i__) 	UARTTransmitString(__i__, UART_CH_0)
+#define uart_puts1(__i__) 	UARTTransmitString(__i__, UART_CH_1)
 #define uart_putc(__i__) 	UARTTransmitByte(__i__, UART_CH_0)
+#define uart_putc1(__i__) 	UARTTransmitByte(__i__, UART_CH_1)
+
 
 
 #define	UART_CH_0	0x0

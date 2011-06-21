@@ -91,7 +91,7 @@ $(ARM_OBJS) : %.o : %.c Makefile
 clean :
 	rm -f $(ARM_OBJS) $(THUMB_OBJS) ${TARGET}.elf ${TARGET}.hex ${TARGET}.bin ${TARGET}.map ${TARGET}.lst
 
-isp:
+isp:   ${TARGET}.hex
 	lpc21isp ${TARGET}.hex /dev/ttyUSB0 115200 12000
 
 

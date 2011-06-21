@@ -41,10 +41,10 @@ typedef unsigned long long U64_t;
 #define uipMAC_ADDR5	0x24
 
 /* IP address configuration. */
-int uipIP_ADDR0;
-int uipIP_ADDR1;
-int uipIP_ADDR2;
-int uipIP_ADDR3;
+static int uipIP_ADDR0;
+static int uipIP_ADDR1;
+static int uipIP_ADDR2;
+static int uipIP_ADDR3;
 
 unsigned short uip_GAT0;
 unsigned short uip_GAT1;
@@ -82,7 +82,7 @@ typedef enum {
 	FTP_CMD /** @var FTP_CMD comandos do tipo FTP */
 } type_t;
 
-int vectorAddrIPv4[4];
+static int vectorAddrIPv4[4];
 
 /**
  * @brief str_t

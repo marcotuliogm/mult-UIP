@@ -29,8 +29,8 @@ static char msg_dest[MAX_TAM_SIZE_STRING];
 extern cli_str const api_cli[];				/* - tabela de parametros */
 static const cli_str* menu_cli = api_cli;
 
-char buff_cmd[MAX_COMMAND_SIZE];
-int buff_cmd_counter=0;
+static char buff_cmd[MAX_COMMAND_SIZE];
+static int buff_cmd_counter=0;
 
 
 /**

@@ -1,9 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$mprintf_8c.html#a8456d79947fb428e0927d19e7a1e9423" title="atoi" alt="" coords="163,5,208,35"/>
-<area shape="rect" id="node5" href="$cli__func_8c.html#a71559270e0f357a3da53ea277273f02f" title="Funcao para alterar o GATEWAY do kit." alt="" coords="133,59,237,88"/>
-<area shape="rect" id="node7" href="$mprintf_8c.html#a486df650a64b4719f771096d27ed4076" title="sprintf" alt="" coords="155,112,216,141"/>
-<area shape="rect" id="node9" href="$mprintf_8c.html#a4258ec4e57ed55fef8f175226f66263d" title="sputchar" alt="" coords="287,85,364,115"/>
-<area shape="rect" id="node11" href="$mprintf_8c.html#afac470569c34e290d1b8b7c53cbeb6e1" title="va_printf" alt="" coords="287,139,364,168"/>
-<area shape="rect" id="node13" href="$mprintf_8c.html#a829eca90dc67b4fcf6dd1460e621d144" title="dprint" alt="" coords="413,112,472,141"/>
-<area shape="rect" id="node15" href="$mprintf_8c.html#ad44aca28598820cf82ac3cff0c30350a" title="u2str" alt="" coords="416,165,469,195"/>
-</map>

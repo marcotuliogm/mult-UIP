@@ -1,0 +1,6 @@
+docs/*
+*.o
+*.hex
+*.alf
+*.map
+uip/*.o

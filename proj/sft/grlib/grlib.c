@@ -25,7 +25,7 @@
 #include "grlib.h"
 #include "charset.c"
 struct txtinfo *ptxt;
-
+#define RST_MSK ((1<<31)+0X100)
 
 /*
 Em alguns displays as cores e a coordenada X sao invertidas
@@ -66,10 +66,10 @@ T1TCR = 0;	// T1 em 1000 contagens por segundo
 T1PR = 12000000/10000 - 1;
 T1TCR = 2;
 T1TCR = 1;
-FIO0DIR |= 0x100;
-FIO0CLR = 0x100;	// Reset no PCF8833
+FIO0DIR |= RST_MSK;// 0x100;
+FIO0CLR = RST_MSK;//0x100;	// Reset no PCF8833
 espera_ms(10);		// Pulso de 10ms
-FIO0SET = 0x100;
+FIO0SET = RST_MSK;//0x100;
 espera_ms(10);
 WriteSpiCommand(0x11);	// SLEEPOUT
 WriteSpiCommand(0x3a);	// COLMOD (Modo de colorido)
