@@ -77,7 +77,7 @@ WriteSpiData(0x03);	// 12 bits
 // Dependendo do modelo de display estas configuracoes devem mudar
 WriteSpiCommand(0x36);	// MADCTL
 #ifdef INVERTE
-WriteSpiData(0x48);	// 0x40: Xmirror;  0x08: bgr [1-bgr 0-rgb]
+WriteSpiData(0x40);	// 0x40: Xmirror;  0x08: bgr [1-bgr 0-rgb]
 #else
 WriteSpiData(0x0);	// no mirror - rgb
 WriteSpiCommand(0x20);	// INVON
