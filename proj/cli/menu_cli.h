@@ -20,9 +20,9 @@ cli_str const api_cli[] =
 	{do_configIp, "IPCONFIG","Retorna configuração da rede."},
 	{do_MAC, "MAC","Retorna MAC da placa."},
 	{do_init, "INIT","Mensagem inicial."},
-	{do_lcd, "LCD","Sintaxe -[SET LCD <data> <col> <linha>"},
+	{do_lcd, "LCD","Sintaxe -[SET LCD <data>] "},
 	{do_chat, "CHAT","CHAT PORTA troca de mensagens."},
-	{do_ftp, "FTP", "FTP [END IP] - ftp client"},
+	//{do_ftp, "FTP", "FTP [END IP] - ftp client"},
 	//inserir outra função. Vai... <func tratadora>, "NOME",<mensage de help.>;
 	{NULL, NULL},
 };

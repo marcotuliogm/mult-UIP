@@ -68,7 +68,6 @@ void services_appcall(void){
 		//função tratadora dos serviços do sft.
 		sftd_appcall();
 	}
-
 	//IMPLEMENTADO OS SERVIÇO DE FTP APENAS PARA CLIENTE.
 	/*
 	else if(uip_conn->lport == HTONS(FTP_PORT)){

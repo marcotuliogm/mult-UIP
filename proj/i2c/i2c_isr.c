@@ -43,7 +43,7 @@ void I2C0MasterHandler( void ) __attribute__ ((interrupt("IRQ")));
 void I2C0MasterHandler(void)
 {
   char StatValue;
-  uart_putc('i');
+//  uart_putc('i');
   /* this handler deals with master read and master write only */
   StatValue = I22STAT;
   switch ( StatValue )

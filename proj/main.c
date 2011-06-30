@@ -191,9 +191,9 @@ int main( void )
  	do_init(tp);
  	uart_puts(tp->resp);
  	uart_puts(CLI_PROMPT);
- 	UARTTakeString(dest, UART_CH_0);
+/* 	UARTTakeString(dest, UART_CH_0);
  	CLI_Builder(dest, buff);
- 	uart_puts(buff);
+ 	uart_puts(buff);*/
 
 	while(1)
     {
@@ -208,9 +208,9 @@ int main( void )
 		LCDbcd(RTC_SEC);
 
 #if 0
-		if(global_chat_flag==0){//se em 1 significa que uart esta dedicada para atender o chat.
+		if(global_chat_flag!=1){//se em 1 significa que uart esta dedicada para atender o chat.
 			if(UARTTakeStringAsync(dest, UART_CH_0) == 0){
-				if (strlen(dest)>2){
+				if (strlen(dest)>0){
 				CLI_Builder(dest,buff);
 				uart_puts(buff);
 				memset(dest, '\0', sizeof(dest));
@@ -231,7 +231,6 @@ int main( void )
                 memset(dest, '\0', sizeof(dest));
                 }
         }
-
 
 
   	}

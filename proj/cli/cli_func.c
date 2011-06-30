@@ -73,6 +73,7 @@ break_t do_init(str_t* tp){
 	return RET_OK;
 }
 
+
 /**
  * @brief Funcao que retorna a temperatura ambiente
  *
@@ -83,8 +84,15 @@ break_t do_init(str_t* tp){
  */
 break_t do_get_temperature(str_t* tp){
 	char buff[20];
+	unsigned char temp0, temp1;
+	int temp;
 	DEBUG_CLI("do_get_temperature");
-	strcpy(tp->resp,"em construcao");
+	temp= read_temp();
+	temp1 = temp >> 8;
+	temp0 = temp & 0xf;
+	//sprintf(str, " %d,%dC ",temp1,temp0 );
+	sprintf(buff, "%3d,%02d °C", (int)temp1, (int)temp0);
+	strcpy(tp->resp,buff);
 	//tp->resp =  buff;
 	return RET_OK;
 }
@@ -101,6 +109,9 @@ break_t do_chat(str_t* tp){
 	char buff[20], porta[20];
 	uint32_t port;
 
+	 if (tp->tipo == GET || tp->tipo == SET){
+		 return RET_ERROR;
+	 }
 	DEBUG_CLI("do_chat troca de mensagens entre usuarios.\n");
 	if(tp->value == NULL) return RET_ERROR;
 
@@ -109,8 +120,8 @@ break_t do_chat(str_t* tp){
 	sprintf(buff, "Porta %d",port);
 	DEBUG_CLI(buff);
 	CHAT_PORT = port;
-	chat_start();//chama com a porta definida que será usado no chat.
 	global_chat_flag = 1; //enquanto 1 a UART fica bloqueada para o chat.
+	chat_start();//chama com a porta definida que será usado no chat.
 	//uart_puts("\nCLI SUSPENSA.\n");
 
 //	while(global_chat_flag==1); //fica aqui ateh vir comando de quit pelo chat para sair.
@@ -176,8 +187,10 @@ break_t do_MAC(str_t* tp){
 	if(tp->tipo == SET)
 		strcpy(tp->resp, "Apenas comando de GET.");
 	else if (tp->tipo == GET){
-		sprintf(buff, "%d:%d:%d:%d:%d:%d", uipMAC_ADDR0, uipMAC_ADDR1, uipMAC_ADDR2,uipMAC_ADDR3,
+		sprintf(buff, "%02x:%02x:%02x:%02x:%02x:%02x", uipMAC_ADDR0, uipMAC_ADDR1, uipMAC_ADDR2,uipMAC_ADDR3,
 				uipMAC_ADDR4,uipMAC_ADDR5);
+			strcpy(tp->resp, buff);
+			DEBUG_CLI(tp->resp);
 	}
 	return RET_OK;
 }
@@ -262,14 +275,14 @@ break_t do_lcd(str_t* tp){
 	if(tp->tipo == SET){	//tipo SET
 			strcpy(arq,tp->value);
 			if(strlen(arq)<=0) return RET_ERROR;
-			buff = strtok(arq, ";"); //mensagem para aparecer no display
+			buff = strtok(arq, ".;"); //mensagem para aparecer no display
 			strcpy(msg, buff);
-			buff = strtok(NULL, " ,.");
-			posX = atoi(buff);
-			if (posX > 16 || posX < 0) return RET_ERROR;
-			buff = strtok(NULL, " ,.");
-			posY = atoi(buff);
-			if (posY > 2 || posY < 0) return RET_ERROR;
+//			buff = strtok(NULL, " ,.");
+//			posX = atoi(buff);
+//			if (posX > 16 || posX < 0) return RET_ERROR;
+//			buff = strtok(NULL, " ,.");
+//			posY = atoi(buff);
+//			if (posY > 2 || posY < 0) return RET_ERROR;
 			writeDataLcd(msg, posX, posY);
 			strcpy(tp->resp,"Dados Escritos com sucesso.");
 		}

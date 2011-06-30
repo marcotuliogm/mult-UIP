@@ -99,8 +99,8 @@ int chat_communication(struct chat_state *s){
 	int a;
 	sprintf(estado,"Estado: %d\n", s->state);
 	DEBUG_INFO(estado);
-
 	PSOCK_BEGIN(&prot);
+
 	if(s->state==RECV_CHAT){
 //			PSOCK_WAIT_UNTIL(&prot,PSOCK_NEWDATA(&prot));//{	//verifica se tem dados armazenado.
 				DEBUG_SOCK_INFO("recebendo dados.\n");
@@ -142,16 +142,17 @@ int chat_communication(struct chat_state *s){
 
 	if(s->state == QUIT_CHAT){
 		uart_puts("bye.\n");
-		PSOCK_SEND_STR(&prot, "bye.");	//envia para a socket.
+		PSOCK_SEND_STR(&prot, "quit");	//envia para a socket.
 		global_chat_flag = 0;	//verifica se é para sair do chat
 		DEBUG_SOCK_INFO("socket finalizada.\n");
 		PSOCK_CLOSE(&prot);
-		PSOCK_END(&prot);
 		PSOCK_CLOSE_EXIT(&prot);
+		uip_unlisten(CHAT_PORT);
 		s->state = 10;//estado nao tratado.
 		fflush(stdout);
-		return 0;
+//		return 0;
 	}
+	PSOCK_END(&prot);
 
 	return 0;
 }

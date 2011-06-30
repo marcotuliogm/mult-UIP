@@ -93,9 +93,9 @@ int main(int argc, char *argv[])
 		 rval = recv(s1, msg_rec, TAMMSG, 0) ;
          msg_rec[rval] = 0;
 		 printf("%s\n",msg_rec);
-		 if(strcmp(msg_rec, "quit")==0) {
+		 if(strncmp(msg_rec, "quit", "quit")==0) {
 			 printf("bye.\n");
-			 send(s1, "quit", strlen("quit"), 0);
+//			 send(s1, "quit", strlen("quit"), 0);
 			 break;
 		 }
 

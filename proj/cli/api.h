@@ -82,7 +82,7 @@ typedef enum {
 	FTP_CMD /** @var FTP_CMD comandos do tipo FTP */
 } type_t;
 
-static int vectorAddrIPv4[4];
+int vectorAddrIPv4[4];
 
 /**
  * @brief str_t

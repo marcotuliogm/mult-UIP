@@ -103,7 +103,7 @@ void ethernet_init()
 	/* The next two lines define an IP adress */
 	set_eth_addr();
 
-	dhcpc_init(&xAddr, 6); //DHCP Client not working yet
+	//dhcpc_init(&xAddr, 6); //DHCP Client not working yet
 	services_init();
 
    	/* Initialise the MAC. */
